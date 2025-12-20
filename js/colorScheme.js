@@ -1,0 +1,1 @@
+"use strict";(()=>{const e=window.matchMedia("(prefers-color-scheme: dark)"),t=e=>{document.documentElement.dataset.theme=e.matches?"dark":"light"};t(e),e.addEventListener("change",t)})();

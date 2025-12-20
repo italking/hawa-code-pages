@@ -1,0 +1,1 @@
+"use strict";!function(){const e=window.Cookies.noConflict();function n(){const n=this.value,t=this.dataset.canonical;let c="/";"zh-cn"!==n&&(c+=n+"/"),e.set("nf_lang",n,{expires:365}),location.href=c+t}document.getElementById("lang-select").addEventListener("change",n),document.getElementById("mobile-lang-select").addEventListener("change",n)}();
