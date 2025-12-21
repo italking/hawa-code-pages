@@ -1,6 +1,6 @@
+https://hexo.io/docs/
 https://hexo.io/en/docs/
 https://hexo.io/en/
-https://hexo.io/docs/
 https://hexo.io/
 https://hexo.io/news/2014/06/14/hexo-2-7-released/
 https://hexo.io/themes/
