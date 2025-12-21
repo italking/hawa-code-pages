@@ -54,8 +54,8 @@
 <meta property="og:description" content="安装1、执行安装命令 npm install -g  @dahawa&#x2F;hawa-code  2、配置 API Key  配置文件路径：~&#x2F;.hcode&#x2F;config.json  &#123;  &quot;kimi-k2&quot;: &#123;    &quot;enable&quot;: true,    &quot;env&quot;: &#123;      &amp;quo">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hexo.io/icon/og-image-wide.png">
-<meta property="article:published_time" content="2025-12-20T10:45:19.215Z">
-<meta property="article:modified_time" content="2025-12-20T10:45:19.215Z">
+<meta property="article:published_time" content="2025-12-21T15:16:16.598Z">
+<meta property="article:modified_time" content="2025-12-21T15:16:16.598Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hexo.io/icon/twitter-summary.png">
@@ -130,11 +130,18 @@
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "kimi-k2": {</span><br><span class="line">    "enable": true,</span><br><span class="line">    "env": {</span><br><span class="line">      "BASE_URL": "https://api.moonshot.cn/anthropic",</span><br><span class="line">      "AUTH_TOKEN": "sk-{ 使用自己的 token }",</span><br><span class="line">      "MODEL": "kimi-k2-0905-preview",</span><br><span class="line">      "SMALL_FAST_MODEL": "kimi-k2-0905-preview"</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  "deepseek": {</span><br><span class="line">    "enable": false,</span><br><span class="line">    "env": {</span><br><span class="line">      "BASE_URL": "https://api.deepseek.com/anthropic",</span><br><span class="line">      "AUTH_TOKEN": "sk-{ 使用自己的 token }",</span><br><span class="line">      "API_TIMEOUT_MS": "600000",</span><br><span class="line">      "MODEL": "deepseek-chat",</span><br><span class="line">      "SMALL_FAST_MODEL": "deepseek-chat",</span><br><span class="line">      "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  "openrouter": {</span><br><span class="line">    "enable": false,</span><br><span class="line">    "env": {</span><br><span class="line">      "BASE_URL": "https://openrouter.ai/api/v1",</span><br><span class="line">      "AUTH_TOKEN": "sk-or-v1-{ 使用自己的 token }",</span><br><span class="line">      "MODEL": "anthropic/claude-sonnet-4",</span><br><span class="line">      "SMALL_FAST_MODEL": "anthropic/claude-sonnet-4"</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>3、执行启动命令</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">hcode</span><br></pre></td></tr></tbody></table></figure>
-
+<p>4、Windows 使用<br>在 Windows 系统上使用，需配置如下环境变量，其指向 git bash , 同时确保已经安装了 git。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">HCODE_GIT_BASH_PATH={git 安装目录}\bin\bash.exe</span><br></pre></td></tr></tbody></table></figure>
+<p>环境变量配置方式</p>
+<ul>
+<li>直接使用 Windows 操作系统进行配置</li>
+<li>上述 config.json env 属性中进行配置</li>
+<li>项目路径/.hcode/.evn 文件中进行配置</li>
+</ul>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2025-12-20T10:45:19.215Z" itemprop="dateModified">上次更新：2025-12-20</time>
+                <time class="article-footer-updated" datetime="2025-12-21T15:16:16.598Z" itemprop="dateModified">上次更新：2025-12-21</time>
                 
               </footer>
               
