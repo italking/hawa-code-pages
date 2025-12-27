@@ -1,3 +1,5 @@
+https://hexo.io/en/docs/lsp
+https://hexo.io/docs/lsp
 https://hexo.io/en/
 https://hexo.io/
 https://hexo.io/docs/

@@ -2,21 +2,21 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>安装 | Hawa Code</title>
+  <title>LSPServer | Hawa Code</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://hexo.io/docs/">
+  <link rel="canonical" href="https://hexo.io/docs/lsp">
   <!-- Alternate links -->
   
     
       
     
       
-        <link rel="alternate" hreflang="en" href="https://hexo.io/en/docs/">
+        <link rel="alternate" hreflang="en" href="https://hexo.io/en/docs/lsp">
       
     
-    <link rel="alternate" hreflang="x-default" href="https://hexo.io/en/docs/" />
+    <link rel="alternate" hreflang="x-default" href="https://hexo.io/en/docs/lsp" />
   
   <!-- Icon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="安装1、执行安装命令 npm install -g  @dahawa&#x2F;hawa-code  2、配置 API Key  配置文件路径：~&#x2F;.hcode&#x2F;config.json  &#123;  &quot;kimi-k2&quot;: &#123;    &quot;enable&quot;: true,    &quot;env&quot;: &#123;      &amp;quo">
+  <meta name="description" content="Hawa Code 已经默认支持集成 LSPServer 能力，只需要使用安装相关开发语言的 LSPserver 即可以使用。使用 LSPServer 可以提高 Hawa Code 探索代码的速度，同时可以节省 token 数量。 Hawa Code 支持如下 LSPServer 能力:  goToDefinition: 查找符号定义的位置 findReferences: 查找符号的所有引用 ho">
 <meta property="og:type" content="website">
-<meta property="og:title" content="安装">
-<meta property="og:url" content="https://hexo.io/docs/">
+<meta property="og:title" content="LSPServer">
+<meta property="og:url" content="https://hexo.io/docs/lsp">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="安装1、执行安装命令 npm install -g  @dahawa&#x2F;hawa-code  2、配置 API Key  配置文件路径：~&#x2F;.hcode&#x2F;config.json  &#123;  &quot;kimi-k2&quot;: &#123;    &quot;enable&quot;: true,    &quot;env&quot;: &#123;      &amp;quo">
+<meta property="og:description" content="Hawa Code 已经默认支持集成 LSPServer 能力，只需要使用安装相关开发语言的 LSPserver 即可以使用。使用 LSPServer 可以提高 Hawa Code 探索代码的速度，同时可以节省 token 数量。 Hawa Code 支持如下 LSPServer 能力:  goToDefinition: 查找符号定义的位置 findReferences: 查找符号的所有引用 ho">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://hexo.io/icon/og-image-wide.png">
-<meta property="article:published_time" content="2025-12-21T15:35:09.472Z">
-<meta property="article:modified_time" content="2025-12-21T15:35:09.472Z">
+<meta property="article:published_time" content="2025-12-27T11:42:58.902Z">
+<meta property="article:modified_time" content="2025-12-27T11:42:58.902Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://hexo.io/icon/twitter-summary.png">
@@ -92,7 +92,7 @@
     </nav>
     <div id="lang-select-wrap">
       <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
-      <select id="lang-select" data-canonical="docs/index.html">
+      <select id="lang-select" data-canonical="docs/lsp.html">
         
            <option value="zh-cn" selected>简体中文</option>
         
@@ -116,33 +116,92 @@
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">安装</h1>
-                <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/site/edit/master/source/docs/index.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+                <h1 class="article-title" itemprop="name">LSPServer</h1>
+                <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hexojs/site/edit/master/source/docs/lsp.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h2 id="安装" class="article-heading"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="article-anchor" href="#安装" aria-hidden="true"></a></h2><p>1、执行安装命令</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">npm install -g  @dahawa/hawa-code</span><br></pre></td></tr></tbody></table></figure>
-
-<p>2、配置 API Key</p>
+                <html><head></head><body><p>Hawa Code 已经默认支持集成 LSPServer 能力，只需要使用安装相关开发语言的 LSPserver 即可以使用。使用 LSPServer 可以提高 Hawa Code 探索代码的速度，同时可以节省 token 数量。</p>
+<p>Hawa Code 支持如下 LSPServer 能力:</p>
 <ul>
-<li>配置文件路径：~/.hcode/config.json</li>
+<li>goToDefinition: 查找符号定义的位置</li>
+<li>findReferences: 查找符号的所有引用</li>
+<li>hover: 获取符号的悬停信息（文档、类型信息）</li>
+<li>documentSymbol: 获取文档内的所有符号（函数、类、变量）</li>
+<li>workspaceSymbol: 在整个工作区搜索符号</li>
+<li>goToImplementation: 查找接口或抽象方法的实现</li>
+<li>prepareCallHierarchy: 获取指定位置的调用层次结构项（函数/方法）</li>
+<li>incomingCalls: 查找调用指定位置函数的所有函数/方法</li>
+<li>outgoingCalls: 查找指定位置函数调用的其他函数/方法</li>
 </ul>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  "kimi-k2": {</span><br><span class="line">    "enable": true,</span><br><span class="line">    "env": {</span><br><span class="line">      "BASE_URL": "https://api.moonshot.cn/anthropic",</span><br><span class="line">      "AUTH_TOKEN": "sk-{ 使用自己的 token }",</span><br><span class="line">      "MODEL": "kimi-k2-0905-preview",</span><br><span class="line">      "SMALL_FAST_MODEL": "kimi-k2-0905-preview"</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  "deepseek": {</span><br><span class="line">    "enable": false,</span><br><span class="line">    "env": {</span><br><span class="line">      "BASE_URL": "https://api.deepseek.com/anthropic",</span><br><span class="line">      "AUTH_TOKEN": "sk-{ 使用自己的 token }",</span><br><span class="line">      "API_TIMEOUT_MS": "600000",</span><br><span class="line">      "MODEL": "deepseek-chat",</span><br><span class="line">      "SMALL_FAST_MODEL": "deepseek-chat",</span><br><span class="line">      "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"</span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  "openrouter": {</span><br><span class="line">    "enable": false,</span><br><span class="line">    "env": {</span><br><span class="line">      "BASE_URL": "https://openrouter.ai/api/v1",</span><br><span class="line">      "AUTH_TOKEN": "sk-or-v1-{ 使用自己的 token }",</span><br><span class="line">      "MODEL": "anthropic/claude-sonnet-4",</span><br><span class="line">      "SMALL_FAST_MODEL": "anthropic/claude-sonnet-4",</span><br><span class="line">      "API_TYPE":"openai"</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>3、执行启动命令</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">hcode</span><br></pre></td></tr></tbody></table></figure>
-<p>4、Windows 使用<br>在 Windows 系统上使用，需配置如下环境变量，其指向 git bash , 同时确保已经安装了 git。</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">HCODE_GIT_BASH_PATH={git 安装目录}\bin\bash.exe</span><br></pre></td></tr></tbody></table></figure>
-<p>环境变量配置方式</p>
-<ul>
-<li>直接使用 Windows 操作系统进行配置</li>
-<li>上述 config.json env 属性中进行配置</li>
-<li>项目路径/.hcode/.evn 文件中进行配置</li>
-</ul>
+<h1 id="支持-LSPServer-列表" class="article-heading"><a href="#支持-LSPServer-列表" class="headerlink" title="支持 LSPServer 列表"></a>支持 LSPServer 列表<a class="article-anchor" href="#支持-LSPServer-列表" aria-hidden="true"></a></h1><table>
+<thead>
+<tr>
+<th><strong>Language</strong></th>
+<th><strong>LSP</strong></th>
+<th><strong>Install</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Go</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/golang/tools/tree/master/gopls">gopls</a></td>
+<td><code>go install golang.org/x/tools/gopls@latest</code></td>
+</tr>
+<tr>
+<td>TypeScript/JavaScript</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/yioneko/vtsls">vtsls</a></td>
+<td><code>npm install -g @vtsls/language-server</code></td>
+</tr>
+<tr>
+<td>Python</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/microsoft/pyright">pyright</a></td>
+<td><code>npm install -g pyright</code></td>
+</tr>
+<tr>
+<td>Java</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/eclipse-jdtls/eclipse.jdt.ls">jdtls</a></td>
+<td><code>npm install -g @redhat-developer/vscode-java</code></td>
+</tr>
+<tr>
+<td>C/C++</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://clangd.llvm.org/">clangd</a></td>
+<td><code>npm install -g clangd</code></td>
+</tr>
+<tr>
+<td>C#</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/OmniSharp/omnisharp-roslyn">OmniSharp</a></td>
+<td><code>npm install -g omnisharp</code></td>
+</tr>
+<tr>
+<td>PHP</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/bmewburn/intelephense-docs">Intelephense</a></td>
+<td><code>npm install -g intelephense</code></td>
+</tr>
+<tr>
+<td>Kotlin</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/fwcd/kotlin-language-server">kotlin-language-server</a></td>
+<td><code>npm install -g kotlin-language-server</code></td>
+</tr>
+<tr>
+<td>Rust</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/rust-lang/rust-analyzer">rust-analyzer</a></td>
+<td><code>rustup component add rust-analyzer</code></td>
+</tr>
+<tr>
+<td>Ruby</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/castwide/solargraph">Solargraph</a></td>
+<td><code>gem install solargraph</code></td>
+</tr>
+<tr>
+<td>HTML/CSS</td>
+<td><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/hrsh7th/vscode-langservers-extracted">vscode-langservers</a></td>
+<td><code>npm install -g vscode-langservers-extracted</code></td>
+</tr>
+</tbody></table>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2025-12-21T15:35:09.472Z" itemprop="dateModified">上次更新：2025-12-21</time>
-                <a href="lsp.html" class="article-footer-next" title="LSPServer"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+                <time class="article-footer-updated" datetime="2025-12-27T11:42:58.902Z" itemprop="dateModified">上次更新：2025-12-27</time>
+                <a href="index.html" class="article-footer-prev" title="安装"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
               </footer>
               
             </div>
@@ -150,7 +209,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%94%AF%E6%8C%81-LSPServer-%E5%88%97%E8%A1%A8"><span class="toc-text">支持 LSPServer 列表</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
@@ -158,7 +217,7 @@
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link current">安装</a><a href="lsp.html" class="sidebar-link">LSPServer</a>
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="lsp.html" class="sidebar-link current">LSPServer</a>
   </div>
 </aside>
     </div>
@@ -187,12 +246,12 @@
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link current">安装</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a>
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="lsp.html" class="mobile-nav-link current">LSPServer</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
     <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
-    <select id="mobile-lang-select" data-canonical="docs/index.html">
+    <select id="mobile-lang-select" data-canonical="docs/lsp.html">
       
         <option value="zh-cn" selected>简体中文</option>
       
