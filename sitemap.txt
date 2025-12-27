@@ -1,4 +1,3 @@
-https://hexo.io/google2d7bcbc923b77cd7
 https://hexo.io/en/docs/lsp
 https://hexo.io/docs/lsp
 https://hexo.io/en/
