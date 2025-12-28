@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.hawacode.com/en/docs/skill</loc>
+    
+    <lastmod>2025-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/skill</loc>
+    
+    <lastmod>2025-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/model</loc>
+    
+    <lastmod>2025-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/model</loc>
+    
+    <lastmod>2025-12-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.hawacode.com/en/docs/lsp</loc>
     
     <lastmod>2025-12-27</lastmod>
@@ -94,7 +130,7 @@
 
   <url>
     <loc>https://www.hawacode.com/</loc>
-    <lastmod>2025-12-27</lastmod>
+    <lastmod>2025-12-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
