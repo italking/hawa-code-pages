@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 
-
 # 禁止抓取主题和开发相关目录
 Disallow: /hexo-theme-landscape/
 Disallow: /hexo-theme-light/
