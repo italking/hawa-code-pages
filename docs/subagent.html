@@ -2,21 +2,21 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Tool懒加载 | Hawa Code</title>
+  <title>Subagent | Hawa Code</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://www.hawacode.com/docs/tool-lazy-loading">
+  <link rel="canonical" href="https://www.hawacode.com/docs/subagent">
   <!-- Alternate links -->
   
     
       
     
       
-        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/tool-lazy-loading">
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/subagent">
       
     
-    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/tool-lazy-loading" />
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/subagent" />
   
   <!-- Icon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Tool懒加载Hawa Code 支持 tool 懒加载， Hawa Code 默认不会给模型提供所有的 Tool ，模型会根据需要选择需要加载的 Tool 来进行工作。 Tool 懒加载会大量减少 Token 的消耗。  加载的 Tool 的生命周期是到用户一次对话结束，在终端用户多次输入 prompt 语句，执行多次对话，每次对话完 Tool 会被卸载掉，再对话的时候需要模型重新加载。 当前支">
+  <meta name="description" content="Subagent 使用 name : Subagent 名称 description：Subagent 描述，Hawa Code 通过描述信息选择合适的 Subagent 使用 tools：当前 Subagent 可以使用的工具列表 model：Subagent 使用的模型，对于简单的任务应使用小模型以降低成本。  以下为 Subagent 示例 ---name: translatordescri">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tool懒加载">
-<meta property="og:url" content="https://www.hawacode.com/docs/tool-lazy-loading">
+<meta property="og:title" content="Subagent">
+<meta property="og:url" content="https://www.hawacode.com/docs/subagent">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Tool懒加载Hawa Code 支持 tool 懒加载， Hawa Code 默认不会给模型提供所有的 Tool ，模型会根据需要选择需要加载的 Tool 来进行工作。 Tool 懒加载会大量减少 Token 的消耗。  加载的 Tool 的生命周期是到用户一次对话结束，在终端用户多次输入 prompt 语句，执行多次对话，每次对话完 Tool 会被卸载掉，再对话的时候需要模型重新加载。 当前支">
+<meta property="og:description" content="Subagent 使用 name : Subagent 名称 description：Subagent 描述，Hawa Code 通过描述信息选择合适的 Subagent 使用 tools：当前 Subagent 可以使用的工具列表 model：Subagent 使用的模型，对于简单的任务应使用小模型以降低成本。  以下为 Subagent 示例 ---name: translatordescri">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-01-21T08:22:50.865Z">
-<meta property="article:modified_time" content="2026-01-21T08:22:48.788Z">
+<meta property="article:published_time" content="2026-01-21T11:24:23.884Z">
+<meta property="article:modified_time" content="2026-01-21T11:24:23.884Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -92,7 +92,7 @@
     </nav>
     <div id="lang-select-wrap">
       <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
-      <select id="lang-select" data-canonical="docs/tool-lazy-loading.html">
+      <select id="lang-select" data-canonical="docs/subagent.html">
         
            <option value="zh-cn" selected>简体中文</option>
         
@@ -116,28 +116,25 @@
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">Tool懒加载</h1>
+                <h1 class="article-title" itemprop="name">Subagent</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h2 id="Tool懒加载" class="article-heading"><a href="#Tool懒加载" class="headerlink" title="Tool懒加载"></a>Tool懒加载<a class="article-anchor" href="#Tool懒加载" aria-hidden="true"></a></h2><p>Hawa Code 支持 tool 懒加载， Hawa Code 默认不会给模型提供所有的 Tool ，模型会根据需要选择需要加载的 Tool 来进行工作。 Tool 懒加载会大量减少 Token 的消耗。</p>
-<ul>
-<li>加载的 Tool 的生命周期是到用户一次对话结束，在终端用户多次输入 prompt 语句，执行多次对话，每次对话完 Tool 会被卸载掉，再对话的时候需要模型重新加载。</li>
-<li>当前支持 Tool 懒加载，MCP 懒加载后续版本会支持</li>
-<li>开启 Tool 懒加载，分析的速度会变慢一些，因为模型多了加载 Tool 的步骤。</li>
+                <html><head></head><body><h1 id="Subagent-使用" class="article-heading"><a href="#Subagent-使用" class="headerlink" title="Subagent 使用"></a>Subagent 使用<a class="article-anchor" href="#Subagent-使用" aria-hidden="true"></a></h1><ul>
+<li>name : Subagent 名称</li>
+<li>description：Subagent 描述，Hawa Code 通过描述信息选择合适的 Subagent 使用</li>
+<li>tools：当前 Subagent 可以使用的工具列表</li>
+<li>model：Subagent 使用的模型，对于简单的任务应使用小模型以降低成本。</li>
 </ul>
-<h2 id="使用方式" class="article-heading"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式<a class="article-anchor" href="#使用方式" aria-hidden="true"></a></h2><p>在环境变量中配置以下环境变量，重启终端就会开启 Tool 懒加载模式</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">HAWA_CODE_LAZY_TOOL=true</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<p>环境变量配置方式:</p>
-<ul>
-<li>直接使用操作系统进行配置</li>
-<li>~/.hcode/config.json env 属性中进行配置</li>
-<li>项目路径/.hcode/.env 文件中进行配置</li>
-</ul>
+<p>以下为 Subagent 示例</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">name: translator</span><br><span class="line">description: Translation expert for code comments, documentation, and text. Use when translation between languages is needed.</span><br><span class="line">tools: Read, Write, Edit, Glob, Grep</span><br><span class="line">model: qwen3-coder-plus</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">You are a professional translator specializing in technical documentation and code comments.</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="异步-Subagent" class="article-heading"><a href="#异步-Subagent" class="headerlink" title="异步 Subagent"></a>异步 Subagent<a class="article-anchor" href="#异步-Subagent" aria-hidden="true"></a></h1><p>Hawa Code 支持异步执行。对于复杂的任务，Hawa Code 会选择在后台执行，以免阻塞其他工作。当任务完成后，系统会使用工具获取任务结果。</p>
+<h1 id="Subagent-恢复执行" class="article-heading"><a href="#Subagent-恢复执行" class="headerlink" title="Subagent 恢复执行"></a>Subagent 恢复执行<a class="article-anchor" href="#Subagent-恢复执行" aria-hidden="true"></a></h1><p>Hawa Code 可以获取某个已完成的历史任务的消息记录，并重新执行该任务。</p>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-01-21T08:22:48.788Z" itemprop="dateModified">上次更新：2026-01-21</time>
-                <a href="skill.html" class="article-footer-prev" title="Skill"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="mcp.html" class="article-footer-next" title="MCP"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+                <time class="article-footer-updated" datetime="2026-01-21T11:24:23.884Z" itemprop="dateModified">上次更新：2026-01-21</time>
+                <a href="index.html" class="article-footer-next" title="安装"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
             </div>
@@ -145,7 +142,7 @@
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Tool%E6%87%92%E5%8A%A0%E8%BD%BD"><span class="toc-text">Tool懒加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">使用方式</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Subagent-%E4%BD%BF%E7%94%A8"><span class="toc-text">Subagent 使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5-Subagent"><span class="toc-text">异步 Subagent</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Subagent-%E6%81%A2%E5%A4%8D%E6%89%A7%E8%A1%8C"><span class="toc-text">Subagent 恢复执行</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
@@ -153,7 +150,7 @@
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="model.html" class="sidebar-link">模型</a><a href="skill.html" class="sidebar-link">Skill</a><a href="tool-lazy-loading.html" class="sidebar-link current">Tool懒加载</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="ide.html" class="sidebar-link">IDE</a>
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="model.html" class="sidebar-link">模型</a><a href="skill.html" class="sidebar-link">Skill</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="ide.html" class="sidebar-link">IDE</a>
   </div>
 </aside>
     </div>
@@ -182,12 +179,12 @@
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="model.html" class="mobile-nav-link">模型</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="tool-lazy-loading.html" class="mobile-nav-link current">Tool懒加载</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="ide.html" class="mobile-nav-link">IDE</a>
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="model.html" class="mobile-nav-link">模型</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="ide.html" class="mobile-nav-link">IDE</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
     <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
-    <select id="mobile-lang-select" data-canonical="docs/tool-lazy-loading.html">
+    <select id="mobile-lang-select" data-canonical="docs/subagent.html">
       
         <option value="zh-cn" selected>简体中文</option>
       
