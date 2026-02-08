@@ -4,7 +4,7 @@
   <url>
     <loc>https://www.hawacode.com/en/docs/memory</loc>
     
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -12,6 +12,24 @@
   
   <url>
     <loc>https://www.hawacode.com/docs/memory</loc>
+    
+    <lastmod>2026-02-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/about/</loc>
+    
+    <lastmod>2026-02-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/about/</loc>
     
     <lastmod>2026-02-05</lastmod>
     
@@ -66,24 +84,6 @@
   
   <url>
     <loc>https://www.hawacode.com/docs/configuration</loc>
-    
-    <lastmod>2026-02-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/en/about/</loc>
-    
-    <lastmod>2026-02-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/about/</loc>
     
     <lastmod>2026-02-02</lastmod>
     
@@ -265,7 +265,7 @@
 
   <url>
     <loc>https://www.hawacode.com/</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-02-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

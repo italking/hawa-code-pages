@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Hawa Code 支持记忆功能，可以跨会话记住用户偏好，比如开发语言、项目架构。    类型 文件路径 作用    用户记忆 ~&#x2F;.hcode&#x2F;HAWA.md 用户级别记忆，所有项目共享   项目配置 {项目路径}&#x2F;.hcode&#x2F;HAWA.md 项目级别记忆">
+  <meta name="description" content="Hawa Code 支持记忆功能，可以跨会话记住用户偏好，比如开发语言、项目架构、代码风格等。记忆系统会自动将这些信息注入到每次对话中，帮助 Hawa Code 更好地理解你的需求。 记忆类型Hawa Code 的记忆系统分为 5 种类型，按优先级从高到低排列：    优先级 记忆类型 文件路径 作用范围    1 企业策略 macOS: &#x2F;Library&#x2F;Application Support&#x2F;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="记忆">
 <meta property="og:url" content="https://www.hawacode.com/docs/memory">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Hawa Code 支持记忆功能，可以跨会话记住用户偏好，比如开发语言、项目架构。    类型 文件路径 作用    用户记忆 ~&#x2F;.hcode&#x2F;HAWA.md 用户级别记忆，所有项目共享   项目配置 {项目路径}&#x2F;.hcode&#x2F;HAWA.md 项目级别记忆">
+<meta property="og:description" content="Hawa Code 支持记忆功能，可以跨会话记住用户偏好，比如开发语言、项目架构、代码风格等。记忆系统会自动将这些信息注入到每次对话中，帮助 Hawa Code 更好地理解你的需求。 记忆类型Hawa Code 的记忆系统分为 5 种类型，按优先级从高到低排列：    优先级 记忆类型 文件路径 作用范围    1 企业策略 macOS: &#x2F;Library&#x2F;Application Support&#x2F;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-02-05T14:52:39.804Z">
-<meta property="article:modified_time" content="2026-02-05T14:52:39.804Z">
+<meta property="article:published_time" content="2026-02-08T10:25:51.695Z">
+<meta property="article:modified_time" content="2026-02-08T10:25:51.695Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -120,30 +120,135 @@ var _hmt = _hmt || [];
                 <h1 class="article-title" itemprop="name">记忆</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <p>Hawa Code 支持记忆功能，可以跨会话记住用户偏好，比如开发语言、项目架构。</p>
+                <html><head></head><body><p>Hawa Code 支持记忆功能，可以跨会话记住用户偏好，比如开发语言、项目架构、代码风格等。记忆系统会自动将这些信息注入到每次对话中，帮助 Hawa Code 更好地理解你的需求。</p>
+<h2 id="记忆类型" class="article-heading"><a href="#记忆类型" class="headerlink" title="记忆类型"></a>记忆类型<a class="article-anchor" href="#记忆类型" aria-hidden="true"></a></h2><p>Hawa Code 的记忆系统分为 <strong>5 种类型</strong>，按优先级从高到低排列：</p>
 <table>
 <thead>
 <tr>
-<th>类型</th>
+<th>优先级</th>
+<th>记忆类型</th>
 <th>文件路径</th>
-<th>作用</th>
+<th>作用范围</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>用户记忆</td>
-<td><code>~/.hcode/HAWA.md</code></td>
-<td>用户级别记忆，所有项目共享</td>
+<td>1</td>
+<td><strong>企业策略</strong></td>
+<td>macOS: <code>/Library/Application Support/hawacode/HAWA.md</code><br>Linux: <code>/etc/hawacode/HAWA.md</code><br>Windows: <code>C:\ProgramData\hawacode\HAWA.md</code></td>
+<td>系统级全局策略，适用于企业部署</td>
 </tr>
 <tr>
-<td>项目配置</td>
-<td><code>{项目路径}/.hcode/HAWA.md</code></td>
-<td>项目级别记忆</td>
+<td>2</td>
+<td><strong>用户记忆</strong></td>
+<td><code>~/.hcode/HAWA.md</code></td>
+<td>用户级别全局记忆，适用于所有项目</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>用户规则</strong></td>
+<td><code>~/.hcode/rules/**/*.md</code></td>
+<td>用户级别的规则文件，支持路径匹配</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>项目记忆</strong></td>
+<td><code>{项目路径}/HAWA.md</code><br><code>{项目路径}/.hcode/HAWA.md</code></td>
+<td>项目级别的记忆文件</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>项目规则</strong></td>
+<td><code>{项目路径}/.hcode/rules/**/*.md</code></td>
+<td>项目级别的规则文件，支持路径匹配</td>
 </tr>
 </tbody></table>
+<h2 id="记忆文件格式" class="article-heading"><a href="#记忆文件格式" class="headerlink" title="记忆文件格式"></a>记忆文件格式<a class="article-anchor" href="#记忆文件格式" aria-hidden="true"></a></h2><p>记忆文件使用 Markdown 格式，可以包含任意文本内容：</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section"># 我的偏好设置</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 代码风格</span></span><br><span class="line"><span class="bullet">-</span> 使用 2 个空格缩进</span><br><span class="line"><span class="bullet">-</span> 优先使用单引号</span><br><span class="line"><span class="bullet">-</span> 行尾不加分号</span><br><span class="line"></span><br><span class="line"><span class="section">## 技术栈</span></span><br><span class="line"><span class="bullet">-</span> 前端: React + TypeScript</span><br><span class="line"><span class="bullet">-</span> 后端: Node.js + Express</span><br><span class="line"><span class="bullet">-</span> 数据库: PostgreSQL</span><br></pre></td></tr></tbody></table></figure>
 
+<h2 id="路径匹配规则（Rules）" class="article-heading"><a href="#路径匹配规则（Rules）" class="headerlink" title="路径匹配规则（Rules）"></a>路径匹配规则（Rules）<a class="article-anchor" href="#路径匹配规则（Rules）" aria-hidden="true"></a></h2><p>规则文件支持通过 <strong>YAML frontmatter</strong> 中的 <code>paths</code> 字段来定义匹配模式，实现针对特定文件或目录的个性化规则。</p>
+<h3 id="规则文件格式" class="article-heading"><a href="#规则文件格式" class="headerlink" title="规则文件格式"></a>规则文件格式<a class="article-anchor" href="#规则文件格式" aria-hidden="true"></a></h3><figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">paths:</span><br><span class="line"><span class="bullet">  -</span> "src/<span class="strong">**/<span class="emphasis">*.ts"</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">  - "src/*</span><span class="emphasis">*/*</span>.tsx"</span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong"># TypeScript 开发规则</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">- 所有函数必须添加返回类型注解</span></span><br><span class="line"><span class="strong">- 使用接口（interface）而不是类型别名（type）定义对象结构</span></span><br><span class="line"><span class="strong">- 启用严格模式检查</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="路径匹配语法" class="article-heading"><a href="#路径匹配语法" class="headerlink" title="路径匹配语法"></a>路径匹配语法<a class="article-anchor" href="#路径匹配语法" aria-hidden="true"></a></h3><p><code>paths</code> 字段支持 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/isaacs/minimatch">glob</a> 模式匹配：</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*</code></td>
+<td>匹配任意字符（不包括路径分隔符）</td>
+<td><code>*.js</code> 匹配所有 JS 文件</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>匹配任意层级目录</td>
+<td><code>src/**/*.ts</code> 匹配 src 目录及其子目录下的所有 ts 文件</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>匹配单个字符</td>
+<td><code>file?.txt</code> 匹配 file1.txt, fileA.txt 等</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>排除模式</td>
+<td><code>!**/*.test.ts</code> 排除测试文件</td>
+</tr>
+</tbody></table>
+<h3 id="多个路径模式" class="article-heading"><a href="#多个路径模式" class="headerlink" title="多个路径模式"></a>多个路径模式<a class="article-anchor" href="#多个路径模式" aria-hidden="true"></a></h3><p>支持同时定义多个路径模式：</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">paths:</span><br><span class="line"><span class="bullet">  -</span> "src/<span class="strong">**/<span class="emphasis">*.ts"</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">  - "src/*</span><span class="emphasis">*/*</span>.tsx"</span></span><br><span class="line"><span class="strong">  - "tests/**</span>/<span class="emphasis">*.spec.ts"</span></span><br><span class="line"><span class="emphasis">---</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>也支持逗号分隔的字符串格式：</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="section">paths: "src/<span class="strong">**/<span class="emphasis">*.ts, src/*</span><span class="emphasis">*/*</span>.tsx"</span></span></span><br><span class="line"><span class="strong"><span class="section">---</span></span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="规则触发机制" class="article-heading"><a href="#规则触发机制" class="headerlink" title="规则触发机制"></a>规则触发机制<a class="article-anchor" href="#规则触发机制" aria-hidden="true"></a></h2><ul>
+<li><strong>全局记忆</strong>（Enterprise Policy、User Memory、Project Memory、无 paths 的 Rules）：在每次对话开始时自动加载</li>
+<li><strong>路径特定规则</strong>（带 paths 的 Rules）：按需自动触发加载。</li>
+</ul>
+<h2 id="使用建议" class="article-heading"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议<a class="article-anchor" href="#使用建议" aria-hidden="true"></a></h2><h3 id="1-用户记忆（-hcode-HAWA-md）" class="article-heading"><a href="#1-用户记忆（-hcode-HAWA-md）" class="headerlink" title="1. 用户记忆（~/.hcode/HAWA.md）"></a>1. 用户记忆（~/.hcode/HAWA.md）<a class="article-anchor" href="#1-用户记忆（-hcode-HAWA-md）" aria-hidden="true"></a></h3><p>适合存放个人通用的偏好设置：</p>
+<ul>
+<li>个人代码风格偏好</li>
+<li>常用的技术栈</li>
+<li>个人开发习惯</li>
+</ul>
+<h3 id="2-项目记忆（项目路径-HAWA-md）" class="article-heading"><a href="#2-项目记忆（项目路径-HAWA-md）" class="headerlink" title="2. 项目记忆（项目路径/HAWA.md）"></a>2. 项目记忆（项目路径/HAWA.md）<a class="article-anchor" href="#2-项目记忆（项目路径-HAWA-md）" aria-hidden="true"></a></h3><p>适合存放项目特定的信息：</p>
+<ul>
+<li>项目架构说明</li>
+<li>项目技术规范</li>
+<li>项目目录结构约定</li>
+</ul>
+<h3 id="3-规则文件（rules-md）" class="article-heading"><a href="#3-规则文件（rules-md）" class="headerlink" title="3. 规则文件（rules/*.md）"></a>3. 规则文件（rules/*.md）<a class="article-anchor" href="#3-规则文件（rules-md）" aria-hidden="true"></a></h3><p>适合存放针对特定文件类型的规则：</p>
+<ul>
+<li>API 开发规范</li>
+<li>组件编写规范</li>
+<li>测试文件规范</li>
+<li>配置文件规范</li>
+</ul>
+<h2 id="示例" class="article-heading"><a href="#示例" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例" aria-hidden="true"></a></h2><h3 id="用户记忆示例" class="article-heading"><a href="#用户记忆示例" class="headerlink" title="用户记忆示例"></a>用户记忆示例<a class="article-anchor" href="#用户记忆示例" aria-hidden="true"></a></h3><p><strong>文件</strong>: <code>~/.hcode/HAWA.md</code></p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section"># 我的开发偏好</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 代码风格</span></span><br><span class="line"><span class="bullet">-</span> 使用 2 个空格缩进</span><br><span class="line"><span class="bullet">-</span> 使用单引号</span><br><span class="line"><span class="bullet">-</span> 不使用分号</span><br><span class="line"></span><br><span class="line"><span class="section">## 技术偏好</span></span><br><span class="line"><span class="bullet">-</span> 优先使用函数式组件</span><br><span class="line"><span class="bullet">-</span> 使用 async/await 处理异步</span><br><span class="line"><span class="bullet">-</span> 优先选择解构赋值</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="项目记忆示例" class="article-heading"><a href="#项目记忆示例" class="headerlink" title="项目记忆示例"></a>项目记忆示例<a class="article-anchor" href="#项目记忆示例" aria-hidden="true"></a></h3><p><strong>文件</strong>: <code>项目路径/HAWA.md</code></p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section"># 项目规范</span></span><br><span class="line"></span><br><span class="line"><span class="section">## 架构</span></span><br><span class="line"><span class="bullet">-</span> 使用 MVC 架构</span><br><span class="line"><span class="bullet">-</span> 控制器放在 controllers/ 目录</span><br><span class="line"><span class="bullet">-</span> 模型放在 models/ 目录</span><br><span class="line"></span><br><span class="line"><span class="section">## 命名规范</span></span><br><span class="line"><span class="bullet">-</span> 文件名使用 kebab-case</span><br><span class="line"><span class="bullet">-</span> 类名使用 PascalCase</span><br><span class="line"><span class="bullet">-</span> 函数名使用 camelCase</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="路径规则示例" class="article-heading"><a href="#路径规则示例" class="headerlink" title="路径规则示例"></a>路径规则示例<a class="article-anchor" href="#路径规则示例" aria-hidden="true"></a></h3><p><strong>文件</strong>: <code>.hcode/rules/api.md</code></p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">paths:</span><br><span class="line"><span class="bullet">  -</span> "src/api/<span class="strong">**/<span class="emphasis">*.ts"</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">  - "src/routes/*</span><span class="emphasis">*/*</span>.ts"</span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong"># API 开发规则</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">1. 所有 API 端点必须包含输入验证</span></span><br><span class="line"><span class="strong">2. 使用统一的错误响应格式</span></span><br><span class="line"><span class="strong">3. 包含 OpenAPI 文档注释</span></span><br><span class="line"><span class="strong">4. 返回 HTTP 状态码要符合 REST 规范</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>文件</strong>: <code>.hcode/rules/react.md</code></p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">paths:</span><br><span class="line"><span class="bullet">  -</span> "src/components/<span class="strong">**/<span class="emphasis">*.tsx"</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">  - "src/pages/*</span><span class="emphasis">*/*</span>.tsx"</span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong"># React 组件规则</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">1. 使用函数式组件 + Hooks</span></span><br><span class="line"><span class="strong">2. Props 必须定义 TypeScript 接口</span></span><br><span class="line"><span class="strong">3. 组件文件名与组件名一致（PascalCase）</span></span><br><span class="line"><span class="strong">4. 使用 CSS Modules 或 Tailwind CSS</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="注意事项" class="article-heading"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项<a class="article-anchor" href="#注意事项" aria-hidden="true"></a></h2><ol>
+<li><strong>文件编码</strong>: 记忆文件必须使用 UTF-8 编码</li>
+<li><strong>文件格式</strong>: 必须是有效的 Markdown 格式</li>
+<li><strong>路径匹配</strong>: 规则文件中的 <code>paths</code> 字段是可选的，如果没有定义则作为全局规则加载</li>
+<li><strong>性能考虑</strong>: 避免在记忆文件中存放过多内容，建议只存放关键偏好和规则</li>
+</ol>
+</body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-02-05T14:52:39.804Z" itemprop="dateModified">上次更新：2026-02-05</time>
+                <time class="article-footer-updated" datetime="2026-02-08T10:25:51.695Z" itemprop="dateModified">上次更新：2026-02-08</time>
                 <a href="configuration.html" class="article-footer-prev" title="配置"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
               </footer>
               
@@ -152,7 +257,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BF%86%E7%B1%BB%E5%9E%8B"><span class="toc-text">记忆类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BF%86%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">记忆文件格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E5%8C%B9%E9%85%8D%E8%A7%84%E5%88%99%EF%BC%88Rules%EF%BC%89"><span class="toc-text">路径匹配规则（Rules）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="toc-text">规则文件格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E5%8C%B9%E9%85%8D%E8%AF%AD%E6%B3%95"><span class="toc-text">路径匹配语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E8%B7%AF%E5%BE%84%E6%A8%A1%E5%BC%8F"><span class="toc-text">多个路径模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E8%A7%A6%E5%8F%91%E6%9C%BA%E5%88%B6"><span class="toc-text">规则触发机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE"><span class="toc-text">使用建议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%94%A8%E6%88%B7%E8%AE%B0%E5%BF%86%EF%BC%88-hcode-HAWA-md%EF%BC%89"><span class="toc-text">1. 用户记忆（~&#x2F;.hcode&#x2F;HAWA.md）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BF%86%EF%BC%88%E9%A1%B9%E7%9B%AE%E8%B7%AF%E5%BE%84-HAWA-md%EF%BC%89"><span class="toc-text">2. 项目记忆（项目路径&#x2F;HAWA.md）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%A7%84%E5%88%99%E6%96%87%E4%BB%B6%EF%BC%88rules-md%EF%BC%89"><span class="toc-text">3. 规则文件（rules&#x2F;*.md）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%AE%B0%E5%BF%86%E7%A4%BA%E4%BE%8B"><span class="toc-text">用户记忆示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BF%86%E7%A4%BA%E4%BE%8B"><span class="toc-text">项目记忆示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%99%E7%A4%BA%E4%BE%8B"><span class="toc-text">路径规则示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">注意事项</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>

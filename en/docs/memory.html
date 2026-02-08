@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Hawa Code supports memory functionality, which can remember user preferences across sessions, such as development language and project architecture.    Type File Path Purpose    User Memory ~&#x2F;.hcode&#x2F;H">
+  <meta name="description" content="Hawa Code supports memory functionality that can remember user preferences across sessions, such as development language, project architecture, code style, etc. The memory system automatically injects">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Memory">
 <meta property="og:url" content="https://www.hawacode.com/en/docs/memory">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Hawa Code supports memory functionality, which can remember user preferences across sessions, such as development language and project architecture.    Type File Path Purpose    User Memory ~&#x2F;.hcode&#x2F;H">
+<meta property="og:description" content="Hawa Code supports memory functionality that can remember user preferences across sessions, such as development language, project architecture, code style, etc. The memory system automatically injects">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-02-05T14:53:38.684Z">
-<meta property="article:modified_time" content="2026-02-05T14:53:38.684Z">
+<meta property="article:published_time" content="2026-02-08T10:26:50.006Z">
+<meta property="article:modified_time" content="2026-02-08T10:26:50.006Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -120,30 +120,135 @@ var _hmt = _hmt || [];
                 <h1 class="article-title" itemprop="name">Memory</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <p>Hawa Code supports memory functionality, which can remember user preferences across sessions, such as development language and project architecture.</p>
+                <html><head></head><body><p>Hawa Code supports memory functionality that can remember user preferences across sessions, such as development language, project architecture, code style, etc. The memory system automatically injects this information into every conversation to help Hawa Code better understand your needs.</p>
+<h2 id="Memory-Types" class="article-heading"><a href="#Memory-Types" class="headerlink" title="Memory Types"></a>Memory Types<a class="article-anchor" href="#Memory-Types" aria-hidden="true"></a></h2><p>Hawa Code’s memory system is divided into <strong>5 types</strong>, arranged by priority from high to low:</p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
+<th>Priority</th>
+<th>Memory Type</th>
 <th>File Path</th>
-<th>Purpose</th>
+<th>Scope</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>User Memory</td>
-<td><code>~/.hcode/HAWA.md</code></td>
-<td>User-level memory, shared across all projects</td>
+<td>1</td>
+<td><strong>Enterprise Policy</strong></td>
+<td>macOS: <code>/Library/Application Support/hawacode/HAWA.md</code><br>Linux: <code>/etc/hawacode/HAWA.md</code><br>Windows: <code>C:\ProgramData\hawacode\HAWA.md</code></td>
+<td>System-level global policy for enterprise deployments</td>
 </tr>
 <tr>
-<td>Project Config</td>
-<td><code>{project_path}/.hcode/HAWA.md</code></td>
-<td>Project-level memory</td>
+<td>2</td>
+<td><strong>User Memory</strong></td>
+<td><code>~/.hcode/HAWA.md</code></td>
+<td>User-level global memory applicable to all projects</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>User Rules</strong></td>
+<td><code>~/.hcode/rules/**/*.md</code></td>
+<td>User-level rule files with path matching support</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Project Memory</strong></td>
+<td><code>{project_path}/HAWA.md</code><br><code>{project_path}/.hcode/HAWA.md</code></td>
+<td>Project-level memory files</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Project Rules</strong></td>
+<td><code>{project_path}/.hcode/rules/**/*.md</code></td>
+<td>Project-level rule files with path matching support</td>
 </tr>
 </tbody></table>
+<h2 id="Memory-File-Format" class="article-heading"><a href="#Memory-File-Format" class="headerlink" title="Memory File Format"></a>Memory File Format<a class="article-anchor" href="#Memory-File-Format" aria-hidden="true"></a></h2><p>Memory files use Markdown format and can contain any text content:</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section"># My Preferences</span></span><br><span class="line"></span><br><span class="line"><span class="section">## Code Style</span></span><br><span class="line"><span class="bullet">-</span> Use 2 spaces for indentation</span><br><span class="line"><span class="bullet">-</span> Prefer single quotes</span><br><span class="line"><span class="bullet">-</span> No semicolons at end of lines</span><br><span class="line"></span><br><span class="line"><span class="section">## Tech Stack</span></span><br><span class="line"><span class="bullet">-</span> Frontend: React + TypeScript</span><br><span class="line"><span class="bullet">-</span> Backend: Node.js + Express</span><br><span class="line"><span class="bullet">-</span> Database: PostgreSQL</span><br></pre></td></tr></tbody></table></figure>
 
+<h2 id="Path-Matching-Rules-Rules" class="article-heading"><a href="#Path-Matching-Rules-Rules" class="headerlink" title="Path Matching Rules (Rules)"></a>Path Matching Rules (Rules)<a class="article-anchor" href="#Path-Matching-Rules-Rules" aria-hidden="true"></a></h2><p>Rule files support defining matching patterns through the <code>paths</code> field in <strong>YAML frontmatter</strong>, enabling personalized rules for specific files or directories.</p>
+<h3 id="Rule-File-Format" class="article-heading"><a href="#Rule-File-Format" class="headerlink" title="Rule File Format"></a>Rule File Format<a class="article-anchor" href="#Rule-File-Format" aria-hidden="true"></a></h3><figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">paths:</span><br><span class="line"><span class="bullet">  -</span> "src/<span class="strong">**/<span class="emphasis">*.ts"</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">  - "src/*</span><span class="emphasis">*/*</span>.tsx"</span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong"># TypeScript Development Rules</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">- All functions must have return type annotations</span></span><br><span class="line"><span class="strong">- Use interfaces instead of type aliases for object structures</span></span><br><span class="line"><span class="strong">- Enable strict mode checking</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Path-Matching-Syntax" class="article-heading"><a href="#Path-Matching-Syntax" class="headerlink" title="Path Matching Syntax"></a>Path Matching Syntax<a class="article-anchor" href="#Path-Matching-Syntax" aria-hidden="true"></a></h3><p>The <code>paths</code> field supports <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/isaacs/minimatch">glob</a> pattern matching:</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>*</code></td>
+<td>Matches any characters (except path separators)</td>
+<td><code>*.js</code> matches all JS files</td>
+</tr>
+<tr>
+<td><code>**</code></td>
+<td>Matches any directory level</td>
+<td><code>src/**/*.ts</code> matches all ts files in src and its subdirectories</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>Matches a single character</td>
+<td><code>file?.txt</code> matches file1.txt, fileA.txt, etc.</td>
+</tr>
+<tr>
+<td><code>!</code></td>
+<td>Exclusion pattern</td>
+<td><code>!**/*.test.ts</code> excludes test files</td>
+</tr>
+</tbody></table>
+<h3 id="Multiple-Path-Patterns" class="article-heading"><a href="#Multiple-Path-Patterns" class="headerlink" title="Multiple Path Patterns"></a>Multiple Path Patterns<a class="article-anchor" href="#Multiple-Path-Patterns" aria-hidden="true"></a></h3><p>Multiple path patterns can be defined simultaneously:</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">paths:</span><br><span class="line"><span class="bullet">  -</span> "src/<span class="strong">**/<span class="emphasis">*.ts"</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">  - "src/*</span><span class="emphasis">*/*</span>.tsx"</span></span><br><span class="line"><span class="strong">  - "tests/**</span>/<span class="emphasis">*.spec.ts"</span></span><br><span class="line"><span class="emphasis">---</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>Comma-separated string format is also supported:</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line"><span class="section">paths: "src/<span class="strong">**/<span class="emphasis">*.ts, src/*</span><span class="emphasis">*/*</span>.tsx"</span></span></span><br><span class="line"><span class="strong"><span class="section">---</span></span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Rule-Triggering-Mechanism" class="article-heading"><a href="#Rule-Triggering-Mechanism" class="headerlink" title="Rule Triggering Mechanism"></a>Rule Triggering Mechanism<a class="article-anchor" href="#Rule-Triggering-Mechanism" aria-hidden="true"></a></h2><ul>
+<li><strong>Global Memory</strong> (Enterprise Policy, User Memory, Project Memory, Rules without paths): Automatically loaded at the start of each conversation</li>
+<li><strong>Path-specific Rules</strong> (Rules with paths): Loaded on-demand and automatically triggered.</li>
+</ul>
+<h2 id="Usage-Recommendations" class="article-heading"><a href="#Usage-Recommendations" class="headerlink" title="Usage Recommendations"></a>Usage Recommendations<a class="article-anchor" href="#Usage-Recommendations" aria-hidden="true"></a></h2><h3 id="1-User-Memory-hcode-HAWA-md" class="article-heading"><a href="#1-User-Memory-hcode-HAWA-md" class="headerlink" title="1. User Memory (~/.hcode/HAWA.md)"></a>1. User Memory (~/.hcode/HAWA.md)<a class="article-anchor" href="#1-User-Memory-hcode-HAWA-md" aria-hidden="true"></a></h3><p>Suitable for storing personal general preferences:</p>
+<ul>
+<li>Personal code style preferences</li>
+<li>Commonly used tech stacks</li>
+<li>Personal development habits</li>
+</ul>
+<h3 id="2-Project-Memory-project-path-HAWA-md" class="article-heading"><a href="#2-Project-Memory-project-path-HAWA-md" class="headerlink" title="2. Project Memory (project_path/HAWA.md)"></a>2. Project Memory (project_path/HAWA.md)<a class="article-anchor" href="#2-Project-Memory-project-path-HAWA-md" aria-hidden="true"></a></h3><p>Suitable for storing project-specific information:</p>
+<ul>
+<li>Project architecture descriptions</li>
+<li>Project technical specifications</li>
+<li>Project directory structure conventions</li>
+</ul>
+<h3 id="3-Rule-Files-rules-md" class="article-heading"><a href="#3-Rule-Files-rules-md" class="headerlink" title="3. Rule Files (rules/*.md)"></a>3. Rule Files (rules/*.md)<a class="article-anchor" href="#3-Rule-Files-rules-md" aria-hidden="true"></a></h3><p>Suitable for storing rules for specific file types:</p>
+<ul>
+<li>API development specifications</li>
+<li>Component writing specifications</li>
+<li>Test file specifications</li>
+<li>Configuration file specifications</li>
+</ul>
+<h2 id="Examples" class="article-heading"><a href="#Examples" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples" aria-hidden="true"></a></h2><h3 id="User-Memory-Example" class="article-heading"><a href="#User-Memory-Example" class="headerlink" title="User Memory Example"></a>User Memory Example<a class="article-anchor" href="#User-Memory-Example" aria-hidden="true"></a></h3><p><strong>File</strong>: <code>~/.hcode/HAWA.md</code></p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section"># My Development Preferences</span></span><br><span class="line"></span><br><span class="line"><span class="section">## Code Style</span></span><br><span class="line"><span class="bullet">-</span> Use 2 spaces for indentation</span><br><span class="line"><span class="bullet">-</span> Use single quotes</span><br><span class="line"><span class="bullet">-</span> No semicolons</span><br><span class="line"></span><br><span class="line"><span class="section">## Technical Preferences</span></span><br><span class="line"><span class="bullet">-</span> Prefer functional components</span><br><span class="line"><span class="bullet">-</span> Use async/await for asynchronous operations</span><br><span class="line"><span class="bullet">-</span> Prefer destructuring assignment</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Project-Memory-Example" class="article-heading"><a href="#Project-Memory-Example" class="headerlink" title="Project Memory Example"></a>Project Memory Example<a class="article-anchor" href="#Project-Memory-Example" aria-hidden="true"></a></h3><p><strong>File</strong>: <code>project_path/HAWA.md</code></p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line"><span class="section"># Project Guidelines</span></span><br><span class="line"></span><br><span class="line"><span class="section">## Architecture</span></span><br><span class="line"><span class="bullet">-</span> Use MVC architecture</span><br><span class="line"><span class="bullet">-</span> Controllers go in controllers/ directory</span><br><span class="line"><span class="bullet">-</span> Models go in models/ directory</span><br><span class="line"></span><br><span class="line"><span class="section">## Naming Conventions</span></span><br><span class="line"><span class="bullet">-</span> File names use kebab-case</span><br><span class="line"><span class="bullet">-</span> Class names use PascalCase</span><br><span class="line"><span class="bullet">-</span> Function names use camelCase</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Path-Rule-Examples" class="article-heading"><a href="#Path-Rule-Examples" class="headerlink" title="Path Rule Examples"></a>Path Rule Examples<a class="article-anchor" href="#Path-Rule-Examples" aria-hidden="true"></a></h3><p><strong>File</strong>: <code>.hcode/rules/api.md</code></p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">paths:</span><br><span class="line"><span class="bullet">  -</span> "src/api/<span class="strong">**/<span class="emphasis">*.ts"</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">  - "src/routes/*</span><span class="emphasis">*/*</span>.ts"</span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong"># API Development Rules</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">1. All API endpoints must include input validation</span></span><br><span class="line"><span class="strong">2. Use unified error response format</span></span><br><span class="line"><span class="strong">3. Include OpenAPI documentation comments</span></span><br><span class="line"><span class="strong">4. Return HTTP status codes that comply with REST specifications</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>File</strong>: <code>.hcode/rules/react.md</code></p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">paths:</span><br><span class="line"><span class="bullet">  -</span> "src/components/<span class="strong">**/<span class="emphasis">*.tsx"</span></span></span><br><span class="line"><span class="emphasis"><span class="strong">  - "src/pages/*</span><span class="emphasis">*/*</span>.tsx"</span></span><br><span class="line"><span class="strong">---</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong"># React Component Rules</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">1. Use functional components + Hooks</span></span><br><span class="line"><span class="strong">2. Props must define TypeScript interfaces</span></span><br><span class="line"><span class="strong">3. Component file names match component names (PascalCase)</span></span><br><span class="line"><span class="strong">4. Use CSS Modules or Tailwind CSS</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Notes" class="article-heading"><a href="#Notes" class="headerlink" title="Notes"></a>Notes<a class="article-anchor" href="#Notes" aria-hidden="true"></a></h2><ol>
+<li><strong>File Encoding</strong>: Memory files must use UTF-8 encoding</li>
+<li><strong>File Format</strong>: Must be valid Markdown format</li>
+<li><strong>Path Matching</strong>: The <code>paths</code> field in rule files is optional; if not defined, rules are loaded as global rules</li>
+<li><strong>Performance</strong>: Avoid storing excessive content in memory files; only keep key preferences and rules</li>
+</ol>
+</body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-02-05T14:53:38.684Z" itemprop="dateModified">Last updated: 2026-02-05</time>
+                <time class="article-footer-updated" datetime="2026-02-08T10:26:50.006Z" itemprop="dateModified">Last updated: 2026-02-08</time>
                 <a href="configuration.html" class="article-footer-prev" title="Configuration"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
               </footer>
               
@@ -152,7 +257,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Memory-Types"><span class="toc-text">Memory Types</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Memory-File-Format"><span class="toc-text">Memory File Format</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Path-Matching-Rules-Rules"><span class="toc-text">Path Matching Rules (Rules)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rule-File-Format"><span class="toc-text">Rule File Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Path-Matching-Syntax"><span class="toc-text">Path Matching Syntax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Multiple-Path-Patterns"><span class="toc-text">Multiple Path Patterns</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rule-Triggering-Mechanism"><span class="toc-text">Rule Triggering Mechanism</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage-Recommendations"><span class="toc-text">Usage Recommendations</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-User-Memory-hcode-HAWA-md"><span class="toc-text">1. User Memory (~&#x2F;.hcode&#x2F;HAWA.md)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Project-Memory-project-path-HAWA-md"><span class="toc-text">2. Project Memory (project_path&#x2F;HAWA.md)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Rule-Files-rules-md"><span class="toc-text">3. Rule Files (rules&#x2F;*.md)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples"><span class="toc-text">Examples</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#User-Memory-Example"><span class="toc-text">User Memory Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Project-Memory-Example"><span class="toc-text">Project Memory Example</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Path-Rule-Examples"><span class="toc-text">Path Rule Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Notes"><span class="toc-text">Notes</span></a></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
