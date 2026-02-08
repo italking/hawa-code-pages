@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Commands | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/en/docs/commands">
+  <!-- Alternate links -->
+  
+    
+      
+        <link rel="alternate" hreflang="zh-cn" href="https://www.hawacode.com/docs/commands">
+      
+    
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/commands" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="Hawa Code provides a rich command-line interface supporting interactive sessions, configuration management, MCP server management, and more. Basic Usagehcode [prompt] [options]  By default, launching">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Commands">
+<meta property="og:url" content="https://www.hawacode.com/en/docs/commands">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="Hawa Code provides a rich command-line interface supporting interactive sessions, configuration management, MCP server management, and more. Basic Usagehcode [prompt] [options]  By default, launching">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-02-08T16:26:56.448Z">
+<meta property="article:modified_time" content="2026-02-08T16:26:56.448Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/en/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/en/docs/" class="main-nav-link">Docs</a><a href="/en/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/commands.html">
+        
+           <option value="zh-cn">简体中文</option>
+        
+           <option value="en" selected>English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Commands</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p>Hawa Code provides a rich command-line interface supporting interactive sessions, configuration management, MCP server management, and more.</p>
+<h2 id="Basic-Usage" class="article-heading"><a href="#Basic-Usage" class="headerlink" title="Basic Usage"></a>Basic Usage<a class="article-anchor" href="#Basic-Usage" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode [prompt] [options]</span><br></pre></td></tr></tbody></table></figure>
+
+<p>By default, launching without any subcommands enters interactive session mode.</p>
+<h3 id="Global-Options" class="article-heading"><a href="#Global-Options" class="headerlink" title="Global Options"></a>Global Options<a class="article-anchor" href="#Global-Options" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>-c, --cwd &lt;cwd&gt;</code></td>
+<td>Set the current working directory</td>
+</tr>
+<tr>
+<td><code>-d, --debug</code></td>
+<td>Enable debug mode</td>
+</tr>
+<tr>
+<td><code>--verbose</code></td>
+<td>Enable verbose output mode</td>
+</tr>
+<tr>
+<td><code>-ea, --enable-architect</code></td>
+<td>Enable the Architect tool</td>
+</tr>
+<tr>
+<td><code>-p, --print</code></td>
+<td>Print response and exit (useful for pipes)</td>
+</tr>
+<tr>
+<td><code>--dangerously-skip-permissions</code></td>
+<td>Skip all permission checks (Docker containers with no internet only)</td>
+</tr>
+<tr>
+<td><code>-v, --version</code></td>
+<td>Show version number</td>
+</tr>
+</tbody></table>
+<h3 id="Examples" class="article-heading"><a href="#Examples" class="headerlink" title="Examples"></a>Examples<a class="article-anchor" href="#Examples" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Start interactive session</span></span><br><span class="line">hcode</span><br><span class="line"></span><br><span class="line"><span class="comment"># Execute a prompt directly</span></span><br><span class="line">hcode <span class="string">"Analyze the code structure in current directory"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Pipe input</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Optimize this code"</span> | hcode -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># Specify working directory</span></span><br><span class="line">hcode -c /path/to/project <span class="string">"Explain this code"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="Configuration-Management-config" class="article-heading"><a href="#Configuration-Management-config" class="headerlink" title="Configuration Management (config)"></a>Configuration Management (config)<a class="article-anchor" href="#Configuration-Management-config" aria-hidden="true"></a></h2><p>Manage Hawa Code configuration items.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode config &lt;subcommand&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Subcommands" class="article-heading"><a href="#Subcommands" class="headerlink" title="Subcommands"></a>Subcommands<a class="article-anchor" href="#Subcommands" aria-hidden="true"></a></h3><h4 id="get" class="article-heading"><a href="#get" class="headerlink" title="get <key>"></a><code>get &lt;key&gt;</code><a class="article-anchor" href="#get" aria-hidden="true"></a></h4><p>Get a configuration value.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode config get theme</span><br><span class="line">hcode config get theme -g  <span class="comment"># Get global config</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-g, --global</code> - Use global configuration</li>
+</ul>
+<h4 id="set" class="article-heading"><a href="#set" class="headerlink" title="set <key> <value>"></a><code>set &lt;key&gt; &lt;value&gt;</code><a class="article-anchor" href="#set" aria-hidden="true"></a></h4><p>Set a configuration value.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode config <span class="built_in">set</span> theme dark</span><br><span class="line">hcode config <span class="built_in">set</span> theme dark -g  <span class="comment"># Set global config</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-g, --global</code> - Use global configuration</li>
+</ul>
+<h4 id="remove" class="article-heading"><a href="#remove" class="headerlink" title="remove <key>"></a><code>remove &lt;key&gt;</code><a class="article-anchor" href="#remove" aria-hidden="true"></a></h4><p>Remove a configuration item.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode config remove theme</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-g, --global</code> - Use global configuration</li>
+</ul>
+<h4 id="list" class="article-heading"><a href="#list" class="headerlink" title="list"></a><code>list</code><a class="article-anchor" href="#list" aria-hidden="true"></a></h4><p>List all configuration values.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode config list</span><br><span class="line">hcode config list -g  <span class="comment"># List global config</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-g, --global</code> - Use global configuration</li>
+</ul>
+<hr>
+<h2 id="Approved-Tools-Management-approved-tools" class="article-heading"><a href="#Approved-Tools-Management-approved-tools" class="headerlink" title="Approved Tools Management (approved-tools)"></a>Approved Tools Management (approved-tools)<a class="article-anchor" href="#Approved-Tools-Management-approved-tools" aria-hidden="true"></a></h2><p>Manage the list of approved tools.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode approved-tools &lt;subcommand&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Subcommands-1" class="article-heading"><a href="#Subcommands-1" class="headerlink" title="Subcommands"></a>Subcommands<a class="article-anchor" href="#Subcommands-1" aria-hidden="true"></a></h3><h4 id="list-1" class="article-heading"><a href="#list-1" class="headerlink" title="list"></a><code>list</code><a class="article-anchor" href="#list-1" aria-hidden="true"></a></h4><p>List all approved tools.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode approved-tools list</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="remove-1" class="article-heading"><a href="#remove-1" class="headerlink" title="remove <tool>"></a><code>remove &lt;tool&gt;</code><a class="article-anchor" href="#remove-1" aria-hidden="true"></a></h4><p>Remove a tool from the approved list.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode approved-tools remove BashTool</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="MCP-Server-Management-mcp" class="article-heading"><a href="#MCP-Server-Management-mcp" class="headerlink" title="MCP Server Management (mcp)"></a>MCP Server Management (mcp)<a class="article-anchor" href="#MCP-Server-Management-mcp" aria-hidden="true"></a></h2><p>Configure and manage MCP (Model Context Protocol) servers.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode mcp &lt;subcommand&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Subcommands-2" class="article-heading"><a href="#Subcommands-2" class="headerlink" title="Subcommands"></a>Subcommands<a class="article-anchor" href="#Subcommands-2" aria-hidden="true"></a></h3><h4 id="serve" class="article-heading"><a href="#serve" class="headerlink" title="serve"></a><code>serve</code><a class="article-anchor" href="#serve" aria-hidden="true"></a></h4><p>Start the Hawa Code MCP server.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode mcp serve</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="add-args" class="article-heading"><a href="#add-args" class="headerlink" title="add <name> <command> [args...]"></a><code>add &lt;name&gt; &lt;command&gt; [args...]</code><a class="article-anchor" href="#add-args" aria-hidden="true"></a></h4><p>Add a stdio-type MCP server.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Add npx server</span></span><br><span class="line">hcode mcp add my-server npx -y @modelcontextprotocol/server-filesystem /path/to/files</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add server with environment variables</span></span><br><span class="line">hcode mcp add my-server node server.js -e API_KEY=secret -e PORT=3000</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-s, --scope &lt;scope&gt;</code> - Configuration scope (project or global), default: project</li>
+<li><code>-e, --env &lt;env...&gt;</code> - Set environment variables (e.g., -e KEY=value)</li>
+</ul>
+<h4 id="add-sse" class="article-heading"><a href="#add-sse" class="headerlink" title="add-sse <name> <url>"></a><code>add-sse &lt;name&gt; &lt;url&gt;</code><a class="article-anchor" href="#add-sse" aria-hidden="true"></a></h4><p>Add an SSE-type MCP server (requires specific permissions).</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode mcp add-sse my-server http://localhost:3000/sse</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-s, --scope &lt;scope&gt;</code> - Configuration scope (project or global), default: project</li>
+</ul>
+<h4 id="remove-2" class="article-heading"><a href="#remove-2" class="headerlink" title="remove <name>"></a><code>remove &lt;name&gt;</code><a class="article-anchor" href="#remove-2" aria-hidden="true"></a></h4><p>Remove an MCP server.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode mcp remove my-server</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Options:</strong></p>
+<ul>
+<li><code>-s, --scope &lt;scope&gt;</code> - Configuration scope (project, global, or mcprc), default: project</li>
+</ul>
+<h4 id="list-2" class="article-heading"><a href="#list-2" class="headerlink" title="list"></a><code>list</code><a class="article-anchor" href="#list-2" aria-hidden="true"></a></h4><p>List all configured MCP servers.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode mcp list</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="get-1" class="article-heading"><a href="#get-1" class="headerlink" title="get <name>"></a><code>get &lt;name&gt;</code><a class="article-anchor" href="#get-1" aria-hidden="true"></a></h4><p>Get detailed information about a specific MCP server.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode mcp get my-server</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="reset-mcprc-choices" class="article-heading"><a href="#reset-mcprc-choices" class="headerlink" title="reset-mcprc-choices"></a><code>reset-mcprc-choices</code><a class="article-anchor" href="#reset-mcprc-choices" aria-hidden="true"></a></h4><p>Reset all .mcp.json server approval/rejection states (requires specific permissions).</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode mcp reset-mcprc-choices</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="Update" class="article-heading"><a href="#Update" class="headerlink" title="Update"></a>Update<a class="article-anchor" href="#Update" aria-hidden="true"></a></h2><p>Check for and install updates.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode update</span><br></pre></td></tr></tbody></table></figure>
+
+<p>This command will:</p>
+<ol>
+<li>Check for the latest version</li>
+<li>Automatically download and install if a new version is available</li>
+<li>Display the update result</li>
+</ol>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-02-08T16:26:56.448Z" itemprop="dateModified">Last updated: 2026-02-09</time>
+                <a href="memory.html" class="article-footer-prev" title="Memory"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Basic-Usage"><span class="toc-text">Basic Usage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Global-Options"><span class="toc-text">Global Options</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-text">Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-Management-config"><span class="toc-text">Configuration Management (config)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Subcommands"><span class="toc-text">Subcommands</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#get"><span class="toc-text">get &lt;key&gt;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set"><span class="toc-text">set &lt;key&gt; &lt;value&gt;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#remove"><span class="toc-text">remove &lt;key&gt;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#list"><span class="toc-text">list</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Approved-Tools-Management-approved-tools"><span class="toc-text">Approved Tools Management (approved-tools)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Subcommands-1"><span class="toc-text">Subcommands</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#list-1"><span class="toc-text">list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#remove-1"><span class="toc-text">remove &lt;tool&gt;</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MCP-Server-Management-mcp"><span class="toc-text">MCP Server Management (mcp)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Subcommands-2"><span class="toc-text">Subcommands</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#serve"><span class="toc-text">serve</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#add-args"><span class="toc-text">add &lt;name&gt; &lt;command&gt; [args...]</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#add-sse"><span class="toc-text">add-sse &lt;name&gt; &lt;url&gt;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#remove-2"><span class="toc-text">remove &lt;name&gt;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#list-2"><span class="toc-text">list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#get-1"><span class="toc-text">get &lt;name&gt;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#reset-mcprc-choices"><span class="toc-text">reset-mcprc-choices</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Update"><span class="toc-text">Update</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="model.html" class="sidebar-link">Models</a><a href="skill.html" class="sidebar-link">Skill</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool Lazy Loading</a><a href="tools.html" class="sidebar-link">Tools</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="ide.html" class="sidebar-link">IDE</a><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="commands.html" class="sidebar-link current">Commands</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/en/docs/" class="mobile-nav-link">Docs</a><a href="/en/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="model.html" class="mobile-nav-link">Models</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool Lazy Loading</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="ide.html" class="mobile-nav-link">IDE</a><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="commands.html" class="mobile-nav-link current">Commands</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/commands.html">
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+docsearch({
+  appId: '92MM5ICJU3',
+  apiKey: '64d254213e6c3157c3abc2bc74228632',
+  indexName: 'hawacode',
+  insights: true,
+  container: '#docsearch',
+  debug: false,
+  searchParameters: {
+    facetFilters: ['lang:en']
+  }
+});
+</script>
+
+</body>
+</html>
