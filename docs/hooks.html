@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Hooks | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/docs/hooks">
+  <!-- Alternate links -->
+  
+    
+      
+    
+      
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/hooks">
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/hooks" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="Stop在主 Agent 对话结束时触发，可用于阻止主 Agent 结束并让其继续工作。 入参   参数名 说明    session_id 当前会话 ID   transcript_path 当前会话的消息记录文件路径   permission_mode 当前 Agent 运行模式   hook_event_name Hook 事件名称   stop_hook_active 是否已触发过停止 H">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hooks">
+<meta property="og:url" content="https://www.hawacode.com/docs/hooks">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="Stop在主 Agent 对话结束时触发，可用于阻止主 Agent 结束并让其继续工作。 入参   参数名 说明    session_id 当前会话 ID   transcript_path 当前会话的消息记录文件路径   permission_mode 当前 Agent 运行模式   hook_event_name Hook 事件名称   stop_hook_active 是否已触发过停止 H">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-02-11T13:58:07.045Z">
+<meta property="article:modified_time" content="2026-02-11T13:58:07.045Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/hooks.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Hooks</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><h1 id="Stop" class="article-heading"><a href="#Stop" class="headerlink" title="Stop"></a>Stop<a class="article-anchor" href="#Stop" aria-hidden="true"></a></h1><p>在主 Agent 对话结束时触发，可用于阻止主 Agent 结束并让其继续工作。</p>
+<h2 id="入参" class="article-heading"><a href="#入参" class="headerlink" title="入参"></a>入参<a class="article-anchor" href="#入参" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session_id</td>
+<td>当前会话 ID</td>
+</tr>
+<tr>
+<td>transcript_path</td>
+<td>当前会话的消息记录文件路径</td>
+</tr>
+<tr>
+<td>permission_mode</td>
+<td>当前 Agent 运行模式</td>
+</tr>
+<tr>
+<td>hook_event_name</td>
+<td>Hook 事件名称</td>
+</tr>
+<tr>
+<td>stop_hook_active</td>
+<td>是否已触发过停止 Hook，<code>true</code> 表示已触发，<code>false</code> 表示未触发，用于避免无限循环</td>
+</tr>
+</tbody></table>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"session_id"</span><span class="punctuation">:</span> <span class="string">"abc123"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"transcript_path"</span><span class="punctuation">:</span> <span class="string">"~/.claude/projects/.../00893aaf-19fa-41d2-8238-13269b9b3ca0.jsonl"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"permission_mode"</span><span class="punctuation">:</span> <span class="string">"default"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hook_event_name"</span><span class="punctuation">:</span> <span class="string">"Stop"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"stop_hook_active"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="出参" class="article-heading"><a href="#出参" class="headerlink" title="出参"></a>出参<a class="article-anchor" href="#出参" aria-hidden="true"></a></h2><h3 id="JSON-格式" class="article-heading"><a href="#JSON-格式" class="headerlink" title="JSON 格式"></a>JSON 格式<a class="article-anchor" href="#JSON-格式" aria-hidden="true"></a></h3><p>返回以下数据结构时，Hawa Code 将正常结束：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span><span class="attr">"ok"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>返回以下数据结构时，Hawa Code 将继续工作，并将 <code>reason</code> 作为继续工作的原因发送给模型：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span><span class="attr">"ok"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span> <span class="attr">"reason"</span><span class="punctuation">:</span> <span class="string">"your explanation"</span><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="返回码格式" class="article-heading"><a href="#返回码格式" class="headerlink" title="返回码格式"></a>返回码格式<a class="article-anchor" href="#返回码格式" aria-hidden="true"></a></h3><ul>
+<li>退出代码 <code>0</code>：成功，Hawa Code 将停止任务</li>
+<li>退出代码 <code>2</code>：失败，Hawa Code 将继续工作，并将 <code>stderr</code> 作为继续工作的原因发送给模型</li>
+</ul>
+<h2 id="配置方式" class="article-heading"><a href="#配置方式" class="headerlink" title="配置方式"></a>配置方式<a class="article-anchor" href="#配置方式" aria-hidden="true"></a></h2><h3 id="Prompt-方式" class="article-heading"><a href="#Prompt-方式" class="headerlink" title="Prompt 方式"></a>Prompt 方式<a class="article-anchor" href="#Prompt-方式" aria-hidden="true"></a></h3><p>通过 <code>$ARGUMENTS</code> 占位符配置 Prompt：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"Stop"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"prompt"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"prompt"</span><span class="punctuation">:</span> <span class="string">"Evaluate if Hawa Code should stop: $ARGUMENTS. Check if all tasks are complete."</span></span><br><span class="line">          <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Command-方式" class="article-heading"><a href="#Command-方式" class="headerlink" title="Command 方式"></a>Command 方式<a class="article-anchor" href="#Command-方式" aria-hidden="true"></a></h3><p>执行 Shell 脚本：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"Stop"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"command"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"node ./hooks/stop.js"</span></span><br><span class="line">          <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>示例脚本：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fs <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="number">0</span>, <span class="string">'utf-8'</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>({</span><br><span class="line">  <span class="string">"ok"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">"reason"</span>: input + <span class="string">" Root cause analysis"</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="配置文件位置" class="article-heading"><a href="#配置文件位置" class="headerlink" title="配置文件位置"></a>配置文件位置<a class="article-anchor" href="#配置文件位置" aria-hidden="true"></a></h2><ul>
+<li><strong>项目级别</strong>：<code>{项目路径}/.hcode/settings.json</code></li>
+<li><strong>用户级别</strong>：<code>~/.hcode/settings.json</code></li>
+</ul>
+<hr>
+<h1 id="SubagentStop" class="article-heading"><a href="#SubagentStop" class="headerlink" title="SubagentStop"></a>SubagentStop<a class="article-anchor" href="#SubagentStop" aria-hidden="true"></a></h1><p>在 Subagent 对话结束时触发，可用于阻止 Subagent 结束并让其继续工作。</p>
+<h2 id="入参-1" class="article-heading"><a href="#入参-1" class="headerlink" title="入参"></a>入参<a class="article-anchor" href="#入参-1" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>session_id</td>
+<td>当前会话 ID</td>
+</tr>
+<tr>
+<td>transcript_path</td>
+<td>当前会话的消息记录文件路径</td>
+</tr>
+<tr>
+<td>permission_mode</td>
+<td>当前 Agent 运行模式</td>
+</tr>
+<tr>
+<td>hook_event_name</td>
+<td>Hook 事件名称</td>
+</tr>
+<tr>
+<td>stop_hook_active</td>
+<td>是否已触发过停止 Hook，<code>true</code> 表示已触发，<code>false</code> 表示未触发，用于避免无限循环</td>
+</tr>
+</tbody></table>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"session_id"</span><span class="punctuation">:</span> <span class="string">"abc123"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"transcript_path"</span><span class="punctuation">:</span> <span class="string">"~/.claude/projects/.../00893aaf-19fa-41d2-8238-13269b9b3ca0.jsonl"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"permission_mode"</span><span class="punctuation">:</span> <span class="string">"default"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hook_event_name"</span><span class="punctuation">:</span> <span class="string">"Stop"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"stop_hook_active"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="出参-1" class="article-heading"><a href="#出参-1" class="headerlink" title="出参"></a>出参<a class="article-anchor" href="#出参-1" aria-hidden="true"></a></h2><h3 id="JSON-格式-1" class="article-heading"><a href="#JSON-格式-1" class="headerlink" title="JSON 格式"></a>JSON 格式<a class="article-anchor" href="#JSON-格式-1" aria-hidden="true"></a></h3><p>返回以下数据结构时，Hawa Code 将正常结束：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span><span class="attr">"ok"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>返回以下数据结构时，Hawa Code 将继续工作，并将 <code>reason</code> 作为继续工作的原因发送给模型：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span><span class="attr">"ok"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span> <span class="attr">"reason"</span><span class="punctuation">:</span> <span class="string">"your explanation"</span><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="返回码格式-1" class="article-heading"><a href="#返回码格式-1" class="headerlink" title="返回码格式"></a>返回码格式<a class="article-anchor" href="#返回码格式-1" aria-hidden="true"></a></h3><ul>
+<li>退出代码 <code>0</code>：成功，Hawa Code 将停止任务</li>
+<li>退出代码 <code>2</code>：失败，Hawa Code 将继续工作，并将 <code>stderr</code> 作为继续工作的原因发送给模型</li>
+</ul>
+<h2 id="配置方式-1" class="article-heading"><a href="#配置方式-1" class="headerlink" title="配置方式"></a>配置方式<a class="article-anchor" href="#配置方式-1" aria-hidden="true"></a></h2><h3 id="Prompt-方式-1" class="article-heading"><a href="#Prompt-方式-1" class="headerlink" title="Prompt 方式"></a>Prompt 方式<a class="article-anchor" href="#Prompt-方式-1" aria-hidden="true"></a></h3><p>通过 <code>$ARGUMENTS</code> 占位符配置 Prompt：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"SubagentStop"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"prompt"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"prompt"</span><span class="punctuation">:</span> <span class="string">"Evaluate if Hawa Code should stop: $ARGUMENTS. Check if all tasks are complete."</span></span><br><span class="line">          <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Command-方式-1" class="article-heading"><a href="#Command-方式-1" class="headerlink" title="Command 方式"></a>Command 方式<a class="article-anchor" href="#Command-方式-1" aria-hidden="true"></a></h3><p>执行 Shell 脚本：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"SubagentStop"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"command"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"node ./hooks/subagent-stop.js"</span></span><br><span class="line">          <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>示例脚本：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fs <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="number">0</span>, <span class="string">'utf-8'</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>({</span><br><span class="line">  <span class="string">"ok"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">"reason"</span>: input + <span class="string">" Root cause analysis"</span></span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="配置文件位置-1" class="article-heading"><a href="#配置文件位置-1" class="headerlink" title="配置文件位置"></a>配置文件位置<a class="article-anchor" href="#配置文件位置-1" aria-hidden="true"></a></h2><ul>
+<li><strong>项目级别</strong>：<code>{项目路径}/.hcode/settings.json</code></li>
+<li><strong>用户级别</strong>：<code>~/.hcode/settings.json</code></li>
+</ul>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-02-11T13:58:07.045Z" itemprop="dateModified">上次更新：2026-02-11</time>
+                <a href="commands.html" class="article-footer-prev" title="命令"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Stop"><span class="toc-text">Stop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E5%8F%82"><span class="toc-text">入参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%82"><span class="toc-text">出参</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-%E6%A0%BC%E5%BC%8F"><span class="toc-text">JSON 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%A0%81%E6%A0%BC%E5%BC%8F"><span class="toc-text">返回码格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-%E6%96%B9%E5%BC%8F"><span class="toc-text">Prompt 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-%E6%96%B9%E5%BC%8F"><span class="toc-text">Command 方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span class="toc-text">配置文件位置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SubagentStop"><span class="toc-text">SubagentStop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E5%8F%82-1"><span class="toc-text">入参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%82-1"><span class="toc-text">出参</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">JSON 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%A0%81%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">返回码格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F-1"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-%E6%96%B9%E5%BC%8F-1"><span class="toc-text">Prompt 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-%E6%96%B9%E5%BC%8F-1"><span class="toc-text">Command 方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE-1"><span class="toc-text">配置文件位置</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="model.html" class="sidebar-link">模型</a><a href="skill.html" class="sidebar-link">Skill</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><a href="tools.html" class="sidebar-link">工具</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="ide.html" class="sidebar-link">IDE</a><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="commands.html" class="sidebar-link">命令</a><a href="hooks.html" class="sidebar-link current">Hooks</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="model.html" class="mobile-nav-link">模型</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="ide.html" class="mobile-nav-link">IDE</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="hooks.html" class="mobile-nav-link current">Hooks</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/hooks.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+docsearch({
+  appId: '92MM5ICJU3',
+  apiKey: '64d254213e6c3157c3abc2bc74228632',
+  indexName: 'hawacode',
+  insights: true,
+  container: '#docsearch',
+  debug: false,
+  searchParameters: {
+    facetFilters: ['lang:zh-cn']
+  }
+});
+</script>
+
+</body>
+</html>
