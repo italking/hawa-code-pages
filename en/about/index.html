@@ -54,8 +54,8 @@
 <meta property="og:description" content="Dahawa Life Plan  An intelligent programming assistant who understands you An intelligent assistant who understands you An assistant who understands you  One   is the bottom line you leave for yoursel">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-02-18T15:40:03.052Z">
-<meta property="article:modified_time" content="2026-02-18T15:40:03.052Z">
+<meta property="article:published_time" content="2026-02-21T15:48:49.629Z">
+<meta property="article:modified_time" content="2026-02-21T15:48:49.629Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,11 +129,30 @@ var _hmt = _hmt || [];
 <p><strong>One</strong>   is the bottom line you leave for yourself</p>
 <h1 id="Version-History" class="article-heading"><a href="#Version-History" class="headerlink" title="Version History"></a>Version History<a class="article-anchor" href="#Version-History" aria-hidden="true"></a></h1><hr>
 <ul>
-<li>1.11.0<ul>
+<li><p>1.11.2</p>
+<ul>
+<li>Added PostToolUse Hook to support triggering custom actions after successful tool execution</li>
+<li>Added PostToolUseFailure Hook to support triggering custom actions when tool execution fails</li>
+<li>Optimized Hook Matcher matching performance</li>
+</ul>
+</li>
+<li><p>1.11.1</p>
+<ul>
+<li>Support lazy loading of tool inputScheme to optimize startup time</li>
+<li>Optimized Task Tool progress display to resolve terminal flickering issues</li>
+<li>Support disabling Prompt hint functionality</li>
+<li>Fixed bug with duplicate message publishing</li>
+<li>Fixed bug with duplicate system reminder messages</li>
+<li>Optimized tool execution performance</li>
+</ul>
+</li>
+<li><p>1.11.0</p>
+<ul>
 <li>Support PreToolUse Hook</li>
 </ul>
 </li>
-<li>1.10.2<ul>
+<li><p>1.10.2</p>
+<ul>
 <li>Added keyboard shortcut to move tasks to background execution</li>
 <li>Added support for toggling background task notifications</li>
 <li>Improved Markdown rendering</li>
@@ -141,7 +160,8 @@ var _hmt = _hmt || [];
 <li>Fixed inaccurate background shell task count display</li>
 </ul>
 </li>
-<li>1.10.0<ul>
+<li><p>1.10.0</p>
+<ul>
 <li>Added TaskStop tool to support stopping background subagent tasks and shell task execution</li>
 <li>Removed KillShell tool</li>
 <li>Support re-initiating conversation after background shell tasks complete</li>
@@ -149,71 +169,84 @@ var _hmt = _hmt || [];
 <li>Fixed background subagent conversation re-initiation freeze issue</li>
 </ul>
 </li>
-<li>1.9.3<ul>
+<li><p>1.9.3</p>
+<ul>
 <li>Support SubagentStart hook</li>
 </ul>
 </li>
-<li>1.9.2<ul>
+<li><p>1.9.2</p>
+<ul>
 <li>Support Stop and SubagentStop hooks</li>
 </ul>
 </li>
-<li>1.9.0<ul>
+<li><p>1.9.0</p>
+<ul>
 <li>Support user-level rules, project-level rules, and on-demand loading by path</li>
 <li>Support startup commands</li>
 <li>Optimized message notifications</li>
 </ul>
 </li>
-<li>1.8.0<ul>
+<li><p>1.8.0</p>
+<ul>
 <li>Optimized terminal MCP automatic authorization configuration</li>
 </ul>
 </li>
-<li>1.7.0<ul>
+<li><p>1.7.0</p>
+<ul>
 <li>Remote MCP supports automatic authorization</li>
 <li>Improved usage in github codespaces</li>
 <li>MCP Tool permissions.allow supports wildcard settings</li>
 <li>Enhanced compatibility with non-standard JSON and incorrect JSON formats in Tool input and Qwen-code-plus</li>
 </ul>
 </li>
-<li>1.6.0<ul>
+<li><p>1.6.0</p>
+<ul>
 <li>Support MCP Tool lazy loading</li>
 <li>Fixed Task Tool verbose mode crash bug</li>
 <li>Optimized network request retry performance</li>
 </ul>
 </li>
-<li>1.5.0<ul>
+<li><p>1.5.0</p>
+<ul>
 <li>Support settings.json configuration with hot reload</li>
 </ul>
 </li>
-<li>1.4.0<ul>
+<li><p>1.4.0</p>
+<ul>
 <li>AskUserQuestion tool supports multiple questions and custom input</li>
 <li>Enhanced Grep Tool functionality</li>
 </ul>
 </li>
-<li>1.3.0<ul>
+<li><p>1.3.0</p>
+<ul>
 <li>Support providing prompt suggestions at the end of conversations</li>
 </ul>
 </li>
-<li>1.2.0<ul>
+<li><p>1.2.0</p>
+<ul>
 <li>Support submitting prompt statements during conversation</li>
 </ul>
 </li>
-<li>1.1.0<ul>
+<li><p>1.1.0</p>
+<ul>
 <li>Support subagent background execution</li>
 <li>Support subagent resume execution </li>
 <li>Optimize LSP tool file path validation</li>
 </ul>
 </li>
-<li>1.0.16 <ul>
+<li><p>1.0.16 </p>
+<ul>
 <li>Optimized tool lazy loading performance</li>
 <li>Optimized LSP tool terminal display</li>
 </ul>
 </li>
-<li>1.0.15 Restore TODO LIST along with session</li>
+<li><p>1.0.15 Restore TODO LIST along with session</p>
+</li>
 </ul>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-02-18T15:40:03.052Z" itemprop="dateModified">Last updated: 2026-02-18</time>
+                <time class="article-footer-updated" datetime="2026-02-21T15:48:49.629Z" itemprop="dateModified">Last updated: 2026-02-21</time>
                 
               </footer>
               

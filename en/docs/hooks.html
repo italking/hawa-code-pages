@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="StopTriggered when the main Agent conversation ends. Can be used to prevent the main Agent from stopping and allow it to continue working. Input Parameters   Parameter Description    session_id Curren">
+  <meta name="description" content="Hooks Configuration Project Level: {project_path}&#x2F;.hcode&#x2F;settings.json User Level: ~&#x2F;.hcode&#x2F;settings.json  MatcherHooks support Matcher for matching tool names or Subagent names. The matching rules ar">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hooks">
 <meta property="og:url" content="https://www.hawacode.com/en/docs/hooks">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="StopTriggered when the main Agent conversation ends. Can be used to prevent the main Agent from stopping and allow it to continue working. Input Parameters   Parameter Description    session_id Curren">
+<meta property="og:description" content="Hooks Configuration Project Level: {project_path}&#x2F;.hcode&#x2F;settings.json User Level: ~&#x2F;.hcode&#x2F;settings.json  MatcherHooks support Matcher for matching tool names or Subagent names. The matching rules ar">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-02-12T04:32:29.541Z">
-<meta property="article:modified_time" content="2026-02-12T04:32:29.541Z">
+<meta property="article:published_time" content="2026-02-21T15:36:41.034Z">
+<meta property="article:modified_time" content="2026-02-21T15:36:41.034Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -120,7 +120,18 @@ var _hmt = _hmt || [];
                 <h1 class="article-title" itemprop="name">Hooks</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h1 id="Stop" class="article-heading"><a href="#Stop" class="headerlink" title="Stop"></a>Stop<a class="article-anchor" href="#Stop" aria-hidden="true"></a></h1><p>Triggered when the main Agent conversation ends. Can be used to prevent the main Agent from stopping and allow it to continue working.</p>
+                <html><head></head><body><h1 id="Hooks-Configuration" class="article-heading"><a href="#Hooks-Configuration" class="headerlink" title="Hooks Configuration"></a>Hooks Configuration<a class="article-anchor" href="#Hooks-Configuration" aria-hidden="true"></a></h1><ul>
+<li><strong>Project Level</strong>: <code>{project_path}/.hcode/settings.json</code></li>
+<li><strong>User Level</strong>: <code>~/.hcode/settings.json</code></li>
+</ul>
+<h1 id="Matcher" class="article-heading"><a href="#Matcher" class="headerlink" title="Matcher"></a>Matcher<a class="article-anchor" href="#Matcher" aria-hidden="true"></a></h1><p>Hooks support Matcher for matching tool names or Subagent names. The matching rules are as follows:</p>
+<ul>
+<li><strong>Single Match</strong>: Match a single attribute, e.g., <code>"Edit"</code>.</li>
+<li><strong>Multiple Matches</strong>: Use pipe <code>|</code> to separate multiple attributes, e.g., <code>"Edit|Write"</code>.</li>
+<li><strong>Wildcard Match</strong>: Use <code>*</code> for wildcard matching, e.g., <code>"mcp__memory__.*"</code>, <code>"mcp__.*__write.*"</code>, <code>"mcp__.*__write.*|Edit"</code>.</li>
+</ul>
+<hr>
+<h1 id="Stop" class="article-heading"><a href="#Stop" class="headerlink" title="Stop"></a>Stop<a class="article-anchor" href="#Stop" aria-hidden="true"></a></h1><p>Triggered when the main Agent conversation ends. Can be used to prevent the main Agent from stopping and allow it to continue working.</p>
 <h2 id="Input-Parameters" class="article-heading"><a href="#Input-Parameters" class="headerlink" title="Input Parameters"></a>Input Parameters<a class="article-anchor" href="#Input-Parameters" aria-hidden="true"></a></h2><table>
 <thead>
 <tr>
@@ -248,14 +259,229 @@ var _hmt = _hmt || [];
 <p>Example script:</p>
 <figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fs <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> input = fs.<span class="title function_">readFileSync</span>(<span class="number">0</span>, <span class="string">'utf-8'</span>);</span><br><span class="line"><span class="keyword">const</span> output = {</span><br><span class="line">  <span class="string">"hookSpecificOutput"</span>: {</span><br><span class="line">    <span class="string">"hookEventName"</span>: <span class="string">"SubagentStart"</span>,</span><br><span class="line">    <span class="string">"additionalContext"</span>: <span class="string">"Please follow security guidelines: Do not access production databases. Input parameters: "</span> + input</span><br><span class="line">  }</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(output));</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="Configuration-File-Locations-2" class="article-heading"><a href="#Configuration-File-Locations-2" class="headerlink" title="Configuration File Locations"></a>Configuration File Locations<a class="article-anchor" href="#Configuration-File-Locations-2" aria-hidden="true"></a></h2><ul>
-<li><strong>Project Level</strong>: <code>{project_path}/.hcode/settings.json</code></li>
-<li><strong>User Level</strong>: <code>~/.hcode/settings.json</code></li>
+<hr>
+<h1 id="PostToolUse" class="article-heading"><a href="#PostToolUse" class="headerlink" title="PostToolUse"></a>PostToolUse<a class="article-anchor" href="#PostToolUse" aria-hidden="true"></a></h1><p><strong>PostToolUse</strong> triggers immediately after a tool executes successfully. Supports the same matcher values as PreToolUse.</p>
+<h2 id="Common-Matchers" class="article-heading"><a href="#Common-Matchers" class="headerlink" title="Common Matchers"></a>Common Matchers<a class="article-anchor" href="#Common-Matchers" aria-hidden="true"></a></h2><ul>
+<li><code>Task</code> - Subagent tasks</li>
+<li><code>Bash</code> - Shell commands</li>
+<li><code>Glob</code> - File pattern matching</li>
+<li><code>Grep</code> - Content search</li>
+<li><code>Read</code> - File reading</li>
+<li><code>Edit</code> - File editing</li>
+<li><code>Write</code> - File writing</li>
+<li><code>WebFetch</code>, <code>WebSearch</code> - Web operations</li>
 </ul>
+<h2 id="Configuration" class="article-heading"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration<a class="article-anchor" href="#Configuration" aria-hidden="true"></a></h2><p>Configure hooks in your settings file:</p>
+<ul>
+<li><code>~/.hcode/settings.json</code> - User settings</li>
+<li><code>.hcode/settings.json</code> - Project settings</li>
+</ul>
+<h3 id="Basic-Structure" class="article-heading"><a href="#Basic-Structure" class="headerlink" title="Basic Structure"></a>Basic Structure<a class="article-anchor" href="#Basic-Structure" aria-hidden="true"></a></h3><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"PostToolUse"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"matcher"</span><span class="punctuation">:</span> <span class="string">"ToolPattern"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"command"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"your-command-here"</span></span><br><span class="line">          <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>matcher</strong>: Pattern for matching tool names, case-sensitive</p>
+<ul>
+<li><strong>Simple string</strong>: Exact match, e.g., <code>Write</code> only matches the Write tool</li>
+<li><strong>Regular expressions</strong>: Supports patterns like <code>Edit|Write</code> or <code>Notebook.*</code></li>
+<li><strong>Wildcard</strong>: Use <code>*</code> to match all tools. You can also use an empty string <code>""</code> or omit <code>matcher</code>.</li>
+</ul>
+<p><strong>hooks</strong>: Array of hooks to execute when the pattern matches</p>
+<ul>
+<li><code>type</code>: Hook execution type - <code>"command"</code> for bash commands</li>
+<li><code>command</code>: The bash command to execute</li>
+<li><code>timeout</code>: (Optional) How long the hook should run in seconds</li>
+</ul>
+<h3 id="PostToolUse-in-Plugin-Hooks" class="article-heading"><a href="#PostToolUse-in-Plugin-Hooks" class="headerlink" title="PostToolUse in Plugin Hooks"></a>PostToolUse in Plugin Hooks<a class="article-anchor" href="#PostToolUse-in-Plugin-Hooks" aria-hidden="true"></a></h3><p><strong>Example plugin hook configuration</strong>:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"Automatic code formatting"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"PostToolUse"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"matcher"</span><span class="punctuation">:</span> <span class="string">"Write|Edit"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"command"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"node ./scripts/format.sh"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"timeout"</span><span class="punctuation">:</span> <span class="number">30</span></span><br><span class="line">          <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Input-Parameters-3" class="article-heading"><a href="#Input-Parameters-3" class="headerlink" title="Input Parameters"></a>Input Parameters<a class="article-anchor" href="#Input-Parameters-3" aria-hidden="true"></a></h2><p>The exact schema for <code>tool_input</code> and <code>tool_response</code> depends on the tool.</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"session_id"</span><span class="punctuation">:</span> <span class="string">"abc123"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"transcript_path"</span><span class="punctuation">:</span> <span class="string">"/Users/.../.hcode/projects/.../00893aaf-19fa-41d2-8238-13269b9b3ca0.jsonl"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"cwd"</span><span class="punctuation">:</span> <span class="string">"/Users/..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"permission_mode"</span><span class="punctuation">:</span> <span class="string">"default"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hook_event_name"</span><span class="punctuation">:</span> <span class="string">"PostToolUse"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_name"</span><span class="punctuation">:</span> <span class="string">"Write"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_input"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"file_path"</span><span class="punctuation">:</span> <span class="string">"/path/to/file.txt"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"content"</span><span class="punctuation">:</span> <span class="string">"file content"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_response"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"filePath"</span><span class="punctuation">:</span> <span class="string">"/path/to/file.txt"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"success"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_use_id"</span><span class="punctuation">:</span> <span class="string">"toolu_01ABC123..."</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Field-Descriptions" class="article-heading"><a href="#Field-Descriptions" class="headerlink" title="Field Descriptions"></a>Field Descriptions<a class="article-anchor" href="#Field-Descriptions" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>session_id</code></td>
+<td align="left">string</td>
+<td align="left">Session unique identifier</td>
+</tr>
+<tr>
+<td align="left"><code>transcript_path</code></td>
+<td align="left">string</td>
+<td align="left">Full path to the conversation JSON file</td>
+</tr>
+<tr>
+<td align="left"><code>cwd</code></td>
+<td align="left">string</td>
+<td align="left">Current working directory when the hook was invoked</td>
+</tr>
+<tr>
+<td align="left"><code>permission_mode</code></td>
+<td align="left">string</td>
+<td align="left">Current permission mode: <code>"default"</code>, <code>"plan"</code>, <code>"acceptEdits"</code>, <code>"dontAsk"</code>, or <code>"bypassPermissions"</code></td>
+</tr>
+<tr>
+<td align="left"><code>hook_event_name</code></td>
+<td align="left">string</td>
+<td align="left">Always <code>"PostToolUse"</code></td>
+</tr>
+<tr>
+<td align="left"><code>tool_name</code></td>
+<td align="left">string</td>
+<td align="left">Name of the executed tool (e.g., <code>Write</code>, <code>Edit</code>, <code>Bash</code>, etc.)</td>
+</tr>
+<tr>
+<td align="left"><code>tool_input</code></td>
+<td align="left">object</td>
+<td align="left">Tool input parameters (varies by tool)</td>
+</tr>
+<tr>
+<td align="left"><code>tool_response</code></td>
+<td align="left">object</td>
+<td align="left">Tool response result (varies by tool)</td>
+</tr>
+<tr>
+<td align="left"><code>tool_use_id</code></td>
+<td align="left">string</td>
+<td align="left">Unique identifier for the tool invocation</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Note</strong>: The exact schema for <code>tool_input</code> and <code>tool_response</code> depends on the specific tool.</p>
+</blockquote>
+<h2 id="Output-Parameters-Decision-Control" class="article-heading"><a href="#Output-Parameters-Decision-Control" class="headerlink" title="Output Parameters / Decision Control"></a>Output Parameters / Decision Control<a class="article-anchor" href="#Output-Parameters-Decision-Control" aria-hidden="true"></a></h2><p><code>PostToolUse</code> hooks can provide feedback to Hawa Code after tool execution.</p>
+<ul>
+<li><code>"block"</code>: Block subsequent operations and prompt Hawa Code with <code>reason</code></li>
+<li><code>undefined</code>: Do nothing. <code>reason</code> is ignored.</li>
+<li><code>"hookSpecificOutput.additionalContext"</code>: Add additional context for Hawa Code</li>
+</ul>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"decision"</span><span class="punctuation">:</span> <span class="string">"block"</span> | undefined<span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"reason"</span><span class="punctuation">:</span> <span class="string">"Explanation for decision"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hookSpecificOutput"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"hookEventName"</span><span class="punctuation">:</span> <span class="string">"PostToolUse"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"additionalContext"</span><span class="punctuation">:</span> <span class="string">"Additional information for Hawa Code"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Field-Descriptions-1" class="article-heading"><a href="#Field-Descriptions-1" class="headerlink" title="Field Descriptions"></a>Field Descriptions<a class="article-anchor" href="#Field-Descriptions-1" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>decision</code></td>
+<td align="left">string | undefined</td>
+<td align="left"><code>"block"</code> to block and show reason, or <code>undefined</code> to do nothing</td>
+</tr>
+<tr>
+<td align="left"><code>reason</code></td>
+<td align="left">string</td>
+<td align="left">Explanation for the decision</td>
+</tr>
+<tr>
+<td align="left"><code>hookSpecificOutput</code></td>
+<td align="left">object</td>
+<td align="left">Hook-specific output information</td>
+</tr>
+<tr>
+<td align="left"><code>hookSpecificOutput.hookEventName</code></td>
+<td align="left">string</td>
+<td align="left">Always <code>"PostToolUse"</code></td>
+</tr>
+<tr>
+<td align="left"><code>hookSpecificOutput.additionalContext</code></td>
+<td align="left">string</td>
+<td align="left">Additional context information for Hawa Code</td>
+</tr>
+</tbody></table>
+<h2 id="Exit-Code-Behavior" class="article-heading"><a href="#Exit-Code-Behavior" class="headerlink" title="Exit Code Behavior"></a>Exit Code Behavior<a class="article-anchor" href="#Exit-Code-Behavior" aria-hidden="true"></a></h2><h3 id="Simple-Exit-Codes" class="article-heading"><a href="#Simple-Exit-Codes" class="headerlink" title="Simple Exit Codes"></a>Simple Exit Codes<a class="article-anchor" href="#Simple-Exit-Codes" aria-hidden="true"></a></h3><p>Hooks communicate status through exit codes, stdout, and stderr:</p>
+<ul>
+<li><strong>Exit code 0</strong>: Success. <code>stdout</code> is shown to the user.</li>
+<li><strong>Exit code 2</strong>: Blocking error. Shows stderr to Hawa Code (tool has run). Format is <code>[command]: {stderr}</code>.</li>
+<li><strong>Other exit codes</strong>: Non-blocking error. Shown in <code>stderr</code>.</li>
+</ul>
+<h3 id="PostToolUse-Specific-Exit-Code-2-Behavior" class="article-heading"><a href="#PostToolUse-Specific-Exit-Code-2-Behavior" class="headerlink" title="PostToolUse-Specific Exit Code 2 Behavior"></a>PostToolUse-Specific Exit Code 2 Behavior<a class="article-anchor" href="#PostToolUse-Specific-Exit-Code-2-Behavior" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Hook Event</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>PostToolUse</code></td>
+<td>Shows stderr to Hawa Code (tool has run)</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="PostToolUseFailure" class="article-heading"><a href="#PostToolUseFailure" class="headerlink" title="PostToolUseFailure"></a>PostToolUseFailure<a class="article-anchor" href="#PostToolUseFailure" aria-hidden="true"></a></h1><p><strong>PostToolUseFailure</strong> triggers when a tool execution fails. This event is triggered when a tool call throws an error or returns a failure result. Useful for logging failures, sending alerts, or providing corrective feedback to Hawa Code.</p>
+<p>Matching: Matches by tool name, supports the same matcher values as PreToolUse.</p>
+<h2 id="Input-Parameters-4" class="article-heading"><a href="#Input-Parameters-4" class="headerlink" title="Input Parameters"></a>Input Parameters<a class="article-anchor" href="#Input-Parameters-4" aria-hidden="true"></a></h2><p>PostToolUseFailure hooks receive the same <code>tool_name</code> and <code>tool_input</code> fields as PostToolUse, along with error information as top-level fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>tool_name</code></td>
+<td>Tool name</td>
+</tr>
+<tr>
+<td><code>tool_input</code></td>
+<td>Parameters sent to the tool</td>
+</tr>
+<tr>
+<td><code>tool_use_id</code></td>
+<td>Unique identifier for the tool use</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>String describing what went wrong</td>
+</tr>
+<tr>
+<td><code>is_interrupt</code></td>
+<td>Optional boolean indicating if the failure was caused by user interruption</td>
+</tr>
+</tbody></table>
+<h3 id="Input-Example" class="article-heading"><a href="#Input-Example" class="headerlink" title="Input Example"></a>Input Example<a class="article-anchor" href="#Input-Example" aria-hidden="true"></a></h3><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"session_id"</span><span class="punctuation">:</span> <span class="string">"abc123"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"transcript_path"</span><span class="punctuation">:</span> <span class="string">"/Users/.../.hcode/projects/.../00893aaf-19fa-41d2-8238-13269b9b3ca0.jsonl"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"cwd"</span><span class="punctuation">:</span> <span class="string">"/Users/..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"permission_mode"</span><span class="punctuation">:</span> <span class="string">"default"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hook_event_name"</span><span class="punctuation">:</span> <span class="string">"PostToolUseFailure"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_name"</span><span class="punctuation">:</span> <span class="string">"Bash"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_input"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"npm test"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"Run test suite"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_use_id"</span><span class="punctuation">:</span> <span class="string">"toolu_01ABC123..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"error"</span><span class="punctuation">:</span> <span class="string">"Command exited with non-zero status code 1"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"is_interrupt"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Output-Parameters-Decision-Control-1" class="article-heading"><a href="#Output-Parameters-Decision-Control-1" class="headerlink" title="Output Parameters / Decision Control"></a>Output Parameters / Decision Control<a class="article-anchor" href="#Output-Parameters-Decision-Control-1" aria-hidden="true"></a></h2><p>PostToolUseFailure hooks can provide context to Hawa Code after a tool failure. In addition to the JSON output fields available to all hooks, the following event-specific fields can be returned:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>additionalContext</code></td>
+<td>Additional context for Hawa Code to consider, provided along with the error message</td>
+</tr>
+</tbody></table>
+<h3 id="Output-Example" class="article-heading"><a href="#Output-Example" class="headerlink" title="Output Example"></a>Output Example<a class="article-anchor" href="#Output-Example" aria-hidden="true"></a></h3><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hookSpecificOutput"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"hookEventName"</span><span class="punctuation">:</span> <span class="string">"PostToolUseFailure"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"additionalContext"</span><span class="punctuation">:</span> <span class="string">"Additional information about the failure for Hawa Code"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Exit-Code-Behavior-1" class="article-heading"><a href="#Exit-Code-Behavior-1" class="headerlink" title="Exit Code Behavior"></a>Exit Code Behavior<a class="article-anchor" href="#Exit-Code-Behavior-1" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>Exit Code</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>Success, parses JSON response from stdout</td>
+</tr>
+<tr>
+<td>Non-zero</td>
+<td>Failure, hook output is ignored</td>
+</tr>
+</tbody></table>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-02-12T04:32:29.541Z" itemprop="dateModified">Last updated: 2026-02-12</time>
+                <time class="article-footer-updated" datetime="2026-02-21T15:36:41.034Z" itemprop="dateModified">Last updated: 2026-02-21</time>
                 <a href="commands.html" class="article-footer-prev" title="Commands"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
               </footer>
               
@@ -264,7 +490,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Stop"><span class="toc-text">Stop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Parameters"><span class="toc-text">Input Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-Parameters"><span class="toc-text">Output Parameters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-Format"><span class="toc-text">JSON Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exit-Code-Format"><span class="toc-text">Exit Code Format</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-Methods"><span class="toc-text">Configuration Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-Method"><span class="toc-text">Prompt Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-Method"><span class="toc-text">Command Method</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-File-Locations"><span class="toc-text">Configuration File Locations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SubagentStop"><span class="toc-text">SubagentStop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Parameters-1"><span class="toc-text">Input Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-Parameters-1"><span class="toc-text">Output Parameters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-Format-1"><span class="toc-text">JSON Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exit-Code-Format-1"><span class="toc-text">Exit Code Format</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-Methods-1"><span class="toc-text">Configuration Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-Method-1"><span class="toc-text">Prompt Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-Method-1"><span class="toc-text">Command Method</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-File-Locations-1"><span class="toc-text">Configuration File Locations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SubagentStart"><span class="toc-text">SubagentStart</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Parameters-2"><span class="toc-text">Input Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-Parameters-2"><span class="toc-text">Output Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-Methods-2"><span class="toc-text">Configuration Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-Method-2"><span class="toc-text">Prompt Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-Method-2"><span class="toc-text">Command Method</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-File-Locations-2"><span class="toc-text">Configuration File Locations</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hooks-Configuration"><span class="toc-text">Hooks Configuration</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Matcher"><span class="toc-text">Matcher</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Stop"><span class="toc-text">Stop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Parameters"><span class="toc-text">Input Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-Parameters"><span class="toc-text">Output Parameters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-Format"><span class="toc-text">JSON Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exit-Code-Format"><span class="toc-text">Exit Code Format</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-Methods"><span class="toc-text">Configuration Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-Method"><span class="toc-text">Prompt Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-Method"><span class="toc-text">Command Method</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-File-Locations"><span class="toc-text">Configuration File Locations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SubagentStop"><span class="toc-text">SubagentStop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Parameters-1"><span class="toc-text">Input Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-Parameters-1"><span class="toc-text">Output Parameters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-Format-1"><span class="toc-text">JSON Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Exit-Code-Format-1"><span class="toc-text">Exit Code Format</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-Methods-1"><span class="toc-text">Configuration Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-Method-1"><span class="toc-text">Prompt Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-Method-1"><span class="toc-text">Command Method</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-File-Locations-1"><span class="toc-text">Configuration File Locations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SubagentStart"><span class="toc-text">SubagentStart</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Parameters-2"><span class="toc-text">Input Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-Parameters-2"><span class="toc-text">Output Parameters</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration-Methods-2"><span class="toc-text">Configuration Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-Method-2"><span class="toc-text">Prompt Method</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-Method-2"><span class="toc-text">Command Method</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PostToolUse"><span class="toc-text">PostToolUse</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Common-Matchers"><span class="toc-text">Common Matchers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Basic-Structure"><span class="toc-text">Basic Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PostToolUse-in-Plugin-Hooks"><span class="toc-text">PostToolUse in Plugin Hooks</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Parameters-3"><span class="toc-text">Input Parameters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Field-Descriptions"><span class="toc-text">Field Descriptions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-Parameters-Decision-Control"><span class="toc-text">Output Parameters &#x2F; Decision Control</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Field-Descriptions-1"><span class="toc-text">Field Descriptions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exit-Code-Behavior"><span class="toc-text">Exit Code Behavior</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Simple-Exit-Codes"><span class="toc-text">Simple Exit Codes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PostToolUse-Specific-Exit-Code-2-Behavior"><span class="toc-text">PostToolUse-Specific Exit Code 2 Behavior</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PostToolUseFailure"><span class="toc-text">PostToolUseFailure</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-Parameters-4"><span class="toc-text">Input Parameters</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-Example"><span class="toc-text">Input Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-Parameters-Decision-Control-1"><span class="toc-text">Output Parameters &#x2F; Decision Control</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-Example"><span class="toc-text">Output Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Exit-Code-Behavior-1"><span class="toc-text">Exit Code Behavior</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
