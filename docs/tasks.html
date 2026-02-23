@@ -2,21 +2,21 @@
 <html lang="zh-cn">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Skill | Hawa Code</title>
+  <title>Tasks | Hawa Code</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://www.hawacode.com/docs/skill">
+  <link rel="canonical" href="https://www.hawacode.com/docs/tasks">
   <!-- Alternate links -->
   
     
       
     
       
-        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/skill">
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/tasks">
       
     
-    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/skill" />
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/tasks" />
   
   <!-- Icon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Skill通过 SKill 可以轻松扩展 Hawa Code 的能力，用户不需要开发 Agent ，就可以实现各种垂直场景的能力。 Skill 结构excel&#x2F;├── SKILL.md              # 概述和快速开始├── FORMS.md              # 表单字段映射和填充说明├── REFERENCE.md          # excel 框架工具的 API 详情">
+  <meta name="description" content="Hawa Code 任务管理已从 TodoWrite 升级为 Task 模式。 特性Task 任务模式将任务列表存储在本地文件中，支持以下功能：  跨 Subagent 协作：不同 Subagent 之间可以共享和同步任务状态 跨会话持久化：通过配置环境变量，实现会话间的任务管理 任务依赖管理：支持设置任务之间的依赖关系，确保按正确顺序执行  建议在执行大型工程项目时开启此模式，以获得更好的任务追">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Skill">
-<meta property="og:url" content="https://www.hawacode.com/docs/skill">
+<meta property="og:title" content="Tasks">
+<meta property="og:url" content="https://www.hawacode.com/docs/tasks">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Skill通过 SKill 可以轻松扩展 Hawa Code 的能力，用户不需要开发 Agent ，就可以实现各种垂直场景的能力。 Skill 结构excel&#x2F;├── SKILL.md              # 概述和快速开始├── FORMS.md              # 表单字段映射和填充说明├── REFERENCE.md          # excel 框架工具的 API 详情">
+<meta property="og:description" content="Hawa Code 任务管理已从 TodoWrite 升级为 Task 模式。 特性Task 任务模式将任务列表存储在本地文件中，支持以下功能：  跨 Subagent 协作：不同 Subagent 之间可以共享和同步任务状态 跨会话持久化：通过配置环境变量，实现会话间的任务管理 任务依赖管理：支持设置任务之间的依赖关系，确保按正确顺序执行  建议在执行大型工程项目时开启此模式，以获得更好的任务追">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2025-12-28T12:20:30.397Z">
-<meta property="article:modified_time" content="2025-12-28T12:20:30.397Z">
+<meta property="article:published_time" content="2026-02-23T14:35:11.969Z">
+<meta property="article:modified_time" content="2026-02-23T14:35:11.969Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -93,7 +93,7 @@ var _hmt = _hmt || [];
     </nav>
     <div id="lang-select-wrap">
       <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
-      <select id="lang-select" data-canonical="docs/skill.html">
+      <select id="lang-select" data-canonical="docs/tasks.html">
         
            <option value="zh-cn" selected>简体中文</option>
         
@@ -117,24 +117,29 @@ var _hmt = _hmt || [];
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">Skill</h1>
+                <h1 class="article-title" itemprop="name">Tasks</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h1 id="Skill" class="article-heading"><a href="#Skill" class="headerlink" title="Skill"></a>Skill<a class="article-anchor" href="#Skill" aria-hidden="true"></a></h1><p>通过 SKill 可以轻松扩展 Hawa Code 的能力，用户不需要开发 Agent ，就可以实现各种垂直场景的能力。</p>
-<h1 id="Skill-结构" class="article-heading"><a href="#Skill-结构" class="headerlink" title="Skill 结构"></a>Skill 结构<a class="article-anchor" href="#Skill-结构" aria-hidden="true"></a></h1><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">excel/</span><br><span class="line">├── SKILL.md              # 概述和快速开始</span><br><span class="line">├── FORMS.md              # 表单字段映射和填充说明</span><br><span class="line">├── REFERENCE.md          # excel 框架工具的 API 详情</span><br><span class="line">└── scripts/</span><br><span class="line">    ├── fill_form.py      # 填充表单字段的工具</span><br><span class="line">    └── validate.py       # 检查必填字段</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="Skill-示例" class="article-heading"><a href="#Skill-示例" class="headerlink" title="Skill 示例"></a>Skill 示例<a class="article-anchor" href="#Skill-示例" aria-hidden="true"></a></h1><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">name: Excel</span><br><span class="line">description: 生成 Excel 文档 </span><br><span class="line">---</span><br><span class="line">生成 Excel 详细描述，具体的步骤和执行的代码等信息信息</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="Skill-安装" class="article-heading"><a href="#Skill-安装" class="headerlink" title="Skill 安装"></a>Skill 安装<a class="article-anchor" href="#Skill-安装" aria-hidden="true"></a></h1><p>复制 Skill 到以下安装目录，重启 Hawa Code 就可以生效</p>
+                <html><head></head><body><p>Hawa Code 任务管理已从 TodoWrite 升级为 Task 模式。</p>
+<h2 id="特性" class="article-heading"><a href="#特性" class="headerlink" title="特性"></a>特性<a class="article-anchor" href="#特性" aria-hidden="true"></a></h2><p>Task 任务模式将任务列表存储在本地文件中，支持以下功能：</p>
 <ul>
-<li>~/.hcode/skill   (此目录为用户配置，所有项目都会生效)</li>
-<li>{项目目录}/.hcode/skill  (此目录为项目配置，只会针对当前项目生效)</li>
+<li><strong>跨 Subagent 协作</strong>：不同 Subagent 之间可以共享和同步任务状态</li>
+<li><strong>跨会话持久化</strong>：通过配置环境变量，实现会话间的任务管理</li>
+<li><strong>任务依赖管理</strong>：支持设置任务之间的依赖关系，确保按正确顺序执行</li>
 </ul>
+<p>建议在执行大型工程项目时开启此模式，以获得更好的任务追踪和管理体验。</p>
+<h2 id="配置" class="article-heading"><a href="#配置" class="headerlink" title="配置"></a>配置<a class="article-anchor" href="#配置" aria-hidden="true"></a></h2><h3 id="开启-Task-任务模式" class="article-heading"><a href="#开启-Task-任务模式" class="headerlink" title="开启 Task 任务模式"></a>开启 Task 任务模式<a class="article-anchor" href="#开启-Task-任务模式" aria-hidden="true"></a></h3><p>设置环境变量：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">HAWA_CODE_ENABLE_TASKS=<span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="启用跨会话任务管理" class="article-heading"><a href="#启用跨会话任务管理" class="headerlink" title="启用跨会话任务管理"></a>启用跨会话任务管理<a class="article-anchor" href="#启用跨会话任务管理" aria-hidden="true"></a></h3><p>设置任务列表 ID（任意字符串）：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">HAWA_CODE_TASK_LIST_ID=your-task-list-id</span><br></pre></td></tr></tbody></table></figure>
+
+<p>配置后，任务列表将在不同会话间保持同步。</p>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2025-12-28T12:20:30.397Z" itemprop="dateModified">上次更新：2025-12-28</time>
-                <a href="model.html" class="article-footer-prev" title="模型"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="tool-lazy-loading.html" class="article-footer-next" title="Tool懒加载"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+                <time class="article-footer-updated" datetime="2026-02-23T14:35:11.969Z" itemprop="dateModified">上次更新：2026-02-23</time>
+                <a href="hooks.html" class="article-footer-prev" title="Hooks"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
               </footer>
               
             </div>
@@ -142,7 +147,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Skill"><span class="toc-text">Skill</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Skill-%E7%BB%93%E6%9E%84"><span class="toc-text">Skill 结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Skill-%E7%A4%BA%E4%BE%8B"><span class="toc-text">Skill 示例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Skill-%E5%AE%89%E8%A3%85"><span class="toc-text">Skill 安装</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E5%90%AF-Task-%E4%BB%BB%E5%8A%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">开启 Task 任务模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E8%B7%A8%E4%BC%9A%E8%AF%9D%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-text">启用跨会话任务管理</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
@@ -150,7 +155,7 @@ var _hmt = _hmt || [];
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="model.html" class="sidebar-link">模型</a><a href="skill.html" class="sidebar-link current">Skill</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><a href="tools.html" class="sidebar-link">工具</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="ide.html" class="sidebar-link">IDE</a><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="commands.html" class="sidebar-link">命令</a><a href="hooks.html" class="sidebar-link">Hooks</a><a href="tasks.html" class="sidebar-link">Tasks</a>
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="model.html" class="sidebar-link">模型</a><a href="skill.html" class="sidebar-link">Skill</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><a href="tools.html" class="sidebar-link">工具</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="ide.html" class="sidebar-link">IDE</a><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="commands.html" class="sidebar-link">命令</a><a href="hooks.html" class="sidebar-link">Hooks</a><a href="tasks.html" class="sidebar-link current">Tasks</a>
   </div>
 </aside>
     </div>
@@ -179,12 +184,12 @@ var _hmt = _hmt || [];
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="model.html" class="mobile-nav-link">模型</a><a href="skill.html" class="mobile-nav-link current">Skill</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="ide.html" class="mobile-nav-link">IDE</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="hooks.html" class="mobile-nav-link">Hooks</a><a href="tasks.html" class="mobile-nav-link">Tasks</a>
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="model.html" class="mobile-nav-link">模型</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="ide.html" class="mobile-nav-link">IDE</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="hooks.html" class="mobile-nav-link">Hooks</a><a href="tasks.html" class="mobile-nav-link current">Tasks</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
     <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
-    <select id="mobile-lang-select" data-canonical="docs/skill.html">
+    <select id="mobile-lang-select" data-canonical="docs/tasks.html">
       
         <option value="zh-cn" selected>简体中文</option>
       
