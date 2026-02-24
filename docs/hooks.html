@@ -54,8 +54,8 @@
 <meta property="og:description" content="Hooks 配置 项目级别：{项目路径}&#x2F;.hcode&#x2F;settings.json 用户级别：~&#x2F;.hcode&#x2F;settings.json  Matcher当前 Hook 支持 Matcher，用于匹配工具名称或 Subagent 名称。匹配规则如下：  单一匹配：匹配单个属性，例如 &quot;Edit&quot;。 多个匹配：使用竖线 | 分隔多个属性，例如 &quot;Edit|Write&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-02-21T15:35:24.157Z">
-<meta property="article:modified_time" content="2026-02-21T15:35:24.157Z">
+<meta property="article:published_time" content="2026-02-24T05:28:18.768Z">
+<meta property="article:modified_time" content="2026-02-24T05:28:18.768Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -466,10 +466,163 @@ var _hmt = _hmt || [];
 <td>失败，忽略 hook 输出</td>
 </tr>
 </tbody></table>
+<h1 id="SessionStartHook" class="article-heading"><a href="#SessionStartHook" class="headerlink" title="SessionStartHook"></a>SessionStartHook<a class="article-anchor" href="#SessionStartHook" aria-hidden="true"></a></h1><p><strong>SessionStart</strong> 在 Hawa Code 启动新会话或恢复现有会话时触发。适用于加载开发上下文（如待处理的问题或代码库的最近更改），或设置环境变量。</p>
+<blockquote>
+<p><strong>注意</strong>：对于不需要脚本的静态上下文，建议使用 HAWA.md。由于 SessionStart 在每个会话都会运行，请确保 hooks 执行快速高效。</p>
+</blockquote>
+<hr>
+<h2 id="Matcher-支持" class="article-heading"><a href="#Matcher-支持" class="headerlink" title="Matcher 支持"></a>Matcher 支持<a class="article-anchor" href="#Matcher-支持" aria-hidden="true"></a></h2><p>SessionStart 支持 matcher，用于匹配不同的会话启动方式：</p>
+<table>
+<thead>
+<tr>
+<th>Matcher</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startup</code></td>
+<td>新会话启动时</td>
+</tr>
+<tr>
+<td><code>resume</code></td>
+<td>使用 <code>--resume</code>、<code>--continue</code> 或 <code>/resume</code> 恢复会话时</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>执行 <code>/clear</code> 后</td>
+</tr>
+<tr>
+<td><code>compact</code></td>
+<td>自动或手动压缩对话后</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="输入参数-2" class="article-heading"><a href="#输入参数-2" class="headerlink" title="输入参数"></a>输入参数<a class="article-anchor" href="#输入参数-2" aria-hidden="true"></a></h2><p>除通用输入字段外，SessionStart hooks 还接收以下字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>source</code></td>
+<td>会话启动方式：<code>"startup"</code>（新会话）、<code>"resume"</code>（恢复会话）、<code>"clear"</code>（<code>/clear</code> 后）、<code>"compact"</code>（压缩后）</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>当前使用的模型标识符</td>
+</tr>
+<tr>
+<td><code>agent_type</code></td>
+<td>可选，Agent 类型</td>
+</tr>
+</tbody></table>
+<p><strong>输入示例：</strong></p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"session_id"</span><span class="punctuation">:</span> <span class="string">"abc123"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"transcript_path"</span><span class="punctuation">:</span> <span class="string">"/Users/.../.hcode/projects/.../dakabxi.jsonl"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"cwd"</span><span class="punctuation">:</span> <span class="string">"/Users/..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"permission_mode"</span><span class="punctuation">:</span> <span class="string">"default"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hook_event_name"</span><span class="punctuation">:</span> <span class="string">"SessionStart"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"source"</span><span class="punctuation">:</span> <span class="string">"startup"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"model"</span><span class="punctuation">:</span> <span class="string">"kimi-k2.5"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="输出参数" class="article-heading"><a href="#输出参数" class="headerlink" title="输出参数"></a>输出参数<a class="article-anchor" href="#输出参数" aria-hidden="true"></a></h2><p>Hook 脚本输出到 stdout 的内容将作为上下文添加到 Claude。除通用 JSON 输出字段外，还可返回以下专用字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>additionalContext</code></td>
+<td>要添加到 Claude 上下文的字符串，多个 hooks 的值会拼接在一起</td>
+</tr>
+</tbody></table>
+<p><strong>JSON 输出示例：</strong></p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hookSpecificOutput"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"hookEventName"</span><span class="punctuation">:</span> <span class="string">"SessionStart"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"additionalContext"</span><span class="punctuation">:</span> <span class="string">"My additional context here"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="配置" class="article-heading"><a href="#配置" class="headerlink" title="配置"></a>配置<a class="article-anchor" href="#配置" aria-hidden="true"></a></h2><h3 id="Hook-处理器字段" class="article-heading"><a href="#Hook-处理器字段" class="headerlink" title="Hook 处理器字段"></a>Hook 处理器字段<a class="article-anchor" href="#Hook-处理器字段" aria-hidden="true"></a></h3><p><strong>通用字段（所有 hook 类型）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>必需</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>type</code></td>
+<td>是</td>
+<td>Hook 类型：<code>"command"</code>、<code>"prompt"</code> 或 <code>"agent"</code></td>
+</tr>
+<tr>
+<td><code>timeout</code></td>
+<td>否</td>
+<td>超时时间（秒）。默认值：command 为 600，prompt 为 30，agent 为 60</td>
+</tr>
+<tr>
+<td><code>statusMessage</code></td>
+<td>否</td>
+<td>Hook 运行时显示的自定义 spinner 消息</td>
+</tr>
+</tbody></table>
+<p><strong>Command Hook 专用字段</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>必需</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>command</code></td>
+<td>是</td>
+<td>要执行的 shell 命令</td>
+</tr>
+<tr>
+<td><code>async</code></td>
+<td>否</td>
+<td>设为 <code>true</code> 时在后台运行，不阻塞会话启动</td>
+</tr>
+</tbody></table>
+<p><strong>Prompt Hook 专用字段</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>必需</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>prompt</code></td>
+<td>是</td>
+<td>发送给模型的提示文本，使用 <code>$ARGUMENTS</code> 作为 hook 输入 JSON 的占位符</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td>否</td>
+<td>用于评估的模型，默认为快速模型</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="配置示例" class="article-heading"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例<a class="article-anchor" href="#配置示例" aria-hidden="true"></a></h3><p><strong>1. Command Hook（命令类型）</strong></p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"SessionStart"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"matcher"</span><span class="punctuation">:</span> <span class="string">"startup"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"command"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"node ./scripts/test.js"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"timeout"</span><span class="punctuation">:</span> <span class="number">600</span></span><br><span class="line">          <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>脚本示例</strong>（<code>./scripts/test.js</code>）：</p>
+<figure class="highlight javascript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">testAddContext</span>(<span class="params"></span>) {</span><br><span class="line">  <span class="keyword">const</span> result = {</span><br><span class="line">    <span class="string">"hookSpecificOutput"</span>: {</span><br><span class="line">      <span class="string">"hookEventName"</span>: <span class="string">"SessionStart"</span>,</span><br><span class="line">      <span class="string">"additionalContext"</span>: <span class="string">"会话已启动，当前项目使用 Node.js 技术栈，主要目录包括 src、tests 和 docs。"</span></span><br><span class="line">    }</span><br><span class="line">  };</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(result));</span><br><span class="line">}</span><br><span class="line"><span class="title function_">testAddContext</span>();</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>2. Prompt Hook（提示类型）</strong></p>
+<p>Prompt Hook 将提示发送给模型进行单轮评估，模型返回的 JSON 可作为决策依据，适用于需要 LLM 判断的场景。</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"SessionStart"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"matcher"</span><span class="punctuation">:</span> <span class="string">"startup"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"prompt"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"prompt"</span><span class="punctuation">:</span> <span class="string">"Analyze the current project structure and provide a brief summary of the main technologies used. Input: $ARGUMENTS"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"timeout"</span><span class="punctuation">:</span> <span class="number">30</span></span><br><span class="line">          <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="后台运行-Hooks" class="article-heading"><a href="#后台运行-Hooks" class="headerlink" title="后台运行 Hooks"></a>后台运行 Hooks<a class="article-anchor" href="#后台运行-Hooks" aria-hidden="true"></a></h2><p>Command Hook 支持 <code>async</code> 字段，设为 <code>true</code> 时 hook 将在后台运行，不会阻塞会话启动。</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"SessionStart"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"matcher"</span><span class="punctuation">:</span> <span class="string">"startup"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">          <span class="punctuation">{</span></span><br><span class="line">            <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"command"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"./scripts/background-task.sh"</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">"async"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">          <span class="punctuation">}</span></span><br><span class="line">        <span class="punctuation">]</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-02-21T15:35:24.157Z" itemprop="dateModified">上次更新：2026-02-21</time>
+                <time class="article-footer-updated" datetime="2026-02-24T05:28:18.768Z" itemprop="dateModified">上次更新：2026-02-24</time>
                 <a href="commands.html" class="article-footer-prev" title="命令"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="tasks.html" class="article-footer-next" title="Tasks"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -478,7 +631,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hooks-%E9%85%8D%E7%BD%AE"><span class="toc-text">Hooks 配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Matcher"><span class="toc-text">Matcher</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Stop"><span class="toc-text">Stop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E5%8F%82"><span class="toc-text">入参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%82"><span class="toc-text">出参</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-%E6%A0%BC%E5%BC%8F"><span class="toc-text">JSON 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%A0%81%E6%A0%BC%E5%BC%8F"><span class="toc-text">返回码格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-%E6%96%B9%E5%BC%8F"><span class="toc-text">Prompt 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-%E6%96%B9%E5%BC%8F"><span class="toc-text">Command 方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SubagentStop"><span class="toc-text">SubagentStop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E5%8F%82-1"><span class="toc-text">入参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%82-1"><span class="toc-text">出参</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">JSON 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%A0%81%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">返回码格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F-1"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-%E6%96%B9%E5%BC%8F-1"><span class="toc-text">Prompt 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-%E6%96%B9%E5%BC%8F-1"><span class="toc-text">Command 方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SubagentStart"><span class="toc-text">SubagentStart</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E5%8F%82-2"><span class="toc-text">入参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%82-2"><span class="toc-text">出参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F-2"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-%E6%96%B9%E5%BC%8F-2"><span class="toc-text">Prompt 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-%E6%96%B9%E5%BC%8F-2"><span class="toc-text">Command 方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PostToolUse"><span class="toc-text">PostToolUse</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%8C%B9%E9%85%8D%E5%99%A8"><span class="toc-text">常见匹配器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F-3"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6-Hooks-%E4%B8%AD%E7%9A%84-PostToolUse"><span class="toc-text">插件 Hooks 中的 PostToolUse</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-text">输入参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="toc-text">字段说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%8F%82%E6%95%B0-%E5%86%B3%E7%AD%96%E6%8E%A7%E5%88%B6"><span class="toc-text">输出参数 &#x2F; 决策控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-1"><span class="toc-text">字段说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%80%E5%87%BA%E7%A0%81%E8%A1%8C%E4%B8%BA"><span class="toc-text">退出码行为</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%80%80%E5%87%BA%E7%A0%81"><span class="toc-text">简单退出码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PostToolUse-%E7%89%B9%E5%AE%9A%E7%9A%84%E9%80%80%E5%87%BA%E7%A0%81-2-%E8%A1%8C%E4%B8%BA"><span class="toc-text">PostToolUse 特定的退出码 2 行为</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PostToolUseFailure"><span class="toc-text">PostToolUseFailure</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0-1"><span class="toc-text">输入参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%A4%BA%E4%BE%8B"><span class="toc-text">输入示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%8F%82%E6%95%B0-%E5%86%B3%E7%AD%96%E6%8E%A7%E5%88%B6-1"><span class="toc-text">输出参数 &#x2F; 决策控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B"><span class="toc-text">输出示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%80%E5%87%BA%E7%A0%81%E8%A1%8C%E4%B8%BA-1"><span class="toc-text">退出码行为</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hooks-%E9%85%8D%E7%BD%AE"><span class="toc-text">Hooks 配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Matcher"><span class="toc-text">Matcher</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Stop"><span class="toc-text">Stop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E5%8F%82"><span class="toc-text">入参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%82"><span class="toc-text">出参</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-%E6%A0%BC%E5%BC%8F"><span class="toc-text">JSON 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%A0%81%E6%A0%BC%E5%BC%8F"><span class="toc-text">返回码格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-%E6%96%B9%E5%BC%8F"><span class="toc-text">Prompt 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-%E6%96%B9%E5%BC%8F"><span class="toc-text">Command 方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SubagentStop"><span class="toc-text">SubagentStop</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E5%8F%82-1"><span class="toc-text">入参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%82-1"><span class="toc-text">出参</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">JSON 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%A0%81%E6%A0%BC%E5%BC%8F-1"><span class="toc-text">返回码格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F-1"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-%E6%96%B9%E5%BC%8F-1"><span class="toc-text">Prompt 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-%E6%96%B9%E5%BC%8F-1"><span class="toc-text">Command 方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SubagentStart"><span class="toc-text">SubagentStart</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E5%8F%82-2"><span class="toc-text">入参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E5%8F%82-2"><span class="toc-text">出参</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F-2"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prompt-%E6%96%B9%E5%BC%8F-2"><span class="toc-text">Prompt 方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Command-%E6%96%B9%E5%BC%8F-2"><span class="toc-text">Command 方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PostToolUse"><span class="toc-text">PostToolUse</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%8C%B9%E9%85%8D%E5%99%A8"><span class="toc-text">常见匹配器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F-3"><span class="toc-text">配置方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6-Hooks-%E4%B8%AD%E7%9A%84-PostToolUse"><span class="toc-text">插件 Hooks 中的 PostToolUse</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-text">输入参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="toc-text">字段说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%8F%82%E6%95%B0-%E5%86%B3%E7%AD%96%E6%8E%A7%E5%88%B6"><span class="toc-text">输出参数 &#x2F; 决策控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E-1"><span class="toc-text">字段说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%80%E5%87%BA%E7%A0%81%E8%A1%8C%E4%B8%BA"><span class="toc-text">退出码行为</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%80%80%E5%87%BA%E7%A0%81"><span class="toc-text">简单退出码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PostToolUse-%E7%89%B9%E5%AE%9A%E7%9A%84%E9%80%80%E5%87%BA%E7%A0%81-2-%E8%A1%8C%E4%B8%BA"><span class="toc-text">PostToolUse 特定的退出码 2 行为</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PostToolUseFailure"><span class="toc-text">PostToolUseFailure</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0-1"><span class="toc-text">输入参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%A4%BA%E4%BE%8B"><span class="toc-text">输入示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%8F%82%E6%95%B0-%E5%86%B3%E7%AD%96%E6%8E%A7%E5%88%B6-1"><span class="toc-text">输出参数 &#x2F; 决策控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B"><span class="toc-text">输出示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%80%E5%87%BA%E7%A0%81%E8%A1%8C%E4%B8%BA-1"><span class="toc-text">退出码行为</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SessionStartHook"><span class="toc-text">SessionStartHook</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Matcher-%E6%94%AF%E6%8C%81"><span class="toc-text">Matcher 支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0-2"><span class="toc-text">输入参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%8F%82%E6%95%B0"><span class="toc-text">输出参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hook-%E5%A4%84%E7%90%86%E5%99%A8%E5%AD%97%E6%AE%B5"><span class="toc-text">Hook 处理器字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B"><span class="toc-text">配置示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C-Hooks"><span class="toc-text">后台运行 Hooks</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
