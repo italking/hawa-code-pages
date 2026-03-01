@@ -2,21 +2,21 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <title>Subagent | Hawa Code</title>
+  <title>Agent Team | Hawa Code</title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://www.hawacode.com/en/docs/subagent">
+  <link rel="canonical" href="https://www.hawacode.com/en/docs/agent-team">
   <!-- Alternate links -->
   
     
       
-        <link rel="alternate" hreflang="zh-cn" href="https://www.hawacode.com/docs/subagent">
+        <link rel="alternate" hreflang="zh-cn" href="https://www.hawacode.com/docs/agent-team">
       
     
       
     
-    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/subagent" />
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/agent-team" />
   
   <!-- Icon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Subagent Usage name : Subagent name description: Subagent description, Hawa Code selects appropriate Subagents based on this description tools: List of tools available to the current Subagent model: M">
+  <meta name="description" content="Agent teams let you coordinate multiple Claude Code instances working together. One session acts as the team lead, coordinating work, assigning tasks, and synthesizing results. Teammates work independ">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Subagent">
-<meta property="og:url" content="https://www.hawacode.com/en/docs/subagent">
+<meta property="og:title" content="Agent Team">
+<meta property="og:url" content="https://www.hawacode.com/en/docs/agent-team">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Subagent Usage name : Subagent name description: Subagent description, Hawa Code selects appropriate Subagents based on this description tools: List of tools available to the current Subagent model: M">
+<meta property="og:description" content="Agent teams let you coordinate multiple Claude Code instances working together. One session acts as the team lead, coordinating work, assigning tasks, and synthesizing results. Teammates work independ">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-01-23T13:48:49.051Z">
-<meta property="article:modified_time" content="2026-01-23T13:48:49.051Z">
+<meta property="article:published_time" content="2026-03-01T06:14:31.797Z">
+<meta property="article:modified_time" content="2026-03-01T06:14:31.797Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -93,7 +93,7 @@ var _hmt = _hmt || [];
     </nav>
     <div id="lang-select-wrap">
       <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
-      <select id="lang-select" data-canonical="docs/subagent.html">
+      <select id="lang-select" data-canonical="docs/agent-team.html">
         
            <option value="zh-cn">简体中文</option>
         
@@ -117,25 +117,31 @@ var _hmt = _hmt || [];
           <div class="article">
             <div class="inner">
               <header class="article-header">
-                <h1 class="article-title" itemprop="name">Subagent</h1>
+                <h1 class="article-title" itemprop="name">Agent Team</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h1 id="Subagent-Usage" class="article-heading"><a href="#Subagent-Usage" class="headerlink" title="Subagent Usage"></a>Subagent Usage<a class="article-anchor" href="#Subagent-Usage" aria-hidden="true"></a></h1><ul>
-<li>name : Subagent name</li>
-<li>description: Subagent description, Hawa Code selects appropriate Subagents based on this description</li>
-<li>tools: List of tools available to the current Subagent</li>
-<li>model: Model used by the Subagent, for simple tasks smaller models should be used to reduce costs.</li>
+                <html><head></head><body><p>Agent teams let you coordinate multiple Claude Code instances working together. One session acts as the team lead, coordinating work, assigning tasks, and synthesizing results. Teammates work independently, each in its own context window, and communicate directly with each other.</p>
+<p>Unlike subagents, which run within a single session and can only report back to the main agent, you can also interact with individual teammates directly without going through the lead.</p>
+<p>This page covers:</p>
+<ul>
+<li>When to use agent teams, including best use cases and how they compare with subagents</li>
+<li>Starting a team</li>
+<li>Controlling teammates, including display modes, task assignment, and delegation</li>
+<li>Best practices for parallel work</li>
 </ul>
-<p>Below is a Subagent example</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">name: translator</span><br><span class="line">description: Translation expert for code comments, documentation, and text. Use when translation between languages is needed.</span><br><span class="line">tools: Read, Write, Edit, Glob, Grep</span><br><span class="line">model: qwen3-coder-plus</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">You are a professional translator specializing in technical documentation and code comments.</span><br></pre></td></tr></tbody></table></figure>
-
-<h1 id="Asynchronous-Subagent" class="article-heading"><a href="#Asynchronous-Subagent" class="headerlink" title="Asynchronous Subagent"></a>Asynchronous Subagent<a class="article-anchor" href="#Asynchronous-Subagent" aria-hidden="true"></a></h1><p>Hawa Code supports asynchronous execution. For complex tasks, Hawa Code will execute them in the background without blocking other work. Once the task is completed, the system will use tools to retrieve the task results.</p>
-<h1 id="Subagent-Execution-Recovery" class="article-heading"><a href="#Subagent-Execution-Recovery" class="headerlink" title="Subagent Execution Recovery"></a>Subagent Execution Recovery<a class="article-anchor" href="#Subagent-Execution-Recovery" aria-hidden="true"></a></h1><p>Hawa Code can retrieve the message records of a historical completed task and re-execute that task.</p>
+<h2 id="When-to-use-agent-teams" class="article-heading"><a href="#When-to-use-agent-teams" class="headerlink" title="When to use agent teams"></a>When to use agent teams<a class="article-anchor" href="#When-to-use-agent-teams" aria-hidden="true"></a></h2><p>Agent teams are most effective for tasks where parallel exploration adds real value. See use case examples for full scenarios. The strongest use cases are:</p>
+<ul>
+<li><strong>Research and review</strong>: multiple teammates can investigate different aspects of a problem simultaneously, then share and challenge each other’s findings</li>
+<li><strong>New modules or features</strong>: teammates can each own a separate piece without stepping on each other</li>
+<li><strong>Debugging with competing hypotheses</strong>: teammates test different theories in parallel and converge on the answer faster</li>
+<li><strong>Cross-layer coordination</strong>: changes that span frontend, backend, and tests, each owned by a different teammate</li>
+</ul>
+<p>Agent teams add coordination overhead and use significantly more tokens than a single session. They work best when teammates can operate independently. For sequential tasks, same-file edits, or work with many dependencies, a single session or subagents are more effective.</p>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-01-23T13:48:49.051Z" itemprop="dateModified">Last updated: 2026-01-23</time>
-                <a href="mcp.html" class="article-footer-prev" title="MCP"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="slash-commands.html" class="article-footer-next" title="Slash Commands"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+                <time class="article-footer-updated" datetime="2026-03-01T06:14:31.797Z" itemprop="dateModified">Last updated: 2026-03-01</time>
+                <a href="hooks.html" class="article-footer-prev" title="Hooks"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="tasks.html" class="article-footer-next" title="Tasks"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
             </div>
@@ -143,7 +149,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Subagent-Usage"><span class="toc-text">Subagent Usage</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Asynchronous-Subagent"><span class="toc-text">Asynchronous Subagent</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Subagent-Execution-Recovery"><span class="toc-text">Subagent Execution Recovery</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#When-to-use-agent-teams"><span class="toc-text">When to use agent teams</span></a></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
@@ -151,7 +157,7 @@ var _hmt = _hmt || [];
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="model.html" class="sidebar-link">Models</a><a href="skill.html" class="sidebar-link">Skill</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool Lazy Loading</a><a href="tools.html" class="sidebar-link">Tools</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="subagent.html" class="sidebar-link current">Subagent</a><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="ide.html" class="sidebar-link">IDE</a><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="commands.html" class="sidebar-link">Commands</a><a href="hooks.html" class="sidebar-link">Hooks</a><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a>
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="model.html" class="sidebar-link">Models</a><a href="skill.html" class="sidebar-link">Skill</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool Lazy Loading</a><a href="tools.html" class="sidebar-link">Tools</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="ide.html" class="sidebar-link">IDE</a><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="commands.html" class="sidebar-link">Commands</a><a href="hooks.html" class="sidebar-link">Hooks</a><a href="agent-team.html" class="sidebar-link current">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a>
   </div>
 </aside>
     </div>
@@ -180,12 +186,12 @@ var _hmt = _hmt || [];
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="model.html" class="mobile-nav-link">Models</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool Lazy Loading</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="subagent.html" class="mobile-nav-link current">Subagent</a><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="ide.html" class="mobile-nav-link">IDE</a><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="commands.html" class="mobile-nav-link">Commands</a><a href="hooks.html" class="mobile-nav-link">Hooks</a><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a>
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="model.html" class="mobile-nav-link">Models</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool Lazy Loading</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="ide.html" class="mobile-nav-link">IDE</a><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="commands.html" class="mobile-nav-link">Commands</a><a href="hooks.html" class="mobile-nav-link">Hooks</a><a href="agent-team.html" class="mobile-nav-link current">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
     <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
-    <select id="mobile-lang-select" data-canonical="docs/subagent.html">
+    <select id="mobile-lang-select" data-canonical="docs/agent-team.html">
       
         <option value="zh-cn">简体中文</option>
       
