@@ -54,8 +54,8 @@
 <meta property="og:description" content="Agent Team 让你可以协调多个 Hawa Code 实例协同工作。一个会话作为团队负责人，协调工作、分配任务并综合结果。团队成员独立工作，每个都有自己的上下文窗口，并可以直接相互通信。 与 subagent 不同，subagent 在单个会话中运行且只能向主 agent 报告，而你可以直接与单个团队成员交互，无需通过负责人。 何时使用 Agent TeamAgent Team 在并行探索能">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-03-01T06:14:03.487Z">
-<meta property="article:modified_time" content="2026-03-01T06:14:03.487Z">
+<meta property="article:published_time" content="2026-03-05T12:38:09.527Z">
+<meta property="article:modified_time" content="2026-03-05T12:38:09.527Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -133,10 +133,46 @@ var _hmt = _hmt || [];
 <h1 id="启用方式" class="article-heading"><a href="#启用方式" class="headerlink" title="启用方式"></a>启用方式<a class="article-anchor" href="#启用方式" aria-hidden="true"></a></h1><p>设置以下环境变量启用 Agent Team 功能</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">"HAWA_CODE_EXPERIMENTAL_AGENT_TEAMS":"1",</span><br></pre></td></tr></tbody></table></figure>
 
+<h1 id="和-Subagent-区别" class="article-heading"><a href="#和-Subagent-区别" class="headerlink" title="和 Subagent 区别"></a>和 Subagent 区别<a class="article-anchor" href="#和-Subagent-区别" aria-hidden="true"></a></h1><p><img src="/img/agent-team.png" alt="Agent Team"></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Subagents</th>
+<th>Agent teams</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>上下文</td>
+<td>独立的上下文窗口；结果返回给调用者</td>
+<td>独立的上下文窗口；完全独立</td>
+</tr>
+<tr>
+<td>通信</td>
+<td>仅向主 agent 报告结果</td>
+<td>团队成员直接相互通信</td>
+</tr>
+<tr>
+<td>协调</td>
+<td>主 agent 管理所有工作</td>
+<td>共享任务列表，自主协调</td>
+</tr>
+<tr>
+<td>适用场景</td>
+<td>只需关注结果的有针对性任务</td>
+<td>需要讨论和协作的复杂工作</td>
+</tr>
+<tr>
+<td>Token 成本</td>
+<td>较低：结果汇总到主上下文</td>
+<td>较高：每个团队成员都是独立的 Hawa code 实例</td>
+</tr>
+</tbody></table>
+<p>当你需要快速、有针对性且能汇报结果的 worker 时，使用 subagent。当团队成员需要分享发现、相互质疑并自主协调时，使用 agent team。</p>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-03-01T06:14:03.487Z" itemprop="dateModified">上次更新：2026-03-01</time>
+                <time class="article-footer-updated" datetime="2026-03-05T12:38:09.527Z" itemprop="dateModified">上次更新：2026-03-05</time>
                 <a href="hooks.html" class="article-footer-prev" title="Hooks"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="tasks.html" class="article-footer-next" title="Tasks"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -145,7 +181,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8-Agent-Team"><span class="toc-text">何时使用 Agent Team</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">启用方式</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%95%E6%97%B6%E4%BD%BF%E7%94%A8-Agent-Team"><span class="toc-text">何时使用 Agent Team</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">启用方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%92%8C-Subagent-%E5%8C%BA%E5%88%AB"><span class="toc-text">和 Subagent 区别</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
