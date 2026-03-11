@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>定时任务 | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/docs/scheduled">
+  <!-- Alternate links -->
+  
+    
+      
+    
+      
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/scheduled">
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/scheduled" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="按计划运行提示词使用 &#x2F;loop 和 cron 调度工具在 Hawa Code 会话中定时运行提示词、轮询状态或设置一次性提醒。 定时任务让 Hawa Code 自动按间隔重新运行提示词。使用它们来轮询部署、监控 PR、检查长时间运行的构建，或提醒自己稍后做某事。任务是会话范围的：它们存在于当前的 Hawa Code 进程中，退出后就会消失。 使用 &#x2F;loop 定时执行提示词&#x2F;loop">
+<meta property="og:type" content="website">
+<meta property="og:title" content="定时任务">
+<meta property="og:url" content="https://www.hawacode.com/docs/scheduled">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="按计划运行提示词使用 &#x2F;loop 和 cron 调度工具在 Hawa Code 会话中定时运行提示词、轮询状态或设置一次性提醒。 定时任务让 Hawa Code 自动按间隔重新运行提示词。使用它们来轮询部署、监控 PR、检查长时间运行的构建，或提醒自己稍后做某事。任务是会话范围的：它们存在于当前的 Hawa Code 进程中，退出后就会消失。 使用 &#x2F;loop 定时执行提示词&#x2F;loop">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-03-11T12:37:52.890Z">
+<meta property="article:modified_time" content="2026-03-11T12:37:52.890Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/scheduled.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">定时任务</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><h1 id="按计划运行提示词" class="article-heading"><a href="#按计划运行提示词" class="headerlink" title="按计划运行提示词"></a>按计划运行提示词<a class="article-anchor" href="#按计划运行提示词" aria-hidden="true"></a></h1><p>使用 <code>/loop</code> 和 cron 调度工具在 Hawa Code 会话中定时运行提示词、轮询状态或设置一次性提醒。</p>
+<p>定时任务让 Hawa Code 自动按间隔重新运行提示词。使用它们来轮询部署、监控 PR、检查长时间运行的构建，或提醒自己稍后做某事。任务是会话范围的：它们存在于当前的 Hawa Code 进程中，退出后就会消失。</p>
+<h2 id="使用-loop-定时执行提示词" class="article-heading"><a href="#使用-loop-定时执行提示词" class="headerlink" title="使用 /loop 定时执行提示词"></a>使用 /loop 定时执行提示词<a class="article-anchor" href="#使用-loop-定时执行提示词" aria-hidden="true"></a></h2><p><code>/loop</code> 是安排重复提示词的最快方式。传入可选的间隔和提示词，Hawa Code 就会设置一个 cron 作业，在会话保持打开时在后台触发。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/loop 5m 检查部署是否完成并告诉我发生了什么</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Hawa Code 会解析间隔，将其转换为 cron 表达式，安排作业，并确认执行频率和作业 ID。</p>
+<h3 id="时间间隔配置" class="article-heading"><a href="#时间间隔配置" class="headerlink" title="时间间隔配置"></a>时间间隔配置<a class="article-anchor" href="#时间间隔配置" aria-hidden="true"></a></h3><p>间隔是可选的。你可以将其放在前面、后面，或完全省略。</p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>示例</th>
+<th>解析后的间隔</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>前置标记</td>
+<td><code>/loop 30m 检查构建</code></td>
+<td>每 30 分钟</td>
+</tr>
+<tr>
+<td>后置 <code>every</code> 从句</td>
+<td><code>/loop 检查构建 every 2 hours</code></td>
+<td>每 2 小时</td>
+</tr>
+<tr>
+<td>无间隔</td>
+<td><code>/loop 检查构建</code></td>
+<td>默认为每 10 分钟</td>
+</tr>
+</tbody></table>
+<p>支持的单位有 <code>s</code> 表示秒、<code>m</code> 表示分钟、<code>h</code> 表示小时、<code>d</code> 表示天。由于 cron 的粒度为一分钟，秒数会向上取整到最接近的分钟。不能整除单位的间隔（如 <code>7m</code> 或 <code>90m</code>）会四舍五入到最接近的干净间隔，Hawa Code 会告诉你它选择了什么。</p>
+<h3 id="循环执行其他命令" class="article-heading"><a href="#循环执行其他命令" class="headerlink" title="循环执行其他命令"></a>循环执行其他命令<a class="article-anchor" href="#循环执行其他命令" aria-hidden="true"></a></h3><p>计划的提示词本身可以是命令或技能调用。这对于重新运行你已经打包好的工作流很有用。</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/loop 20m /review-pr 1234</span><br></pre></td></tr></tbody></table></figure>
+
+<p>每次作业触发时，Hawa Code 都会运行 <code>/review-pr 1234</code>，就像你输入它一样。</p>
+<h2 id="管理定时任务" class="article-heading"><a href="#管理定时任务" class="headerlink" title="管理定时任务"></a>管理定时任务<a class="article-anchor" href="#管理定时任务" aria-hidden="true"></a></h2><p>你可以用自然语言让 Hawa Code 列出或取消任务，或者直接使用底层工具。</p>
+<p><strong>示例：查看任务列表</strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">我有哪些定时任务？</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>示例：取消任务</strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">取消部署检查任务</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="底层工具" class="article-heading"><a href="#底层工具" class="headerlink" title="底层工具"></a>底层工具<a class="article-anchor" href="#底层工具" aria-hidden="true"></a></h3><p>Hawa Code 在后台使用以下工具管理定时任务：</p>
+<table>
+<thead>
+<tr>
+<th align="left">工具</th>
+<th align="left">用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>CronCreate</code></td>
+<td align="left">安排新任务。接受 5 字段的 cron 表达式、要运行的提示词，以及是否重复执行或仅执行一次</td>
+</tr>
+<tr>
+<td align="left"><code>CronList</code></td>
+<td align="left">列出所有定时任务，包括 ID、计划和提示词</td>
+</tr>
+<tr>
+<td align="left"><code>CronDelete</code></td>
+<td align="left">通过 ID 取消任务</td>
+</tr>
+</tbody></table>
+<p>每个定时任务都有一个 <strong>8 字符的 ID</strong>，可以传递给 <code>CronDelete</code> 进行取消。一个会话最多可同时持有 <strong>50 个定时任务</strong>。</p>
+<h2 id="定时任务的运行方式" class="article-heading"><a href="#定时任务的运行方式" class="headerlink" title="定时任务的运行方式"></a>定时任务的运行方式<a class="article-anchor" href="#定时任务的运行方式" aria-hidden="true"></a></h2><p>调度器每秒检查一次到期任务，并以低优先级将它们加入队列。定时提示词在你的回合之间触发，而不是在 Hawa Code 正在响应时触发。如果任务到期时 Hawa Code 正忙，提示词会等到当前回合结束后才执行。</p>
+<p>所有时间都按你的<strong>本地时区</strong>解释。例如，cron 表达式 <code>0 9 * * *</code> 表示你运行 Hawa Code 的当地时间的上午 9 点，而不是 UTC。</p>
+<h3 id="抖动" class="article-heading"><a href="#抖动" class="headerlink" title="抖动"></a>抖动<a class="article-anchor" href="#抖动" aria-hidden="true"></a></h3><p>为避免每个会话在同一时刻访问 API，调度器会在触发时间添加一个小的确定性偏移：</p>
+<ul>
+<li><strong>重复任务</strong>：最多延迟其周期的 10%，上限为 15 分钟。例如，每小时任务可能在 <code>:00</code> 到 <code>:06</code> 之间的任意时刻触发</li>
+<li><strong>整点或半点安排的一次性任务</strong>：最多提前 90 秒触发</li>
+</ul>
+<p>偏移量从任务 ID 派生，因此同一任务始终获得相同的偏移。如果精确时间很重要，请选择非 <code>:00</code> 或 <code>:30</code> 的分钟数，例如使用 <code>3 9 * * *</code> 而不是 <code>0 9 * * *</code>，这样一次性任务的抖动将不适用。</p>
+<h3 id="三天过期" class="article-heading"><a href="#三天过期" class="headerlink" title="三天过期"></a>三天过期<a class="article-anchor" href="#三天过期" aria-hidden="true"></a></h3><p>重复任务在创建后 <strong>3 天自动过期</strong>。任务会最后一次触发，然后自动删除。这限制了被遗忘的循环任务可以运行的时间。</p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-03-11T12:37:52.890Z" itemprop="dateModified">上次更新：2026-03-11</time>
+                <a href="tasks.html" class="article-footer-prev" title="Tasks"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%89%E8%AE%A1%E5%88%92%E8%BF%90%E8%A1%8C%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-text">按计划运行提示词</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-loop-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-text">使用 &#x2F;loop 定时执行提示词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E9%97%B4%E9%9A%94%E9%85%8D%E7%BD%AE"><span class="toc-text">时间间隔配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%89%A7%E8%A1%8C%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-text">循环执行其他命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-text">管理定时任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%95%E5%B1%82%E5%B7%A5%E5%85%B7"><span class="toc-text">底层工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">定时任务的运行方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%96%E5%8A%A8"><span class="toc-text">抖动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%A4%A9%E8%BF%87%E6%9C%9F"><span class="toc-text">三天过期</span></a></li></ol></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="model.html" class="sidebar-link">模型</a><a href="skill.html" class="sidebar-link">Skill</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><a href="tools.html" class="sidebar-link">工具</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="ide.html" class="sidebar-link">IDE</a><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="commands.html" class="sidebar-link">命令</a><a href="hooks.html" class="sidebar-link">Hooks</a><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link current">定时任务</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="model.html" class="mobile-nav-link">模型</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="ide.html" class="mobile-nav-link">IDE</a><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="hooks.html" class="mobile-nav-link">Hooks</a><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link current">定时任务</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/scheduled.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+docsearch({
+  appId: '92MM5ICJU3',
+  apiKey: '64d254213e6c3157c3abc2bc74228632',
+  indexName: 'hawacode',
+  insights: true,
+  container: '#docsearch',
+  debug: false,
+  searchParameters: {
+    facetFilters: ['lang:zh-cn']
+  }
+});
+</script>
+
+</body>
+</html>
