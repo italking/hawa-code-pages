@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Run prompts on a scheduleUse &#x2F;loop and the cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Claude Code session. Scheduled tasks let Claude re-run a">
+  <meta name="description" content="Run prompts on a scheduleUse &#x2F;loop and cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Hawa Code session. Scheduled tasks let Hawa Code automatical">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Scheduled Tasks">
 <meta property="og:url" content="https://www.hawacode.com/en/docs/scheduled">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Run prompts on a scheduleUse &#x2F;loop and the cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Claude Code session. Scheduled tasks let Claude re-run a">
+<meta property="og:description" content="Run prompts on a scheduleUse &#x2F;loop and cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Hawa Code session. Scheduled tasks let Hawa Code automatical">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-03-12T03:12:24.801Z">
-<meta property="article:modified_time" content="2026-03-12T03:12:23.945Z">
+<meta property="article:published_time" content="2026-03-12T03:36:35.720Z">
+<meta property="article:modified_time" content="2026-03-12T03:36:35.720Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -120,13 +120,13 @@ var _hmt = _hmt || [];
                 <h1 class="article-title" itemprop="name">Scheduled Tasks</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h1 id="Run-prompts-on-a-schedule" class="article-heading"><a href="#Run-prompts-on-a-schedule" class="headerlink" title="Run prompts on a schedule"></a>Run prompts on a schedule<a class="article-anchor" href="#Run-prompts-on-a-schedule" aria-hidden="true"></a></h1><p>Use <code>/loop</code> and the cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Claude Code session.</p>
-<p>Scheduled tasks let Claude re-run a prompt automatically on an interval. Use them to poll a deployment, babysit a PR, check back on a long-running build, or remind yourself to do something later in the session. Tasks are session-scoped: they live in the current Claude Code process and are gone when you exit. For durable scheduling that survives restarts and runs without an active terminal session, see <a href="/en/docs/desktop#schedule-recurring-tasks">Desktop scheduled tasks</a> or <a href="/en/docs/github-actions">GitHub Actions</a>.</p>
-<h2 id="Schedule-a-recurring-prompt-with-loop" class="article-heading"><a href="#Schedule-a-recurring-prompt-with-loop" class="headerlink" title="Schedule a recurring prompt with /loop"></a>Schedule a recurring prompt with /loop<a class="article-anchor" href="#Schedule-a-recurring-prompt-with-loop" aria-hidden="true"></a></h2><p>The <code>/loop</code> <a href="/en/docs/skills#bundled-skills">bundled skill</a> is the quickest way to schedule a recurring prompt. Pass an optional interval and a prompt, and Claude sets up a cron job that fires in the background while the session stays open.</p>
+                <html><head></head><body><h1 id="Run-prompts-on-a-schedule" class="article-heading"><a href="#Run-prompts-on-a-schedule" class="headerlink" title="Run prompts on a schedule"></a>Run prompts on a schedule<a class="article-anchor" href="#Run-prompts-on-a-schedule" aria-hidden="true"></a></h1><p>Use <code>/loop</code> and cron scheduling tools to run prompts repeatedly, poll for status, or set one-time reminders within a Hawa Code session.</p>
+<p>Scheduled tasks let Hawa Code automatically re-run a prompt at intervals. Use them to poll deployments, monitor PRs, check on long-running builds, or remind yourself to do something later. Tasks are session-scoped: they exist in the current Hawa Code process and disappear when you exit.</p>
+<h2 id="Schedule-recurring-prompts-with-loop" class="article-heading"><a href="#Schedule-recurring-prompts-with-loop" class="headerlink" title="Schedule recurring prompts with /loop"></a>Schedule recurring prompts with /loop<a class="article-anchor" href="#Schedule-recurring-prompts-with-loop" aria-hidden="true"></a></h2><p><code>/loop</code> is the fastest way to schedule recurring prompts. Pass an optional interval and a prompt, and Hawa Code sets up a cron job that fires in the background while the session stays open.</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/loop 5m check if the deployment finished and tell me what happened</span><br></pre></td></tr></tbody></table></figure>
 
-<p>Claude parses the interval, converts it to a cron expression, schedules the job, and confirms the cadence and job ID.</p>
-<h3 id="Interval-syntax" class="article-heading"><a href="#Interval-syntax" class="headerlink" title="Interval syntax"></a>Interval syntax<a class="article-anchor" href="#Interval-syntax" aria-hidden="true"></a></h3><p>Intervals are optional. You can lead with them, trail with them, or leave them out entirely.</p>
+<p>Hawa Code parses the interval, converts it to a cron expression, schedules the job, and confirms the cadence and job ID.</p>
+<h3 id="Interval-configuration" class="article-heading"><a href="#Interval-configuration" class="headerlink" title="Interval configuration"></a>Interval configuration<a class="article-anchor" href="#Interval-configuration" aria-hidden="true"></a></h3><p>Intervals are optional. You can place them at the beginning, at the end, or omit them entirely.</p>
 <table>
 <thead>
 <tr>
@@ -141,7 +141,7 @@ var _hmt = _hmt || [];
 <td>every 30 minutes</td>
 </tr>
 <tr>
-<td>Trailing <code>every</code> clause</td>
+<td>Trailing interval</td>
 <td><code>/loop check the build every 2 hours</code></td>
 <td>every 2 hours</td>
 </tr>
@@ -151,19 +151,22 @@ var _hmt = _hmt || [];
 <td>defaults to every 10 minutes</td>
 </tr>
 </tbody></table>
-<p>Supported units are <code>s</code> for seconds, <code>m</code> for minutes, <code>h</code> for hours, and <code>d</code> for days. Seconds are rounded up to the nearest minute since cron has one-minute granularity. Intervals that don’t divide evenly into their unit, such as <code>7m</code> or <code>90m</code>, are rounded to the nearest clean interval and Claude tells you what it picked.</p>
-<h3 id="Loop-over-another-command" class="article-heading"><a href="#Loop-over-another-command" class="headerlink" title="Loop over another command"></a>Loop over another command<a class="article-anchor" href="#Loop-over-another-command" aria-hidden="true"></a></h3><p>The scheduled prompt can itself be a command or skill invocation. This is useful for re-running a workflow you’ve already packaged.</p>
+<p>Supported units are <code>s</code> for seconds, <code>m</code> for minutes, <code>h</code> for hours, and <code>d</code> for days. Since cron has one-minute granularity, seconds are rounded up to the nearest minute. Intervals that don’t divide evenly into their unit, such as <code>7m</code> or <code>90m</code>, are rounded to the nearest clean interval and Hawa Code tells you what it picked.</p>
+<h3 id="Loop-over-other-commands" class="article-heading"><a href="#Loop-over-other-commands" class="headerlink" title="Loop over other commands"></a>Loop over other commands<a class="article-anchor" href="#Loop-over-other-commands" aria-hidden="true"></a></h3><p>The scheduled prompt can itself be a command or skill invocation. This is useful for re-running a workflow you’ve already packaged.</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/loop 20m /review-pr 1234</span><br></pre></td></tr></tbody></table></figure>
 
-<p>Each time the job fires, Claude runs <code>/review-pr 1234</code> as if you had typed it.</p>
-<h2 id="Manage-scheduled-tasks" class="article-heading"><a href="#Manage-scheduled-tasks" class="headerlink" title="Manage scheduled tasks"></a>Manage scheduled tasks<a class="article-anchor" href="#Manage-scheduled-tasks" aria-hidden="true"></a></h2><p>You can ask Claude to list or cancel tasks in natural language, or use the underlying tools directly.</p>
+<p>Each time the job fires, Hawa Code runs <code>/review-pr 1234</code> as if you had typed it.</p>
+<h2 id="One-time-scheduled-tasks" class="article-heading"><a href="#One-time-scheduled-tasks" class="headerlink" title="One-time scheduled tasks"></a>One-time scheduled tasks<a class="article-anchor" href="#One-time-scheduled-tasks" aria-hidden="true"></a></h2><p>The <code>/loop</code> command is for periodic tasks. If you need to execute a task once at a specific time, use the following command:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Create a scheduled task to execute project deployment at 13:00 today</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Manage-scheduled-tasks" class="article-heading"><a href="#Manage-scheduled-tasks" class="headerlink" title="Manage scheduled tasks"></a>Manage scheduled tasks<a class="article-anchor" href="#Manage-scheduled-tasks" aria-hidden="true"></a></h2><p>You can ask Hawa Code to list or cancel tasks in natural language, or use the underlying tools directly.</p>
 <p><strong>Example: List tasks</strong></p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">what scheduled tasks do I have?</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">What scheduled tasks do I have?</span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>Example: Cancel a task</strong></p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">cancel the deploy check job</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Cancel the deploy check task</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="Underlying-tools" class="article-heading"><a href="#Underlying-tools" class="headerlink" title="Underlying tools"></a>Underlying tools<a class="article-anchor" href="#Underlying-tools" aria-hidden="true"></a></h3><p>Claude uses these tools under the hood to manage scheduled tasks:</p>
+<h3 id="Tools" class="article-heading"><a href="#Tools" class="headerlink" title="Tools"></a>Tools<a class="article-anchor" href="#Tools" aria-hidden="true"></a></h3><p>Hawa Code uses these tools under the hood to manage scheduled tasks:</p>
 <table>
 <thead>
 <tr>
@@ -185,19 +188,14 @@ var _hmt = _hmt || [];
 </tr>
 </tbody></table>
 <p>Each scheduled task has an <strong>8-character ID</strong> that you can pass to <code>CronDelete</code> to cancel it. A session can hold up to <strong>50 scheduled tasks</strong> at once.</p>
-<h2 id="How-scheduled-tasks-run" class="article-heading"><a href="#How-scheduled-tasks-run" class="headerlink" title="How scheduled tasks run"></a>How scheduled tasks run<a class="article-anchor" href="#How-scheduled-tasks-run" aria-hidden="true"></a></h2><p>The scheduler checks for due tasks every second and queues them at low priority. Scheduled prompts fire between your turns, not while Claude is mid-response. If a task is due while Claude is busy, the prompt waits until the current turn finishes.</p>
-<p>All times are interpreted in your <strong>local timezone</strong>. For example, the cron expression <code>0 9 * * *</code> means 9 AM in the local timezone where you’re running Claude Code, not UTC.</p>
-<h3 id="Jitter" class="article-heading"><a href="#Jitter" class="headerlink" title="Jitter"></a>Jitter<a class="article-anchor" href="#Jitter" aria-hidden="true"></a></h3><p>To avoid every session hitting the API at the same instant, the scheduler adds a small deterministic offset to the trigger time:</p>
-<ul>
-<li><strong>Repeating tasks</strong>: Delayed by up to 10% of their period, capped at 15 minutes. For example, an hourly task might fire anytime between :00 and :06</li>
-<li><strong>One-time tasks scheduled on the hour or half-hour</strong>: Fired up to 90 seconds early</li>
-</ul>
-<p>The offset is derived from the task ID, so the same task always gets the same offset. If precise timing matters, pick a minute other than :00 or :30, such as <code>3 9 * * *</code> instead of <code>0 9 * * *</code>, and the one-time jitter won’t apply.</p>
+<h2 id="How-scheduled-tasks-run" class="article-heading"><a href="#How-scheduled-tasks-run" class="headerlink" title="How scheduled tasks run"></a>How scheduled tasks run<a class="article-anchor" href="#How-scheduled-tasks-run" aria-hidden="true"></a></h2><p>The scheduler checks for due tasks every second and queues them at low priority. Scheduled prompts fire between your turns, not while Hawa Code is mid-response. If a task is due while Hawa Code is busy, the prompt waits until the current turn finishes.</p>
+<p>All times are interpreted in your <strong>local timezone</strong>. For example, the cron expression <code>0 9 * * *</code> means 9 AM in the local timezone where you’re running Hawa Code, not UTC.</p>
+<h3 id="Lifecycle" class="article-heading"><a href="#Lifecycle" class="headerlink" title="Lifecycle"></a>Lifecycle<a class="article-anchor" href="#Lifecycle" aria-hidden="true"></a></h3><p>Scheduled tasks exist within the current session. If Hawa Code is closed, the scheduled tasks will also be terminated.</p>
 <h3 id="Three-day-expiry" class="article-heading"><a href="#Three-day-expiry" class="headerlink" title="Three-day expiry"></a>Three-day expiry<a class="article-anchor" href="#Three-day-expiry" aria-hidden="true"></a></h3><p>Repeating tasks <strong>automatically expire after 3 days</strong>. The task fires one last time and then deletes itself. This limits how long forgotten loops can run.</p>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-03-12T03:12:23.945Z" itemprop="dateModified">Last updated: 2026-03-12</time>
+                <time class="article-footer-updated" datetime="2026-03-12T03:36:35.720Z" itemprop="dateModified">Last updated: 2026-03-12</time>
                 <a href="tasks.html" class="article-footer-prev" title="Tasks"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
               </footer>
               
@@ -206,7 +204,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Run-prompts-on-a-schedule"><span class="toc-text">Run prompts on a schedule</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Schedule-a-recurring-prompt-with-loop"><span class="toc-text">Schedule a recurring prompt with &#x2F;loop</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Interval-syntax"><span class="toc-text">Interval syntax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Loop-over-another-command"><span class="toc-text">Loop over another command</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Manage-scheduled-tasks"><span class="toc-text">Manage scheduled tasks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Underlying-tools"><span class="toc-text">Underlying tools</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-scheduled-tasks-run"><span class="toc-text">How scheduled tasks run</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Jitter"><span class="toc-text">Jitter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Three-day-expiry"><span class="toc-text">Three-day expiry</span></a></li></ol></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Run-prompts-on-a-schedule"><span class="toc-text">Run prompts on a schedule</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Schedule-recurring-prompts-with-loop"><span class="toc-text">Schedule recurring prompts with &#x2F;loop</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Interval-configuration"><span class="toc-text">Interval configuration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Loop-over-other-commands"><span class="toc-text">Loop over other commands</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#One-time-scheduled-tasks"><span class="toc-text">One-time scheduled tasks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Manage-scheduled-tasks"><span class="toc-text">Manage scheduled tasks</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Tools"><span class="toc-text">Tools</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-scheduled-tasks-run"><span class="toc-text">How scheduled tasks run</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Lifecycle"><span class="toc-text">Lifecycle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Three-day-expiry"><span class="toc-text">Three-day expiry</span></a></li></ol></li></ol></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
