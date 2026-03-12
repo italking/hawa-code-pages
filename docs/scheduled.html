@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="按计划运行提示词使用 &#x2F;loop 和 cron 调度工具在 Hawa Code 会话中定时运行提示词、轮询状态或设置一次性提醒。 定时任务让 Hawa Code 自动按间隔重新运行提示词。使用它们来轮询部署、监控 PR、检查长时间运行的构建，或提醒自己稍后做某事。任务是会话范围的：它们存在于当前的 Hawa Code 进程中，退出后就会消失。 使用 &#x2F;loop 定时执行提示词&#x2F;loop">
+  <meta name="description" content="按计划执行提示词使用 &#x2F;loop 和 cron 调度工具在 Hawa Code 会话中定时运行提示词、轮询状态或设置一次性提醒。 定时任务让 Hawa Code 自动按间隔重新运行提示词。使用它们来轮询部署、监控 PR、检查长时间运行的构建，或提醒自己稍后做某事。任务是会话范围的：它们存在于当前的 Hawa Code 进程中，退出后就会消失。 使用 &#x2F;loop 定时执行提示词&#x2F;loop">
 <meta property="og:type" content="website">
 <meta property="og:title" content="定时任务">
 <meta property="og:url" content="https://www.hawacode.com/docs/scheduled">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="按计划运行提示词使用 &#x2F;loop 和 cron 调度工具在 Hawa Code 会话中定时运行提示词、轮询状态或设置一次性提醒。 定时任务让 Hawa Code 自动按间隔重新运行提示词。使用它们来轮询部署、监控 PR、检查长时间运行的构建，或提醒自己稍后做某事。任务是会话范围的：它们存在于当前的 Hawa Code 进程中，退出后就会消失。 使用 &#x2F;loop 定时执行提示词&#x2F;loop">
+<meta property="og:description" content="按计划执行提示词使用 &#x2F;loop 和 cron 调度工具在 Hawa Code 会话中定时运行提示词、轮询状态或设置一次性提醒。 定时任务让 Hawa Code 自动按间隔重新运行提示词。使用它们来轮询部署、监控 PR、检查长时间运行的构建，或提醒自己稍后做某事。任务是会话范围的：它们存在于当前的 Hawa Code 进程中，退出后就会消失。 使用 &#x2F;loop 定时执行提示词&#x2F;loop">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-03-11T12:48:34.136Z">
-<meta property="article:modified_time" content="2026-03-11T12:48:34.136Z">
+<meta property="article:published_time" content="2026-03-12T03:21:43.295Z">
+<meta property="article:modified_time" content="2026-03-12T03:21:43.295Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -120,7 +120,7 @@ var _hmt = _hmt || [];
                 <h1 class="article-title" itemprop="name">定时任务</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h1 id="按计划运行提示词" class="article-heading"><a href="#按计划运行提示词" class="headerlink" title="按计划运行提示词"></a>按计划运行提示词<a class="article-anchor" href="#按计划运行提示词" aria-hidden="true"></a></h1><p>使用 <code>/loop</code> 和 cron 调度工具在 Hawa Code 会话中定时运行提示词、轮询状态或设置一次性提醒。</p>
+                <html><head></head><body><h1 id="按计划执行提示词" class="article-heading"><a href="#按计划执行提示词" class="headerlink" title="按计划执行提示词"></a>按计划执行提示词<a class="article-anchor" href="#按计划执行提示词" aria-hidden="true"></a></h1><p>使用 <code>/loop</code> 和 cron 调度工具在 Hawa Code 会话中定时运行提示词、轮询状态或设置一次性提醒。</p>
 <p>定时任务让 Hawa Code 自动按间隔重新运行提示词。使用它们来轮询部署、监控 PR、检查长时间运行的构建，或提醒自己稍后做某事。任务是会话范围的：它们存在于当前的 Hawa Code 进程中，退出后就会消失。</p>
 <h2 id="使用-loop-定时执行提示词" class="article-heading"><a href="#使用-loop-定时执行提示词" class="headerlink" title="使用 /loop 定时执行提示词"></a>使用 /loop 定时执行提示词<a class="article-anchor" href="#使用-loop-定时执行提示词" aria-hidden="true"></a></h2><p><code>/loop</code> 是安排重复提示词的最快方式。传入可选的间隔和提示词，Hawa Code 就会设置一个 cron 作业，在会话保持打开时在后台触发。</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/loop 5m 检查部署是否完成并告诉我发生了什么</span><br></pre></td></tr></tbody></table></figure>
@@ -156,6 +156,10 @@ var _hmt = _hmt || [];
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/loop 20m /review-pr 1234</span><br></pre></td></tr></tbody></table></figure>
 
 <p>每次作业触发时，Hawa Code 都会运行 <code>/review-pr 1234</code>，就像你输入它一样。</p>
+<h2 id="单次定时执行任务" class="article-heading"><a href="#单次定时执行任务" class="headerlink" title="单次定时执行任务"></a>单次定时执行任务<a class="article-anchor" href="#单次定时执行任务" aria-hidden="true"></a></h2><p>/loop 命令是周期性执行任务，如果需要在指定的时间单次执行一次任务，可以按照如下指令操作</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">创建定时任务、今天 13:00 执行项目发布</span><br></pre></td></tr></tbody></table></figure>
+
+
 <h2 id="管理定时任务" class="article-heading"><a href="#管理定时任务" class="headerlink" title="管理定时任务"></a>管理定时任务<a class="article-anchor" href="#管理定时任务" aria-hidden="true"></a></h2><p>你可以用自然语言让 Hawa Code 列出或取消任务，或者直接使用底层工具。</p>
 <p><strong>示例：查看任务列表</strong></p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">我有哪些定时任务？</span><br></pre></td></tr></tbody></table></figure>
@@ -163,7 +167,7 @@ var _hmt = _hmt || [];
 <p><strong>示例：取消任务</strong></p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">取消部署检查任务</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="底层工具" class="article-heading"><a href="#底层工具" class="headerlink" title="底层工具"></a>底层工具<a class="article-anchor" href="#底层工具" aria-hidden="true"></a></h3><p>Hawa Code 在后台使用以下工具管理定时任务：</p>
+<h3 id="工具" class="article-heading"><a href="#工具" class="headerlink" title="工具"></a>工具<a class="article-anchor" href="#工具" aria-hidden="true"></a></h3><p>Hawa Code 在后台使用以下工具管理定时任务：</p>
 <table>
 <thead>
 <tr>
@@ -187,17 +191,12 @@ var _hmt = _hmt || [];
 <p>每个定时任务都有一个 <strong>8 字符的 ID</strong>，可以传递给 <code>CronDelete</code> 进行取消。一个会话最多可同时持有 <strong>50 个定时任务</strong>。</p>
 <h2 id="定时任务的运行方式" class="article-heading"><a href="#定时任务的运行方式" class="headerlink" title="定时任务的运行方式"></a>定时任务的运行方式<a class="article-anchor" href="#定时任务的运行方式" aria-hidden="true"></a></h2><p>调度器每秒检查一次到期任务，并以低优先级将它们加入队列。定时提示词在你的回合之间触发，而不是在 Hawa Code 正在响应时触发。如果任务到期时 Hawa Code 正忙，提示词会等到当前回合结束后才执行。</p>
 <p>所有时间都按你的<strong>本地时区</strong>解释。例如，cron 表达式 <code>0 9 * * *</code> 表示你运行 Hawa Code 的当地时间的上午 9 点，而不是 UTC。</p>
-<h3 id="抖动" class="article-heading"><a href="#抖动" class="headerlink" title="抖动"></a>抖动<a class="article-anchor" href="#抖动" aria-hidden="true"></a></h3><p>为避免每个会话在同一时刻访问 API，调度器会在触发时间添加一个小的确定性偏移：</p>
-<ul>
-<li><strong>重复任务</strong>：最多延迟其周期的 10%，上限为 15 分钟。例如，每小时任务可能在 <code>:00</code> 到 <code>:06</code> 之间的任意时刻触发</li>
-<li><strong>整点或半点安排的一次性任务</strong>：最多提前 90 秒触发</li>
-</ul>
-<p>偏移量从任务 ID 派生，因此同一任务始终获得相同的偏移。如果精确时间很重要，请选择非 <code>:00</code> 或 <code>:30</code> 的分钟数，例如使用 <code>3 9 * * *</code> 而不是 <code>0 9 * * *</code>，这样一次性任务的抖动将不适用。</p>
+<h3 id="生命周期" class="article-heading"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期<a class="article-anchor" href="#生命周期" aria-hidden="true"></a></h3><p>定时任务是存在当前会话中的，如果 hawa code 被关闭，定时任务也会被中止</p>
 <h3 id="三天过期" class="article-heading"><a href="#三天过期" class="headerlink" title="三天过期"></a>三天过期<a class="article-anchor" href="#三天过期" aria-hidden="true"></a></h3><p>重复任务在创建后 <strong>3 天自动过期</strong>。任务会最后一次触发，然后自动删除。这限制了被遗忘的循环任务可以运行的时间。</p>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-03-11T12:48:34.136Z" itemprop="dateModified">上次更新：2026-03-11</time>
+                <time class="article-footer-updated" datetime="2026-03-12T03:21:43.295Z" itemprop="dateModified">上次更新：2026-03-12</time>
                 <a href="tasks.html" class="article-footer-prev" title="Tasks"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
               </footer>
               
@@ -206,7 +205,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%89%E8%AE%A1%E5%88%92%E8%BF%90%E8%A1%8C%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-text">按计划运行提示词</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-loop-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-text">使用 &#x2F;loop 定时执行提示词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E9%97%B4%E9%9A%94%E9%85%8D%E7%BD%AE"><span class="toc-text">时间间隔配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%89%A7%E8%A1%8C%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-text">循环执行其他命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-text">管理定时任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%95%E5%B1%82%E5%B7%A5%E5%85%B7"><span class="toc-text">底层工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">定时任务的运行方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%96%E5%8A%A8"><span class="toc-text">抖动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%A4%A9%E8%BF%87%E6%9C%9F"><span class="toc-text">三天过期</span></a></li></ol></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%89%E8%AE%A1%E5%88%92%E6%89%A7%E8%A1%8C%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-text">按计划执行提示词</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-loop-%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-text">使用 &#x2F;loop 定时执行提示词</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E9%97%B4%E9%9A%94%E9%85%8D%E7%BD%AE"><span class="toc-text">时间间隔配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E6%89%A7%E8%A1%8C%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="toc-text">循环执行其他命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E6%AC%A1%E5%AE%9A%E6%97%B6%E6%89%A7%E8%A1%8C%E4%BB%BB%E5%8A%A1"><span class="toc-text">单次定时执行任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span class="toc-text">管理定时任务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7"><span class="toc-text">工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">定时任务的运行方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%A4%A9%E8%BF%87%E6%9C%9F"><span class="toc-text">三天过期</span></a></li></ol></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
