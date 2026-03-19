@@ -231,17 +231,20 @@ function toggleSubmenu(element, event) {
 <!-- Algolia -->
 <script src="/npm/@docsearch/js@3"></script>
 <script type="text/javascript">
-docsearch({
-  appId: '92MM5ICJU3',
-  apiKey: '64d254213e6c3157c3abc2bc74228632',
-  indexName: 'hawacode',
-  insights: true,
-  container: '#docsearch',
-  debug: false,
-  searchParameters: {
-    facetFilters: ['lang:en']
-  }
-});
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:en']
+    }
+  });
+}
 </script>
 
 </body>
