@@ -353,14 +353,25 @@ var _hmt = _hmt || [];
 </aside>
 
 <script>
-function toggleSubmenu(element) {
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
   const submenu = element.nextElementSibling;
   const toggle = element.querySelector('.sidebar-toggle');
   
   if (submenu && submenu.classList.contains('sidebar-submenu')) {
     submenu.classList.toggle('expanded');
-    toggle.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
   }
+  
+  // 返回 false 阻止默认行为
+  return false;
 }
 </script>
     </div>
