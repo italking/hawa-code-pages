@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>PostToolUseFailure Hook | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/docs/hooks-post-tool-use-failure">
+  <!-- Alternate links -->
+  
+    
+      
+    
+      
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/hooks-post-tool-use-failure">
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/hooks-post-tool-use-failure" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="PostToolUseFailurePostToolUseFailure 在工具执行失败时触发。当工具调用抛出错误或返回失败结果时，此事件会被触发。可用于记录失败日志、发送警报或向 Hawa Code 提供纠正性反馈。 匹配方式：按工具名称匹配，支持使用与 PreToolUse 相同的匹配器值。 输入参数PostToolUseFailure hooks 接收与 PostToolUse 相同的 to">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PostToolUseFailure Hook">
+<meta property="og:url" content="https://www.hawacode.com/docs/hooks-post-tool-use-failure">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="PostToolUseFailurePostToolUseFailure 在工具执行失败时触发。当工具调用抛出错误或返回失败结果时，此事件会被触发。可用于记录失败日志、发送警报或向 Hawa Code 提供纠正性反馈。 匹配方式：按工具名称匹配，支持使用与 PreToolUse 相同的匹配器值。 输入参数PostToolUseFailure hooks 接收与 PostToolUse 相同的 to">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-03-19T16:57:53.720Z">
+<meta property="article:modified_time" content="2026-03-19T16:29:00.157Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/hooks-post-tool-use-failure.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">PostToolUseFailure Hook</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><h1 id="PostToolUseFailure" class="article-heading"><a href="#PostToolUseFailure" class="headerlink" title="PostToolUseFailure"></a>PostToolUseFailure<a class="article-anchor" href="#PostToolUseFailure" aria-hidden="true"></a></h1><p><strong>PostToolUseFailure</strong> 在工具执行失败时触发。当工具调用抛出错误或返回失败结果时，此事件会被触发。可用于记录失败日志、发送警报或向 Hawa Code 提供纠正性反馈。</p>
+<p>匹配方式：按工具名称匹配，支持使用与 PreToolUse 相同的匹配器值。</p>
+<h2 id="输入参数" class="article-heading"><a href="#输入参数" class="headerlink" title="输入参数"></a>输入参数<a class="article-anchor" href="#输入参数" aria-hidden="true"></a></h2><p>PostToolUseFailure hooks 接收与 PostToolUse 相同的 <code>tool_name</code> 和 <code>tool_input</code> 字段，以及作为顶层字段的错误信息：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>tool_name</code></td>
+<td>工具名称</td>
+</tr>
+<tr>
+<td><code>tool_input</code></td>
+<td>发送给工具的参数</td>
+</tr>
+<tr>
+<td><code>tool_use_id</code></td>
+<td>工具使用的唯一标识符</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>描述出错原因的字符串</td>
+</tr>
+<tr>
+<td><code>is_interrupt</code></td>
+<td>可选布尔值，指示失败是否由用户中断引起</td>
+</tr>
+</tbody></table>
+<h3 id="输入示例" class="article-heading"><a href="#输入示例" class="headerlink" title="输入示例"></a>输入示例<a class="article-anchor" href="#输入示例" aria-hidden="true"></a></h3><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"session_id"</span><span class="punctuation">:</span> <span class="string">"abc123"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"transcript_path"</span><span class="punctuation">:</span> <span class="string">"/Users/.../.hcode/projects/.../00893aaf-19fa-41d2-8238-13269b9b3ca0.jsonl"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"cwd"</span><span class="punctuation">:</span> <span class="string">"/Users/..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"permission_mode"</span><span class="punctuation">:</span> <span class="string">"default"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hook_event_name"</span><span class="punctuation">:</span> <span class="string">"PostToolUseFailure"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_name"</span><span class="punctuation">:</span> <span class="string">"Bash"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_input"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"npm test"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"Run test suite"</span></span><br><span class="line">  <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"tool_use_id"</span><span class="punctuation">:</span> <span class="string">"toolu_01ABC123..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"error"</span><span class="punctuation">:</span> <span class="string">"Command exited with non-zero status code 1"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"is_interrupt"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="输出参数-决策控制" class="article-heading"><a href="#输出参数-决策控制" class="headerlink" title="输出参数 / 决策控制"></a>输出参数 / 决策控制<a class="article-anchor" href="#输出参数-决策控制" aria-hidden="true"></a></h2><p>PostToolUseFailure hooks 可在工具失败后向 Hawa Code 提供上下文。除所有 hooks 共有的 JSON 输出字段外，还可返回以下事件特定字段：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>additionalContext</code></td>
+<td>供 Hawa Code 考虑的额外上下文，与错误信息一并提供</td>
+</tr>
+</tbody></table>
+<h3 id="输出示例" class="article-heading"><a href="#输出示例" class="headerlink" title="输出示例"></a>输出示例<a class="article-anchor" href="#输出示例" aria-hidden="true"></a></h3><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"hookSpecificOutput"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"hookEventName"</span><span class="punctuation">:</span> <span class="string">"PostToolUseFailure"</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"additionalContext"</span><span class="punctuation">:</span> <span class="string">"关于失败的其他信息"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="退出码行为" class="article-heading"><a href="#退出码行为" class="headerlink" title="退出码行为"></a>退出码行为<a class="article-anchor" href="#退出码行为" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>退出码</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>成功，解析 stdout 中的 JSON 响应</td>
+</tr>
+<tr>
+<td>非零</td>
+<td>失败，忽略 hook 输出</td>
+</tr>
+</tbody></table>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-03-19T16:29:00.157Z" itemprop="dateModified">上次更新：2026-03-20</time>
+                <a href="index.html" class="article-footer-next" title="安装"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PostToolUseFailure"><span class="toc-text">PostToolUseFailure</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0"><span class="toc-text">输入参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%A4%BA%E4%BE%8B"><span class="toc-text">输入示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E5%8F%82%E6%95%B0-%E5%86%B3%E7%AD%96%E6%8E%A7%E5%88%B6"><span class="toc-text">输出参数 &#x2F; 决策控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%A4%BA%E4%BE%8B"><span class="toc-text">输出示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%80%E5%87%BA%E7%A0%81%E8%A1%8C%E4%B8%BA"><span class="toc-text">退出码行为</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="commands.html" class="sidebar-link">命令</a><a href="model.html" class="sidebar-link">模型</a><a href="tools.html" class="sidebar-link">工具</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><strong class="sidebar-title">高级功能</strong><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><div class="sidebar-link-parent" onclick="toggleSubmenu(this)"><span class="sidebar-toggle expanded">▶</span><span>Hooks</span></div><div class="sidebar-submenu expanded"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3 current">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">定时任务</a><a href="plan.html" class="sidebar-link">Plan</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element) {
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    toggle.classList.toggle('expanded');
+  }
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="model.html" class="mobile-nav-link">模型</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><strong class="mobile-nav-title">高级功能</strong><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><div class="mobile-nav-link-parent" onclick="toggleSubmenu(this)"><span class="mobile-nav-toggle expanded">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu expanded"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3 current">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">定时任务</a><a href="plan.html" class="mobile-nav-link">Plan</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/hooks-post-tool-use-failure.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+docsearch({
+  appId: '92MM5ICJU3',
+  apiKey: '64d254213e6c3157c3abc2bc74228632',
+  indexName: 'hawacode',
+  insights: true,
+  container: '#docsearch',
+  debug: false,
+  searchParameters: {
+    facetFilters: ['lang:zh-cn']
+  }
+});
+</script>
+
+</body>
+</html>

@@ -346,6 +346,18 @@ var _hmt = _hmt || [];
     
   </div>
 </aside>
+
+<script>
+function toggleSubmenu(element) {
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    toggle.classList.toggle('expanded');
+  }
+}
+</script>
     </div>
   </div>
 </div>
