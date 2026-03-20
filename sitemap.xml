@@ -56,15 +56,6 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/post-tool-use</loc>
-    
-    <lastmod>2026-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.hawacode.com/en/docs/hooks/session-end</loc>
     
     <lastmod>2026-03-20</lastmod>
@@ -83,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/stop</loc>
+    <loc>https://www.hawacode.com/en/docs/hooks/post-tool-use</loc>
     
     <lastmod>2026-03-20</lastmod>
     
@@ -102,6 +93,24 @@
   
   <url>
     <loc>https://www.hawacode.com/en/docs/hooks/subagent-stop</loc>
+    
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/hooks/stop</loc>
+    
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/about/</loc>
     
     <lastmod>2026-03-20</lastmod>
     
@@ -174,15 +183,6 @@
   
   <url>
     <loc>https://www.hawacode.com/docs/skill</loc>
-    
-    <lastmod>2026-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/about/</loc>
     
     <lastmod>2026-03-20</lastmod>
     
@@ -272,15 +272,6 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/mcp</loc>
-    
-    <lastmod>2026-03-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.hawacode.com/en/docs/memory</loc>
     
     <lastmod>2026-03-12</lastmod>
@@ -299,7 +290,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/slash-commands</loc>
+    <loc>https://www.hawacode.com/en/docs/mcp</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -317,15 +308,6 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/tasks</loc>
-    
-    <lastmod>2026-03-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.hawacode.com/en/docs/tool-lazy-loading</loc>
     
     <lastmod>2026-03-12</lastmod>
@@ -335,7 +317,25 @@
   </url>
   
   <url>
+    <loc>https://www.hawacode.com/en/docs/tasks</loc>
+    
+    <lastmod>2026-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.hawacode.com/en/docs/tools</loc>
+    
+    <lastmod>2026-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/slash-commands</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -380,6 +380,15 @@
   </url>
   
   <url>
+    <loc>https://www.hawacode.com/en/docs/hooks</loc>
+    
+    <lastmod>2026-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.hawacode.com/en/docs/configuration</loc>
     
     <lastmod>2026-03-12</lastmod>
@@ -398,25 +407,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks</loc>
-    
-    <lastmod>2026-03-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.hawacode.com/docs/hooks</loc>
-    
-    <lastmod>2026-03-12</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/docs/ide</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -434,7 +425,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/docs/lsp</loc>
+    <loc>https://www.hawacode.com/docs/ide</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -443,7 +434,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/docs/mcp</loc>
+    <loc>https://www.hawacode.com/docs/lsp</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -462,6 +453,15 @@
   
   <url>
     <loc>https://www.hawacode.com/docs/model</loc>
+    
+    <lastmod>2026-03-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/mcp</loc>
     
     <lastmod>2026-03-12</lastmod>
     
