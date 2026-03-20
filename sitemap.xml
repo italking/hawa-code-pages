@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.hawacode.com/docs/hooks-pre-tool-use</loc>
+    
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.hawacode.com/en/docs/hooks/</loc>
     
     <lastmod>2026-03-20</lastmod>
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/stop</loc>
+    <loc>https://www.hawacode.com/en/docs/hooks/session-start</loc>
     
     <lastmod>2026-03-20</lastmod>
     
@@ -74,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/session-start</loc>
+    <loc>https://www.hawacode.com/en/docs/hooks/stop</loc>
     
     <lastmod>2026-03-20</lastmod>
     
@@ -101,25 +110,25 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/about/</loc>
-    
-    <lastmod>2026-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/docs/skill</loc>
-    
-    <lastmod>2026-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.hawacode.com/docs/hooks-post-tool-use-failure</loc>
+    
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/hooks-post-tool-use</loc>
+    
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/hooks-session-end</loc>
     
     <lastmod>2026-03-20</lastmod>
     
@@ -155,15 +164,6 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/docs/hooks-post-tool-use</loc>
-    
-    <lastmod>2026-03-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.hawacode.com/docs/hooks-subagent-stop</loc>
     
     <lastmod>2026-03-20</lastmod>
@@ -173,7 +173,16 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/docs/hooks-session-end</loc>
+    <loc>https://www.hawacode.com/docs/skill</loc>
+    
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/about/</loc>
     
     <lastmod>2026-03-20</lastmod>
     
@@ -308,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/tool-lazy-loading</loc>
+    <loc>https://www.hawacode.com/en/docs/tasks</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -317,7 +326,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/tasks</loc>
+    <loc>https://www.hawacode.com/en/docs/tool-lazy-loading</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -371,7 +380,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks</loc>
+    <loc>https://www.hawacode.com/en/docs/configuration</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -389,7 +398,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/configuration</loc>
+    <loc>https://www.hawacode.com/en/docs/hooks</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -434,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/docs/memory</loc>
+    <loc>https://www.hawacode.com/docs/mcp</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -443,7 +452,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/docs/mcp</loc>
+    <loc>https://www.hawacode.com/docs/memory</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -497,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/docs/configuration</loc>
+    <loc>https://www.hawacode.com/docs/commands</loc>
     
     <lastmod>2026-03-12</lastmod>
     
@@ -506,7 +515,7 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/docs/commands</loc>
+    <loc>https://www.hawacode.com/docs/configuration</loc>
     
     <lastmod>2026-03-12</lastmod>
     
