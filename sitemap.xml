@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/configuration</loc>
+    <loc>https://www.hawacode.com/en/about/</loc>
     
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/about/</loc>
+    
+    <lastmod>2026-03-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,6 +22,15 @@
   <url>
     <loc>https://www.hawacode.com/docs/configuration</loc>
     
+    <lastmod>2026-03-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/hooks-subagent-stop</loc>
+    
     <lastmod>2026-03-20</lastmod>
     
     <changefreq>monthly</changefreq>
@@ -20,72 +38,81 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/session-end</loc>
+    <loc>https://www.hawacode.com/en/docs/hooks-subagent-start</loc>
     
-    <lastmod>2026-03-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/session-start</loc>
-    
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/post-tool-use-failure</loc>
+    <loc>https://www.hawacode.com/en/docs/hooks-stop</loc>
     
-    <lastmod>2026-03-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/post-tool-use</loc>
-    
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/subagent-start</loc>
+    <loc>https://www.hawacode.com/en/docs/hooks-session-start</loc>
     
-    <lastmod>2026-03-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/subagent-stop</loc>
-    
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/stop</loc>
+    <loc>https://www.hawacode.com/en/docs/hooks-session-end</loc>
     
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/en/docs/hooks/</loc>
+    <loc>https://www.hawacode.com/en/docs/hooks-pre-tool-use</loc>
     
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/hooks-post-tool-use</loc>
+    
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/hooks-post-tool-use-failure</loc>
+    
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/hooks-</loc>
+    
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/hooks-pre-tool-use</loc>
+    
+    <lastmod>2026-03-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -94,7 +121,16 @@
   <url>
     <loc>https://www.hawacode.com/docs/hooks-</loc>
     
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-03-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/configuration</loc>
+    
+    <lastmod>2026-03-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -174,24 +210,6 @@
   
   <url>
     <loc>https://www.hawacode.com/docs/skill</loc>
-    
-    <lastmod>2026-03-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/en/about/</loc>
-    
-    <lastmod>2026-03-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/about/</loc>
     
     <lastmod>2026-03-19</lastmod>
     
@@ -517,7 +535,7 @@
 
   <url>
     <loc>https://www.hawacode.com/</loc>
-    <lastmod>2026-03-20</lastmod>
+    <lastmod>2026-03-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
