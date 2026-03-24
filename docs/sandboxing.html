@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>沙箱 | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/docs/sandboxing">
+  <!-- Alternate links -->
+  
+    
+      
+    
+      
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/sandboxing">
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/sandboxing" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="概述Hawa Code 提供原生沙箱功能，为 Agent 执行提供更安全的环境，同时减少频繁的权限提示。沙箱机制预先定义边界，让 Hawa Code 能够在降低风险的前提下更自由地工作，而无需为每个 bash 命令请求权限。沙箱化的 bash 工具使用操作系统级别的原语来强制执行文件系统和网络隔离。 工作原理文件系统隔离沙箱化的 bash 工具将文件系统访问限制在特定目录：  默认写入行为：对当前">
+<meta property="og:type" content="website">
+<meta property="og:title" content="沙箱">
+<meta property="og:url" content="https://www.hawacode.com/docs/sandboxing">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="概述Hawa Code 提供原生沙箱功能，为 Agent 执行提供更安全的环境，同时减少频繁的权限提示。沙箱机制预先定义边界，让 Hawa Code 能够在降低风险的前提下更自由地工作，而无需为每个 bash 命令请求权限。沙箱化的 bash 工具使用操作系统级别的原语来强制执行文件系统和网络隔离。 工作原理文件系统隔离沙箱化的 bash 工具将文件系统访问限制在特定目录：  默认写入行为：对当前">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-03-24T15:47:13.313Z">
+<meta property="article:modified_time" content="2026-03-24T15:47:13.313Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/sandboxing.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">沙箱</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><h1 id="概述" class="article-heading"><a href="#概述" class="headerlink" title="概述"></a>概述<a class="article-anchor" href="#概述" aria-hidden="true"></a></h1><p>Hawa Code 提供原生沙箱功能，为 Agent 执行提供更安全的环境，同时减少频繁的权限提示。沙箱机制预先定义边界，让 Hawa Code 能够在降低风险的前提下更自由地工作，而无需为每个 bash 命令请求权限。<br>沙箱化的 bash 工具使用操作系统级别的原语来强制执行文件系统和网络隔离。</p>
+<h1 id="工作原理" class="article-heading"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理<a class="article-anchor" href="#工作原理" aria-hidden="true"></a></h1><h2 id="文件系统隔离" class="article-heading"><a href="#文件系统隔离" class="headerlink" title="文件系统隔离"></a>文件系统隔离<a class="article-anchor" href="#文件系统隔离" aria-hidden="true"></a></h2><p>沙箱化的 bash 工具将文件系统访问限制在特定目录：</p>
+<ul>
+<li><strong>默认写入行为</strong>：对当前工作目录及其子目录具有读写权限</li>
+<li><strong>默认读取行为</strong>：可以读取整个计算机，但某些目录除外</li>
+<li><strong>阻止访问</strong>：未经明确许可无法修改当前工作目录之外的文件</li>
+<li><strong>可配置</strong>：通过设置定义自定义的允许和拒绝路径</li>
+</ul>
+<p>你可以使用设置中的 <code>sandbox.filesystem.allowWrite</code> 授予对额外路径的写入权限。这些限制在操作系统级别强制执行（macOS 上使用 Seatbelt，Linux 上使用 bubblewrap），因此它们适用于所有子进程命令，包括 kubectl、terraform 和 npm 等工具，而不仅仅是 Hawa Code 的文件工具。</p>
+<h2 id="网络隔离" class="article-heading"><a href="#网络隔离" class="headerlink" title="网络隔离"></a>网络隔离<a class="article-anchor" href="#网络隔离" aria-hidden="true"></a></h2><p>网络访问通过运行在沙箱外部的代理服务器进行控制：</p>
+<ul>
+<li><strong>域名限制</strong>：只能访问已批准的域名</li>
+<li><strong>用户确认</strong>：新的域名请求会触发权限提示（除非启用了 <code>allowManagedDomainsOnly</code>，它会自动阻止非允许的域名）</li>
+<li><strong>自定义代理支持</strong>：高级用户可以对外出流量实施自定义规则</li>
+<li><strong>全面覆盖</strong>：限制适用于命令生成的所有脚本、程序和子进程</li>
+</ul>
+<h2 id="操作系统级强制执行" class="article-heading"><a href="#操作系统级强制执行" class="headerlink" title="操作系统级强制执行"></a>操作系统级强制执行<a class="article-anchor" href="#操作系统级强制执行" aria-hidden="true"></a></h2><p>沙箱化的 bash 工具利用操作系统安全原语：</p>
+<ul>
+<li><strong>macOS</strong>：使用 Seatbelt 进行沙箱强制执行</li>
+<li><strong>Linux</strong>：使用 bubblewrap 进行隔离</li>
+<li><strong>WSL2</strong>：使用 bubblewrap，与 Linux 相同</li>
+</ul>
+<p>WSL1 不受支持，因为 bubblewrap 需要仅在 WSL2 中可用的内核功能。</p>
+<p>这些操作系统级限制确保 Hawa Code 命令生成的所有子进程都继承相同的安全边界。</p>
+<h1 id="开始使用" class="article-heading"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用<a class="article-anchor" href="#开始使用" aria-hidden="true"></a></h1><h2 id="前置条件" class="article-heading"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件<a class="article-anchor" href="#前置条件" aria-hidden="true"></a></h2><p>在 macOS 上，沙箱功能开箱即用，使用内置的 Seatbelt 框架。<br>在 Linux 和 WSL2 上，需要先安装必需的软件包：</p>
+<p><strong>Ubuntu/Debian</strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get install bubblewrap socat</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Fedora</strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">sudo dnf install bubblewrap socat</span><br></pre></td></tr></tbody></table></figure>
+
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-03-24T15:47:13.313Z" itemprop="dateModified">上次更新：2026-03-24</time>
+                <a href="plan.html" class="article-footer-prev" title="Plan"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-text">工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E9%9A%94%E7%A6%BB"><span class="toc-text">文件系统隔离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%9A%94%E7%A6%BB"><span class="toc-text">网络隔离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%BA%A7%E5%BC%BA%E5%88%B6%E6%89%A7%E8%A1%8C"><span class="toc-text">操作系统级强制执行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8"><span class="toc-text">开始使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="toc-text">前置条件</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="commands.html" class="sidebar-link">命令</a><a href="model.html" class="sidebar-link">模型</a><a href="tools.html" class="sidebar-link">工具</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><strong class="sidebar-title">高级功能</strong><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle">▶</span><span>Hooks</span></div><div class="sidebar-submenu"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">定时任务</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link current">沙箱</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="model.html" class="mobile-nav-link">模型</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><strong class="mobile-nav-title">高级功能</strong><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">定时任务</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link current">沙箱</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/sandboxing.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:zh-cn']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
