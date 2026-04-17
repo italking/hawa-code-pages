@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Custom Slash Commands   Field Type Description    name string Slash command name   description string Slash command description   enabled boolean Whether the command is enabled, when set to false the">
+  <meta name="description" content="Built-in Slash CommandsHawa Code comes with a rich set of built-in slash commands. Type &#x2F; in the terminal to trigger command completion hints, with support for arrow key selection, Tab or Enter confir">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Slash Commands">
 <meta property="og:url" content="https://www.hawacode.com/en/docs/slash-commands">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Custom Slash Commands   Field Type Description    name string Slash command name   description string Slash command description   enabled boolean Whether the command is enabled, when set to false the">
+<meta property="og:description" content="Built-in Slash CommandsHawa Code comes with a rich set of built-in slash commands. Type &#x2F; in the terminal to trigger command completion hints, with support for arrow key selection, Tab or Enter confir">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-03-12T03:14:30.742Z">
-<meta property="article:modified_time" content="2026-03-12T03:12:23.945Z">
+<meta property="article:published_time" content="2026-04-17T14:40:56.980Z">
+<meta property="article:modified_time" content="2026-04-17T14:40:56.980Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -120,7 +120,109 @@ var _hmt = _hmt || [];
                 <h1 class="article-title" itemprop="name">Slash Commands</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h2 id="Custom-Slash-Commands" class="article-heading"><a href="#Custom-Slash-Commands" class="headerlink" title="Custom Slash Commands"></a>Custom Slash Commands<a class="article-anchor" href="#Custom-Slash-Commands" aria-hidden="true"></a></h2><table>
+                <html><head></head><body><h2 id="Built-in-Slash-Commands" class="article-heading"><a href="#Built-in-Slash-Commands" class="headerlink" title="Built-in Slash Commands"></a>Built-in Slash Commands<a class="article-anchor" href="#Built-in-Slash-Commands" aria-hidden="true"></a></h2><p>Hawa Code comes with a rich set of built-in slash commands. Type <code>/</code> in the terminal to trigger command completion hints, with support for arrow key selection, Tab or Enter confirmation.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/clear</code></td>
+<td>local</td>
+<td>Clear conversation history and release context, while triggering SessionEnd / SessionStart hooks</td>
+</tr>
+<tr>
+<td><code>/compact</code></td>
+<td>local</td>
+<td>Compress conversation history, keeping summary in context. Prioritizes Session Memory compression, otherwise falls back to traditional API call method</td>
+</tr>
+<tr>
+<td><code>/resume</code></td>
+<td>local</td>
+<td>Resume previous conversation, switch to historical session selection interface</td>
+</tr>
+<tr>
+<td><code>/cost</code></td>
+<td>local</td>
+<td>Display total cost and duration of current session</td>
+</tr>
+<tr>
+<td><code>/plan</code></td>
+<td>local</td>
+<td>Enable Plan mode, requiring user approval before executing tasks</td>
+</tr>
+<tr>
+<td><code>/auto</code></td>
+<td>local</td>
+<td>Enable Auto mode, automatically execute without individual confirmation</td>
+</tr>
+<tr>
+<td><code>/loop</code></td>
+<td>prompt</td>
+<td>Timed loop execution of prompt or slash commands, default interval is 10 minutes. Usage: <code>/loop [interval] &lt;prompt&gt;</code>, interval supports <code>s/m/h/d</code> suffix</td>
+</tr>
+<tr>
+<td><code>/init</code></td>
+<td>prompt</td>
+<td>Analyze codebase and create <code>HAWA.md</code> project documentation, including common commands, architecture description, etc.</td>
+</tr>
+<tr>
+<td><code>/review</code></td>
+<td>prompt</td>
+<td>Review GitHub Pull Request. Can include PR number parameter, lists open PRs when not provided</td>
+</tr>
+<tr>
+<td><code>/pr-comments</code></td>
+<td>prompt</td>
+<td>Get GitHub PR comments (including PR-level and code review-level comments)</td>
+</tr>
+<tr>
+<td><code>/config</code></td>
+<td>local-jsx</td>
+<td>Open interactive configuration panel</td>
+</tr>
+<tr>
+<td><code>/mcp</code></td>
+<td>local-jsx</td>
+<td>Manage MCP servers (add, remove, configure)</td>
+</tr>
+<tr>
+<td><code>/sandbox</code></td>
+<td>local-jsx</td>
+<td>Configure sandbox environment. Display current status: <code>auto-allow</code>, <code>fallback allowed</code>, etc.</td>
+</tr>
+<tr>
+<td><code>/memory</code></td>
+<td>local-jsx</td>
+<td>Edit Hawa Code memory files (Memory system)</td>
+</tr>
+<tr>
+<td><code>/doctor</code></td>
+<td>local-jsx</td>
+<td>Check Hawa Code installation environment health</td>
+</tr>
+<tr>
+<td><code>/ide</code></td>
+<td>local-jsx</td>
+<td>Connect to IDE (such as VS Code) for integrated development features</td>
+</tr>
+<tr>
+<td><code>/help</code></td>
+<td>local-jsx</td>
+<td>Display help information and available command list</td>
+</tr>
+</tbody></table>
+<h3 id="Skill-Commands" class="article-heading"><a href="#Skill-Commands" class="headerlink" title="Skill Commands"></a>Skill Commands<a class="article-anchor" href="#Skill-Commands" aria-hidden="true"></a></h3><p>All Skills defined in <code>~/.hcode/skills/</code> or project <code>.hcode/skills/</code> that have <code>userInvocable: true</code> set will automatically generate corresponding slash commands. For example, if a <code>commit</code> skill is defined, it can be called via <code>/commit</code>.</p>
+<p>Skill commands are divided into two categories:</p>
+<ul>
+<li><strong>context !== ‘fork’</strong>: Generate <code>prompt</code> type commands, sending Skill content as prompt to AI</li>
+<li><strong>context === ‘fork’</strong>: Generate <code>local</code> type commands, executing Skill in independent agent</li>
+</ul>
+<hr>
+<h2 id="Custom-Slash-Commands" class="article-heading"><a href="#Custom-Slash-Commands" class="headerlink" title="Custom Slash Commands"></a>Custom Slash Commands<a class="article-anchor" href="#Custom-Slash-Commands" aria-hidden="true"></a></h2><table>
 <thead>
 <tr>
 <th>Field</th>
@@ -165,7 +267,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-03-12T03:12:23.945Z" itemprop="dateModified">Last updated: 2026-03-12</time>
+                <time class="article-footer-updated" datetime="2026-04-17T14:40:56.980Z" itemprop="dateModified">Last updated: 2026-04-17</time>
                 <a href="tool-lazy-loading.html" class="article-footer-prev" title="Tool Lazy Loading"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="skill.html" class="article-footer-next" title="Skill"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -174,7 +276,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Custom-Slash-Commands"><span class="toc-text">Custom Slash Commands</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Built-in-Slash-Commands"><span class="toc-text">Built-in Slash Commands</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Skill-Commands"><span class="toc-text">Skill Commands</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Custom-Slash-Commands"><span class="toc-text">Custom Slash Commands</span></a></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
