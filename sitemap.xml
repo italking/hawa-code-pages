@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.hawacode.com/docs/tool-lazy-loading</loc>
+    
+    <lastmod>2026-05-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.hawacode.com/en/blog/posts/Tool_Lazy_Loading_and_Lifecycle_Management</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -525,15 +534,6 @@
   
   <url>
     <loc>https://www.hawacode.com/en/docs/tool-lazy-loading</loc>
-    
-    <lastmod>2026-01-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/docs/tool-lazy-loading</loc>
     
     <lastmod>2026-01-31</lastmod>
     
