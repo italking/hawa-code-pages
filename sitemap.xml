@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.hawacode.com/en/docs/</loc>
+    
+    <lastmod>2026-05-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/configuration</loc>
+    
+    <lastmod>2026-05-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/</loc>
+    
+    <lastmod>2026-05-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/configuration</loc>
+    
+    <lastmod>2026-05-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.hawacode.com/en/about/</loc>
     
     <lastmod>2026-05-21</lastmod>
@@ -101,15 +137,6 @@
   </url>
   
   <url>
-    <loc>https://www.hawacode.com/docs/</loc>
-    
-    <lastmod>2026-05-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://www.hawacode.com/blog/posts/multi_model_load_balancer</loc>
     
     <lastmod>2026-05-07</lastmod>
@@ -149,24 +176,6 @@
     <loc>https://www.hawacode.com/blog/</loc>
     
     <lastmod>2026-04-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/en/docs/configuration</loc>
-    
-    <lastmod>2026-04-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/docs/configuration</loc>
-    
-    <lastmod>2026-04-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -554,15 +563,6 @@
     <loc>https://www.hawacode.com/docs/mcp</loc>
     
     <lastmod>2026-02-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/en/docs/</loc>
-    
-    <lastmod>2026-01-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
