@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Goal | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/docs/goal">
+  <!-- Alternate links -->
+  
+    
+      
+    
+      
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/goal">
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/goal" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="&#x2F;goal 命令用于设置一个完成条件，Hawa Code 会在无需你逐步提示的情况下持续工作以达成该条件。每次对话轮次结束后，一个轻量级快速模型会检查该条件是否满足。如果未满足，Hawa Code 会自动开启下一轮对话，而不是将控制权交还给你。一旦条件满足，目标会自动清除。 在有明确可验证终态的实质性工作中使用 goal：  将某个模块迁移到新 API，直到所有调用点都能编译通过且测试通过 实现设">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Goal">
+<meta property="og:url" content="https://www.hawacode.com/docs/goal">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="&#x2F;goal 命令用于设置一个完成条件，Hawa Code 会在无需你逐步提示的情况下持续工作以达成该条件。每次对话轮次结束后，一个轻量级快速模型会检查该条件是否满足。如果未满足，Hawa Code 会自动开启下一轮对话，而不是将控制权交还给你。一旦条件满足，目标会自动清除。 在有明确可验证终态的实质性工作中使用 goal：  将某个模块迁移到新 API，直到所有调用点都能编译通过且测试通过 实现设">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-06-04T06:07:18.729Z">
+<meta property="article:modified_time" content="2026-06-04T06:07:18.729Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/blog/" class="main-nav-link">博客</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/goal.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Goal</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p><code>/goal</code> 命令用于设置一个完成条件，Hawa Code 会在无需你逐步提示的情况下持续工作以达成该条件。每次对话轮次结束后，一个轻量级快速模型会检查该条件是否满足。如果未满足，Hawa Code 会自动开启下一轮对话，而不是将控制权交还给你。一旦条件满足，目标会自动清除。</p>
+<p>在有明确可验证终态的实质性工作中使用 goal：</p>
+<ul>
+<li>将某个模块迁移到新 API，直到所有调用点都能编译通过且测试通过</li>
+<li>实现设计文档，直到所有验收标准都被满足</li>
+<li>将大文件拆分为聚焦的模块，直到每个模块都在大小限制以内</li>
+<li>处理带标签的待办事项列表，直到队列为空</li>
+</ul>
+<h2 id="各种会话持续运行方式比较" class="article-heading"><a href="#各种会话持续运行方式比较" class="headerlink" title="各种会话持续运行方式比较"></a>各种会话持续运行方式比较<a class="article-anchor" href="#各种会话持续运行方式比较" aria-hidden="true"></a></h2><p>有三种方式可以在提示之间保持当前会话持续运行。根据下一轮应由什么触发来选择：</p>
+<table>
+<thead>
+<tr>
+<th>方式</th>
+<th>下一轮何时开始</th>
+<th>何时停止</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/goal</code></td>
+<td>上一轮结束后</td>
+<td>模型确认条件已满足</td>
+</tr>
+<tr>
+<td><code>/loop</code></td>
+<td>时间间隔到达</td>
+<td>你手动停止，或 Hawa Code 判断工作已完成</td>
+</tr>
+<tr>
+<td>Stop hook</td>
+<td>上一轮结束后</td>
+<td>你自己的脚本或提示决定</td>
+</tr>
+</tbody></table>
+<p><code>/goal</code> 和 Stop hook 都在每一轮结束后触发。<code>/goal</code> 是会话级别的快捷方式：你输入一个条件，它仅对当前会话生效。Stop hook 保存在设置文件中，对其作用域内的每个会话都生效，可以运行脚本进行确定性检查，也可以使用提示进行模型评估。</p>
+<p><code>/auto model</code> 本身只会在单轮对话内自动批准工具调用，但不会开启新一轮对话。Hawa Code 会在判断工作完成时停止。<code>/goal</code> 增加了一个独立的评估器，在每一轮结束后检查你的条件，因此完成判断由一个独立的模型做出，而不是正在执行工作的模型。两者是互补的：自动模式消除了逐个工具的提示，而 <code>/goal</code> 消除了逐轮的提示。</p>
+<h2 id="使用-goal" class="article-heading"><a href="#使用-goal" class="headerlink" title="使用 /goal"></a>使用 <code>/goal</code><a class="article-anchor" href="#使用-goal" aria-hidden="true"></a></h2><p>每个会话只能有一个活跃的 goal。同一个命令根据参数不同可以设置、查看或清除 goal。</p>
+<h3 id="设置-goal" class="article-heading"><a href="#设置-goal" class="headerlink" title="设置 goal"></a>设置 goal<a class="article-anchor" href="#设置-goal" aria-hidden="true"></a></h3><p>运行 <code>/goal</code>，后跟你希望满足的条件。如果已经有活跃的 goal，新的条件会将其替换。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">/goal 修复当前项目中报错，所有报错信息都需要完整修复</span><br></pre></td></tr></tbody></table></figure>
+
+<p>设置 goal 会立即开启一轮对话，条件本身作为指令。你不需要再发送单独的提示。</p>
+<p>当 goal 处于活跃状态时，会显示 <code>◎ /goal active</code> 指示器，展示 goal 已经运行了多长时间。</p>
+<p>每轮对话结束后，评估器会返回一个简短的理由，解释条件是否已满足。最新的理由会显示在状态视图和对话记录中，因此你可以看到 Hawa Code 接下来正在努力实现什么。</p>
+<h3 id="查看状态" class="article-heading"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态<a class="article-anchor" href="#查看状态" aria-hidden="true"></a></h3><p>不带参数运行 <code>/goal</code> 可以查看当前状态。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">/goal</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果 goal 处于活跃状态，状态会显示：</p>
+<ul>
+<li>条件内容</li>
+<li>已运行时长</li>
+<li>已评估的轮次数</li>
+<li>当前 token 消耗</li>
+<li>评估器最新的理由</li>
+</ul>
+<p>如果没有活跃的 goal，但本次会话中之前已成功达成过一个 goal，状态会显示已达成条件的具体内容，以及其持续时间、轮次数和 token 消耗。</p>
+<h3 id="清除-goal" class="article-heading"><a href="#清除-goal" class="headerlink" title="清除 goal"></a>清除 goal<a class="article-anchor" href="#清除-goal" aria-hidden="true"></a></h3><p>运行 <code>/goal clear</code> 可以在条件满足之前移除活跃的 goal。</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">/goal clear</span><br></pre></td></tr></tbody></table></figure>
+
+<p>运行 <code>/clear</code> 开启新对话也会移除任何活跃的 goal。</p>
+<h3 id="恢复活跃的-goal" class="article-heading"><a href="#恢复活跃的-goal" class="headerlink" title="恢复活跃的 goal"></a>恢复活跃的 goal<a class="article-anchor" href="#恢复活跃的-goal" aria-hidden="true"></a></h3><p>当会话结束时仍有活跃的 goal，使用 <code>--resume</code> 或恢复该会话时会还原该 goal。条件会保留，但轮次数、计时器和 token 消耗基准都会在恢复时重置。已经达成或已清除的 goal 不会被还原。</p>
+<p>使用 Ctrl+C 中断进程，可以在条件满足前停止非交互式 goal。</p>
+<h2 id="评估机制如何工作" class="article-heading"><a href="#评估机制如何工作" class="headerlink" title="评估机制如何工作"></a>评估机制如何工作<a class="article-anchor" href="#评估机制如何工作" aria-hidden="true"></a></h2><p><code>/goal</code> 是对话会话级别的基于提示的 Stop hook 的封装。每次 Hawa Code 完成一轮对话后，条件内容和迄今为止的对话记录会被发送到你配置的轻量级快速模型。该模型返回一个是否（yes/no）决定和一条简短理由。”no” 表示 Hawa Code 需要继续工作，并将理由作为下一轮对话的指导；”yes” 会清除 goal，并在对话记录中记录一个已达成条目。</p>
+<p>评估器在你为会话配置的提供商上运行。它不会调用工具，因此只能判断 Hawa Code 已经在对话中展示的内容。</p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-06-04T06:07:18.729Z" itemprop="dateModified">上次更新：2026-06-04</time>
+                <a href="sandboxing.html" class="article-footer-prev" title="沙箱"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="computer-use.html" class="article-footer-next" title="computer use"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E4%BC%9A%E8%AF%9D%E6%8C%81%E7%BB%AD%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F%E6%AF%94%E8%BE%83"><span class="toc-text">各种会话持续运行方式比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-goal"><span class="toc-text">使用 &#x2F;goal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-goal"><span class="toc-text">设置 goal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%8A%B6%E6%80%81"><span class="toc-text">查看状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%85%E9%99%A4-goal"><span class="toc-text">清除 goal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E6%B4%BB%E8%B7%83%E7%9A%84-goal"><span class="toc-text">恢复活跃的 goal</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E6%9C%BA%E5%88%B6%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C"><span class="toc-text">评估机制如何工作</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="commands.html" class="sidebar-link">命令</a><a href="model.html" class="sidebar-link">模型</a><a href="tools.html" class="sidebar-link">工具</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="permissions.html" class="sidebar-link">权限</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><strong class="sidebar-title">高级功能</strong><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle">▶</span><span>Hooks</span></div><div class="sidebar-submenu"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">定时任务</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">沙箱</a><a href="goal.html" class="sidebar-link current">Goal</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/blog/" class="mobile-nav-link">博客</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="model.html" class="mobile-nav-link">模型</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="permissions.html" class="mobile-nav-link">权限</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><strong class="mobile-nav-title">高级功能</strong><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">定时任务</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">沙箱</a><a href="goal.html" class="mobile-nav-link current">Goal</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/goal.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:zh-cn']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
