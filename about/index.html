@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  1.37.4 (2026-06-07)  优化 hands 工具本地渲染   1.37.0 (2026-06-03)  支持 Goal 斜杠命令   Stop Hook 增加了 last_assistant_message  入参   1.36.0 (2026-05-2">
+  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v1.39.1 (2026-06-22)  修复 webServer 前端因引用 @constants&#x2F;product.js 导致 process is not defined 的错误   v1.39.0 (2026-06-21)  消息归档与上下文优化 消息">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://www.hawacode.com/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  1.37.4 (2026-06-07)  优化 hands 工具本地渲染   1.37.0 (2026-06-03)  支持 Goal 斜杠命令   Stop Hook 增加了 last_assistant_message  入参   1.36.0 (2026-05-2">
+<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v1.39.1 (2026-06-22)  修复 webServer 前端因引用 @constants&#x2F;product.js 导致 process is not defined 的错误   v1.39.0 (2026-06-21)  消息归档与上下文优化 消息">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-06-15T15:36:58.306Z">
-<meta property="article:modified_time" content="2026-06-15T15:36:58.306Z">
+<meta property="article:published_time" content="2026-06-22T12:35:53.666Z">
+<meta property="article:modified_time" content="2026-06-22T12:35:53.666Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,133 @@ var _hmt = _hmt || [];
 <p><strong>一个</strong>   是留给自己的底线</p>
 <h1 id="版本" class="article-heading"><a href="#版本" class="headerlink" title="版本"></a>版本<a class="article-anchor" href="#版本" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v1.39.1 (2026-06-22)</p>
+<ul>
+<li>修复 webServer 前端因引用 @constants/product.js 导致 process is not defined 的错误</li>
+</ul>
+</li>
+<li><p>v1.39.0 (2026-06-21)</p>
+<ul>
+<li>消息归档与上下文优化<ul>
+<li>消息归档 1.0 正式上线</li>
+<li>支持 MessageArchiving 懒加载并优化引导提醒</li>
+<li>解耦 Message Archiving 与 Memo 的上下文优化提醒</li>
+<li>将 Message Archiving 启用判断集中到 SettingManager</li>
+<li>归档工具结果时支持可选总结字段，用于概括关键信息</li>
+<li>对返回内容较少的工具（如 Cwd、Think、TodoWrite、MessageArchiving 等）直接跳过归档，避免无意义替换</li>
+<li>自动压缩前应用 messageArchivingService.applyToMessages，确保已归档内容也被替换</li>
+<li>将 AUTO_COMPACT_THRESHOLD_RATIO 集中到 constants/product.ts</li>
+<li>system reminder 上下文使用率提示中补充自动压缩触发阈值（92%）</li>
+</ul>
+</li>
+<li>Memo 工具增强<ul>
+<li>简化 prompt 并提取常量，schema 增加基础校验</li>
+<li>增加输入校验，禁止保存包含 “…(argument truncated)” 占位符的内容</li>
+<li>改为截断模式：占位符替换为截断后文本，保留前 20 个字符并添加提示说明</li>
+<li>移除 write 成功结果中重复的 summary 提示</li>
+<li>新增 SettingManager.isMemoEnable，通过环境变量 HAWA_CODE_MEMO 控制是否启用</li>
+<li>system prompt 增加关于 Memo 内容占位符的说明</li>
+<li>增加 content 参数，查询时过滤 content 以减少上下文占用</li>
+<li>截断旧 Memo write content 后插入合成说明消息，减少模型幻觉</li>
+</ul>
+</li>
+<li>配置与交互<ul>
+<li>在设置面板中添加 autoMode 开关选项</li>
+<li>/model 命令增加 Open Config 按钮</li>
+<li>斜杠命令支持控制工具懒加载</li>
+<li>autoModel 默认启用</li>
+<li>修复 autoDream 配置关闭后仍执行的缺陷</li>
+</ul>
+</li>
+<li>工具与权限<ul>
+<li>还原 LS 目录列表工具</li>
+<li>后端新增 /api/config 接口返回 userType</li>
+<li>前端新增 useConfig hook 获取 userType，并根据 userType 过滤工具</li>
+<li>为 BashTool 和 PowerShellTool 的输入 schema 增加 description 字段</li>
+<li>补齐缺失的 agent id 参数</li>
+</ul>
+</li>
+<li>其他修复<ul>
+<li>修复 websocket 模块引入问题，兼容 CommonJS 和 ES 模块</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.38.12 (2026-06-16)</p>
+<ul>
+<li>修复读取空文件报错</li>
+</ul>
+</li>
+<li><p>v1.38.11 (2026-06-15)</p>
+<ul>
+<li>修复 agentviewer bug</li>
+<li>架构优化：拆分工具执行与 agent 执行</li>
+</ul>
+</li>
+<li><p>v1.38.10 (2026-06-14)</p>
+<ul>
+<li>修复 AgentTabs 中 main 标签显示问题，保持与后端 agentId 一致</li>
+<li>修复 subagent 结束后无法唤醒主 agent 的 bug</li>
+<li>在 hawaContext.onQueryStart 中添加 agentType、agentName 和 description 参数，便于追踪子 Agent 生命周期</li>
+</ul>
+</li>
+<li><p>v1.38.9 (2026-06-12)</p>
+<ul>
+<li>隐藏 tool unload 消息</li>
+<li>webviewer 2 新增多个工具的使用和结果组件：NotebookEdit、WebSearch、WebFetch、TaskStop、TodoWrite、Think、AskUserQuestion、EnterPlanMode、ExitPlanMode、Enter WorktreeTool、ExitWorktreeTool、SlashCommand、Skill、CronCreate、CronDelete、CronList、TeamCreate、TeamDelete、SendMessage</li>
+<li>优化普通 MCP 工具显示</li>
+</ul>
+</li>
+<li><p>v1.38.8 / v1.38.7 / v1.38.6 (2026-06-12)</p>
+<ul>
+<li>三个 tag 指向同一提交</li>
+<li>Hawa Code - Agent Viewer 居中显示</li>
+</ul>
+</li>
+<li><p>v1.38.5 (2026-06-12)</p>
+<ul>
+<li>hands 工具支持 cwd tool</li>
+</ul>
+</li>
+<li><p>v1.38.4 (2026-06-12)</p>
+<ul>
+<li>hands 工具 server 支持 Session 复用当前 mcpserver</li>
+<li>优化 command 消息显示</li>
+</ul>
+</li>
+<li><p>v1.38.3 (2026-06-12)</p>
+<ul>
+<li>修复重试不能被中断的错误</li>
+<li>支持 config 中的 proxy 设置项，允许用户启用或禁用代理功能</li>
+<li>修复 edit tool 在 webviewer 中的显示问题</li>
+<li>优化 hands 远程标识</li>
+<li>优化 webviewer 中 hands 工具的渲染</li>
+<li>优化 webviewer 整体渲染</li>
+<li>去掉消耗钱的显示</li>
+</ul>
+</li>
+<li><p>v1.38.2 (2026-06-08)</p>
+<ul>
+<li>修复启动多个 hcode webserver 时的端口冲突问题</li>
+</ul>
+</li>
+<li><p>v1.38.1 (2026-06-08)</p>
+<ul>
+<li>修复 webviewer 静态文件路径问题</li>
+</ul>
+</li>
+<li><p>v1.38.0 (2026-06-08)</p>
+<ul>
+<li>支持 webviewer 1.0</li>
+<li>web viewer 支持表格显示</li>
+<li>优化 webview 前端页面渲染 tool use 与 tool result 的对应关系</li>
+<li>改为使用增量消息以提升性能</li>
+<li>TaskCreate、TaskGet、TaskList、TaskUpdate 工具在 web 端不再渲染，与 CLI 端保持一致</li>
+<li>修复 default 和 main agent 显示重复的问题</li>
+<li>优化 webserver 启动日志输出</li>
+<li>优化 config 中 webserver 的显示</li>
+</ul>
+</li>
 <li><p>1.37.4 (2026-06-07)</p>
 <ul>
 <li>优化 hands 工具本地渲染</li>
@@ -489,7 +616,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-06-15T15:36:58.306Z" itemprop="dateModified">上次更新：2026-06-15</time>
+                <time class="article-footer-updated" datetime="2026-06-22T12:35:53.666Z" itemprop="dateModified">上次更新：2026-06-22</time>
                 
               </footer>
               

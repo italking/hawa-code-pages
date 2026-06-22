@@ -54,8 +54,8 @@
 <meta property="og:description" content="Dahawa Life Plan  An intelligent programming assistant who understands you An intelligent assistant who understands you An assistant who understands you  One   is the bottom line you leave for yoursel">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-06-15T15:36:58.314Z">
-<meta property="article:modified_time" content="2026-06-15T15:36:58.314Z">
+<meta property="article:published_time" content="2026-06-22T12:38:42.873Z">
+<meta property="article:modified_time" content="2026-06-22T12:38:42.873Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,133 @@ var _hmt = _hmt || [];
 <p><strong>One</strong>   is the bottom line you leave for yourself</p>
 <h1 id="Version-History" class="article-heading"><a href="#Version-History" class="headerlink" title="Version History"></a>Version History<a class="article-anchor" href="#Version-History" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v1.39.1 (2026-06-22)</p>
+<ul>
+<li>Fixed <code>process is not defined</code> error in webServer frontend caused by importing @constants/product.js</li>
+</ul>
+</li>
+<li><p>v1.39.0 (2026-06-21)</p>
+<ul>
+<li>Message Archiving and Context Optimization<ul>
+<li>Message Archiving 1.0 officially released</li>
+<li>Support lazy loading for MessageArchiving and optimized onboarding reminders</li>
+<li>Decoupled Message Archiving and Memo context optimization reminders</li>
+<li>Centralized Message Archiving enablement check in SettingManager</li>
+<li>Added optional summary field when archiving tool results to capture key information</li>
+<li>Skip archiving for tools with minimal output (e.g., Cwd, Think, TodoWrite, MessageArchiving) to avoid meaningless replacements</li>
+<li>Apply <code>messageArchivingService.applyToMessages</code> before auto-compaction to ensure archived content is also replaced</li>
+<li>Centralized <code>AUTO_COMPACT_THRESHOLD_RATIO</code> in constants/product.ts</li>
+<li>Added auto-compaction trigger threshold (92%) to system reminder context usage hint</li>
+</ul>
+</li>
+<li>Memo Tool Enhancements<ul>
+<li>Simplified prompt and extracted constants, added basic schema validation</li>
+<li>Added input validation to reject content containing “…(argument truncated)” placeholders</li>
+<li>Switched to truncation mode: replace placeholders with truncated text, keep first 20 chars and add explanatory note</li>
+<li>Removed duplicate summary hint from successful Memo write results</li>
+<li>Added <code>SettingManager.isMemoEnable</code>, controlled by <code>HAWA_CODE_MEMO</code> environment variable</li>
+<li>Added Memo content placeholder explanation to system prompt</li>
+<li>Added <code>content</code> parameter to filter content during queries and reduce context usage</li>
+<li>Insert synthetic explanation message after truncating old Memo write content to reduce model hallucination</li>
+</ul>
+</li>
+<li>Configuration and Interaction<ul>
+<li>Added autoMode toggle option in settings panel</li>
+<li>Added Open Config button to <code>/model</code> command</li>
+<li>Slash commands support controlling tool lazy loading</li>
+<li>autoModel enabled by default</li>
+<li>Fixed issue where autoDream still ran after being disabled</li>
+</ul>
+</li>
+<li>Tools and Permissions<ul>
+<li>Restored LS directory listing tool</li>
+<li>Added <code>/api/config</code> endpoint on backend to return userType</li>
+<li>Added <code>useConfig</code> hook on frontend to get userType and filter tools accordingly</li>
+<li>Added description field to input schemas for BashTool and PowerShellTool</li>
+<li>Added missing agent id parameters</li>
+</ul>
+</li>
+<li>Other Fixes<ul>
+<li>Fixed websocket module import issue for CommonJS and ES module compatibility</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.38.12 (2026-06-16)</p>
+<ul>
+<li>Fixed error when reading empty files</li>
+</ul>
+</li>
+<li><p>v1.38.11 (2026-06-15)</p>
+<ul>
+<li>Fixed agentviewer bug</li>
+<li>Architecture optimization: split tool execution and agent execution</li>
+</ul>
+</li>
+<li><p>v1.38.10 (2026-06-14)</p>
+<ul>
+<li>Fixed main tab display issue in AgentTabs to stay consistent with backend agentId</li>
+<li>Fixed bug where subagent could not wake up main agent after completion</li>
+<li>Added agentType, agentName, and description parameters to <code>hawaContext.onQueryStart</code> for better sub-agent lifecycle tracking</li>
+</ul>
+</li>
+<li><p>v1.38.9 (2026-06-12)</p>
+<ul>
+<li>Hidden tool unload messages</li>
+<li>webviewer 2 added usage and result components for multiple tools: NotebookEdit, WebSearch, WebFetch, TaskStop, TodoWrite, Think, AskUserQuestion, EnterPlanMode, ExitPlanMode, EnterWorktreeTool, ExitWorktreeTool, SlashCommand, Skill, CronCreate, CronDelete, CronList, TeamCreate, TeamDelete, SendMessage</li>
+<li>Optimized display of common MCP tools</li>
+</ul>
+</li>
+<li><p>v1.38.8 / v1.38.7 / v1.38.6 (2026-06-12)</p>
+<ul>
+<li>Three tags point to the same commit</li>
+<li>Hawa Code - Agent Viewer centered display</li>
+</ul>
+</li>
+<li><p>v1.38.5 (2026-06-12)</p>
+<ul>
+<li>hands tool supports cwd tool</li>
+</ul>
+</li>
+<li><p>v1.38.4 (2026-06-12)</p>
+<ul>
+<li>hands tool server supports Session reuse with current mcpserver</li>
+<li>Optimized command message display</li>
+</ul>
+</li>
+<li><p>v1.38.3 (2026-06-12)</p>
+<ul>
+<li>Fixed retry cannot be interrupted error</li>
+<li>Added proxy setting in config, allowing users to enable or disable proxy functionality</li>
+<li>Fixed edit tool display issue in webviewer</li>
+<li>Optimized hands remote identifier</li>
+<li>Optimized rendering of hands tool in webviewer</li>
+<li>Optimized overall webviewer rendering</li>
+<li>Removed cost display</li>
+</ul>
+</li>
+<li><p>v1.38.2 (2026-06-08)</p>
+<ul>
+<li>Fixed port conflict when starting multiple hcode webservers</li>
+</ul>
+</li>
+<li><p>v1.38.1 (2026-06-08)</p>
+<ul>
+<li>Fixed webviewer static file path issue</li>
+</ul>
+</li>
+<li><p>v1.38.0 (2026-06-08)</p>
+<ul>
+<li>Support webviewer 1.0</li>
+<li>web viewer supports table display</li>
+<li>Optimized correspondence between tool use and tool result rendering in webview frontend</li>
+<li>Switched to incremental messages to improve performance</li>
+<li>TaskCreate, TaskGet, TaskList, TaskUpdate tools no longer render on web, consistent with CLI</li>
+<li>Fixed duplicate display of default and main agent</li>
+<li>Optimized webserver startup log output</li>
+<li>Optimized webserver display in config</li>
+</ul>
+</li>
 <li><p>1.37.4 (2026-06-07)</p>
 <ul>
 <li>Optimized hands tool local rendering</li>
@@ -489,7 +616,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-06-15T15:36:58.314Z" itemprop="dateModified">Last updated: 2026-06-15</time>
+                <time class="article-footer-updated" datetime="2026-06-22T12:38:42.873Z" itemprop="dateModified">Last updated: 2026-06-22</time>
                 
               </footer>
               
