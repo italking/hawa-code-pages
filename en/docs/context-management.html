@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Context Management | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/en/docs/context-management">
+  <!-- Alternate links -->
+  
+    
+      
+        <link rel="alternate" hreflang="zh-cn" href="https://www.hawacode.com/docs/context-management">
+      
+    
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/context-management" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="In long-running sessions or complex development tasks, the model’s context window has a limited capacity. As context continues to grow, inference efficiency may decrease, and key information may get b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Context Management">
+<meta property="og:url" content="https://www.hawacode.com/en/docs/context-management">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="In long-running sessions or complex development tasks, the model’s context window has a limited capacity. As context continues to grow, inference efficiency may decrease, and key information may get b">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-06-22T13:01:06.274Z">
+<meta property="article:modified_time" content="2026-06-22T13:01:06.274Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/en/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/en/docs/" class="main-nav-link">Docs</a><a href="/en/blog/" class="main-nav-link">Blog</a><a href="/en/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/context-management.html">
+        
+           <option value="zh-cn">简体中文</option>
+        
+           <option value="en" selected>English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Context Management</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p>In long-running sessions or complex development tasks, the model’s context window has a limited capacity. As context continues to grow, inference efficiency may decrease, and key information may get buried. Hawa Code provides two context management tools: <strong>Message Archiving</strong> and <strong>Memo</strong>, for proactively controlling context size while preserving reusable analysis conclusions.</p>
+<p>Both tools are disabled by default and must be manually enabled via environment variables.</p>
+<h2 id="1-Enabling-the-Tools" class="article-heading"><a href="#1-Enabling-the-Tools" class="headerlink" title="1. Enabling the Tools"></a>1. Enabling the Tools<a class="article-anchor" href="#1-Enabling-the-Tools" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Environment Variable</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Message Archiving</td>
+<td><code>HAWA_CODE_MESSAGE_ARCHIVING=true</code></td>
+<td>Archive historical tool results</td>
+</tr>
+<tr>
+<td>Memo</td>
+<td><code>HAWA_CODE_MEMO=true</code></td>
+<td>Persist analysis conclusions to disk and read them on demand</td>
+</tr>
+</tbody></table>
+<p>Add the following configuration to the project’s <code>.env</code> file to enable them:</p>
+<figure class="highlight ini"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attr">HAWA_CODE_MESSAGE_ARCHIVING</span>=<span class="literal">true</span></span><br><span class="line"><span class="attr">HAWA_CODE_MEMO</span>=<span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>The two tools complement each other: Message Archiving reduces the size of the immediate context, while Memo preserves structured information across multiple session stages. It is recommended to enable both when handling complex tasks.</p>
+<h2 id="2-Message-Archiving" class="article-heading"><a href="#2-Message-Archiving" class="headerlink" title="2. Message Archiving"></a>2. Message Archiving<a class="article-anchor" href="#2-Message-Archiving" aria-hidden="true"></a></h2><h3 id="2-1-Overview" class="article-heading"><a href="#2-1-Overview" class="headerlink" title="2.1 Overview"></a>2.1 Overview<a class="article-anchor" href="#2-1-Overview" aria-hidden="true"></a></h3><p>The Message Archiving tool archives tool execution results in the current context that have already been produced but are no longer directly used. Archived results no longer occupy the model context, but remain in the session state and can be restored when necessary.</p>
+<p>Content suitable for archiving includes:</p>
+<ul>
+<li>Tool outputs that have been completed and are unrelated to the current task step</li>
+<li>Results that are long but whose key information has already been extracted as summaries</li>
+<li>Files or logs queried temporarily that are unlikely to be reused later</li>
+</ul>
+<p>Content that will not be archived includes:</p>
+<ul>
+<li>Results with content no longer than 100 characters</li>
+<li>Tool outputs on which the current reasoning still depends</li>
+</ul>
+<h3 id="2-2-UI-Feedback" class="article-heading"><a href="#2-2-UI-Feedback" class="headerlink" title="2.2 UI Feedback"></a>2.2 UI Feedback<a class="article-anchor" href="#2-2-UI-Feedback" aria-hidden="true"></a></h3><p>When a batch of tool results is archived, the interface will display:</p>
+<figure class="highlight text"><table><tbody><tr><td class="code"><pre><span class="line">⎿ Archived 3 tool result(s)</span><br><span class="line">  Key summary: confirmed the return value formats of three APIs</span><br></pre></td></tr></tbody></table></figure>
+
+<p>When archived results are restored, the interface will display:</p>
+<figure class="highlight text"><table><tbody><tr><td class="code"><pre><span class="line">⎿ Unarchived 2 tool result(s)</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-3-Benefits" class="article-heading"><a href="#2-3-Benefits" class="headerlink" title="2.3 Benefits"></a>2.3 Benefits<a class="article-anchor" href="#2-3-Benefits" aria-hidden="true"></a></h3><ul>
+<li><strong>Reduces context consumption</strong>: Prevents large blocks of file content and log output from lingering in the conversation context.</li>
+<li><strong>Automated decisions</strong>: When context size increases, Hawa Code proactively identifies and archives low-relevance results.</li>
+<li><strong>Reversible operation</strong>: Archived results can be automatically restored later when needed.</li>
+</ul>
+<h2 id="3-Memo" class="article-heading"><a href="#3-Memo" class="headerlink" title="3. Memo"></a>3. Memo<a class="article-anchor" href="#3-Memo" aria-hidden="true"></a></h2><h3 id="3-1-Overview" class="article-heading"><a href="#3-1-Overview" class="headerlink" title="3.1 Overview"></a>3.1 Overview<a class="article-anchor" href="#3-1-Overview" aria-hidden="true"></a></h3><p>The Memo tool saves key information needed across multiple conversation turns to disk, such as analysis conclusions, execution plans, error records, or core findings. After writing, the full content is removed from the current context, leaving only a short summary; the full content can be read at any time when needed.</p>
+<h3 id="3-2-Operation-Types" class="article-heading"><a href="#3-2-Operation-Types" class="headerlink" title="3.2 Operation Types"></a>3.2 Operation Types<a class="article-anchor" href="#3-2-Operation-Types" aria-hidden="true"></a></h3><p>The Memo tool supports the following operations:</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>write</code></td>
+<td>Write or overwrite a memo. Requires <code>key</code>, <code>summary</code>, and <code>content</code></td>
+</tr>
+<tr>
+<td><code>list</code></td>
+<td>List all memos in the current session, sorted by most recently updated</td>
+</tr>
+<tr>
+<td><code>read</code></td>
+<td>Read the full content of the memo with the specified <code>key</code></td>
+</tr>
+<tr>
+<td><code>delete</code></td>
+<td>Delete the memo with the specified <code>key</code></td>
+</tr>
+</tbody></table>
+<h3 id="3-3-Memo-Structure" class="article-heading"><a href="#3-3-Memo-Structure" class="headerlink" title="3.3 Memo Structure"></a>3.3 Memo Structure<a class="article-anchor" href="#3-3-Memo-Structure" aria-hidden="true"></a></h3><p>Each memo consists of the following fields:</p>
+<ul>
+<li><strong>key</strong>: The unique identifier for the memo, e.g., <code>auth-flow-analysis</code></li>
+<li><strong>summary</strong>: A summary of no more than 300 characters, retained in the context to quickly determine whether to read it</li>
+<li><strong>content</strong>: The full content of the memo, which can contain analysis results of any length</li>
+</ul>
+<h3 id="3-4-Storage-Path" class="article-heading"><a href="#3-4-Storage-Path" class="headerlink" title="3.4 Storage Path"></a>3.4 Storage Path<a class="article-anchor" href="#3-4-Storage-Path" aria-hidden="true"></a></h3><p>Memo content is persisted as Markdown files. The default path is:</p>
+<figure class="highlight text"><table><tbody><tr><td class="code"><pre><span class="line">~/.hcode/projects/{project-dir}/notes/{session-id}/{key}.md</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Where:</p>
+<ul>
+<li><code>{project-dir}</code>: The project directory name converted from the current working directory</li>
+<li><code>{session-id}</code>: The unique identifier of the current session</li>
+<li><code>{key}</code>: The unique identifier of the memo</li>
+</ul>
+<p>All memos under the same project and session also maintain an index file:</p>
+<figure class="highlight text"><table><tbody><tr><td class="code"><pre><span class="line">~/.hcode/projects/{project-dir}/notes/{session-id}/index.json</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Memo files remain on the local disk for a long time; as long as the cache is not cleared or files are manually deleted, the content can continue to be used in subsequent sessions.</p>
+<h3 id="3-5-Benefits" class="article-heading"><a href="#3-5-Benefits" class="headerlink" title="3.5 Benefits"></a>3.5 Benefits<a class="article-anchor" href="#3-5-Benefits" aria-hidden="true"></a></h3><ul>
+<li><strong>Reusable across turns</strong>: Even after many turns, previously saved conclusions can be precisely retrieved.</li>
+<li><strong>Frees up context space</strong>: Long analyses retain only summaries, reducing context burden during ongoing reasoning.</li>
+<li><strong>Automatic deduplication</strong>: Repeated writes with the same <code>key</code> will overwrite old content without being counted as additional memos.</li>
+<li><strong>Capacity management</strong>: Each session can save up to 50 memos; when the limit is reached, outdated content must be manually deleted.</li>
+</ul>
+<h2 id="4-Using-Together" class="article-heading"><a href="#4-Using-Together" class="headerlink" title="4. Using Together"></a>4. Using Together<a class="article-anchor" href="#4-Using-Together" aria-hidden="true"></a></h2><p>Message Archiving and Memo can be used together in complex tasks as follows:</p>
+<ol>
+<li><strong>Analysis phase</strong>: Use Memo to save structured conclusions such as code structure, call relationships, and key findings.</li>
+<li><strong>Execution phase</strong>: Use Message Archiving to archive memo lists or memo content that has already been read.</li>
+<li><strong>Reuse phase</strong>: When needed, reload relevant memos via the <code>read</code> operation, and archive them again after use.</li>
+</ol>
+<p>The positioning of the two tools can be summarized as:</p>
+<ul>
+<li><strong>Message Archiving</strong>: Archives temporarily unused conversation content to keep the current context tidy.</li>
+<li><strong>Memo</strong>: Persists important conclusions to disk and reads them on demand.</li>
+</ul>
+<h2 id="5-Summary" class="article-heading"><a href="#5-Summary" class="headerlink" title="5. Summary"></a>5. Summary<a class="article-anchor" href="#5-Summary" aria-hidden="true"></a></h2><p>Message Archiving and Memo together form Hawa Code’s context management mechanism. The former controls the volume of the current session’s context, while the latter preserves and reuses key knowledge within the session lifecycle. When handling long conversations, code analysis, and multi-step development scenarios, enabling both tools can significantly improve session clarity and continuity.</p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-06-22T13:01:06.274Z" itemprop="dateModified">Last updated: 2026-06-22</time>
+                <a href="agent-viewer.html" class="article-footer-prev" title="Agent Viewer"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="computer-use.html" class="article-footer-next" title="computer use"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Enabling-the-Tools"><span class="toc-text">1. Enabling the Tools</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Message-Archiving"><span class="toc-text">2. Message Archiving</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Overview"><span class="toc-text">2.1 Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-UI-Feedback"><span class="toc-text">2.2 UI Feedback</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Benefits"><span class="toc-text">2.3 Benefits</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Memo"><span class="toc-text">3. Memo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Overview"><span class="toc-text">3.1 Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Operation-Types"><span class="toc-text">3.2 Operation Types</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Memo-Structure"><span class="toc-text">3.3 Memo Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-Storage-Path"><span class="toc-text">3.4 Storage Path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-Benefits"><span class="toc-text">3.5 Benefits</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Using-Together"><span class="toc-text">4. Using Together</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Summary"><span class="toc-text">5. Summary</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="commands.html" class="sidebar-link">Commands</a><a href="model.html" class="sidebar-link">Models</a><a href="tools.html" class="sidebar-link">Tools</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="permissions.html" class="sidebar-link">Permissions</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool Lazy Loading</a><strong class="sidebar-title">Advanced Features</strong><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle">▶</span><span>Hooks</span></div><div class="sidebar-submenu"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">Scheduled Tasks</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">Sandboxing</a><a href="goal.html" class="sidebar-link">Goal</a><a href="agent-viewer.html" class="sidebar-link">Agent Viewer</a><a href="context-management.html" class="sidebar-link current">Context Management</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/en/docs/" class="mobile-nav-link">Docs</a><a href="/en/blog/" class="mobile-nav-link">Blog</a><a href="/en/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="commands.html" class="mobile-nav-link">Commands</a><a href="model.html" class="mobile-nav-link">Models</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="permissions.html" class="mobile-nav-link">Permissions</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool Lazy Loading</a><strong class="mobile-nav-title">Advanced Features</strong><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">Scheduled Tasks</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">Sandboxing</a><a href="goal.html" class="mobile-nav-link">Goal</a><a href="agent-viewer.html" class="mobile-nav-link">Agent Viewer</a><a href="context-management.html" class="mobile-nav-link current">Context Management</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/context-management.html">
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:en']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
