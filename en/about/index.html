@@ -54,8 +54,8 @@
 <meta property="og:description" content="Dahawa Life Plan  An intelligent programming assistant who understands you An intelligent assistant who understands you An assistant who understands you  One   is the bottom line you leave for yoursel">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-06-23T02:42:35.309Z">
-<meta property="article:modified_time" content="2026-06-23T02:42:35.309Z">
+<meta property="article:published_time" content="2026-07-03T03:00:35.500Z">
+<meta property="article:modified_time" content="2026-07-03T03:00:35.500Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,85 @@ var _hmt = _hmt || [];
 <p><strong>One</strong>   is the bottom line you leave for yourself</p>
 <h1 id="Version-History" class="article-heading"><a href="#Version-History" class="headerlink" title="Version History"></a>Version History<a class="article-anchor" href="#Version-History" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v1.41.1 (2026-07-01)</p>
+<ul>
+<li>Optimize Agent Viewer and support Memo write details display<ul>
+<li>AgentToolUse adds prompt detail expand/collapse, displaying model, type, resume, background run and other metadata</li>
+<li>AgentToolResult long results support collapse after expansion</li>
+<li>MemoToolUse write operation adds details button, allowing viewing of complete written content</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.41.0 (2026-07-01)</p>
+<ul>
+<li>Web Settings configuration panel<ul>
+<li>New /api/settings REST API and configuration write validation</li>
+<li>WebSocket real-time sync config changes (settings_changed / settings_snapshot)</li>
+<li>Frontend SettingsPanel component and basic editing controls</li>
+<li>Config file hot reload broadcasts changes via eventBus</li>
+<li>New settingsValidation validation module and related tests</li>
+</ul>
+</li>
+<li>Settings panel optimization<ul>
+<li>Adjust Advanced config order to env/permissions/sandbox/sessionSummary</li>
+<li>env config changed to KeyValue form mode, supporting add/delete/edit</li>
+<li>Changed from real-time save to batch submit mode via save button</li>
+<li>Improved env config validation rules and added tests</li>
+</ul>
+</li>
+<li>/cost command UI panelization<ul>
+<li>Added token usage, context window ratio, cache hit rate display</li>
+<li>cost-tracker added cacheTokens and currentContextTokens tracking</li>
+<li>llmodel syncs cache and context token stats on each API call</li>
+</ul>
+</li>
+<li>Web tools and message optimization<ul>
+<li>Memo tool web component implementation, including use and result display components</li>
+<li>Filter internal messages displayed on web (INNER_MESSAGE, SYSTEM_NOTIFICATION, system-reminder)</li>
+<li>Fixed archive function display on web</li>
+</ul>
+</li>
+<li>Lazy loading tool hint optimization<ul>
+<li>Fixed wrong prompt when lazy loading tool doesn’t exist</li>
+<li>Optimized unloaded tool prompt text</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.40.1 (2026-06-24)</p>
+<ul>
+<li>Unified tool lazy loading reminders to use tools parameter, optimized LSP reminder text<ul>
+<li>getToolLazy and getLSPServer methods unified to use current agent’s actual tool list instead of global context data</li>
+<li>Optimized unloaded tool reminder text: “Available but not loaded tools” replaces “Unloaded tools”</li>
+<li>LSP reminder uses tools parameter to determine if LSP tools are loaded, removed direct dependency on CONTEXT_LOADED_TOOLS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.40.0 (2026-06-24)</p>
+<ul>
+<li>Subagent Tool Lazy Loading<ul>
+<li>Full support for subagent tool lazy loading, each agent’s loaded tool state is isolated</li>
+<li>ToolLoader / ToolUnLoader isolates loaded state by agentId, subagent won’t pollute main agent’s tool list</li>
+<li>Fork mode subagent passes complete original tool list (_tools), ensuring lazy loading can access all available tools</li>
+<li>Tool.prompt adds optional context parameter, ToolLoader can sense current agent’s tool scope</li>
+<li>In lazy loading mode, ToolLoader / ToolUnLoader are always available (fixTools dynamically supplements based on enableLazyTool)</li>
+<li>Unloaded tool error hints also work for subagents</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.39.2 (2026-06-23)</p>
+<ul>
+<li>Optimized context usage reminders<ul>
+<li>System reminder context usage hint displays at all usage levels, no longer only shown at ≥50%</li>
+<li>Optimized MessageArchiving and Memo tool loaded/unloaded hint text to be more concise and clear</li>
+<li>Multiple tool suggestions (archiving + memo) presented as a list for clearer structure</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>v1.39.1 (2026-06-22)</p>
 <ul>
 <li>Fixed <code>process is not defined</code> error in webServer frontend caused by importing @constants/product.js</li>
@@ -616,7 +695,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-06-23T02:42:35.309Z" itemprop="dateModified">Last updated: 2026-06-23</time>
+                <time class="article-footer-updated" datetime="2026-07-03T03:00:35.500Z" itemprop="dateModified">Last updated: 2026-07-03</time>
                 
               </footer>
               

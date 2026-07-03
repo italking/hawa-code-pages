@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v1.39.1 (2026-06-22)  修复 webServer 前端因引用 @constants&#x2F;product.js 导致 process is not defined 的错误   v1.39.0 (2026-06-21)  消息归档与上下文优化 消息">
+  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v1.41.1 (2026-07-01)  优化 Agent Viewer 并支持 Memo 写入详情展示 AgentToolUse 增加 prompt 详情展开&#x2F;收起，显示模型、类型、resume、后台运行等元数据 AgentToolResult 长结果支持">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://www.hawacode.com/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v1.39.1 (2026-06-22)  修复 webServer 前端因引用 @constants&#x2F;product.js 导致 process is not defined 的错误   v1.39.0 (2026-06-21)  消息归档与上下文优化 消息">
+<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v1.41.1 (2026-07-01)  优化 Agent Viewer 并支持 Memo 写入详情展示 AgentToolUse 增加 prompt 详情展开&#x2F;收起，显示模型、类型、resume、后台运行等元数据 AgentToolResult 长结果支持">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-06-23T02:42:35.308Z">
-<meta property="article:modified_time" content="2026-06-23T02:42:35.308Z">
+<meta property="article:published_time" content="2026-07-03T03:00:35.499Z">
+<meta property="article:modified_time" content="2026-07-03T03:00:35.499Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,95 @@ var _hmt = _hmt || [];
 <p><strong>一个</strong>   是留给自己的底线</p>
 <h1 id="版本" class="article-heading"><a href="#版本" class="headerlink" title="版本"></a>版本<a class="article-anchor" href="#版本" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v1.41.1 (2026-07-01)</p>
+<ul>
+<li>优化 Agent Viewer 并支持 Memo 写入详情展示<ul>
+<li>AgentToolUse 增加 prompt 详情展开/收起，显示模型、类型、resume、后台运行等元数据</li>
+<li>AgentToolResult 长结果支持展开后再次收起</li>
+<li>MemoToolUse write 操作增加 details 按钮，可查看完整写入内容</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.41.0 (2026-07-01)</p>
+<ul>
+<li>Web 端 Settings 配置面板<ul>
+<li>新增 /api/settings REST API 与配置写入校验</li>
+<li>WebSocket 实时同步配置变更（settings_changed / settings_snapshot）</li>
+<li>前端 SettingsPanel 组件及基础编辑控件</li>
+<li>配置文件热加载时通过 eventBus 广播变更</li>
+<li>新增 settingsValidation 校验模块与相关测试</li>
+</ul>
+</li>
+<li>Settings 面板优化<ul>
+<li>调整 Advanced 配置顺序为 env/permissions/sandbox/sessionSummary</li>
+<li>env 配置改为 KeyValue 表单模式，支持添加/删除/编辑</li>
+<li>从实时保存改为保存按钮批量提交模式</li>
+<li>完善 env 配置校验规则并补充测试</li>
+</ul>
+</li>
+<li>/cost 命令 UI 面板化<ul>
+<li>新增 token 用量、上下文窗口占比、缓存命中率显示</li>
+<li>cost-tracker 新增 cacheTokens 和 currentContextTokens 追踪</li>
+<li>llmodel 每次 API 调用同步更新 cache 和 context token 统计</li>
+</ul>
+</li>
+<li>Web 端工具与消息优化<ul>
+<li>Memo 工具 Web 端组件实现，包括使用和结果展示组件</li>
+<li>过滤 web 端显示的内部消息（INNER_MESSAGE、SYSTEM_NOTIFICATION、system-reminder）</li>
+<li>修复归档函数 web 端显示</li>
+</ul>
+</li>
+<li>懒加载工具提示优化<ul>
+<li>修复懒加载工具不存在时提示错误</li>
+<li>优化未加载工具提示文案</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.40.3 (2026-06-25)</p>
+<ul>
+<li>统一工具已加载/未加载的提示词，新增 MessageArchiving 与 Memo 协作提示</li>
+</ul>
+</li>
+<li><p>v1.40.2 (2026-06-25)</p>
+<ul>
+<li>修改 IDE 提示 system reminder 到底部，提升缓存命中率</li>
+</ul>
+</li>
+<li><p>v1.40.1 (2026-06-24)</p>
+<ul>
+<li>统一工具懒加载提醒使用 tools 参数，优化 LSP 提醒文案<ul>
+<li>getToolLazy 和 getLSPServer 方法统一使用当前 agent 实际工具列表而非全局 context 数据</li>
+<li>优化未加载工具提示文案：”Available but not loaded tools” 替代 “Unloaded tools”</li>
+<li>LSP 提醒通过 tools 参数判断 LSP 工具是否已加载，移除对 CONTEXT_LOADED_TOOLS 的直接依赖</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.40.0 (2026-06-24)</p>
+<ul>
+<li>Subagent 工具懒加载<ul>
+<li>完整支持 subagent 工具懒加载，各 agent 的已加载工具状态相互隔离</li>
+<li>ToolLoader / ToolUnLoader 按 agentId 隔离已加载状态，subagent 不会污染主 agent 的工具列表</li>
+<li>fork 模式 subagent 传入完整原始工具列表（_tools），确保懒加载能访问全部可用工具</li>
+<li>Tool.prompt 增加可选的 context 参数，ToolLoader 可感知当前 agent 的工具范围</li>
+<li>懒加载模式下 ToolLoader / ToolUnLoader 始终可用（fixTools 按 enableLazyTool 动态补充）</li>
+<li>未加载工具的错误提示对 subagent 同样生效</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v1.39.2 (2026-06-23)</p>
+<ul>
+<li>优化上下文使用率提醒<ul>
+<li>system reminder 上下文使用率提示在所有使用率下均显示，不再仅在 ≥50% 时展示</li>
+<li>优化 MessageArchiving 和 Memo 工具的加载/已加载提示文案，更简洁明了</li>
+<li>多项工具建议（归档+备忘录）以列表形式呈现，结构更清晰</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>v1.39.1 (2026-06-22)</p>
 <ul>
 <li>修复 webServer 前端因引用 @constants/product.js 导致 process is not defined 的错误</li>
@@ -616,7 +705,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-06-23T02:42:35.308Z" itemprop="dateModified">上次更新：2026-06-23</time>
+                <time class="article-footer-updated" datetime="2026-07-03T03:00:35.499Z" itemprop="dateModified">上次更新：2026-07-03</time>
                 
               </footer>
               
