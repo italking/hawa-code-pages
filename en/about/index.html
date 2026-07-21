@@ -54,8 +54,8 @@
 <meta property="og:description" content="Dahawa Life Plan  An intelligent programming assistant who understands you An intelligent assistant who understands you An assistant who understands you  One   is the bottom line you leave for yoursel">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-07-11T08:10:05.362Z">
-<meta property="article:modified_time" content="2026-07-11T08:10:05.362Z">
+<meta property="article:published_time" content="2026-07-21T14:13:35.939Z">
+<meta property="article:modified_time" content="2026-07-21T14:13:35.939Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,54 @@ var _hmt = _hmt || [];
 <p><strong>One</strong>   is the bottom line you leave for yourself</p>
 <h1 id="Version-History" class="article-heading"><a href="#Version-History" class="headerlink" title="Version History"></a>Version History<a class="article-anchor" href="#Version-History" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.0.3 (2026-07-21)</p>
+<ul>
+<li>History storage optimization<ul>
+<li>History is now stored in <code>history.jsonl</code></li>
+</ul>
+</li>
+<li>Settings model config optimization<ul>
+<li>Fixed issue where comma input was blocked in the model config <code>models</code> field</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.0.2 (2026-07-17)</p>
+<ul>
+<li>Added <code>/cd</code> slash command<ul>
+<li>Quickly switch the working directory</li>
+<li>Supports generic argument hints (arg-hint)</li>
+</ul>
+</li>
+<li>Config initialization refactor<ul>
+<li>Consolidated config initialization logic into <code>modelManager</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.0.1 (2026-07-11 ~ 2026-07-16)</p>
+<ul>
+<li>Terminal framework upgraded to ink 7<ul>
+<li>Replaced custom paste detection with ink 7 <code>usePaste</code></li>
+<li>Fixed escape key routing, terminal clear timeout, and functional state update issues</li>
+<li>Debounced REPL terminal resize to reduce flickering and clear race conditions</li>
+<li>Restored arrow/enter navigation for slash commands</li>
+<li>Migrated spinner and periodic UI refreshes to ink 7 <code>useAnimation</code></li>
+<li>Used shared <code>useWindowSize</code> hook for unified window resize handling</li>
+<li>Removed unused sticker form and animated asterisk components</li>
+</ul>
+</li>
+<li>Agent execution enhancements<ul>
+<li>Added configurable agent depth limit</li>
+<li>Wait for background subagent tasks to complete before continuing</li>
+</ul>
+</li>
+<li>Agent Viewer enhancements<ul>
+<li>Show in-progress spinner for executing <code>tool_use</code></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>v2.0.0 (2026-07-10)</p>
 <ul>
 <li>Settings Form Layout Optimization<ul>
@@ -783,7 +831,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-07-11T08:10:05.362Z" itemprop="dateModified">Last updated: 2026-07-11</time>
+                <time class="article-footer-updated" datetime="2026-07-21T14:13:35.939Z" itemprop="dateModified">Last updated: 2026-07-21</time>
                 
               </footer>
               

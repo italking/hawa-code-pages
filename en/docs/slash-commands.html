@@ -54,8 +54,8 @@
 <meta property="og:description" content="Built-in Slash CommandsHawa Code comes with a rich set of built-in slash commands. Type &#x2F; in the terminal to trigger command completion hints, with support for arrow key selection, Tab or Enter confir">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-06-15T15:36:58.319Z">
-<meta property="article:modified_time" content="2026-06-15T15:36:58.319Z">
+<meta property="article:published_time" content="2026-07-21T14:14:04.680Z">
+<meta property="article:modified_time" content="2026-07-21T14:14:04.680Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,10 @@ var _hmt = _hmt || [];
 </tr>
 </thead>
 <tbody><tr>
+<td><code>/cd</code></td>
+<td>Change the current session’s working directory. Usage: <code>/cd &lt;path&gt;</code>, supports relative paths and directory autocomplete</td>
+</tr>
+<tr>
 <td><code>/clear</code></td>
 <td>Clear conversation history and release context, while triggering SessionEnd / SessionStart hooks</td>
 </tr>
@@ -197,6 +201,20 @@ var _hmt = _hmt || [];
 <td>Display help information and available command list</td>
 </tr>
 </tbody></table>
+<h3 id="cd-Change-Working-Directory" class="article-heading"><a href="#cd-Change-Working-Directory" class="headerlink" title="/cd Change Working Directory"></a><code>/cd</code> Change Working Directory<a class="article-anchor" href="#cd-Change-Working-Directory" aria-hidden="true"></a></h3><p><code>/cd</code> is used to change the working directory of the current Hawa Code session. This command only changes the current session’s <code>cwd</code> and does not affect the original directory where Hawa Code was started.</p>
+<p><strong>Usage</strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/cd &lt;path&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>Features</strong></p>
+<ul>
+<li>Supports relative paths: paths are resolved based on the current working directory, e.g., <code>/cd subdir</code> or <code>/cd ../sibling</code></li>
+<li>Directory autocomplete: after typing <code>/cd </code>, the terminal lists matching subdirectory suggestions, supporting arrow key selection, Enter or Tab confirmation</li>
+<li>Same directory hint: if the target directory is the same as the current directory, it prompts <code>Already in ...</code></li>
+<li>Success hint: returns <code>Changed directory to .../</code></li>
+</ul>
+<p><strong>Examples</strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/cd src</span><br><span class="line">/cd ../another-project</span><br><span class="line">/cd /home/user/projects/my-app</span><br></pre></td></tr></tbody></table></figure>
+
 <h3 id="Skill-Commands" class="article-heading"><a href="#Skill-Commands" class="headerlink" title="Skill Commands"></a>Skill Commands<a class="article-anchor" href="#Skill-Commands" aria-hidden="true"></a></h3><p>All Skills defined in <code>~/.hcode/skills/</code> or project <code>.hcode/skills/</code> that have <code>userInvocable: true</code> set will automatically generate corresponding slash commands. For example, if a <code>commit</code> skill is defined, it can be called via <code>/commit</code>.</p>
 <p>Skill commands are divided into two categories:</p>
 <ul>
@@ -243,7 +261,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-06-15T15:36:58.319Z" itemprop="dateModified">Last updated: 2026-06-15</time>
+                <time class="article-footer-updated" datetime="2026-07-21T14:14:04.680Z" itemprop="dateModified">Last updated: 2026-07-21</time>
                 <a href="tool-lazy-loading.html" class="article-footer-prev" title="Tool Lazy Loading"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="skill.html" class="article-footer-next" title="Skill"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -252,7 +270,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Built-in-Slash-Commands"><span class="toc-text">Built-in Slash Commands</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Skill-Commands"><span class="toc-text">Skill Commands</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Custom-Slash-Commands"><span class="toc-text">Custom Slash Commands</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Built-in-Slash-Commands"><span class="toc-text">Built-in Slash Commands</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cd-Change-Working-Directory"><span class="toc-text">&#x2F;cd Change Working Directory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Skill-Commands"><span class="toc-text">Skill Commands</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Custom-Slash-Commands"><span class="toc-text">Custom Slash Commands</span></a></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
