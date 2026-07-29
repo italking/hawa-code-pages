@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa Life Plan  An intelligent programming assistant who understands you An intelligent assistant who understands you An assistant who understands you  One   is the bottom line you leave for yoursel">
+  <meta name="description" content="Dahawa Life Plan  An intelligent programming assistant who understands you An intelligent assistant who understands you An assistant who understands you  One is the bottom line reserved for yourself V">
 <meta property="og:type" content="website">
 <meta property="og:title" content="About">
 <meta property="og:url" content="https://www.hawacode.com/en/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa Life Plan  An intelligent programming assistant who understands you An intelligent assistant who understands you An assistant who understands you  One   is the bottom line you leave for yoursel">
+<meta property="og:description" content="Dahawa Life Plan  An intelligent programming assistant who understands you An intelligent assistant who understands you An assistant who understands you  One is the bottom line reserved for yourself V">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-07-25T04:00:57.846Z">
-<meta property="article:modified_time" content="2026-07-25T04:00:57.846Z">
+<meta property="article:published_time" content="2026-07-29T15:38:25.476Z">
+<meta property="article:modified_time" content="2026-07-29T15:38:25.476Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -126,17 +126,45 @@ var _hmt = _hmt || [];
 <li>An intelligent assistant who understands you</li>
 <li>An assistant who understands you</li>
 </ul>
-<p><strong>One</strong>   is the bottom line you leave for yourself</p>
-<h1 id="Version-History" class="article-heading"><a href="#Version-History" class="headerlink" title="Version History"></a>Version History<a class="article-anchor" href="#Version-History" aria-hidden="true"></a></h1><hr>
+<p><strong>One</strong> is the bottom line reserved for yourself</p>
+<h1 id="Versions" class="article-heading"><a href="#Versions" class="headerlink" title="Versions"></a>Versions<a class="article-anchor" href="#Versions" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.1.4 (2026-07-29)</p>
+<ul>
+<li>Plugin compatibility configuration<ul>
+<li>Changed Claude Code plugin compatibility to the <code>settings.plugins.pluginClaudeCompat</code> setting, enabled by default</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.1.2 / v2.1.3 (2026-07-28)</p>
+<ul>
+<li>MCP HTTP server enhancement<ul>
+<li>Supports streamable-http as an MCP HTTP server type</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.1.1 (2026-07-27 ~ 2026-07-28)</p>
+<ul>
+<li>Plugin plugin system enhancement<ul>
+<li>PluginManager marketplace detail page supports Update and Remove operations</li>
+</ul>
+</li>
+<li>Terminal compatibility fix<ul>
+<li>Fixed inconsistent line endings on Windows, unified to <code>\n</code></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>v2.1.0 (2026-07-23 ~ 2026-07-25)</p>
 <ul>
-<li>Plugin System<ul>
+<li>Plugin plugin system<ul>
 <li>Enabled plugin compatibility</li>
-<li>Supported plugin 0.1 with new PluginManager UI</li>
-<li>Added core modules: MarketplaceService, PluginInstallService, PluginRegistry, PluginManifestService, PluginSecurity, PluginUpdateService</li>
-<li>Supported fetching plugins from GitHub, Git, NPM, and local directories</li>
-<li>Supported plugin MCP services, allowing plugins to register custom MCP Servers</li>
+<li>Supported plugin 0.1, added PluginManager management interface</li>
+<li>Added core modules such as MarketplaceService, PluginInstallService, PluginRegistry, PluginManifestService, PluginSecurity, PluginUpdateService</li>
+<li>Supports fetching plugins from multiple sources including GitHub, Git, NPM, and local directories</li>
+<li>Supports plugin MCP services; plugins can register custom MCP Servers</li>
 <li>Added plugin-related tests (install, marketplaceValidator, schemas, PluginRegistry MCP, etc.)</li>
 </ul>
 </li>
@@ -146,24 +174,24 @@ var _hmt = _hmt || [];
 <li><p>v2.0.3 (2026-07-21)</p>
 <ul>
 <li>History storage optimization<ul>
-<li>History is now stored in <code>history.jsonl</code></li>
+<li>History records now stored in history.jsonl</li>
 </ul>
 </li>
-<li>Settings model config optimization<ul>
-<li>Fixed issue where comma input was blocked in the model config <code>models</code> field</li>
+<li>Settings model configuration optimization<ul>
+<li>Fixed issue where comma input in the models field of model configuration was blocked</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>v2.0.2 (2026-07-17)</p>
 <ul>
-<li>Added <code>/cd</code> slash command<ul>
-<li>Quickly switch the working directory</li>
+<li>Added /cd slash command<ul>
+<li>Supports quickly switching working directories</li>
 <li>Supports generic argument hints (arg-hint)</li>
 </ul>
 </li>
-<li>Config initialization refactor<ul>
-<li>Consolidated config initialization logic into <code>modelManager</code></li>
+<li>Configuration initialization refactoring<ul>
+<li>Unified configuration initialization logic into modelManager</li>
 </ul>
 </li>
 </ul>
@@ -171,79 +199,79 @@ var _hmt = _hmt || [];
 <li><p>v2.0.1 (2026-07-11 ~ 2026-07-16)</p>
 <ul>
 <li>Terminal framework upgraded to ink 7<ul>
-<li>Replaced custom paste detection with ink 7 <code>usePaste</code></li>
-<li>Fixed escape key routing, terminal clear timeout, and functional state update issues</li>
-<li>Debounced REPL terminal resize to reduce flickering and clear race conditions</li>
-<li>Restored arrow/enter navigation for slash commands</li>
-<li>Migrated spinner and periodic UI refreshes to ink 7 <code>useAnimation</code></li>
-<li>Used shared <code>useWindowSize</code> hook for unified window resize handling</li>
+<li>Replaced custom paste detection with ink 7 usePaste</li>
+<li>Fixed Esc key routing, terminal clear timeout, and functional state update issues</li>
+<li>REPL terminal resize debouncing to reduce flicker and clear races</li>
+<li>Slash command arrow/enter navigation restored</li>
+<li>Spinner and periodic UI refresh migrated to ink 7 useAnimation</li>
+<li>Unified window resize handling with shared useWindowSize hook</li>
 <li>Removed unused sticker form and animated asterisk components</li>
 </ul>
 </li>
-<li>Agent execution enhancements<ul>
-<li>Added configurable agent depth limit</li>
-<li>Wait for background subagent tasks to complete before continuing</li>
+<li>Agent execution enhancement<ul>
+<li>Supports configuring agent depth limits</li>
+<li>Waits for background subagent tasks to complete before continuing</li>
 </ul>
 </li>
-<li>Agent Viewer enhancements<ul>
-<li>Show in-progress spinner for executing <code>tool_use</code></li>
+<li>Agent Viewer enhancement<ul>
+<li>In-progress tool_use displays a spinner</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>v2.0.0 (2026-07-10)</p>
 <ul>
-<li>Settings Form Layout Optimization<ul>
-<li>Replaced flex space-between with a fixed-label-column grid layout</li>
-<li>Improved control alignment for General, Web Server, Auto Mode, and Memory settings to avoid excessive gaps</li>
+<li>Settings form layout optimization<ul>
+<li>Replaced flex space-between with a grid layout using a fixed label column</li>
+<li>Improved alignment of controls in General, Web Server, Auto Mode, Memory, and other settings to avoid excessive gaps</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>v1.42.3 (2026-07-09)</p>
 <ul>
-<li>Agent Viewer Enhancements<ul>
-<li>Support prompt input</li>
-<li>Support interrupting main agent requests</li>
+<li>Agent Viewer enhancement<ul>
+<li>Supports prompt input</li>
+<li>Supports interrupting main agent requests</li>
 </ul>
 </li>
-<li>Interactive Tool Unified Rendering<ul>
-<li>Added <code>toolUserResponseService</code> to support unified rendering of interactive tools in both terminal and Web</li>
+<li>Unified interactive tool rendering<ul>
+<li>Added toolUserResponseService, supporting unified rendering of interactive tools in terminal and Web</li>
 </ul>
 </li>
-<li>Settings Enhancements<ul>
-<li>Added <code>planDirectory</code> setting to support customizing plan file storage directory</li>
+<li>Settings enhancement<ul>
+<li>Added planDirectory setting, supporting custom plan file storage directory</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>v1.42.2 (2026-07-04)</p>
 <ul>
-<li>Fixed compression thinking failure issue, ensuring message content is handled correctly during compression to avoid errors caused by unexpected content format</li>
-<li>Removed unused <code>src/messages.ts</code> and related references</li>
+<li>Fixed compressed thinking failure, ensuring message content is correctly handled during compression to avoid errors caused by unexpected content formats</li>
+<li>Removed unused src/messages.ts and related references</li>
 </ul>
 </li>
 <li><p>v1.42.1 (2026-07-03)</p>
 <ul>
-<li>Fixed issue where <code>clearConversation</code> function did not trigger REPL re-render after clearing messages</li>
+<li>Fixed clearConversation function not triggering REPL re-render when clearing messages</li>
 </ul>
 </li>
 <li><p>v1.42.0 (2026-07-03)</p>
 <ul>
-<li>Web Tool Confirmation 2.0<ul>
-<li>Added ConfirmationService to decouple tool permission confirmation from the UI layer</li>
-<li>Unified tool confirmation flow for both CLI local UI and Web clients</li>
-<li>Added ToolConfirmQueue component on web for popup-style tool confirmation</li>
+<li>Web tool confirmation 2.0<ul>
+<li>Added ConfirmationService, decoupling tool permission confirmation flow from the UI layer</li>
+<li>Unified tool confirmation support for CLI local UI and Web clients</li>
+<li>Added ToolConfirmQueue component on Web, with modal-style tool call confirmation</li>
 <li>WebSocket broadcasts tool confirmation requests and completion notifications</li>
-<li>When any client responds, confirmation windows close automatically on other clients</li>
-<li>Pending confirmations are restored after WebSocket reconnection or page refresh</li>
+<li>Other clients’ confirmation windows automatically close after one client responds</li>
+<li>Pending confirmation requests can be restored after reconnecting or refreshing the page</li>
 </ul>
 </li>
-<li>Settings Migration<ul>
-<li>Moved Memo and Message Archiving toggles from environment variables to settings</li>
-<li>Added <code>memo</code> and <code>messageArchiving</code> settings, both disabled by default</li>
+<li>Settings migration<ul>
+<li>Memo and Message Archiving toggles migrated from environment variables to settings</li>
+<li>Added memo and messageArchiving settings, disabled by default</li>
 <li>Config panel supports enabling/disabling Memo and Message Archiving</li>
-<li>Settings file watchers use <code>unref</code> to avoid blocking process exit</li>
+<li>Settings file hot-reload listener changed to unref to avoid blocking process exit</li>
 </ul>
 </li>
 </ul>
@@ -255,13 +283,13 @@ var _hmt = _hmt || [];
 </li>
 <li><p>v1.41.3 (2026-07-02)</p>
 <ul>
-<li>Context optimization reminder improvements<ul>
-<li>Fixed MessageArchiving and Memo tool loaded-state detection logic</li>
-<li>Improved unloaded tool reminder text to be more specific and actionable</li>
-<li>Added reminder: process historical task-irrelevant messages even when context usage is low</li>
+<li>Optimized context usage reminder<ul>
+<li>Fixed MessageArchiving and Memo tool loaded-state judgment logic</li>
+<li>Prompts when tools are not loaded are more specific and actionable</li>
+<li>Added reminder: even if context usage is low, historical messages with a lot of task-irrelevant content should be handled</li>
 </ul>
 </li>
-<li>Web Settings panel polish<ul>
+<li>Web Settings panel optimization<ul>
 <li>Adjusted JSON editor height</li>
 <li>Improved Model Config JSON editor styling</li>
 </ul>
@@ -270,21 +298,21 @@ var _hmt = _hmt || [];
 </li>
 <li><p>v1.41.2 (2026-07-02)</p>
 <ul>
-<li>Web Model Config Settings panel<ul>
-<li>Added <code>/api/model-config</code> API for reading and updating config.json</li>
-<li>Added ModelConfigSetting component with form and JSON editor modes</li>
-<li>Supports configuring sources and routing</li>
-<li>Added model config validation and related tests</li>
+<li>Web model configuration Settings panel<ul>
+<li>Added /api/model-config API, supporting reading and updating config.json</li>
+<li>Added ModelConfigSetting component, supporting form mode and JSON edit mode</li>
+<li>Supports sources and routing configuration</li>
+<li>Added model config validation logic and related tests</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>v1.41.1 (2026-07-01)</p>
 <ul>
-<li>Optimize Agent Viewer and support Memo write details display<ul>
-<li>AgentToolUse adds prompt detail expand/collapse, displaying model, type, resume, background run and other metadata</li>
-<li>AgentToolResult long results support collapse after expansion</li>
-<li>MemoToolUse write operation adds details button, allowing viewing of complete written content</li>
+<li>Optimized Agent Viewer and supported Memo write detail display<ul>
+<li>AgentToolUse added prompt detail expand/collapse, showing model, type, resume, background execution, and other metadata</li>
+<li>AgentToolResult long results support collapsing after expansion</li>
+<li>MemoToolUse write operation added details button to view full written content</li>
 </ul>
 </li>
 </ul>
@@ -292,120 +320,120 @@ var _hmt = _hmt || [];
 <li><p>v1.41.0 (2026-07-01)</p>
 <ul>
 <li>Web Settings configuration panel<ul>
-<li>New /api/settings REST API and configuration write validation</li>
-<li>WebSocket real-time sync config changes (settings_changed / settings_snapshot)</li>
+<li>Added /api/settings REST API and configuration write validation</li>
+<li>WebSocket real-time synchronization of configuration changes (settings_changed / settings_snapshot)</li>
 <li>Frontend SettingsPanel component and basic editing controls</li>
-<li>Config file hot reload broadcasts changes via eventBus</li>
-<li>New settingsValidation validation module and related tests</li>
+<li>Configuration file hot reload broadcasts changes via eventBus</li>
+<li>Added settingsValidation validation module and related tests</li>
 </ul>
 </li>
 <li>Settings panel optimization<ul>
-<li>Adjust Advanced config order to env/permissions/sandbox/sessionSummary</li>
-<li>env config changed to KeyValue form mode, supporting add/delete/edit</li>
-<li>Changed from real-time save to batch submit mode via save button</li>
-<li>Improved env config validation rules and added tests</li>
+<li>Adjusted Advanced configuration order to env/permissions/sandbox/sessionSummary</li>
+<li>env configuration changed to KeyValue form mode, supporting add/delete/edit</li>
+<li>Changed from real-time save to save-button batch submission mode</li>
+<li>Improved env configuration validation rules and added tests</li>
 </ul>
 </li>
 <li>/cost command UI panelization<ul>
-<li>Added token usage, context window ratio, cache hit rate display</li>
+<li>Added token usage, context window ratio, and cache hit rate display</li>
 <li>cost-tracker added cacheTokens and currentContextTokens tracking</li>
-<li>llmodel syncs cache and context token stats on each API call</li>
+<li>llmodel updates cache and context token statistics on each API call</li>
 </ul>
 </li>
 <li>Web tools and message optimization<ul>
-<li>Memo tool web component implementation, including use and result display components</li>
-<li>Filter internal messages displayed on web (INNER_MESSAGE, SYSTEM_NOTIFICATION, system-reminder)</li>
-<li>Fixed archive function display on web</li>
+<li>Memo tool Web component implementation, including usage and result display components</li>
+<li>Filtered internal messages displayed on Web (INNER_MESSAGE, SYSTEM_NOTIFICATION, system-reminder)</li>
+<li>Fixed archive function Web display</li>
 </ul>
 </li>
-<li>Lazy loading tool hint optimization<ul>
-<li>Fixed wrong prompt when lazy loading tool doesn’t exist</li>
-<li>Optimized unloaded tool prompt text</li>
+<li>Lazy-loaded tool prompt optimization<ul>
+<li>Fixed incorrect prompt when lazy-loaded tool does not exist</li>
+<li>Optimized prompt copy for unloaded tools</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>v1.40.1 (2026-06-24)</p>
 <ul>
-<li>Unified tool lazy loading reminders to use tools parameter, optimized LSP reminder text<ul>
-<li>getToolLazy and getLSPServer methods unified to use current agent’s actual tool list instead of global context data</li>
-<li>Optimized unloaded tool reminder text: “Available but not loaded tools” replaces “Unloaded tools”</li>
-<li>LSP reminder uses tools parameter to determine if LSP tools are loaded, removed direct dependency on CONTEXT_LOADED_TOOLS</li>
+<li>Unified lazy-loaded tool reminders to use tools parameter, optimized LSP prompt copy<ul>
+<li>getToolLazy and getLSPServer methods now use the current agent’s actual tool list instead of global context data</li>
+<li>Optimized unloaded tool prompt copy: replaced Unloaded tools with Available but not loaded tools</li>
+<li>LSP reminders now determine whether LSP tools are loaded via the tools parameter, removing direct dependency on CONTEXT_LOADED_TOOLS</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>v1.40.0 (2026-06-24)</p>
 <ul>
-<li>Subagent Tool Lazy Loading<ul>
-<li>Full support for subagent tool lazy loading, each agent’s loaded tool state is isolated</li>
-<li>ToolLoader / ToolUnLoader isolates loaded state by agentId, subagent won’t pollute main agent’s tool list</li>
-<li>Fork mode subagent passes complete original tool list (_tools), ensuring lazy loading can access all available tools</li>
-<li>Tool.prompt adds optional context parameter, ToolLoader can sense current agent’s tool scope</li>
+<li>Subagent tool lazy loading<ul>
+<li>Full support for subagent tool lazy loading, with loaded tool state isolated per agent</li>
+<li>ToolLoader / ToolUnLoader isolate loaded state by agentId, so subagents do not pollute the main agent’s tool list</li>
+<li>Fork-mode subagents pass the complete original tool list (_tools), ensuring lazy loading can access all available tools</li>
+<li>Tool.prompt added optional context parameter, allowing ToolLoader to perceive the current agent’s tool scope</li>
 <li>In lazy loading mode, ToolLoader / ToolUnLoader are always available (fixTools dynamically supplements based on enableLazyTool)</li>
-<li>Unloaded tool error hints also work for subagents</li>
+<li>Unloaded tool error prompts also apply to subagents</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>v1.39.2 (2026-06-23)</p>
 <ul>
-<li>Optimized context usage reminders<ul>
-<li>System reminder context usage hint displays at all usage levels, no longer only shown at ≥50%</li>
-<li>Optimized MessageArchiving and Memo tool loaded/unloaded hint text to be more concise and clear</li>
-<li>Multiple tool suggestions (archiving + memo) presented as a list for clearer structure</li>
+<li>Optimized context usage reminder<ul>
+<li>system reminder context usage prompt is now shown at all usage levels, not only when ≥50%</li>
+<li>Optimized MessageArchiving and Memo tool load/loaded prompt copy to be more concise and clear</li>
+<li>Multiple tool suggestions (archive + memo) are presented as a list for clearer structure</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>v1.39.1 (2026-06-22)</p>
 <ul>
-<li>Fixed <code>process is not defined</code> error in webServer frontend caused by importing @constants/product.js</li>
+<li>Fixed webServer frontend process is not defined error caused by referencing @constants/product.js</li>
 </ul>
 </li>
 <li><p>v1.39.0 (2026-06-21)</p>
 <ul>
-<li>Message Archiving and Context Optimization<ul>
-<li>Message Archiving 1.0 officially released</li>
-<li>Support lazy loading for MessageArchiving and optimized onboarding reminders</li>
+<li>Message archiving and context optimization<ul>
+<li>Message archiving 1.0 officially launched</li>
+<li>Supports MessageArchiving lazy loading and optimized guidance reminders</li>
 <li>Decoupled Message Archiving and Memo context optimization reminders</li>
-<li>Centralized Message Archiving enablement check in SettingManager</li>
-<li>Added optional summary field when archiving tool results to capture key information</li>
-<li>Skip archiving for tools with minimal output (e.g., Cwd, Think, TodoWrite, MessageArchiving) to avoid meaningless replacements</li>
-<li>Apply <code>messageArchivingService.applyToMessages</code> before auto-compaction to ensure archived content is also replaced</li>
-<li>Centralized <code>AUTO_COMPACT_THRESHOLD_RATIO</code> in constants/product.ts</li>
-<li>Added auto-compaction trigger threshold (92%) to system reminder context usage hint</li>
+<li>Centralized Message Archiving enablement judgment in SettingManager</li>
+<li>Archive tool results support optional summary field for summarizing key information</li>
+<li>Skips archiving for tools with little return content (e.g., Cwd, Think, TodoWrite, MessageArchiving, etc.) to avoid meaningless replacement</li>
+<li>Applies messageArchivingService.applyToMessages before automatic compression to ensure archived content is also replaced</li>
+<li>Centralized AUTO_COMPACT_THRESHOLD_RATIO in constants/product.ts</li>
+<li>system reminder context usage prompt supplemented with automatic compression trigger threshold (92%)</li>
 </ul>
 </li>
-<li>Memo Tool Enhancements<ul>
-<li>Simplified prompt and extracted constants, added basic schema validation</li>
-<li>Added input validation to reject content containing “…(argument truncated)” placeholders</li>
-<li>Switched to truncation mode: replace placeholders with truncated text, keep first 20 chars and add explanatory note</li>
+<li>Memo tool enhancement<ul>
+<li>Simplified prompt and extracted constants, schema added basic validation</li>
+<li>Added input validation to prohibit saving content containing …(argument truncated) placeholders</li>
+<li>Changed to truncation mode: placeholders replaced with truncated text, keeping first 20 characters and adding a hint</li>
 <li>Removed duplicate summary hint from successful Memo write results</li>
-<li>Added <code>SettingManager.isMemoEnable</code>, controlled by <code>HAWA_CODE_MEMO</code> environment variable</li>
-<li>Added Memo content placeholder explanation to system prompt</li>
-<li>Added <code>content</code> parameter to filter content during queries and reduce context usage</li>
-<li>Insert synthetic explanation message after truncating old Memo write content to reduce model hallucination</li>
+<li>Added SettingManager.isMemoEnable, controlled by HAWA_CODE_MEMO environment variable</li>
+<li>system prompt added explanation of Memo content placeholders</li>
+<li>Added content parameter to filter content during queries to reduce context usage</li>
+<li>After truncating old Memo write content, insert a synthesized explanation message to reduce model hallucination</li>
 </ul>
 </li>
-<li>Configuration and Interaction<ul>
+<li>Configuration and interaction<ul>
 <li>Added autoMode toggle option in settings panel</li>
-<li>Added Open Config button to <code>/model</code> command</li>
+<li>/model command added Open Config button</li>
 <li>Slash commands support controlling tool lazy loading</li>
 <li>autoModel enabled by default</li>
-<li>Fixed issue where autoDream still ran after being disabled</li>
+<li>Fixed bug where autoDream still executed after being disabled</li>
 </ul>
 </li>
-<li>Tools and Permissions<ul>
+<li>Tools and permissions<ul>
 <li>Restored LS directory listing tool</li>
-<li>Added <code>/api/config</code> endpoint on backend to return userType</li>
-<li>Added <code>useConfig</code> hook on frontend to get userType and filter tools accordingly</li>
-<li>Added description field to input schemas for BashTool and PowerShellTool</li>
-<li>Added missing agent id parameters</li>
+<li>Backend added /api/config endpoint returning userType</li>
+<li>Frontend added useConfig hook to get userType and filter tools based on userType</li>
+<li>Added description fields to BashTool and PowerShellTool input schemas</li>
+<li>Added missing agent id parameter</li>
 </ul>
 </li>
-<li>Other Fixes<ul>
-<li>Fixed websocket module import issue for CommonJS and ES module compatibility</li>
+<li>Other fixes<ul>
+<li>Fixed websocket module import issue, compatible with CommonJS and ES modules</li>
 </ul>
 </li>
 </ul>
@@ -418,21 +446,21 @@ var _hmt = _hmt || [];
 <li><p>v1.38.11 (2026-06-15)</p>
 <ul>
 <li>Fixed agentviewer bug</li>
-<li>Architecture optimization: split tool execution and agent execution</li>
+<li>Architecture optimization: separated tool execution from agent execution</li>
 </ul>
 </li>
 <li><p>v1.38.10 (2026-06-14)</p>
 <ul>
-<li>Fixed main tab display issue in AgentTabs to stay consistent with backend agentId</li>
-<li>Fixed bug where subagent could not wake up main agent after completion</li>
-<li>Added agentType, agentName, and description parameters to <code>hawaContext.onQueryStart</code> for better sub-agent lifecycle tracking</li>
+<li>Fixed AgentTabs main tab display issue, keeping it consistent with backend agentId</li>
+<li>Fixed bug where main agent could not be awakened after subagent ended</li>
+<li>Added agentType, agentName, and description parameters to hawaContext.onQueryStart to facilitate tracking sub-agent lifecycle</li>
 </ul>
 </li>
 <li><p>v1.38.9 (2026-06-12)</p>
 <ul>
 <li>Hidden tool unload messages</li>
-<li>webviewer 2 added usage and result components for multiple tools: NotebookEdit, WebSearch, WebFetch, TaskStop, TodoWrite, Think, AskUserQuestion, EnterPlanMode, ExitPlanMode, EnterWorktreeTool, ExitWorktreeTool, SlashCommand, Skill, CronCreate, CronDelete, CronList, TeamCreate, TeamDelete, SendMessage</li>
-<li>Optimized display of common MCP tools</li>
+<li>webviewer 2 added usage and result components for multiple tools: NotebookEdit, WebSearch, WebFetch, TaskStop, TodoWrite, Think, AskUserQuestion, EnterPlanMode, ExitPlanMode, Enter WorktreeTool, ExitWorktreeTool, SlashCommand, Skill, CronCreate, CronDelete, CronList, TeamCreate, TeamDelete, SendMessage</li>
+<li>Optimized normal MCP tool display</li>
 </ul>
 </li>
 <li><p>v1.38.8 / v1.38.7 / v1.38.6 (2026-06-12)</p>
@@ -448,24 +476,24 @@ var _hmt = _hmt || [];
 </li>
 <li><p>v1.38.4 (2026-06-12)</p>
 <ul>
-<li>hands tool server supports Session reuse with current mcpserver</li>
+<li>hands tool server supports Session reuse of current mcpserver</li>
 <li>Optimized command message display</li>
 </ul>
 </li>
 <li><p>v1.38.3 (2026-06-12)</p>
 <ul>
-<li>Fixed retry cannot be interrupted error</li>
-<li>Added proxy setting in config, allowing users to enable or disable proxy functionality</li>
+<li>Fixed error where retries could not be interrupted</li>
+<li>Supports proxy setting in config, allowing users to enable or disable proxy functionality</li>
 <li>Fixed edit tool display issue in webviewer</li>
 <li>Optimized hands remote identifier</li>
-<li>Optimized rendering of hands tool in webviewer</li>
+<li>Optimized hands tool rendering in webviewer</li>
 <li>Optimized overall webviewer rendering</li>
 <li>Removed cost display</li>
 </ul>
 </li>
 <li><p>v1.38.2 (2026-06-08)</p>
 <ul>
-<li>Fixed port conflict when starting multiple hcode webservers</li>
+<li>Fixed port conflict when starting multiple hcode webserver instances</li>
 </ul>
 </li>
 <li><p>v1.38.1 (2026-06-08)</p>
@@ -475,11 +503,11 @@ var _hmt = _hmt || [];
 </li>
 <li><p>v1.38.0 (2026-06-08)</p>
 <ul>
-<li>Support webviewer 1.0</li>
-<li>web viewer supports table display</li>
-<li>Optimized correspondence between tool use and tool result rendering in webview frontend</li>
-<li>Switched to incremental messages to improve performance</li>
-<li>TaskCreate, TaskGet, TaskList, TaskUpdate tools no longer render on web, consistent with CLI</li>
+<li>Supports webviewer 1.0</li>
+<li>Web viewer supports table display</li>
+<li>Optimized webview frontend page rendering of tool use and tool result correspondence</li>
+<li>Switched to incremental messages for better performance</li>
+<li>TaskCreate, TaskGet, TaskUpdate tools no longer render on Web, consistent with CLI</li>
 <li>Fixed duplicate display of default and main agent</li>
 <li>Optimized webserver startup log output</li>
 <li>Optimized webserver display in config</li>
@@ -492,31 +520,31 @@ var _hmt = _hmt || [];
 </li>
 <li><p>1.37.0 (2026-06-03)</p>
 <ul>
-<li>Support Goal slash command</li>
+<li>Supports Goal slash command</li>
 <li>Stop Hook added last_assistant_message parameter</li>
 </ul>
 </li>
 <li><p>1.36.0 (2026-05-24)</p>
 <ul>
-<li>Support built-in Hands tool, directly launch with hands command without installing mcp</li>
+<li>Supports built-in Hands tool, directly start hands command without installing mcp</li>
 </ul>
 </li>
 <li><p>1.35.5 (2026-05-21)</p>
 <ul>
-<li>Fixed Edit tool code line misalignment bug during file comparison</li>
-<li>Support Http request strong proxy</li>
-<li>Support custom use agent, support authorization, x-api-key</li>
-<li>Support enabling hawa code built-in computer use via environment variables</li>
+<li>Fixed Edit tool line misalignment bug during file comparison</li>
+<li>Supports Http request powerful proxy</li>
+<li>Supports custom use agent, supports authorization, x-api-key</li>
+<li>Supports enabling hawa code built-in computer use via environment variable</li>
 </ul>
 </li>
 <li><p>1.35.0 (2026-05-16)</p>
 <ul>
-<li>Support setting openai image detail via environment variables</li>
+<li>Supports setting openai image detail via environment variable</li>
 </ul>
 </li>
 <li><p>1.32.0 (2026-05-08)</p>
 <ul>
-<li>hawa code fully supports windows, skill, slash commands, user instructions all support powershell</li>
+<li>hawa code fully supports windows, skill, slash commands, and user instructions all support powershell</li>
 <li>Fixed image paste bug</li>
 </ul>
 </li>
@@ -536,151 +564,151 @@ var _hmt = _hmt || [];
 <li>Fixed openai response request bug</li>
 </ul>
 </li>
-<li><p>1.31.0 (2026-05-07)  </p>
+<li><p>1.31.0 (2026-05-07)</p>
 <ul>
-<li>Support automatic tool unloading in tool lazy-loading mode</li>
-<li>Support switching thinking depth</li>
-<li>Compatible with OpenAI Responses API search</li>
-<li>Fixed OpenAI Chat Completions thinking protocol conversion bug</li>
-<li>Optimized multi-model token compression estimation</li>
-<li>Support multi-model load balancing</li>
+<li>Supports automatic tool unloading in tool lazy loading mode</li>
+<li>Supports thinking depth switching</li>
+<li>Compatible with openai response api search</li>
+<li>Fixed openai chat completions thinking protocol conversion bug</li>
+<li>Optimized multi-model token compression estimation calculation</li>
+<li>Supports multi-model load balancing</li>
 </ul>
 </li>
 <li><p>1.28.0</p>
 <ul>
-<li>Support PowerShell tool</li>
-<li>Support memory recall during query</li>
-<li>Agent Team idle messages suppression</li>
+<li>Supports powershell tool</li>
+<li>Supports memory recall during query</li>
+<li>Agent Team idle messages are suppressed</li>
 <li>Memory slash command supports manual memory clearing</li>
 </ul>
 </li>
 <li><p>1.27.0</p>
 <ul>
 <li>autoDream supports team memory</li>
-<li>autoMemory supports automatically recalling up to 5 relevant memories before Query</li>
-<li>Support <code>/memory</code> slash command to manage memory feature toggle and memory files</li>
-<li>Support auto permission mode, where the model autonomously judges and authorizes tool execution</li>
-<li>Support <code>/auto</code> slash command to quickly enable auto mode</li>
-<li>Support switching auto mode via terminal shortcut</li>
+<li>autoMemory supports automatically recalling up to 5 related memories before Query</li>
+<li>Supports /memory slash command to manage memory function on/off and memory files</li>
+<li>Supports auto permission mode, where the model autonomously judges and authorizes tool execution</li>
+<li>Supports /auto slash command to quickly enable auto mode</li>
+<li>Supports switching auto mode via terminal shortcut</li>
 <li>Optimized error log output</li>
 </ul>
 </li>
 <li><p>1.26.0</p>
 <ul>
-<li>Support session memory auto-extraction (autoMemory), currently disabled by default</li>
-<li>Support session memory auto-consolidation (autoDream), currently disabled by default</li>
+<li>Supports session memory automatic extraction, autoMemory, currently disabled by default</li>
+<li>Supports session memory automatic integration, autoDream, currently disabled by default</li>
 </ul>
 </li>
 <li><p>1.25.3</p>
 <ul>
-<li>Support session summary compression mode</li>
-<li>Fixed resume slash command displaying duplicate messages BUG</li>
+<li>Supports session summary compression mode</li>
+<li>Fixed resume slash command duplicate message bug</li>
 </ul>
 </li>
 <li><p>1.24.0</p>
 <ul>
-<li>Support git worktree tool</li>
-<li>Subagent supports git worktree</li>
-<li>Fixed agent team tab switching loading position exception error</li>
+<li>Supports git worktree tool</li>
+<li>subagent supports git worktree</li>
+<li>Fixed agent team tab switching loading position anomaly error</li>
 </ul>
 </li>
 <li><p>1.23.0</p>
 <ul>
-<li>Fixed Agent Team Tab logo not displaying issue</li>
+<li>Fixed Agent Team Tab logo not displaying</li>
 <li>Optimized terminal rendering performance</li>
 </ul>
 </li>
 <li><p>1.22.8</p>
 <ul>
-<li>Fixed auto-compression bug</li>
+<li>Fixed automatic compression bug</li>
 <li>Fixed bash path issue</li>
 </ul>
 </li>
 <li><p>1.22.5</p>
 <ul>
-<li>Fixed tree-sitter-bash test session not working</li>
+<li>Fixed tree-sitter-bash testing issue</li>
 </ul>
 </li>
 <li><p>1.22.3</p>
 <ul>
-<li>Optimized compression messages</li>
+<li>Optimized compressed messages</li>
 <li>Fixed TreeSitterNode path bug</li>
 </ul>
 </li>
 <li><p>1.22.2</p>
 <ul>
-<li>Added permission bypass in acceptEdits mode, allowing all files without file restrictions</li>
-<li>Fixed permission path matching issues</li>
+<li>Added permission release for acceptEdits mode, allowing all files without file restrictions</li>
+<li>Fixed permission path matching issue</li>
 </ul>
 </li>
 <li><p>1.22.1</p>
 <ul>
 <li>Message logs support linked list association</li>
-<li>Fixed error log printing BUG</li>
-<li>Fixed Kimi process crash BUG</li>
+<li>Fixed error log printing bug</li>
+<li>Fixed crash when accessing Kimi process bug</li>
 </ul>
 </li>
 <li><p>1.22.0</p>
 <ul>
 <li>Optimized message log storage performance</li>
-<li>Fixed terminal message display disorder BUG</li>
+<li>Fixed terminal message display disorder bug</li>
 </ul>
 </li>
 <li><p>1.21.0</p>
 <ul>
-<li>Fixed some tool configuration permission exception bugs</li>
+<li>Fixed some tool configuration permission anomaly bug</li>
 </ul>
 </li>
 <li><p>1.20.0</p>
 <ul>
-<li>Support autoAllowBashIfSandboxed parameter, if sandbox is enabled, Bash no longer requires verification</li>
-<li>Permission configuration supports ask setting, can force tool execution to require user confirmation</li>
-<li>In bypassPermissions mode, writing to .git, .hcode, .vscode, and .idea directories will still prompt for confirmation, but writing to .hcode/commands, .hcode/agents, and .hcode/skills is exempted</li>
-<li>Support disableBypassPermissionsMode parameter to disable bypassPermissions mode</li>
-<li>Use tree-sitter-bash to interpret shell, optimizing parsing performance</li>
-<li>Fixed shell prefix matching BUG</li>
-<li>Support saving shell as multiple subcommands, no longer a single named exact match</li>
+<li>Supports autoAllowBashIfSandboxed parameter, if enabled sandbox Bash no longer validates</li>
+<li>Permission configuration supports ask configuration, can force tool execution to require user confirmation</li>
+<li>In bypassPermissions mode, writing to .git, .hcode, .vscode, and .idea directories still prompts confirmation, but writing to .hcode/commands, .hcode/agents, and .hcode/skills is exempted</li>
+<li>Supports disableBypassPermissionsMode parameter to disable bypassPermissions mode</li>
+<li>Uses tree-sitter-bash to interpret shell, optimizing parsing performance</li>
+<li>Fixed shell prefix matching bug</li>
+<li>Supports shell saving as multiple subcommands instead of a single named match</li>
 </ul>
 </li>
 <li><p>1.19.0</p>
 <ul>
-<li>Support sandbox, which can isolate network and disk files. Users can specify safely accessible domains and allowed disk file methods.</li>
-<li>Support sandbox slash commands.</li>
+<li>Supports sandbox, can isolate network, disk files, users can specify allowed domains, disk file methods, etc.</li>
+<li>Supports sandbox slash command</li>
 </ul>
 </li>
 <li><p>1.18.0</p>
 <ul>
-<li>Skill dynamic parameter replacement: $ARGUMENTS, $ARGUMENTS[N], $N, ${HCODE_SESSION_ID}, ${HCODE_SKILL_DIR}</li>
-<li>Skill supports disable-model-invocation and user-invocable parameter configuration</li>
+<li>Skill dynamic parameter replacement, $ARGUMENTS, $ARGUMENTS[N], $N, ${HCODE_SESSION_ID}, ${HCODE_SKILL_DIR}</li>
+<li>Skill supports disable-model-invocation, user-invocable parameter configuration</li>
 <li>Skill supports !<code>command</code> dynamic shell execution</li>
 </ul>
 </li>
 <li><p>1.17.0</p>
 <ul>
-<li>Skill supports context fork parameter using subagent execution, supports agent parameter</li>
+<li>Skill supports context fork parameter for subagent execution, supports agent parameter</li>
 </ul>
 </li>
 <li><p>1.16.0</p>
 <ul>
-<li>Plan mode supports local file storage, storage path is ~/.hcode/plan</li>
-<li>Added plan command, can enter plan mode via plan command</li>
+<li>Plan mode supports local file storage, stored at ~/.hcode/plan</li>
+<li>Added plan command to enter plan mode</li>
 <li>Agent Team supports mode parameter</li>
-<li>Support Read and Edit tool permission configuration</li>
+<li>Supports Read, Edit tool permission configuration</li>
 </ul>
 </li>
 <li><p>1.15.0</p>
 <ul>
-<li>Support scheduled task scheduling</li>
+<li>Supports scheduled task scheduling</li>
 </ul>
 </li>
 <li><p>1.14.0</p>
 <ul>
-<li>Support automatic memory - Hawa Code will automatically extract memories from conversations, and memories support cross-session persistence.</li>
+<li>Supports automatic memory, Hawa code automatically extracts memories from conversations, memories are cross-session</li>
 </ul>
 </li>
 <li><p>1.13.5</p>
 <ul>
-<li>Fixed bug where enabling Agent Team but Tasks were not enabled</li>
+<li>Fixed bug where Agent Team was enabled but Tasks were not enabled</li>
 </ul>
 </li>
 <li><p>1.13.4</p>
@@ -690,34 +718,34 @@ var _hmt = _hmt || [];
 </li>
 <li><p>1.13.2</p>
 <ul>
-<li>Support displaying Agent Team member messages in terminal</li>
+<li>Supports terminal display of Agent Team member messages</li>
 </ul>
 </li>
 <li><p>1.13.1</p>
 <ul>
-<li>Agent Team automatically enables Tasks feature</li>
-<li>Tasks list now displays owner information</li>
+<li>Enabling Agent Team automatically enables Tasks function</li>
+<li>Tasks list added owner display</li>
 </ul>
 </li>
-<li><p>1.13.0 </p>
+<li><p>1.13.0</p>
 <ul>
-<li>Support Agent Team</li>
+<li>Supports Agent Team</li>
 </ul>
 </li>
 <li><p>1.12.2</p>
 <ul>
-<li>Added support for SessionEnd Hook</li>
+<li>Supports SessionEnd Hook</li>
 </ul>
 </li>
 <li><p>1.12.1</p>
 <ul>
-<li>Added support for SessionStart Hook</li>
-<li>Fixed TODO restoration bug</li>
+<li>Supports SessionStart Hook</li>
+<li>Fixed TODO restore bug</li>
 </ul>
 </li>
 <li><p>1.12.0</p>
 <ul>
-<li>Task planning mode upgraded from TodoWrite to Tasks, supporting local file storage and cross-session communication</li>
+<li>Task planning mode upgraded from TodoWrite to Tasks mode, supporting task local file storage and cross-session communication</li>
 <li>Fixed terminal title display anomaly</li>
 <li>Optimized tool name usage</li>
 </ul>
@@ -730,122 +758,122 @@ var _hmt = _hmt || [];
 </li>
 <li><p>1.11.2</p>
 <ul>
-<li>Added PostToolUse Hook to support triggering custom actions after successful tool execution</li>
-<li>Added PostToolUseFailure Hook to support triggering custom actions when tool execution fails</li>
+<li>Added PostToolUse Hook, supports triggering custom operations after successful tool execution</li>
+<li>Added PostToolUseFailure Hook, supports triggering custom operations when tool execution fails</li>
 <li>Optimized Hook Matcher matching performance</li>
 </ul>
 </li>
 <li><p>1.11.1</p>
 <ul>
-<li>Support lazy loading of tool inputScheme to optimize startup time</li>
-<li>Optimized Task Tool progress display to resolve terminal flickering issues</li>
-<li>Support disabling Prompt hint functionality</li>
-<li>Fixed bug with duplicate message publishing</li>
-<li>Fixed bug with duplicate system reminder messages</li>
+<li>Supports tool inputScheme lazy loading, optimizing startup time</li>
+<li>Optimized Task Tool progress display, solving terminal flicker issue</li>
+<li>Supports disabling Prompt prompt function</li>
+<li>Fixed message duplicate publishing bug</li>
+<li>Fixed system reminder message duplicate bug</li>
 <li>Optimized tool execution performance</li>
 </ul>
 </li>
 <li><p>1.11.0</p>
 <ul>
-<li>Support PreToolUse Hook</li>
+<li>Supports PreToolUse Hook</li>
 </ul>
 </li>
 <li><p>1.10.2</p>
 <ul>
-<li>Added keyboard shortcut to move tasks to background execution</li>
-<li>Added support for toggling background task notifications</li>
-<li>Improved Markdown rendering</li>
-<li>Added real-time output display for shell execution</li>
-<li>Fixed inaccurate background shell task count display</li>
+<li>Supports using shortcut keys to switch tasks to background execution</li>
+<li>Supports controlling background task running reminders</li>
+<li>Optimized Markdown display</li>
+<li>Supports displaying output during shell execution</li>
+<li>Fixed inaccurate background shell task count display issue</li>
 </ul>
 </li>
 <li><p>1.10.0</p>
 <ul>
-<li>Added TaskStop tool to support stopping background subagent tasks and shell task execution</li>
+<li>Added TaskStop tool, supports aborting background subagent tasks and shell task execution</li>
 <li>Removed KillShell tool</li>
-<li>Support re-initiating conversation after background shell tasks complete</li>
-<li>Support displaying background shell task count</li>
-<li>Fixed background subagent conversation re-initiation freeze issue</li>
+<li>After background shell tasks complete, supports restarting conversation</li>
+<li>Supports displaying background shell task count</li>
+<li>Fixed background subagent conversation restart deadlock issue</li>
 </ul>
 </li>
 <li><p>1.9.3</p>
 <ul>
-<li>Support SubagentStart hook</li>
+<li>Supports SubagentStart hook</li>
 </ul>
 </li>
 <li><p>1.9.2</p>
 <ul>
-<li>Support Stop and SubagentStop hooks</li>
+<li>Supports Stop, SubagentStop hook</li>
 </ul>
 </li>
 <li><p>1.9.0</p>
 <ul>
-<li>Support user-level rules, project-level rules, and on-demand loading by path</li>
-<li>Support startup commands</li>
-<li>Optimized message notifications</li>
+<li>Supports user-level rules, project-level rules, and on-demand loading by path</li>
+<li>Supports startup commands</li>
+<li>Optimized message reminders</li>
 </ul>
 </li>
 <li><p>1.8.0</p>
 <ul>
-<li>Optimized terminal MCP automatic authorization configuration</li>
+<li>Optimized terminal MCP auto-authorization configuration</li>
 </ul>
 </li>
 <li><p>1.7.0</p>
 <ul>
-<li>Remote MCP supports automatic authorization</li>
-<li>Improved usage in GitHub Codespaces</li>
-<li>MCP Tool permissions.allow supports wildcard settings</li>
-<li>Enhanced compatibility with non-standard JSON and incorrect JSON formats in Tool input and Qwen-code-plus</li>
+<li>Remote MCP supports auto-authorization</li>
+<li>Optimized usage effect in githubcodespace</li>
+<li>MCP Tool permissions.allow supports wildcard setting</li>
+<li>Optimized compatibility with non-standard Tool input JSON and erroneous JSON formats in Qwen-code-plus</li>
 </ul>
 </li>
 <li><p>1.6.0</p>
 <ul>
-<li>Support MCP Tool lazy loading</li>
+<li>Supports MCP Tool lazy loading</li>
 <li>Fixed Task Tool verbose mode crash bug</li>
 <li>Optimized network request retry performance</li>
 </ul>
 </li>
 <li><p>1.5.0</p>
 <ul>
-<li>Support settings.json configuration with hot reload</li>
+<li>Supports settings.json configuration and hot reload</li>
 </ul>
 </li>
 <li><p>1.4.0</p>
 <ul>
 <li>AskUserQuestion tool supports multiple questions and custom input</li>
-<li>Enhanced Grep Tool functionality</li>
+<li>Optimized Grep Tool</li>
 </ul>
 </li>
 <li><p>1.3.0</p>
 <ul>
-<li>Support providing prompt suggestions at the end of conversations</li>
+<li>Supports prompt suggestion statements at the end of conversations</li>
 </ul>
 </li>
 <li><p>1.2.0</p>
 <ul>
-<li>Support submitting prompt statements during conversation</li>
+<li>Supports submitting prompt statements during conversations</li>
 </ul>
 </li>
 <li><p>1.1.0</p>
 <ul>
-<li>Support subagent background execution</li>
-<li>Support subagent resume execution </li>
-<li>Optimize LSP tool file path validation</li>
+<li>Supports subagent background execution</li>
+<li>Supports subagent resume execution</li>
+<li>Optimized LSP tool file path validation</li>
 </ul>
 </li>
-<li><p>1.0.16 </p>
+<li><p>1.0.16</p>
 <ul>
 <li>Optimized tool lazy loading performance</li>
 <li>Optimized LSP tool terminal display</li>
 </ul>
 </li>
-<li><p>1.0.15 Restore TODO LIST along with session</p>
+<li><p>1.0.15 Restored TODO LIST when restoring session</p>
 </li>
 </ul>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-07-25T04:00:57.846Z" itemprop="dateModified">Last updated: 2026-07-25</time>
+                <time class="article-footer-updated" datetime="2026-07-29T15:38:25.476Z" itemprop="dateModified">Last updated: 2026-07-29</time>
                 
               </footer>
               
@@ -854,7 +882,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dahawa-Life-Plan"><span class="toc-text">Dahawa Life Plan</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Version-History"><span class="toc-text">Version History</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Dahawa-Life-Plan"><span class="toc-text">Dahawa Life Plan</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Versions"><span class="toc-text">Versions</span></a></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
