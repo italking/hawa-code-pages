@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Plugin | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/en/docs/plugin">
+  <!-- Alternate links -->
+  
+    
+      
+        <link rel="alternate" hreflang="zh-cn" href="https://www.hawacode.com/docs/plugin">
+      
+    
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/plugin" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="PluginHawa Code supports extending its capabilities through plugins and a plugin marketplace. Plugins are distributed as declarative directories and can contain components such as Skills, slash comman">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Plugin">
+<meta property="og:url" content="https://www.hawacode.com/en/docs/plugin">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="PluginHawa Code supports extending its capabilities through plugins and a plugin marketplace. Plugins are distributed as declarative directories and can contain components such as Skills, slash comman">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-07-29T14:59:54.500Z">
+<meta property="article:modified_time" content="2026-07-29T14:59:54.500Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/en/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/en/docs/" class="main-nav-link">Docs</a><a href="/en/blog/" class="main-nav-link">Blog</a><a href="/en/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/plugin.html">
+        
+           <option value="zh-cn">简体中文</option>
+        
+           <option value="en" selected>English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Plugin</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><h1 id="Plugin" class="article-heading"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin<a class="article-anchor" href="#Plugin" aria-hidden="true"></a></h1><p>Hawa Code supports extending its capabilities through plugins and a plugin marketplace. Plugins are distributed as declarative directories and can contain components such as Skills, slash commands, Agents, Hooks, MCP Servers, and LSP Servers. The marketplace is a plugin catalog for centrally managing and distributing multiple plugins.</p>
+<blockquote>
+<p><strong>Claude Code compatibility</strong>: <code>settings.plugins.pluginClaudeCompat</code> is enabled by default. Hawa Code recognizes both <code>.hcode-plugin/</code> and <code>.claude-plugin/</code> directories, preferring <code>.hcode-plugin/</code>. This allows reusing a large number of plugins from the Claude Code ecosystem.</p>
+</blockquote>
+<hr>
+<h2 id="Quick-Start" class="article-heading"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start<a class="article-anchor" href="#Quick-Start" aria-hidden="true"></a></h2><h3 id="1-Add-a-Marketplace" class="article-heading"><a href="#1-Add-a-Marketplace" class="headerlink" title="1. Add a Marketplace"></a>1. Add a Marketplace<a class="article-anchor" href="#1-Add-a-Marketplace" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Local directory</span></span><br><span class="line">hcode plugin marketplace add ./my-marketplace</span><br><span class="line"></span><br><span class="line"><span class="comment"># GitHub repository shorthand</span></span><br><span class="line">hcode plugin marketplace add owner/repo</span><br><span class="line"></span><br><span class="line"><span class="comment"># git URL</span></span><br><span class="line">hcode plugin marketplace add https://github.com/owner/repo.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># URL pointing directly to a marketplace.json</span></span><br><span class="line">hcode plugin marketplace add https://example.com/marketplace.json</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-Install-a-Plugin" class="article-heading"><a href="#2-Install-a-Plugin" class="headerlink" title="2. Install a Plugin"></a>2. Install a Plugin<a class="article-anchor" href="#2-Install-a-Plugin" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin install demo-plugin@my-marketplace</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-Use-the-Plugin" class="article-heading"><a href="#3-Use-the-Plugin" class="headerlink" title="3. Use the Plugin"></a>3. Use the Plugin<a class="article-anchor" href="#3-Use-the-Plugin" aria-hidden="true"></a></h3><p>Once installed and enabled, the plugin’s Skills and commands are registered automatically:</p>
+<ul>
+<li>Skill: invoke in chat via <code>/plugin-name:SkillName</code> or <code>/SkillName</code>.</li>
+<li>Custom command: invoke via <code>/commandName</code>.</li>
+<li>MCP Server: after restarting or refreshing, view via <code>hcode mcp list</code>.</li>
+</ul>
+<hr>
+<h2 id="Marketplace-Management" class="article-heading"><a href="#Marketplace-Management" class="headerlink" title="Marketplace Management"></a>Marketplace Management<a class="article-anchor" href="#Marketplace-Management" aria-hidden="true"></a></h2><p>A marketplace is a collection of plugins described by a <code>marketplace.json</code> file. Hawa Code supports managing marketplaces through CLI and interactive slash commands.</p>
+<h3 id="Add-a-Marketplace" class="article-heading"><a href="#Add-a-Marketplace" class="headerlink" title="Add a Marketplace"></a>Add a Marketplace<a class="article-anchor" href="#Add-a-Marketplace" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace add &lt;<span class="built_in">source</span>&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>&lt;source&gt;</code> supports the following forms:</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Local directory</td>
+<td><code>./my-marketplace</code></td>
+</tr>
+<tr>
+<td>GitHub shorthand</td>
+<td><code>owner/repo</code></td>
+</tr>
+<tr>
+<td>git URL</td>
+<td><code>https://github.com/owner/repo.git</code> or <code>git@github.com:owner/repo.git</code></td>
+</tr>
+<tr>
+<td>marketplace.json URL</td>
+<td><code>https://example.com/marketplace.json</code></td>
+</tr>
+</tbody></table>
+<h3 id="Remove-a-Marketplace" class="article-heading"><a href="#Remove-a-Marketplace" class="headerlink" title="Remove a Marketplace"></a>Remove a Marketplace<a class="article-anchor" href="#Remove-a-Marketplace" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace remove &lt;name&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="List-Marketplaces" class="article-heading"><a href="#List-Marketplaces" class="headerlink" title="List Marketplaces"></a>List Marketplaces<a class="article-anchor" href="#List-Marketplaces" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace list</span><br><span class="line">hcode plugin marketplace list --json</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Update-a-Marketplace" class="article-heading"><a href="#Update-a-Marketplace" class="headerlink" title="Update a Marketplace"></a>Update a Marketplace<a class="article-anchor" href="#Update-a-Marketplace" aria-hidden="true"></a></h3><p>Re-fetch marketplace content from its source:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Update all marketplaces</span></span><br><span class="line">hcode plugin marketplace update</span><br><span class="line"></span><br><span class="line"><span class="comment"># Update a specific marketplace</span></span><br><span class="line">hcode plugin marketplace update my-marketplace</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="Plugin-Management" class="article-heading"><a href="#Plugin-Management" class="headerlink" title="Plugin Management"></a>Plugin Management<a class="article-anchor" href="#Plugin-Management" aria-hidden="true"></a></h2><h3 id="Install-a-Plugin" class="article-heading"><a href="#Install-a-Plugin" class="headerlink" title="Install a Plugin"></a>Install a Plugin<a class="article-anchor" href="#Install-a-Plugin" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin install &lt;plugin[@marketplace]&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><code>plugin</code>: plugin name.</li>
+<li><code>marketplace</code>: optional marketplace name. If omitted, all known marketplaces are searched; if only one marketplace contains the plugin, it is used automatically.</li>
+</ul>
+<h3 id="Uninstall-a-Plugin" class="article-heading"><a href="#Uninstall-a-Plugin" class="headerlink" title="Uninstall a Plugin"></a>Uninstall a Plugin<a class="article-anchor" href="#Uninstall-a-Plugin" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin uninstall &lt;plugin[@marketplace]&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>You can use the full ID or the <code>plugin@marketplace</code> shorthand.</p>
+<h3 id="Update-a-Plugin" class="article-heading"><a href="#Update-a-Plugin" class="headerlink" title="Update a Plugin"></a>Update a Plugin<a class="article-anchor" href="#Update-a-Plugin" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Update all plugins</span></span><br><span class="line">hcode plugin update</span><br><span class="line"></span><br><span class="line"><span class="comment"># Update a specific plugin</span></span><br><span class="line">hcode plugin update demo-plugin@my-marketplace</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="List-Installed-Plugins" class="article-heading"><a href="#List-Installed-Plugins" class="headerlink" title="List Installed Plugins"></a>List Installed Plugins<a class="article-anchor" href="#List-Installed-Plugins" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin list</span><br><span class="line">hcode plugin list --json</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Enable-Disable-a-Plugin" class="article-heading"><a href="#Enable-Disable-a-Plugin" class="headerlink" title="Enable/Disable a Plugin"></a>Enable/Disable a Plugin<a class="article-anchor" href="#Enable-Disable-a-Plugin" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin <span class="built_in">enable</span> &lt;plugin[@marketplace]&gt;</span><br><span class="line">hcode plugin <span class="built_in">disable</span> &lt;plugin[@marketplace]&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>After disabling, the plugin’s Skills, commands, MCP, and other components no longer take effect, but the files remain in the local cache.</p>
+<hr>
+<h2 id="Interactive-Manager" class="article-heading"><a href="#Interactive-Manager" class="headerlink" title="Interactive Manager"></a>Interactive Manager<a class="article-anchor" href="#Interactive-Manager" aria-hidden="true"></a></h2><p>Enter the following in the Hawa Code interactive interface:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/plugin</span><br></pre></td></tr></tbody></table></figure>
+
+<p>This opens the plugin manager with keyboard navigation:</p>
+<ul>
+<li><code>← / →</code>: switch tabs (Available / Installed / Marketplaces).</li>
+<li><code>↑ / ↓</code>: select list items.</li>
+<li><code>Enter</code>: view details or install/uninstall/update.</li>
+<li><code>Esc</code>: exit.</li>
+</ul>
+<hr>
+<h2 id="marketplace-json" class="article-heading"><a href="#marketplace-json" class="headerlink" title="marketplace.json"></a>marketplace.json<a class="article-anchor" href="#marketplace-json" aria-hidden="true"></a></h2><p>The marketplace description file is usually located at <code>.hcode-plugin/marketplace.json</code> in the marketplace root. In compatibility mode, <code>.claude-plugin/marketplace.json</code> is also supported.</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"my-plugins"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"owner"</span><span class="punctuation">:</span> <span class="punctuation">{</span> <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"Your Name"</span> <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"My Hawa Code plugin marketplace"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"plugins"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"quality-review-plugin"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"source"</span><span class="punctuation">:</span> <span class="string">"./plugins/quality-review-plugin"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"Adds a quality-review skill"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"version"</span><span class="punctuation">:</span> <span class="string">"1.0.0"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Plugin-Source-source" class="article-heading"><a href="#Plugin-Source-source" class="headerlink" title="Plugin Source (source)"></a>Plugin Source (<code>source</code>)<a class="article-anchor" href="#Plugin-Source-source" aria-hidden="true"></a></h3><p><code>plugins[].source</code> supports multiple forms:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Local relative path</td>
+<td><code>"./plugins/formatter"</code></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td><code>{ "source": "github", "repo": "owner/repo", "ref": "main", "sha": "..." }</code></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>{ "source": "url", "url": "https://...", "ref": "..." }</code></td>
+</tr>
+<tr>
+<td>Git subdirectory</td>
+<td><code>{ "source": "git-subdir", "url": "https://...", "path": "plugins/foo", "ref": "main" }</code></td>
+</tr>
+<tr>
+<td>npm</td>
+<td><code>{ "source": "npm", "package": "@org/pkg", "version": "1.0.0" }</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Relative paths are resolved against the marketplace root (the directory containing <code>.hcode-plugin/</code>), not <code>.hcode-plugin/</code> itself.</p>
+</blockquote>
+<hr>
+<h2 id="plugin-json" class="article-heading"><a href="#plugin-json" class="headerlink" title="plugin.json"></a>plugin.json<a class="article-anchor" href="#plugin-json" aria-hidden="true"></a></h2><p>The description file for a single plugin is located at <code>.hcode-plugin/plugin.json</code> in the plugin root. In compatibility mode, <code>.claude-plugin/plugin.json</code> is also supported.</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"quality-review-plugin"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"version"</span><span class="punctuation">:</span> <span class="string">"1.0.0"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"Adds a quality-review skill for quick code reviews"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"author"</span><span class="punctuation">:</span> <span class="punctuation">{</span> <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"Your Name"</span><span class="punctuation">,</span> <span class="attr">"email"</span><span class="punctuation">:</span> <span class="string">"you@example.com"</span> <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"homepage"</span><span class="punctuation">:</span> <span class="string">"https://..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"repository"</span><span class="punctuation">:</span> <span class="string">"https://..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"license"</span><span class="punctuation">:</span> <span class="string">"MIT"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"keywords"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"review"</span><span class="punctuation">,</span> <span class="string">"quality"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"category"</span><span class="punctuation">:</span> <span class="string">"productivity"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"skills"</span><span class="punctuation">:</span> <span class="string">"skills"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"commands"</span><span class="punctuation">:</span> <span class="string">"commands"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"agents"</span><span class="punctuation">:</span> <span class="string">"agents"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="string">"hooks"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"mcpServers"</span><span class="punctuation">:</span> <span class="string">"mcp"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"lspServers"</span><span class="punctuation">:</span> <span class="string">"lsp"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"permissions"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"read"</span><span class="punctuation">,</span> <span class="string">"write"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"strict"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"defaultEnabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Field-Reference" class="article-heading"><a href="#Field-Reference" class="headerlink" title="Field Reference"></a>Field Reference<a class="article-anchor" href="#Field-Reference" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>name</code></td>
+<td>Unique plugin name</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>Version number</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>Description</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>Author information</td>
+</tr>
+<tr>
+<td><code>homepage</code> / <code>repository</code> / <code>license</code></td>
+<td>Project metadata</td>
+</tr>
+<tr>
+<td><code>keywords</code> / <code>category</code></td>
+<td>Classification and tags</td>
+</tr>
+<tr>
+<td><code>skills</code></td>
+<td>Skill directory path, default <code>skills</code></td>
+</tr>
+<tr>
+<td><code>commands</code></td>
+<td>Custom command directory path, default <code>commands</code></td>
+</tr>
+<tr>
+<td><code>agents</code></td>
+<td>Agent directory path, default <code>agents</code></td>
+</tr>
+<tr>
+<td><code>hooks</code></td>
+<td>Hooks configuration directory or inline object</td>
+</tr>
+<tr>
+<td><code>mcpServers</code></td>
+<td>MCP Server configuration directory or inline object</td>
+</tr>
+<tr>
+<td><code>lspServers</code></td>
+<td>LSP Server configuration directory or inline object</td>
+</tr>
+<tr>
+<td><code>permissions</code></td>
+<td>List of permissions required by the plugin</td>
+</tr>
+<tr>
+<td><code>strict</code></td>
+<td>When <code>true</code>, <code>plugin.json</code> takes precedence; when <code>false</code>, the marketplace entry fully overrides</td>
+</tr>
+<tr>
+<td><code>defaultEnabled</code></td>
+<td>Whether the plugin is enabled by default after installation, default <code>true</code></td>
+</tr>
+</tbody></table>
+<h3 id="Strict-Mode" class="article-heading"><a href="#Strict-Mode" class="headerlink" title="Strict Mode"></a>Strict Mode<a class="article-anchor" href="#Strict-Mode" aria-hidden="true"></a></h3><ul>
+<li><code>strict: true</code> (default): <code>plugin.json</code> is the authoritative source of component definitions; the marketplace entry only supplements information.</li>
+<li><code>strict: false</code>: the marketplace entry is the complete definition, and <code>plugin.json</code> must not declare components (skills, commands, etc.), otherwise installation fails.</li>
+</ul>
+<hr>
+<h2 id="Plugin-Components" class="article-heading"><a href="#Plugin-Components" class="headerlink" title="Plugin Components"></a>Plugin Components<a class="article-anchor" href="#Plugin-Components" aria-hidden="true"></a></h2><p>A plugin can contain the following extension components:</p>
+<h3 id="Skill" class="article-heading"><a href="#Skill" class="headerlink" title="Skill"></a>Skill<a class="article-anchor" href="#Skill" aria-hidden="true"></a></h3><p>Each subdirectory under the plugin’s <code>skills</code> directory (containing <code>SKILL.md</code>) is registered as a Skill and can be invoked directly in chat after installation. See the <a href="./skill.md">Skill documentation</a> for details.</p>
+<h3 id="Custom-Commands" class="article-heading"><a href="#Custom-Commands" class="headerlink" title="Custom Commands"></a>Custom Commands<a class="article-anchor" href="#Custom-Commands" aria-hidden="true"></a></h3><p><code>.md</code> files under the plugin’s <code>commands</code> directory are registered as slash commands. Command names are namespaced by default as <code>plugin-name:commandName</code>.</p>
+<h3 id="Agent" class="article-heading"><a href="#Agent" class="headerlink" title="Agent"></a>Agent<a class="article-anchor" href="#Agent" aria-hidden="true"></a></h3><p>Definitions under the plugin’s <code>agents</code> directory are added to the Agent scan path.</p>
+<h3 id="Hooks" class="article-heading"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks<a class="article-anchor" href="#Hooks" aria-hidden="true"></a></h3><p>The <code>hooks</code> field can be a directory path (which must contain <code>hooks.json</code>) or an inline HooksConfig object. Supports <code>SessionStart</code> and <code>SessionEnd</code> hooks.</p>
+<h3 id="MCP-Server" class="article-heading"><a href="#MCP-Server" class="headerlink" title="MCP Server"></a>MCP Server<a class="article-anchor" href="#MCP-Server" aria-hidden="true"></a></h3><p>The <code>mcpServers</code> field can be a directory path (containing JSON configuration files) or an inline object. MCP Servers registered by plugins are automatically prefixed:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">plugin__&lt;marketplace&gt;__&lt;plugin&gt;__&lt;server&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="LSP-Server" class="article-heading"><a href="#LSP-Server" class="headerlink" title="LSP Server"></a>LSP Server<a class="article-anchor" href="#LSP-Server" aria-hidden="true"></a></h3><p>The <code>lspServers</code> field is used similarly to MCP for registering LSP Servers.</p>
+<h3 id="Variable-Substitution" class="article-heading"><a href="#Variable-Substitution" class="headerlink" title="Variable Substitution"></a>Variable Substitution<a class="article-anchor" href="#Variable-Substitution" aria-hidden="true"></a></h3><p>Strings in MCP and Hook configurations support the following variable substitutions:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Substituted with</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>${HCODE_PLUGIN_ROOT}</code></td>
+<td>Plugin cache directory</td>
+</tr>
+<tr>
+<td><code>${HCODE_PLUGIN_DATA}</code></td>
+<td>Plugin data directory</td>
+</tr>
+<tr>
+<td><code>${CLAUDE_PLUGIN_ROOT}</code></td>
+<td>Same as <code>${HCODE_PLUGIN_ROOT}</code></td>
+</tr>
+<tr>
+<td><code>${CLAUDE_PLUGIN_DATA}</code></td>
+<td>Same as <code>${HCODE_PLUGIN_DATA}</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Configuration" class="article-heading"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration<a class="article-anchor" href="#Configuration" aria-hidden="true"></a></h2><p>Configure plugin behavior in <code>~/.hcode/settings.json</code> or project <code>.hcode/settings.json</code>:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"plugins"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"enabledPlugins"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"my-marketplace__demo-plugin@1.0.0"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"disabledPlugins"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginConfigs"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"extraKnownMarketplaces"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span> <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"company"</span><span class="punctuation">,</span> <span class="attr">"source"</span><span class="punctuation">:</span> <span class="string">"https://github.com/company/hawa-plugins"</span> <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"strictKnownMarketplaces"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginMarketplaceAllowlist"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginAutoUpdate"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginAutoUpdateInterval"</span><span class="punctuation">:</span> <span class="number">60</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginSandboxHooks"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginClaudeCompat"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Configuration-Reference" class="article-heading"><a href="#Configuration-Reference" class="headerlink" title="Configuration Reference"></a>Configuration Reference<a class="article-anchor" href="#Configuration-Reference" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>enabledPlugins</code></td>
+<td>List of plugin IDs to force-enable</td>
+</tr>
+<tr>
+<td><code>disabledPlugins</code></td>
+<td>List of plugin IDs to force-disable</td>
+</tr>
+<tr>
+<td><code>pluginConfigs</code></td>
+<td>Per-plugin configuration objects</td>
+</tr>
+<tr>
+<td><code>extraKnownMarketplaces</code></td>
+<td>Additional built-in marketplace list</td>
+</tr>
+<tr>
+<td><code>strictKnownMarketplaces</code></td>
+<td>When <code>true</code>, only accept known marketplaces; when <code>false</code>, allow adding new marketplaces</td>
+</tr>
+<tr>
+<td><code>pluginMarketplaceAllowlist</code></td>
+<td>Marketplace source allowlist, supports glob/regex</td>
+</tr>
+<tr>
+<td><code>pluginAutoUpdate</code></td>
+<td>Whether to enable background auto-update for marketplaces and plugins</td>
+</tr>
+<tr>
+<td><code>pluginAutoUpdateInterval</code></td>
+<td>Auto-update interval in minutes, default 60</td>
+</tr>
+<tr>
+<td><code>pluginSandboxHooks</code></td>
+<td>Whether to execute Hook and MCP commands in sandbox, default <code>true</code></td>
+</tr>
+<tr>
+<td><code>pluginClaudeCompat</code></td>
+<td>Whether to support <code>.claude-plugin/</code> directories, default <code>true</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Security-and-Permissions" class="article-heading"><a href="#Security-and-Permissions" class="headerlink" title="Security and Permissions"></a>Security and Permissions<a class="article-anchor" href="#Security-and-Permissions" aria-hidden="true"></a></h2><h3 id="Installation-Confirmation" class="article-heading"><a href="#Installation-Confirmation" class="headerlink" title="Installation Confirmation"></a>Installation Confirmation<a class="article-anchor" href="#Installation-Confirmation" aria-hidden="true"></a></h3><p>Before installing a plugin, Hawa Code displays its source, version, required permissions, and sandbox status, and requires user confirmation. CLI can skip confirmation via <code>--yes</code> (in current implementation, some paths trust known marketplaces by default).</p>
+<h3 id="Marketplace-Restrictions" class="article-heading"><a href="#Marketplace-Restrictions" class="headerlink" title="Marketplace Restrictions"></a>Marketplace Restrictions<a class="article-anchor" href="#Marketplace-Restrictions" aria-hidden="true"></a></h3><p>The following reserved marketplace names are prohibited for third-party use:</p>
+<ul>
+<li><code>hcode</code>, <code>hawacode</code>, <code>official</code></li>
+<li><code>claude-code-marketplace</code>, <code>claude-plugins-official</code>, <code>anthropic-marketplace</code></li>
+</ul>
+<h3 id="Allowlist" class="article-heading"><a href="#Allowlist" class="headerlink" title="Allowlist"></a>Allowlist<a class="article-anchor" href="#Allowlist" aria-hidden="true"></a></h3><p>Use <code>pluginMarketplaceAllowlist</code> to restrict allowed marketplace sources, supporting glob and regular expressions.</p>
+<h3 id="Path-Isolation" class="article-heading"><a href="#Path-Isolation" class="headerlink" title="Path Isolation"></a>Path Isolation<a class="article-anchor" href="#Path-Isolation" aria-hidden="true"></a></h3><p>Each plugin is copied to an isolated cache directory. <code>../</code> references and out-of-bounds symlinks are forbidden. <code>${HCODE_PLUGIN_ROOT}</code> and <code>${HCODE_PLUGIN_DATA}</code> serve as safe variable substitution entry points.</p>
+<h3 id="Sandbox-Execution" class="article-heading"><a href="#Sandbox-Execution" class="headerlink" title="Sandbox Execution"></a>Sandbox Execution<a class="article-anchor" href="#Sandbox-Execution" aria-hidden="true"></a></h3><p><code>pluginSandboxHooks</code> is enabled by default. Hooks and MCP commands are executed through Hawa Code’s sandbox mechanism, subject to <code>settings.sandbox</code> restrictions.</p>
+<hr>
+<h2 id="Cache-Directory" class="article-heading"><a href="#Cache-Directory" class="headerlink" title="Cache Directory"></a>Cache Directory<a class="article-anchor" href="#Cache-Directory" aria-hidden="true"></a></h2><p>Plugin-related data is stored by default under <code>~/.hcode/plugins/</code>:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">~/.hcode/plugins/</span><br><span class="line">├── known_marketplaces.json</span><br><span class="line">├── installed_plugins.json</span><br><span class="line">├── marketplaces/&lt;name&gt;/          # Marketplace clone/download directory</span><br><span class="line">├── installed/&lt;marketplace&gt;__&lt;plugin&gt;@&lt;version&gt;/  # Plugin cache</span><br><span class="line">└── data/&lt;marketplace&gt;__&lt;plugin&gt;/                  # Plugin persistent data</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Environment-Variables" class="article-heading"><a href="#Environment-Variables" class="headerlink" title="Environment Variables"></a>Environment Variables<a class="article-anchor" href="#Environment-Variables" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Environment Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>HCODE_PLUGIN_CACHE_DIR</code></td>
+<td>Override the entire plugin cache root directory</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_ROOT</code></td>
+<td>Points to the installed plugin directory</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_DATA</code></td>
+<td>Points to the plugin data directory</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_SEED_DIR</code></td>
+<td>Pre-installed plugin directory, used for containers/CI</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_GIT_TIMEOUT_MS</code></td>
+<td>Git operation timeout, default 120000ms</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE</code></td>
+<td>Keep old cache when update fails</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="Command-Quick-Reference" class="article-heading"><a href="#Command-Quick-Reference" class="headerlink" title="Command Quick Reference"></a>Command Quick Reference<a class="article-anchor" href="#Command-Quick-Reference" aria-hidden="true"></a></h2><h3 id="Slash-Commands" class="article-heading"><a href="#Slash-Commands" class="headerlink" title="Slash Commands"></a>Slash Commands<a class="article-anchor" href="#Slash-Commands" aria-hidden="true"></a></h3><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/plugin marketplace add &lt;source&gt;</span><br><span class="line">/plugin marketplace remove &lt;name&gt;</span><br><span class="line">/plugin marketplace list</span><br><span class="line">/plugin marketplace update [name]</span><br><span class="line">/plugin install &lt;plugin[@marketplace]&gt;</span><br><span class="line">/plugin uninstall &lt;plugin[@marketplace]&gt;</span><br><span class="line">/plugin update [plugin[@marketplace]]</span><br><span class="line">/plugin list</span><br><span class="line">/plugin enable &lt;plugin[@marketplace]&gt;</span><br><span class="line">/plugin disable &lt;plugin[@marketplace]&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="CLI" class="article-heading"><a href="#CLI" class="headerlink" title="CLI"></a>CLI<a class="article-anchor" href="#CLI" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace add &lt;<span class="built_in">source</span>&gt;</span><br><span class="line">hcode plugin marketplace remove &lt;name&gt;</span><br><span class="line">hcode plugin marketplace list [--json]</span><br><span class="line">hcode plugin marketplace update [name]</span><br><span class="line">hcode plugin install &lt;plugin[@marketplace]&gt;</span><br><span class="line">hcode plugin uninstall &lt;plugin[@marketplace]&gt;</span><br><span class="line">hcode plugin update [plugin[@marketplace]]</span><br><span class="line">hcode plugin list [--json]</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="Manual-Verification-Example" class="article-heading"><a href="#Manual-Verification-Example" class="headerlink" title="Manual Verification Example"></a>Manual Verification Example<a class="article-anchor" href="#Manual-Verification-Example" aria-hidden="true"></a></h2><p>Create a local marketplace:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p my-marketplace/.hcode-plugin</span><br><span class="line"><span class="built_in">mkdir</span> -p my-marketplace/plugins/demo-plugin/.hcode-plugin</span><br><span class="line"><span class="built_in">mkdir</span> -p my-marketplace/plugins/demo-plugin/skills/demo</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Write <code>my-marketplace/.hcode-plugin/marketplace.json</code>:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"my-marketplace"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"owner"</span><span class="punctuation">:</span> <span class="punctuation">{</span> <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"Demo"</span> <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"plugins"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"demo-plugin"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"source"</span><span class="punctuation">:</span> <span class="string">"./plugins/demo-plugin"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"version"</span><span class="punctuation">:</span> <span class="string">"1.0.0"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>Write <code>my-marketplace/plugins/demo-plugin/.hcode-plugin/plugin.json</code>:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"demo-plugin"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"version"</span><span class="punctuation">:</span> <span class="string">"1.0.0"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"A demo plugin"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>Write <code>my-marketplace/plugins/demo-plugin/skills/demo/SKILL.md</code>:</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">name: Demo</span><br><span class="line"><span class="section">description: Say hello from plugin</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line">Hello from plugin!</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Add and install:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace add ./my-marketplace</span><br><span class="line">hcode plugin install demo-plugin@my-marketplace</span><br></pre></td></tr></tbody></table></figure>
+
+<p>After installation, run <code>/demo-plugin:Demo</code> in Hawa Code to see the result.</p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-07-29T14:59:54.500Z" itemprop="dateModified">Last updated: 2026-07-29</time>
+                <a href="lsp.html" class="article-footer-prev" title="LSPServer"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="[object Object]" class="article-footer-next" title="Hooks"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Plugin"><span class="toc-text">Plugin</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Add-a-Marketplace"><span class="toc-text">1. Add a Marketplace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Install-a-Plugin"><span class="toc-text">2. Install a Plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Use-the-Plugin"><span class="toc-text">3. Use the Plugin</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Marketplace-Management"><span class="toc-text">Marketplace Management</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Add-a-Marketplace"><span class="toc-text">Add a Marketplace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Remove-a-Marketplace"><span class="toc-text">Remove a Marketplace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List-Marketplaces"><span class="toc-text">List Marketplaces</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update-a-Marketplace"><span class="toc-text">Update a Marketplace</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin-Management"><span class="toc-text">Plugin Management</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-a-Plugin"><span class="toc-text">Install a Plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uninstall-a-Plugin"><span class="toc-text">Uninstall a Plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Update-a-Plugin"><span class="toc-text">Update a Plugin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#List-Installed-Plugins"><span class="toc-text">List Installed Plugins</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Enable-Disable-a-Plugin"><span class="toc-text">Enable&#x2F;Disable a Plugin</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interactive-Manager"><span class="toc-text">Interactive Manager</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#marketplace-json"><span class="toc-text">marketplace.json</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Plugin-Source-source"><span class="toc-text">Plugin Source (source)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#plugin-json"><span class="toc-text">plugin.json</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Field-Reference"><span class="toc-text">Field Reference</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Strict-Mode"><span class="toc-text">Strict Mode</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plugin-Components"><span class="toc-text">Plugin Components</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Skill"><span class="toc-text">Skill</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Custom-Commands"><span class="toc-text">Custom Commands</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent"><span class="toc-text">Agent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hooks"><span class="toc-text">Hooks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MCP-Server"><span class="toc-text">MCP Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSP-Server"><span class="toc-text">LSP Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Variable-Substitution"><span class="toc-text">Variable Substitution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuration"><span class="toc-text">Configuration</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Configuration-Reference"><span class="toc-text">Configuration Reference</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Security-and-Permissions"><span class="toc-text">Security and Permissions</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Installation-Confirmation"><span class="toc-text">Installation Confirmation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Marketplace-Restrictions"><span class="toc-text">Marketplace Restrictions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Allowlist"><span class="toc-text">Allowlist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Path-Isolation"><span class="toc-text">Path Isolation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sandbox-Execution"><span class="toc-text">Sandbox Execution</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cache-Directory"><span class="toc-text">Cache Directory</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Environment-Variables"><span class="toc-text">Environment Variables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Command-Quick-Reference"><span class="toc-text">Command Quick Reference</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Slash-Commands"><span class="toc-text">Slash Commands</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CLI"><span class="toc-text">CLI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Manual-Verification-Example"><span class="toc-text">Manual Verification Example</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="commands.html" class="sidebar-link">Commands</a><a href="model.html" class="sidebar-link">Models</a><a href="tools.html" class="sidebar-link">Tools</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="permissions.html" class="sidebar-link">Permissions</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool Lazy Loading</a><strong class="sidebar-title">Advanced Features</strong><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="plugin.html" class="sidebar-link current">Plugin</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle">▶</span><span>Hooks</span></div><div class="sidebar-submenu"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">Scheduled Tasks</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">Sandboxing</a><a href="goal.html" class="sidebar-link">Goal</a><a href="context-management.html" class="sidebar-link">Context Management</a><strong class="sidebar-title">Web Control</strong><a href="agent-viewer.html" class="sidebar-link">Agent Viewer</a><a href="settings.html" class="sidebar-link">Settings</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><strong class="sidebar-title">Remote Control</strong><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a><strong class="sidebar-title">Middleware</strong><a href="context.html" class="sidebar-link">Context</a><a href="db.html" class="sidebar-link">DB</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/en/docs/" class="mobile-nav-link">Docs</a><a href="/en/blog/" class="mobile-nav-link">Blog</a><a href="/en/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="commands.html" class="mobile-nav-link">Commands</a><a href="model.html" class="mobile-nav-link">Models</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="permissions.html" class="mobile-nav-link">Permissions</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool Lazy Loading</a><strong class="mobile-nav-title">Advanced Features</strong><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="plugin.html" class="mobile-nav-link current">Plugin</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">Scheduled Tasks</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">Sandboxing</a><a href="goal.html" class="mobile-nav-link">Goal</a><a href="context-management.html" class="mobile-nav-link">Context Management</a><strong class="mobile-nav-title">Web Control</strong><a href="agent-viewer.html" class="mobile-nav-link">Agent Viewer</a><a href="settings.html" class="mobile-nav-link">Settings</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><strong class="mobile-nav-title">Remote Control</strong><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a><strong class="mobile-nav-title">Middleware</strong><a href="context.html" class="mobile-nav-link">Context</a><a href="db.html" class="mobile-nav-link">DB</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/plugin.html">
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:en']
+    }
+  });
+}
+</script>
+
+</body>
+</html>

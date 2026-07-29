@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Plugin | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/docs/plugin">
+  <!-- Alternate links -->
+  
+    
+      
+    
+      
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/plugin">
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/plugin" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="PluginHawa Code 支持通过插件（Plugin）和插件市场（Marketplace）扩展能力。插件以声明式目录分发，可包含 Skill、斜杠命令、Agent、Hooks、MCP Server、LSP Server 等组件；市场则是一个插件目录，方便集中管理和分发多个插件。  Claude Code 兼容：默认开启 settings.plugins.pluginClaudeCompat，">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Plugin">
+<meta property="og:url" content="https://www.hawacode.com/docs/plugin">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="PluginHawa Code 支持通过插件（Plugin）和插件市场（Marketplace）扩展能力。插件以声明式目录分发，可包含 Skill、斜杠命令、Agent、Hooks、MCP Server、LSP Server 等组件；市场则是一个插件目录，方便集中管理和分发多个插件。  Claude Code 兼容：默认开启 settings.plugins.pluginClaudeCompat，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-07-29T14:53:03.150Z">
+<meta property="article:modified_time" content="2026-07-29T14:53:03.150Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/blog/" class="main-nav-link">博客</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/plugin.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Plugin</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><h1 id="Plugin" class="article-heading"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin<a class="article-anchor" href="#Plugin" aria-hidden="true"></a></h1><p>Hawa Code 支持通过插件（Plugin）和插件市场（Marketplace）扩展能力。插件以声明式目录分发，可包含 Skill、斜杠命令、Agent、Hooks、MCP Server、LSP Server 等组件；市场则是一个插件目录，方便集中管理和分发多个插件。</p>
+<blockquote>
+<p><strong>Claude Code 兼容</strong>：默认开启 <code>settings.plugins.pluginClaudeCompat</code>，Hawa Code 会同时识别 <code>.hcode-plugin/</code> 和 <code>.claude-plugin/</code> 目录，优先使用 <code>.hcode-plugin/</code>。因此可以直接复用大量 Claude Code 生态插件。</p>
+</blockquote>
+<hr>
+<h2 id="快速开始" class="article-heading"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始<a class="article-anchor" href="#快速开始" aria-hidden="true"></a></h2><h3 id="1-添加市场" class="article-heading"><a href="#1-添加市场" class="headerlink" title="1. 添加市场"></a>1. 添加市场<a class="article-anchor" href="#1-添加市场" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 本地目录</span></span><br><span class="line">hcode plugin marketplace add ./my-marketplace</span><br><span class="line"></span><br><span class="line"><span class="comment"># GitHub 仓库简写</span></span><br><span class="line">hcode plugin marketplace add owner/repo</span><br><span class="line"></span><br><span class="line"><span class="comment"># git URL</span></span><br><span class="line">hcode plugin marketplace add https://github.com/owner/repo.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 直接指向 marketplace.json 的 URL</span></span><br><span class="line">hcode plugin marketplace add https://example.com/marketplace.json</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-安装插件" class="article-heading"><a href="#2-安装插件" class="headerlink" title="2. 安装插件"></a>2. 安装插件<a class="article-anchor" href="#2-安装插件" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin install demo-plugin@my-marketplace</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="3-使用插件" class="article-heading"><a href="#3-使用插件" class="headerlink" title="3. 使用插件"></a>3. 使用插件<a class="article-anchor" href="#3-使用插件" aria-hidden="true"></a></h3><p>安装并启用后，插件中的 Skill 和命令会自动注册：</p>
+<ul>
+<li>Skill：在对话中通过 <code>/插件名:Skill名</code> 或 <code>/Skill名</code> 调用。</li>
+<li>自定义命令：通过 <code>/命令名</code> 调用。</li>
+<li>MCP Server：重启或刷新后通过 <code>hcode mcp list</code> 查看。</li>
+</ul>
+<hr>
+<h2 id="市场管理" class="article-heading"><a href="#市场管理" class="headerlink" title="市场管理"></a>市场管理<a class="article-anchor" href="#市场管理" aria-hidden="true"></a></h2><p>市场是插件的集合，由一个 <code>marketplace.json</code> 文件描述。Hawa Code 支持通过 CLI 和交互式斜杠命令管理市场。</p>
+<h3 id="添加市场" class="article-heading"><a href="#添加市场" class="headerlink" title="添加市场"></a>添加市场<a class="article-anchor" href="#添加市场" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace add &lt;<span class="built_in">source</span>&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>&lt;source&gt;</code> 支持以下形式：</p>
+<table>
+<thead>
+<tr>
+<th>来源</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>本地目录</td>
+<td><code>./my-marketplace</code></td>
+</tr>
+<tr>
+<td>GitHub 简写</td>
+<td><code>owner/repo</code></td>
+</tr>
+<tr>
+<td>git URL</td>
+<td><code>https://github.com/owner/repo.git</code> 或 <code>git@github.com:owner/repo.git</code></td>
+</tr>
+<tr>
+<td>marketplace.json URL</td>
+<td><code>https://example.com/marketplace.json</code></td>
+</tr>
+</tbody></table>
+<h3 id="移除市场" class="article-heading"><a href="#移除市场" class="headerlink" title="移除市场"></a>移除市场<a class="article-anchor" href="#移除市场" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace remove &lt;name&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="列出市场" class="article-heading"><a href="#列出市场" class="headerlink" title="列出市场"></a>列出市场<a class="article-anchor" href="#列出市场" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace list</span><br><span class="line">hcode plugin marketplace list --json</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="更新市场" class="article-heading"><a href="#更新市场" class="headerlink" title="更新市场"></a>更新市场<a class="article-anchor" href="#更新市场" aria-hidden="true"></a></h3><p>从来源重新拉取市场内容：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 更新全部市场</span></span><br><span class="line">hcode plugin marketplace update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新指定市场</span></span><br><span class="line">hcode plugin marketplace update my-marketplace</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="插件管理" class="article-heading"><a href="#插件管理" class="headerlink" title="插件管理"></a>插件管理<a class="article-anchor" href="#插件管理" aria-hidden="true"></a></h2><h3 id="安装插件" class="article-heading"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件<a class="article-anchor" href="#安装插件" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin install &lt;plugin[@marketplace]&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><code>plugin</code>：插件名称。</li>
+<li><code>marketplace</code>：可选，市场名称。省略时会在所有已知市场中查找；如果只有一个市场包含该插件，则自动使用该市场。</li>
+</ul>
+<h3 id="卸载插件" class="article-heading"><a href="#卸载插件" class="headerlink" title="卸载插件"></a>卸载插件<a class="article-anchor" href="#卸载插件" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin uninstall &lt;plugin[@marketplace]&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>可以指定完整 ID，也可以使用 <code>plugin@marketplace</code> 简写。</p>
+<h3 id="更新插件" class="article-heading"><a href="#更新插件" class="headerlink" title="更新插件"></a>更新插件<a class="article-anchor" href="#更新插件" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 更新全部插件</span></span><br><span class="line">hcode plugin update</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新指定插件</span></span><br><span class="line">hcode plugin update demo-plugin@my-marketplace</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="列出已安装插件" class="article-heading"><a href="#列出已安装插件" class="headerlink" title="列出已安装插件"></a>列出已安装插件<a class="article-anchor" href="#列出已安装插件" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin list</span><br><span class="line">hcode plugin list --json</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="启用-禁用插件" class="article-heading"><a href="#启用-禁用插件" class="headerlink" title="启用/禁用插件"></a>启用/禁用插件<a class="article-anchor" href="#启用-禁用插件" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin <span class="built_in">enable</span> &lt;plugin[@marketplace]&gt;</span><br><span class="line">hcode plugin <span class="built_in">disable</span> &lt;plugin[@marketplace]&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>禁用后插件的 Skill、命令、MCP 等组件不再生效，但文件仍保留在本地缓存中。</p>
+<hr>
+<h2 id="交互式管理器" class="article-heading"><a href="#交互式管理器" class="headerlink" title="交互式管理器"></a>交互式管理器<a class="article-anchor" href="#交互式管理器" aria-hidden="true"></a></h2><p>在 Hawa Code 交互界面中输入：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/plugin</span><br></pre></td></tr></tbody></table></figure>
+
+<p>即可打开插件管理器，支持键盘操作：</p>
+<ul>
+<li><code>← / →</code>：切换标签页（Available / Installed / Marketplaces）。</li>
+<li><code>↑ / ↓</code>：选择列表项。</li>
+<li><code>Enter</code>：进入详情或执行安装/卸载/更新。</li>
+<li><code>Esc</code>：退出。</li>
+</ul>
+<hr>
+<h2 id="marketplace-json" class="article-heading"><a href="#marketplace-json" class="headerlink" title="marketplace.json"></a>marketplace.json<a class="article-anchor" href="#marketplace-json" aria-hidden="true"></a></h2><p>市场的描述文件，默认位于市场根目录的 <code>.hcode-plugin/marketplace.json</code>；兼容模式下也支持 <code>.claude-plugin/marketplace.json</code>。</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"my-plugins"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"owner"</span><span class="punctuation">:</span> <span class="punctuation">{</span> <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"Your Name"</span> <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"我的 Hawa Code 插件市场"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"plugins"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"quality-review-plugin"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"source"</span><span class="punctuation">:</span> <span class="string">"./plugins/quality-review-plugin"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"Adds a quality-review skill"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"version"</span><span class="punctuation">:</span> <span class="string">"1.0.0"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="插件来源（source）" class="article-heading"><a href="#插件来源（source）" class="headerlink" title="插件来源（source）"></a>插件来源（source）<a class="article-anchor" href="#插件来源（source）" aria-hidden="true"></a></h3><p><code>plugins[].source</code> 支持多种形式：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>本地相对路径</td>
+<td><code>"./plugins/formatter"</code></td>
+</tr>
+<tr>
+<td>GitHub</td>
+<td><code>{ "source": "github", "repo": "owner/repo", "ref": "main", "sha": "..." }</code></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>{ "source": "url", "url": "https://...", "ref": "..." }</code></td>
+</tr>
+<tr>
+<td>Git 子目录</td>
+<td><code>{ "source": "git-subdir", "url": "https://...", "path": "plugins/foo", "ref": "main" }</code></td>
+</tr>
+<tr>
+<td>npm</td>
+<td><code>{ "source": "npm", "package": "@org/pkg", "version": "1.0.0" }</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>相对路径的解析基准是市场根目录（包含 <code>.hcode-plugin/</code> 的目录），而不是 <code>.hcode-plugin/</code> 本身。</p>
+</blockquote>
+<hr>
+<h2 id="plugin-json" class="article-heading"><a href="#plugin-json" class="headerlink" title="plugin.json"></a>plugin.json<a class="article-anchor" href="#plugin-json" aria-hidden="true"></a></h2><p>单个插件的描述文件，位于插件根目录的 <code>.hcode-plugin/plugin.json</code>；兼容模式下也支持 <code>.claude-plugin/plugin.json</code>。</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"quality-review-plugin"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"version"</span><span class="punctuation">:</span> <span class="string">"1.0.0"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"Adds a quality-review skill for quick code reviews"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"author"</span><span class="punctuation">:</span> <span class="punctuation">{</span> <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"Your Name"</span><span class="punctuation">,</span> <span class="attr">"email"</span><span class="punctuation">:</span> <span class="string">"you@example.com"</span> <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"homepage"</span><span class="punctuation">:</span> <span class="string">"https://..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"repository"</span><span class="punctuation">:</span> <span class="string">"https://..."</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"license"</span><span class="punctuation">:</span> <span class="string">"MIT"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"keywords"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"review"</span><span class="punctuation">,</span> <span class="string">"quality"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"category"</span><span class="punctuation">:</span> <span class="string">"productivity"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"skills"</span><span class="punctuation">:</span> <span class="string">"skills"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"commands"</span><span class="punctuation">:</span> <span class="string">"commands"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"agents"</span><span class="punctuation">:</span> <span class="string">"agents"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"hooks"</span><span class="punctuation">:</span> <span class="string">"hooks"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"mcpServers"</span><span class="punctuation">:</span> <span class="string">"mcp"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"lspServers"</span><span class="punctuation">:</span> <span class="string">"lsp"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"permissions"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"read"</span><span class="punctuation">,</span> <span class="string">"write"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"strict"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"defaultEnabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="字段说明" class="article-heading"><a href="#字段说明" class="headerlink" title="字段说明"></a>字段说明<a class="article-anchor" href="#字段说明" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>name</code></td>
+<td>插件唯一名称</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>版本号</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>描述</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>作者信息</td>
+</tr>
+<tr>
+<td><code>homepage</code> / <code>repository</code> / <code>license</code></td>
+<td>项目元数据</td>
+</tr>
+<tr>
+<td><code>keywords</code> / <code>category</code></td>
+<td>分类与标签</td>
+</tr>
+<tr>
+<td><code>skills</code></td>
+<td>Skill 目录路径，默认 <code>skills</code></td>
+</tr>
+<tr>
+<td><code>commands</code></td>
+<td>自定义命令目录路径，默认 <code>commands</code></td>
+</tr>
+<tr>
+<td><code>agents</code></td>
+<td>Agent 目录路径，默认 <code>agents</code></td>
+</tr>
+<tr>
+<td><code>hooks</code></td>
+<td>Hooks 配置目录或内联对象</td>
+</tr>
+<tr>
+<td><code>mcpServers</code></td>
+<td>MCP Server 配置目录或内联对象</td>
+</tr>
+<tr>
+<td><code>lspServers</code></td>
+<td>LSP Server 配置目录或内联对象</td>
+</tr>
+<tr>
+<td><code>permissions</code></td>
+<td>插件所需权限列表</td>
+</tr>
+<tr>
+<td><code>strict</code></td>
+<td><code>true</code> 时 <code>plugin.json</code> 优先；<code>false</code> 时市场条目完全覆盖</td>
+</tr>
+<tr>
+<td><code>defaultEnabled</code></td>
+<td>安装后是否默认启用，默认 <code>true</code></td>
+</tr>
+</tbody></table>
+<h3 id="strict-模式" class="article-heading"><a href="#strict-模式" class="headerlink" title="strict 模式"></a>strict 模式<a class="article-anchor" href="#strict-模式" aria-hidden="true"></a></h3><ul>
+<li><code>strict: true</code>（默认）：<code>plugin.json</code> 是组件定义的权威，市场条目仅补充信息。</li>
+<li><code>strict: false</code>：市场条目是完整定义，此时 <code>plugin.json</code> 不能再声明组件（skills、commands 等），否则安装会失败。</li>
+</ul>
+<hr>
+<h2 id="插件组件" class="article-heading"><a href="#插件组件" class="headerlink" title="插件组件"></a>插件组件<a class="article-anchor" href="#插件组件" aria-hidden="true"></a></h2><p>插件可以包含以下扩展组件：</p>
+<h3 id="Skill" class="article-heading"><a href="#Skill" class="headerlink" title="Skill"></a>Skill<a class="article-anchor" href="#Skill" aria-hidden="true"></a></h3><p>插件 <code>skills</code> 目录下的每个子目录（包含 <code>SKILL.md</code>）都会注册为一个 Skill。安装后可直接在对话中调用。详见 <a href="./skill.md">Skill 文档</a>。</p>
+<h3 id="自定义命令" class="article-heading"><a href="#自定义命令" class="headerlink" title="自定义命令"></a>自定义命令<a class="article-anchor" href="#自定义命令" aria-hidden="true"></a></h3><p>插件 <code>commands</code> 目录下的 <code>.md</code> 文件会注册为斜杠命令。命令名默认按 <code>插件名:命令名</code> 命名空间化。</p>
+<h3 id="Agent" class="article-heading"><a href="#Agent" class="headerlink" title="Agent"></a>Agent<a class="article-anchor" href="#Agent" aria-hidden="true"></a></h3><p>插件 <code>agents</code> 目录下的定义会加入 Agent 扫描路径。</p>
+<h3 id="Hooks" class="article-heading"><a href="#Hooks" class="headerlink" title="Hooks"></a>Hooks<a class="article-anchor" href="#Hooks" aria-hidden="true"></a></h3><p><code>hooks</code> 字段可以是目录路径（该目录下需包含 <code>hooks.json</code>），也可以是内联的 HooksConfig 对象。支持 <code>SessionStart</code> 和 <code>SessionEnd</code> 钩子。</p>
+<h3 id="MCP-Server" class="article-heading"><a href="#MCP-Server" class="headerlink" title="MCP Server"></a>MCP Server<a class="article-anchor" href="#MCP-Server" aria-hidden="true"></a></h3><p><code>mcpServers</code> 字段可以是目录路径（包含 JSON 配置文件），也可以是内联对象。插件注册的 MCP Server 名称会自动加上前缀：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">plugin__&lt;marketplace&gt;__&lt;plugin&gt;__&lt;server&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="LSP-Server" class="article-heading"><a href="#LSP-Server" class="headerlink" title="LSP Server"></a>LSP Server<a class="article-anchor" href="#LSP-Server" aria-hidden="true"></a></h3><p><code>lspServers</code> 字段用法与 MCP 类似，用于注册 LSP Server。</p>
+<h3 id="变量替换" class="article-heading"><a href="#变量替换" class="headerlink" title="变量替换"></a>变量替换<a class="article-anchor" href="#变量替换" aria-hidden="true"></a></h3><p>MCP 和 Hook 配置中的字符串支持以下变量替换：</p>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>替换为</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>${HCODE_PLUGIN_ROOT}</code></td>
+<td>插件缓存目录</td>
+</tr>
+<tr>
+<td><code>${HCODE_PLUGIN_DATA}</code></td>
+<td>插件数据目录</td>
+</tr>
+<tr>
+<td><code>${CLAUDE_PLUGIN_ROOT}</code></td>
+<td>同 <code>${HCODE_PLUGIN_ROOT}</code></td>
+</tr>
+<tr>
+<td><code>${CLAUDE_PLUGIN_DATA}</code></td>
+<td>同 <code>${HCODE_PLUGIN_DATA}</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="配置" class="article-heading"><a href="#配置" class="headerlink" title="配置"></a>配置<a class="article-anchor" href="#配置" aria-hidden="true"></a></h2><p>在 <code>~/.hcode/settings.json</code> 或项目 <code>.hcode/settings.json</code> 中配置插件行为：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"plugins"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"enabledPlugins"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"my-marketplace__demo-plugin@1.0.0"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"disabledPlugins"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginConfigs"</span><span class="punctuation">:</span> <span class="punctuation">{</span><span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"extraKnownMarketplaces"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">      <span class="punctuation">{</span> <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"company"</span><span class="punctuation">,</span> <span class="attr">"source"</span><span class="punctuation">:</span> <span class="string">"https://github.com/company/hawa-plugins"</span> <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"strictKnownMarketplaces"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginMarketplaceAllowlist"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginAutoUpdate"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginAutoUpdateInterval"</span><span class="punctuation">:</span> <span class="number">60</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginSandboxHooks"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"pluginClaudeCompat"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="配置项说明" class="article-heading"><a href="#配置项说明" class="headerlink" title="配置项说明"></a>配置项说明<a class="article-anchor" href="#配置项说明" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>enabledPlugins</code></td>
+<td>强制启用的插件 ID 列表</td>
+</tr>
+<tr>
+<td><code>disabledPlugins</code></td>
+<td>强制禁用的插件 ID 列表</td>
+</tr>
+<tr>
+<td><code>pluginConfigs</code></td>
+<td>每个插件的独立配置对象</td>
+</tr>
+<tr>
+<td><code>extraKnownMarketplaces</code></td>
+<td>额外预置的市场列表</td>
+</tr>
+<tr>
+<td><code>strictKnownMarketplaces</code></td>
+<td><code>true</code> 时只接受已知市场；<code>false</code> 允许添加新市场</td>
+</tr>
+<tr>
+<td><code>pluginMarketplaceAllowlist</code></td>
+<td>市场来源 allowlist，支持 glob/regex</td>
+</tr>
+<tr>
+<td><code>pluginAutoUpdate</code></td>
+<td>是否开启后台自动更新市场与插件</td>
+</tr>
+<tr>
+<td><code>pluginAutoUpdateInterval</code></td>
+<td>自动更新间隔分钟数，默认 60</td>
+</tr>
+<tr>
+<td><code>pluginSandboxHooks</code></td>
+<td>是否在沙箱中执行 Hook 与 MCP 命令，默认 <code>true</code></td>
+</tr>
+<tr>
+<td><code>pluginClaudeCompat</code></td>
+<td>是否兼容 <code>.claude-plugin/</code> 目录，默认 <code>true</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="安全与权限" class="article-heading"><a href="#安全与权限" class="headerlink" title="安全与权限"></a>安全与权限<a class="article-anchor" href="#安全与权限" aria-hidden="true"></a></h2><h3 id="安装确认" class="article-heading"><a href="#安装确认" class="headerlink" title="安装确认"></a>安装确认<a class="article-anchor" href="#安装确认" aria-hidden="true"></a></h3><p>安装插件前，Hawa Code 会展示来源、版本、所需权限和沙箱状态，需要用户确认。CLI 可通过 <code>--yes</code> 跳过确认（当前实现中部分路径已默认信任已知市场）。</p>
+<h3 id="市场限制" class="article-heading"><a href="#市场限制" class="headerlink" title="市场限制"></a>市场限制<a class="article-anchor" href="#市场限制" aria-hidden="true"></a></h3><p>以下保留市场名禁止第三方使用：</p>
+<ul>
+<li><code>hcode</code>、<code>hawacode</code>、<code>official</code></li>
+<li><code>claude-code-marketplace</code>、<code>claude-plugins-official</code>、<code>anthropic-marketplace</code></li>
+</ul>
+<h3 id="Allowlist" class="article-heading"><a href="#Allowlist" class="headerlink" title="Allowlist"></a>Allowlist<a class="article-anchor" href="#Allowlist" aria-hidden="true"></a></h3><p>通过 <code>pluginMarketplaceAllowlist</code> 可限制允许添加的市场来源，支持 glob 和正则表达式。</p>
+<h3 id="路径隔离" class="article-heading"><a href="#路径隔离" class="headerlink" title="路径隔离"></a>路径隔离<a class="article-anchor" href="#路径隔离" aria-hidden="true"></a></h3><p>每个插件复制到独立的缓存目录，禁止 <code>../</code> 引用和越界 symlink。<code>${HCODE_PLUGIN_ROOT}</code> 和 <code>${HCODE_PLUGIN_DATA}</code> 作为安全的变量替换入口。</p>
+<h3 id="沙箱执行" class="article-heading"><a href="#沙箱执行" class="headerlink" title="沙箱执行"></a>沙箱执行<a class="article-anchor" href="#沙箱执行" aria-hidden="true"></a></h3><p><code>pluginSandboxHooks</code> 默认开启，Hook 与 MCP 命令通过 Hawa Code 的沙箱机制执行，受 <code>settings.sandbox</code> 限制。</p>
+<hr>
+<h2 id="缓存目录" class="article-heading"><a href="#缓存目录" class="headerlink" title="缓存目录"></a>缓存目录<a class="article-anchor" href="#缓存目录" aria-hidden="true"></a></h2><p>插件相关数据默认存放在 <code>~/.hcode/plugins/</code>：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">~/.hcode/plugins/</span><br><span class="line">├── known_marketplaces.json</span><br><span class="line">├── installed_plugins.json</span><br><span class="line">├── marketplaces/&lt;name&gt;/          # 市场克隆/下载目录</span><br><span class="line">├── installed/&lt;marketplace&gt;__&lt;plugin&gt;@&lt;version&gt;/  # 插件缓存</span><br><span class="line">└── data/&lt;marketplace&gt;__&lt;plugin&gt;/                  # 插件持久数据</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="环境变量" class="article-heading"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量<a class="article-anchor" href="#环境变量" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>环境变量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>HCODE_PLUGIN_CACHE_DIR</code></td>
+<td>覆盖整个插件缓存根目录</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_ROOT</code></td>
+<td>指向已安装插件目录</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_DATA</code></td>
+<td>指向插件数据目录</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_SEED_DIR</code></td>
+<td>预置插件目录，用于容器/CI</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_GIT_TIMEOUT_MS</code></td>
+<td>git 操作超时，默认 120000ms</td>
+</tr>
+<tr>
+<td><code>HCODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE</code></td>
+<td>更新失败时保留旧缓存</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="命令速查" class="article-heading"><a href="#命令速查" class="headerlink" title="命令速查"></a>命令速查<a class="article-anchor" href="#命令速查" aria-hidden="true"></a></h2><h3 id="斜杠命令" class="article-heading"><a href="#斜杠命令" class="headerlink" title="斜杠命令"></a>斜杠命令<a class="article-anchor" href="#斜杠命令" aria-hidden="true"></a></h3><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">/plugin marketplace add &lt;source&gt;</span><br><span class="line">/plugin marketplace remove &lt;name&gt;</span><br><span class="line">/plugin marketplace list</span><br><span class="line">/plugin marketplace update [name]</span><br><span class="line">/plugin install &lt;plugin[@marketplace]&gt;</span><br><span class="line">/plugin uninstall &lt;plugin[@marketplace]&gt;</span><br><span class="line">/plugin update [plugin[@marketplace]]</span><br><span class="line">/plugin list</span><br><span class="line">/plugin enable &lt;plugin[@marketplace]&gt;</span><br><span class="line">/plugin disable &lt;plugin[@marketplace]&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="CLI" class="article-heading"><a href="#CLI" class="headerlink" title="CLI"></a>CLI<a class="article-anchor" href="#CLI" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace add &lt;<span class="built_in">source</span>&gt;</span><br><span class="line">hcode plugin marketplace remove &lt;name&gt;</span><br><span class="line">hcode plugin marketplace list [--json]</span><br><span class="line">hcode plugin marketplace update [name]</span><br><span class="line">hcode plugin install &lt;plugin[@marketplace]&gt;</span><br><span class="line">hcode plugin uninstall &lt;plugin[@marketplace]&gt;</span><br><span class="line">hcode plugin update [plugin[@marketplace]]</span><br><span class="line">hcode plugin list [--json]</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="手动验证示例" class="article-heading"><a href="#手动验证示例" class="headerlink" title="手动验证示例"></a>手动验证示例<a class="article-anchor" href="#手动验证示例" aria-hidden="true"></a></h2><p>创建一个本地市场：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p my-marketplace/.hcode-plugin</span><br><span class="line"><span class="built_in">mkdir</span> -p my-marketplace/plugins/demo-plugin/.hcode-plugin</span><br><span class="line"><span class="built_in">mkdir</span> -p my-marketplace/plugins/demo-plugin/skills/demo</span><br></pre></td></tr></tbody></table></figure>
+
+<p>写入 <code>my-marketplace/.hcode-plugin/marketplace.json</code>：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"my-marketplace"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"owner"</span><span class="punctuation">:</span> <span class="punctuation">{</span> <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"Demo"</span> <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"plugins"</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"demo-plugin"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"source"</span><span class="punctuation">:</span> <span class="string">"./plugins/demo-plugin"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"version"</span><span class="punctuation">:</span> <span class="string">"1.0.0"</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>写入 <code>my-marketplace/plugins/demo-plugin/.hcode-plugin/plugin.json</code>：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"name"</span><span class="punctuation">:</span> <span class="string">"demo-plugin"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"version"</span><span class="punctuation">:</span> <span class="string">"1.0.0"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"description"</span><span class="punctuation">:</span> <span class="string">"A demo plugin"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>写入 <code>my-marketplace/plugins/demo-plugin/skills/demo/SKILL.md</code>：</p>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">---</span><br><span class="line">name: Demo</span><br><span class="line"><span class="section">description: Say hello from plugin</span></span><br><span class="line"><span class="section">---</span></span><br><span class="line">Hello from plugin!</span><br></pre></td></tr></tbody></table></figure>
+
+<p>添加并安装：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode plugin marketplace add ./my-marketplace</span><br><span class="line">hcode plugin install demo-plugin@my-marketplace</span><br></pre></td></tr></tbody></table></figure>
+
+<p>安装完成后，在 Hawa Code 中执行 <code>/demo-plugin:Demo</code> 即可看到效果。</p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-07-29T14:53:03.150Z" itemprop="dateModified">上次更新：2026-07-29</time>
+                <a href="lsp.html" class="article-footer-prev" title="LSPServer"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="[object Object]" class="article-footer-next" title="Hooks"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Plugin"><span class="toc-text">Plugin</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B7%BB%E5%8A%A0%E5%B8%82%E5%9C%BA"><span class="toc-text">1. 添加市场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-text">2. 安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="toc-text">3. 使用插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%82%E5%9C%BA%E7%AE%A1%E7%90%86"><span class="toc-text">市场管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%B8%82%E5%9C%BA"><span class="toc-text">添加市场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E5%B8%82%E5%9C%BA"><span class="toc-text">移除市场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E5%87%BA%E5%B8%82%E5%9C%BA"><span class="toc-text">列出市场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E5%B8%82%E5%9C%BA"><span class="toc-text">更新市场</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-text">插件管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-text">安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD%E6%8F%92%E4%BB%B6"><span class="toc-text">卸载插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%8F%92%E4%BB%B6"><span class="toc-text">更新插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E5%87%BA%E5%B7%B2%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-text">列出已安装插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8-%E7%A6%81%E7%94%A8%E6%8F%92%E4%BB%B6"><span class="toc-text">启用&#x2F;禁用插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">交互式管理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#marketplace-json"><span class="toc-text">marketplace.json</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E6%9D%A5%E6%BA%90%EF%BC%88source%EF%BC%89"><span class="toc-text">插件来源（source）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#plugin-json"><span class="toc-text">plugin.json</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="toc-text">字段说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strict-%E6%A8%A1%E5%BC%8F"><span class="toc-text">strict 模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6%E7%BB%84%E4%BB%B6"><span class="toc-text">插件组件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Skill"><span class="toc-text">Skill</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4"><span class="toc-text">自定义命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Agent"><span class="toc-text">Agent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hooks"><span class="toc-text">Hooks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MCP-Server"><span class="toc-text">MCP Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSP-Server"><span class="toc-text">LSP Server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E6%9B%BF%E6%8D%A2"><span class="toc-text">变量替换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%A1%B9%E8%AF%B4%E6%98%8E"><span class="toc-text">配置项说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E4%B8%8E%E6%9D%83%E9%99%90"><span class="toc-text">安全与权限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%A1%AE%E8%AE%A4"><span class="toc-text">安装确认</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%82%E5%9C%BA%E9%99%90%E5%88%B6"><span class="toc-text">市场限制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Allowlist"><span class="toc-text">Allowlist</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E9%9A%94%E7%A6%BB"><span class="toc-text">路径隔离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B2%99%E7%AE%B1%E6%89%A7%E8%A1%8C"><span class="toc-text">沙箱执行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E7%9B%AE%E5%BD%95"><span class="toc-text">缓存目录</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5"><span class="toc-text">命令速查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%9C%E6%9D%A0%E5%91%BD%E4%BB%A4"><span class="toc-text">斜杠命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CLI"><span class="toc-text">CLI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E9%AA%8C%E8%AF%81%E7%A4%BA%E4%BE%8B"><span class="toc-text">手动验证示例</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="commands.html" class="sidebar-link">命令</a><a href="model.html" class="sidebar-link">模型</a><a href="tools.html" class="sidebar-link">工具</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="permissions.html" class="sidebar-link">权限</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><strong class="sidebar-title">高级功能</strong><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="plugin.html" class="sidebar-link current">Plugin</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle">▶</span><span>Hooks</span></div><div class="sidebar-submenu"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">定时任务</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">沙箱</a><a href="goal.html" class="sidebar-link">Goal</a><a href="context-management.html" class="sidebar-link">上下文管理</a><strong class="sidebar-title">Web Control</strong><a href="agent-viewer.html" class="sidebar-link">Agent Viewer</a><a href="settings.html" class="sidebar-link">Settings</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><strong class="sidebar-title">远程控制</strong><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a><strong class="sidebar-title">中间件</strong><a href="context.html" class="sidebar-link">Context</a><a href="db.html" class="sidebar-link">DB</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/blog/" class="mobile-nav-link">博客</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="model.html" class="mobile-nav-link">模型</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="permissions.html" class="mobile-nav-link">权限</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><strong class="mobile-nav-title">高级功能</strong><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="plugin.html" class="mobile-nav-link current">Plugin</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">定时任务</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">沙箱</a><a href="goal.html" class="mobile-nav-link">Goal</a><a href="context-management.html" class="mobile-nav-link">上下文管理</a><strong class="mobile-nav-title">Web Control</strong><a href="agent-viewer.html" class="mobile-nav-link">Agent Viewer</a><a href="settings.html" class="mobile-nav-link">Settings</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><strong class="mobile-nav-title">远程控制</strong><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a><strong class="mobile-nav-title">中间件</strong><a href="context.html" class="mobile-nav-link">Context</a><a href="db.html" class="mobile-nav-link">DB</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/plugin.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:zh-cn']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
