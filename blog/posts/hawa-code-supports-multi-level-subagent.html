@@ -9,15 +9,6 @@
   <link rel="canonical" href="https://www.hawacode.com/blog/posts/hawa-code-supports-multi-level-subagent">
   <!-- Alternate links -->
   
-    
-      
-    
-      
-        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/blog/posts/hawa-code-supports-multi-level-subagent">
-      
-    
-    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/blog/posts/hawa-code-supports-multi-level-subagent" />
-  
   <!-- Icon -->
   <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
   <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
@@ -54,8 +45,8 @@
 <meta property="og:description" content="Hawa Code 早期 Subagent 只能同步执行，同时 Subagent 只支持 1 层级，也就是 Subagent 不能再创建 Subagent。后期 Hawa Code 支持 Agent Team 功能，Agent team 成员可以创建 Subagent，但是普通的 Subagent 还是不能再创建 Subagent Agent。当前 Hawa Code 已经开放多层级使用，用户可以">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-07-31T12:09:16.353Z">
-<meta property="article:modified_time" content="2026-07-31T12:09:16.353Z">
+<meta property="article:published_time" content="2026-07-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-31T12:18:28.287Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -118,6 +109,12 @@ var _hmt = _hmt || [];
             <div class="inner">
               <header class="article-header">
                 <h1 class="article-title" itemprop="name">Hawa Code 支持多层级 Subagent</h1>
+                <div class="blog-post-meta">
+                  <time class="blog-post-date" datetime="2026-07-30T16:00:00.000Z">2026-07-31</time>
+                  
+                    <span class="blog-post-author">hawa code</span>
+                  
+                </div>
               </header>
               <div class="article-content" itemprop="articleBody">
                 <html><head></head><body><p>Hawa Code 早期 Subagent 只能同步执行，同时 Subagent 只支持 1 层级，也就是 Subagent 不能再创建 Subagent。后期 Hawa Code 支持 Agent Team 功能，Agent team 成员可以创建 Subagent，但是普通的 Subagent 还是不能再创建 Subagent Agent。当前 Hawa Code 已经开放多层级使用，用户可以自定义设置 Subagent 1～5 层级。</p>
@@ -131,8 +128,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-07-31T12:09:16.353Z" itemprop="dateModified">上次更新：2026-07-31</time>
-                
+                <a href="/blog/" class="blog-back-link">&larr; 返回博客列表</a>
               </footer>
               
             </div>
@@ -146,34 +142,6 @@ var _hmt = _hmt || [];
           </aside>
         </div>
       </article>
-      <aside id="sidebar" role="navigation">
-  <div class="inner">
-    
-  </div>
-</aside>
-
-<script>
-function toggleSubmenu(element, event) {
-  // 阻止事件冒泡，防止触发链接跳转
-  if (event) {
-    event.preventDefault();
-    event.stopPropagation();
-  }
-  
-  const submenu = element.nextElementSibling;
-  const toggle = element.querySelector('.sidebar-toggle');
-  
-  if (submenu && submenu.classList.contains('sidebar-submenu')) {
-    submenu.classList.toggle('expanded');
-    if (toggle) {
-      toggle.classList.toggle('expanded');
-    }
-  }
-  
-  // 返回 false 阻止默认行为
-  return false;
-}
-</script>
     </div>
   </div>
 </div>
@@ -199,8 +167,6 @@ function toggleSubmenu(element, event) {
         <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
       </li>
     </ul>
-    
-      
     
   </div>
   <div id="mobile-lang-select-wrap">
