@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.1.4 (2026-07-29)  Plugin 兼容性配置化 将 Claude Code 插件兼容性改为 settings.plugins.pluginClaudeCompat 配置项，默认开启     v2.1.2 &#x2F; v2.1.3 (2026-07">
+  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.2.2 (2026-08-05)  MessageArchiving 提示精简 移除 prompt 中关于 tool_use_id 查找方式的说明，工具内部已自动处理     v2.2.1 (2026-08-04)  Web Settings 插件管理 在 Web">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://www.hawacode.com/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.1.4 (2026-07-29)  Plugin 兼容性配置化 将 Claude Code 插件兼容性改为 settings.plugins.pluginClaudeCompat 配置项，默认开启     v2.1.2 &#x2F; v2.1.3 (2026-07">
+<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.2.2 (2026-08-05)  MessageArchiving 提示精简 移除 prompt 中关于 tool_use_id 查找方式的说明，工具内部已自动处理     v2.2.1 (2026-08-04)  Web Settings 插件管理 在 Web">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-07-31T10:50:58.370Z">
-<meta property="article:modified_time" content="2026-07-31T10:48:52.173Z">
+<meta property="article:published_time" content="2026-08-05T15:18:28.319Z">
+<meta property="article:modified_time" content="2026-08-05T15:18:28.319Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -77,7 +77,7 @@ var _hmt = _hmt || [];
   <!-- Algolia -->
   <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
   <link rel="stylesheet" href="/npm/@docsearch/css@3">
-<meta name="generator" content="Hexo 8.1.2"></head>
+<meta name="generator" content="Hexo 8.1.1"></head>
 
 <body>
   <div id="container">
@@ -129,6 +129,40 @@ var _hmt = _hmt || [];
 <p><strong>一个</strong>   是留给自己的底线</p>
 <h1 id="版本" class="article-heading"><a href="#版本" class="headerlink" title="版本"></a>版本<a class="article-anchor" href="#版本" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.2.2 (2026-08-05)</p>
+<ul>
+<li>MessageArchiving 提示精简<ul>
+<li>移除 prompt 中关于 tool_use_id 查找方式的说明，工具内部已自动处理</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.2.1 (2026-08-04)</p>
+<ul>
+<li>Web Settings 插件管理<ul>
+<li>在 Web 设置面板中增加插件与插件市场管理功能</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.2.0 (2026-08-03)</p>
+<ul>
+<li>MessageArchiving 归档增强<ul>
+<li>归档 tool_use input 字段时跳过长度 ≤100 的短字段，避免无意义归档</li>
+<li>工具调用时传入 historyMessages，支持基于对话历史判断可归档性</li>
+<li>新增 <code>settings.archiveToolUseInputs</code> 设置控制 input 字段归档开关</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.1.5 (2026-07-30)</p>
+<ul>
+<li>WebServer 模型配置校验增强<ul>
+<li>对无效模型配置返回字段级详细错误信息</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>v2.1.4 (2026-07-29)</p>
 <ul>
 <li>Plugin 兼容性配置化<ul>
@@ -883,7 +917,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-07-31T10:48:52.173Z" itemprop="dateModified">上次更新：2026-07-31</time>
+                <time class="article-footer-updated" datetime="2026-08-05T15:18:28.319Z" itemprop="dateModified">上次更新：2026-08-05</time>
                 
               </footer>
               
