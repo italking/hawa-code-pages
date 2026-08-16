@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>如何入门学习 Agent 开发？ | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/blog/posts/how-to-get-started-with-agent-development">
+  <!-- Alternate links -->
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="当前 Agent 非常火，从而促使很多人愿意学习 Agent 开发，但一开始不知道如何下手，根据自己的经验总结一些。希望对大家有帮助。 Agent 资讯当前 Agent 资讯很多，很多是流量资讯，多是总结别人的“二手”信息，还有一些把 Agent 讲成“玄学”的，这些资讯应该过滤掉，应该看一些有实际开发背景、有实战经验的一手资讯，比如 Claude Code 官方博客 https:&#x2F;&#x2F;claude">
+<meta property="og:type" content="website">
+<meta property="og:title" content="如何入门学习 Agent 开发？">
+<meta property="og:url" content="https://www.hawacode.com/blog/posts/how-to-get-started-with-agent-development">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="当前 Agent 非常火，从而促使很多人愿意学习 Agent 开发，但一开始不知道如何下手，根据自己的经验总结一些。希望对大家有帮助。 Agent 资讯当前 Agent 资讯很多，很多是流量资讯，多是总结别人的“二手”信息，还有一些把 Agent 讲成“玄学”的，这些资讯应该过滤掉，应该看一些有实际开发背景、有实战经验的一手资讯，比如 Claude Code 官方博客 https:&#x2F;&#x2F;claude">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-08-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-16T15:30:46.234Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/blog/" class="main-nav-link">博客</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="blog/posts/how-to-get-started-with-agent-development.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">如何入门学习 Agent 开发？</h1>
+                <div class="blog-post-meta">
+                  <time class="blog-post-date" datetime="2026-08-15T16:00:00.000Z">2026-08-16</time>
+                  
+                    <span class="blog-post-author">hawa code</span>
+                  
+                </div>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p>当前 Agent 非常火，从而促使很多人愿意学习 Agent 开发，但一开始不知道如何下手，根据自己的经验总结一些。希望对大家有帮助。</p>
+<h2 id="Agent-资讯" class="article-heading"><a href="#Agent-资讯" class="headerlink" title="Agent 资讯"></a>Agent 资讯<a class="article-anchor" href="#Agent-资讯" aria-hidden="true"></a></h2><p>当前 Agent 资讯很多，很多是流量资讯，多是总结别人的“二手”信息，还有一些把 Agent 讲成“玄学”的，这些资讯应该过滤掉，应该看一些有实际开发背景、有实战经验的一手资讯，比如 Claude Code 官方博客 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://claude.com/blog">https://claude.com/blog</a>，很多涉及 Agent 技术理念和方向是非常好的。</p>
+<h2 id="框架-VS-Context" class="article-heading"><a href="#框架-VS-Context" class="headerlink" title="框架 VS Context"></a>框架 VS Context<a class="article-anchor" href="#框架-VS-Context" aria-hidden="true"></a></h2><p>做技术很多都会从框架学起，做 Java 开发的学习 Spring 框架等等，Agent 也是有很多框架，但是框架很多本身没有办法直接学到 Agent 本质。</p>
+<p>与模型交互本质上就是发送一段文本，模型返回一段文本，返回的可能是结果或者进行工具的调用。想让模型给出好的反馈，就是要给予模型对于当前的问题充分合理的提示文本，这些文本本质上就是 Context。可以从简单的提问开始，到分析成熟 Agent 的 Context 内容。当前已经有很多成熟的 Agent，比如 Claude Code、Codex，可以分析它们每次给模型发送的内容，来更深地理解 Agent 开发。框架要为 Context 服务。</p>
+<h2 id="要实操" class="article-heading"><a href="#要实操" class="headerlink" title="要实操"></a>要实操<a class="article-anchor" href="#要实操" aria-hidden="true"></a></h2><p>很多人一开始不知道 AI 能干什么，其实很简单，就是先用起来。有人开始 Agent coding 自己写 git 提交，后来让 agent 自己提交 Push 效果更好。尝试在不同的场景使用 AI，这是最简单也是入门成本最低的方式。</p>
+<p>Agent 开发也是同样的道理，不要沉迷各种 Agent 开发概念，Agent（2026-08）正在快速发展迭代中，还没有成熟和定型。一定要自己动手去开发 Agent，但是不能停留在做 Demo 和 POC，必须要落地能用，场景可以很简单。如果自己没有办法找到一个合理的场景，可以看业界一些成熟场景，比如当前业界 Coding 场景相对成熟，也可以尝试自己做一个 Coding Agent 来学习。</p>
+<h2 id="要评测" class="article-heading"><a href="#要评测" class="headerlink" title="要评测"></a>要评测<a class="article-anchor" href="#要评测" aria-hidden="true"></a></h2><p>模型和传统软件工程最大的区别是模型是概率和不确定的，你没有办法保证使用一种方式保证其一直是确定性发生的，所以要评测。你不需要去用复杂的评测框架去打分，最简单的方式就是使用自己的 Agent。如果你开发的 Agent 是生成 PPT，就尝试让它生成不同种类的 PPT，最好的是自己日常就可以使用它，而不是为了测试而测试。如果效果好，才是 Agent 开发得好；如果效果不好，要去分析 Agent 的执行轨迹，是哪次工具调用或者响应偏离了自己的预期，来修改相关的提示词。能落地使用的 Agent 才是好的 Agent。</p>
+<h2 id="自我迭代" class="article-heading"><a href="#自我迭代" class="headerlink" title="自我迭代"></a>自我迭代<a class="article-anchor" href="#自我迭代" aria-hidden="true"></a></h2><p>一般软件开发需要开发和测试两个环节，但是 Agent 可以自我迭代。比如 Hawa Code Agent 就是使用 Hawa Code 自己开发的，开发新的功能就是对已有功能的验证和评测，这也是开发 Coding Agent 的乐趣之一。也可以尝试在其它的场景中找到这样的效果。</p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <a href="/blog/" class="blog-back-link">&larr; 返回博客列表</a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Agent-%E8%B5%84%E8%AE%AF"><span class="toc-text">Agent 资讯</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6-VS-Context"><span class="toc-text">框架 VS Context</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%81%E5%AE%9E%E6%93%8D"><span class="toc-text">要实操</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A6%81%E8%AF%84%E6%B5%8B"><span class="toc-text">要评测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E6%88%91%E8%BF%AD%E4%BB%A3"><span class="toc-text">自我迭代</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/blog/" class="mobile-nav-link">博客</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="blog/posts/how-to-get-started-with-agent-development.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:zh-cn']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
