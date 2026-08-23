@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Hawa Code Web Control 全新升级、远程控制、Team 协作 | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/blog/posts/hawa-code-web-control-upgrade">
+  <!-- Alternate links -->
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="Hawa Code Web Control 全新升级，交互更加便捷易用。基于浏览器即可随时随地远程访问，兼容 PC、手机等多种终端。支持多用户共享，一个 CLI 终端可在多个浏览器端同步使用，满足开发者多人协作与共享使用的需求。 开启方式在 cli 终端使用 hcode 命令启动 Hawa Code ，使用 &#x2F;config 斜杠命令 启用 Web Server ，在浏览器中输入提示地址">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hawa Code Web Control 全新升级、远程控制、Team 协作">
+<meta property="og:url" content="https://www.hawacode.com/blog/posts/hawa-code-web-control-upgrade">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="Hawa Code Web Control 全新升级，交互更加便捷易用。基于浏览器即可随时随地远程访问，兼容 PC、手机等多种终端。支持多用户共享，一个 CLI 终端可在多个浏览器端同步使用，满足开发者多人协作与共享使用的需求。 开启方式在 cli 终端使用 hcode 命令启动 Hawa Code ，使用 &#x2F;config 斜杠命令 启用 Web Server ，在浏览器中输入提示地址">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-08-22T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-23T14:26:04.758Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/blog/" class="main-nav-link">博客</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="blog/posts/hawa-code-web-control-upgrade.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Hawa Code Web Control 全新升级、远程控制、Team 协作</h1>
+                <div class="blog-post-meta">
+                  <time class="blog-post-date" datetime="2026-08-22T16:00:00.000Z">2026-08-23</time>
+                  
+                    <span class="blog-post-author">hawa code</span>
+                  
+                </div>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p>Hawa Code Web Control 全新升级，交互更加便捷易用。基于浏览器即可随时随地远程访问，兼容 PC、手机等多种终端。支持多用户共享，一个 CLI 终端可在多个浏览器端同步使用，满足开发者多人协作与共享使用的需求。</p>
+<h2 id="开启方式" class="article-heading"><a href="#开启方式" class="headerlink" title="开启方式"></a>开启方式<a class="article-anchor" href="#开启方式" aria-hidden="true"></a></h2><p>在 cli 终端使用 hcode 命令启动 Hawa Code ，使用 /config 斜杠命令 启用 Web Server ，在浏览器中输入提示地址 <a target="_blank" rel="noopener external nofollow noreferrer" href="http://127.0.0.1:3210/">http://127.0.0.1:3210</a> 进行访问，每一个 cli 终端会使用单独的 Web Server ，端口号会递增。</p>
+<!-- 这是一张图片，ocr 内容为：SETTINGS CONFIGURE HAWA CODE PREFERENCES FALSE VERBOSE OUTPUT LIGHT-DALTONIZED THEME NOTIFICATIONS ITERM2 WEB SERVER ON (HTTP://127.0.0.1:3210) OFF PROXY LAZY TOOL ON AUTO MODE ON ON MEMO  MESSAGE ARCHIVING ON  ARCHIVE TOOL USE INPUTS ON CLAUDE CODE PLUGIN COMPATIBILITY ON PLAN DIRECTORY 3 AGENT DEPTH -->
+<p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/blog/web-control-enable.png"></p>
+<h2 id="Agent-view" class="article-heading"><a href="#Agent-view" class="headerlink" title="Agent view"></a>Agent view<a class="article-anchor" href="#Agent-view" aria-hidden="true"></a></h2><p>Agent view 可以查看任意 Agent 消息内容，包含用户 Prompt、Tool 调用、模型响应。</p>
+<ul>
+<li>Agent view 支持输入 Prompt 语句，控制 Agent 执行并且可以中断 Agent 执行。</li>
+<li>Agent 列表显示时当前 cli 全部 Agent 、绿色表示活跃 ，灰色表示已经结束。刷新页面后已经结束的 Agent 信息不会被保留。</li>
+</ul>
+<p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/blog/web-control-agent-list.png"></p>
+<p>点击右侧 Agent 可以切换查看不同的 Agent 执行情况。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/blog/web-control-agent-detail.png"></p>
+<h2 id="Settings" class="article-heading"><a href="#Settings" class="headerlink" title="Settings"></a>Settings<a class="article-anchor" href="#Settings" aria-hidden="true"></a></h2><p>在 Settings 中可以修改 cli 的配置、包含代理、懒加载、语音、插件市场配置、auto mode、记忆、模型 token 配置等信息。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/blog/web-control-settings.png"></p>
+<p>欢迎了解使用 <a href="https://www.hawacode.com/">Hawa Code</a> （<a href="https://www.hawacode.com/">https://www.hawacode.com/</a>） 一个懂你的编程助手！</p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <a href="/blog/" class="blog-back-link">&larr; 返回博客列表</a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E6%96%B9%E5%BC%8F"><span class="toc-text">开启方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Agent-view"><span class="toc-text">Agent view</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Settings"><span class="toc-text">Settings</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/blog/" class="mobile-nav-link">博客</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="blog/posts/hawa-code-web-control-upgrade.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:zh-cn']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
