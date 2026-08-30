@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Agent Viewer Help DocumentationAgent Viewer is the web-based real-time observation panel for Hawa Code. Once enabled, it starts a local HTTP + WebSocket service, allowing you to view messages from the">
+  <meta name="description" content="Agent Viewer Help DocumentationAgent Viewer is the web-based real-time observation panel for Hawa Code. Once enabled, it starts a local HTTP + WebSocket server, allowing you to view the running messag">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Agent Viewer">
 <meta property="og:url" content="https://www.hawacode.com/en/docs/agent-viewer">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Agent Viewer Help DocumentationAgent Viewer is the web-based real-time observation panel for Hawa Code. Once enabled, it starts a local HTTP + WebSocket service, allowing you to view messages from the">
+<meta property="og:description" content="Agent Viewer Help DocumentationAgent Viewer is the web-based real-time observation panel for Hawa Code. Once enabled, it starts a local HTTP + WebSocket server, allowing you to view the running messag">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-06-15T15:58:37.991Z">
-<meta property="article:modified_time" content="2026-06-15T15:58:37.991Z">
+<meta property="article:published_time" content="2026-08-30T14:55:34.065Z">
+<meta property="article:modified_time" content="2026-08-30T14:55:34.065Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -120,23 +120,23 @@ var _hmt = _hmt || [];
                 <h1 class="article-title" itemprop="name">Agent Viewer</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h1 id="Agent-Viewer-Help-Documentation" class="article-heading"><a href="#Agent-Viewer-Help-Documentation" class="headerlink" title="Agent Viewer Help Documentation"></a>Agent Viewer Help Documentation<a class="article-anchor" href="#Agent-Viewer-Help-Documentation" aria-hidden="true"></a></h1><p>Agent Viewer is the web-based real-time observation panel for Hawa Code. Once enabled, it starts a local HTTP + WebSocket service, allowing you to view messages from the main Agent and each SubAgent in your browser, synchronized with the terminal CLI.</p>
+                <html><head></head><body><h1 id="Agent-Viewer-Help-Documentation" class="article-heading"><a href="#Agent-Viewer-Help-Documentation" class="headerlink" title="Agent Viewer Help Documentation"></a>Agent Viewer Help Documentation<a class="article-anchor" href="#Agent-Viewer-Help-Documentation" aria-hidden="true"></a></h1><p>Agent Viewer is the web-based real-time observation panel for Hawa Code. Once enabled, it starts a local HTTP + WebSocket server, allowing you to view the running messages of the main Agent and each SubAgent in your browser in real time, with an experience consistent with the terminal CLI.</p>
 <hr>
-<h2 id="1-Enable-Agent-Viewer" class="article-heading"><a href="#1-Enable-Agent-Viewer" class="headerlink" title="1. Enable Agent Viewer"></a>1. Enable Agent Viewer<a class="article-anchor" href="#1-Enable-Agent-Viewer" aria-hidden="true"></a></h2><h3 id="Method-1-Via-the-config-Interface" class="article-heading"><a href="#Method-1-Via-the-config-Interface" class="headerlink" title="Method 1: Via the /config Interface"></a>Method 1: Via the /config Interface<a class="article-anchor" href="#Method-1-Via-the-config-Interface" aria-hidden="true"></a></h3><ol>
-<li><p>Enter <code>/config</code> in the Hawa Code REPL to open the configuration interface.</p>
+<h2 id="1-Enabling-Agent-Viewer" class="article-heading"><a href="#1-Enabling-Agent-Viewer" class="headerlink" title="1. Enabling Agent Viewer"></a>1. Enabling Agent Viewer<a class="article-anchor" href="#1-Enabling-Agent-Viewer" aria-hidden="true"></a></h2><h3 id="Method-1-Via-the-config-Configuration-Interface" class="article-heading"><a href="#Method-1-Via-the-config-Configuration-Interface" class="headerlink" title="Method 1: Via the /config Configuration Interface"></a>Method 1: Via the /config Configuration Interface<a class="article-anchor" href="#Method-1-Via-the-config-Configuration-Interface" aria-hidden="true"></a></h3><ol>
+<li><p>Enter <code>/config</code> in the Hawa Code REPL to enter the configuration interface.</p>
 </li>
 <li><p>Find the <strong>Web Server</strong> option and toggle it to <code>on</code>.</p>
 </li>
-<li><p>After saving the configuration, the service will start automatically and the terminal will print the access address, for example:</p>
+<li><p>After the configuration is saved, the service will start automatically, and the terminal will print the access address, for example:</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">WebServer started at http://127.0.0.1:3210</span><br></pre></td></tr></tbody></table></figure>
 </li>
-<li><p>Open the address in your browser to enter Agent Viewer.</p>
+<li><p>Open this address in your browser to enter Agent Viewer.</p>
 </li>
 </ol>
-<h3 id="Method-2-Edit-settings-json-Directly" class="article-heading"><a href="#Method-2-Edit-settings-json-Directly" class="headerlink" title="Method 2: Edit settings.json Directly"></a>Method 2: Edit settings.json Directly<a class="article-anchor" href="#Method-2-Edit-settings-json-Directly" aria-hidden="true"></a></h3><p>Add a <code>webServer</code> configuration to the global <code>settings.json</code>:</p>
+<h3 id="Method-2-Directly-Modify-settings-json" class="article-heading"><a href="#Method-2-Directly-Modify-settings-json" class="headerlink" title="Method 2: Directly Modify settings.json"></a>Method 2: Directly Modify settings.json<a class="article-anchor" href="#Method-2-Directly-Modify-settings-json" aria-hidden="true"></a></h3><p>Add a <code>webServer</code> configuration to the global <code>settings.json</code>:</p>
 <figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"webServer"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"enabled"</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"port"</span><span class="punctuation">:</span> <span class="number">3210</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"host"</span><span class="punctuation">:</span> <span class="string">"127.0.0.1"</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>Configuration details:</p>
+<p>Configuration description:</p>
 <table>
 <thead>
 <tr>
@@ -165,49 +165,141 @@ var _hmt = _hmt || [];
 <td>Listening address; defaults to local access only</td>
 </tr>
 </tbody></table>
-<p>Restart Hawa Code and the service will start automatically.</p>
+<p>Restart Hawa Code, and the service will start automatically.</p>
 <hr>
-<h2 id="2-Interface-Layout" class="article-heading"><a href="#2-Interface-Layout" class="headerlink" title="2. Interface Layout"></a>2. Interface Layout<a class="article-anchor" href="#2-Interface-Layout" aria-hidden="true"></a></h2><p>The Agent Viewer interface consists of four parts:</p>
-<ol>
-<li><strong>Top title bar</strong>: Displays <code>Hawa Code - Agent Viewer</code> and the WebSocket connection status.</li>
-<li><strong>Agent tabs</strong>: Switch between the currently displayed Agents, including the <code>main</code> Agent and each SubAgent.</li>
-<li><strong>Message list area</strong>: Shows conversation messages, tool calls, execution results, etc. for the current Agent.</li>
-<li><strong>Bottom status bar</strong>: Displays the total number of Agents, active Agents, message count, and WebSocket connection status.</li>
-</ol>
-<p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/agent-viewer.png" alt="alt text"></p>
-<hr>
-<h2 id="3-Auto-scroll-and-Manual-Pause" class="article-heading"><a href="#3-Auto-scroll-and-Manual-Pause" class="headerlink" title="3. Auto-scroll and Manual Pause"></a>3. Auto-scroll and Manual Pause<a class="article-anchor" href="#3-Auto-scroll-and-Manual-Pause" aria-hidden="true"></a></h2><ul>
-<li>Auto-scroll is enabled by default; new messages automatically scroll to the bottom.</li>
-<li>When you manually scroll up to view history, auto-scroll pauses automatically.</li>
-<li>After pausing, a <strong>Resume auto-scroll</strong> button appears; click it to resume auto-scroll.</li>
-</ul>
-<hr>
-<h2 id="4-WebSocket-Real-time-Connection" class="article-heading"><a href="#4-WebSocket-Real-time-Connection" class="headerlink" title="4. WebSocket Real-time Connection"></a>4. WebSocket Real-time Connection<a class="article-anchor" href="#4-WebSocket-Real-time-Connection" aria-hidden="true"></a></h2><ul>
-<li>Agent Viewer maintains a long connection with the Hawa Code backend via WebSocket.</li>
-<li>When the connection drops, the frontend automatically attempts to reconnect every 3 seconds.</li>
-<li>Connection status is shown in the top title bar and bottom status bar:<ul>
-<li><code>connected</code>: connected</li>
-<li><code>connecting</code>: connecting</li>
-<li><code>disconnected</code>: disconnected</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="5-Multi-Agent-Switching" class="article-heading"><a href="#5-Multi-Agent-Switching" class="headerlink" title="5. Multi-Agent Switching"></a>5. Multi-Agent Switching<a class="article-anchor" href="#5-Multi-Agent-Switching" aria-hidden="true"></a></h2><p>When Hawa Code enables Agent Team or multi-Agent collaboration, Agent Viewer displays all active Agents in the tab bar:</p>
+<h2 id="2-Interface-Layout" class="article-heading"><a href="#2-Interface-Layout" class="headerlink" title="2. Interface Layout"></a>2. Interface Layout<a class="article-anchor" href="#2-Interface-Layout" aria-hidden="true"></a></h2><p>The new version of Agent Viewer adopts a left-right split layout:</p>
 <ul>
-<li><code>main</code>: the main Agent, always present.</li>
-<li>Other SubAgents: display the Agent name and type, such as <code>Explore</code>, <code>Coder</code>, etc.</li>
-<li>The dot color on the tab indicates the Agent status:<ul>
-<li>Green / running: currently executing</li>
-<li>Gray / ended: task finished</li>
+<li><strong>Left Sidebar</strong>: Displays the Hawa Code logo, a collapsible Agent tag list, running statistics, and a settings entry.</li>
+<li><strong>Right Main Content Area</strong>: The top contains the title bar and connection status, the middle contains the message list, and the bottom contains the Prompt input box.</li>
+</ul>
+<p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/blog/web-control-agent-detail.png" alt="Agent Viewer Main Interface"></p>
+<h3 id="2-1-Left-Sidebar" class="article-heading"><a href="#2-1-Left-Sidebar" class="headerlink" title="2.1 Left Sidebar"></a>2.1 Left Sidebar<a class="article-anchor" href="#2-1-Left-Sidebar" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Collapse button (<code>≡</code> / <code>≫</code>)</td>
+<td>Click to collapse or expand the sidebar; when collapsed, only the Agent status dot and settings icon are displayed.</td>
+</tr>
+<tr>
+<td>Hawa Code title</td>
+<td>The brand logo at the top of the sidebar.</td>
+</tr>
+<tr>
+<td>Agent tag list</td>
+<td>Lists the <code>main</code> Agent and all active SubAgents; click to switch.</td>
+</tr>
+<tr>
+<td>Statistics</td>
+<td>Displays the current total number of Agents and the number currently running, e.g., <code>Agents: 7 (0 active)</code>.</td>
+</tr>
+<tr>
+<td>Settings button</td>
+<td>Click to open the settings panel on the right.</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-Right-Main-Content-Area" class="article-heading"><a href="#2-2-Right-Main-Content-Area" class="headerlink" title="2.2 Right Main Content Area"></a>2.2 Right Main Content Area<a class="article-anchor" href="#2-2-Right-Main-Content-Area" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Title bar</td>
+<td>Displays the current view name (<code>Agent Viewer</code> or <code>Settings</code>), message count, and WebSocket connection status.</td>
+</tr>
+<tr>
+<td>Message list</td>
+<td>Displays the current Agent’s dialogue messages, tool calls, execution results, thought processes, etc., in chronological order.</td>
+</tr>
+<tr>
+<td>Auto-scroll resume button</td>
+<td>After manually scrolling up to view history, click to resume automatic following to the bottom.</td>
+</tr>
+<tr>
+<td>Prompt input box</td>
+<td>Under the <code>main</code> Agent, you can directly input instructions and send them; supports plain text, slash commands (<code>/</code>), and Bash shortcut mode (<code>!</code>).</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="3-Multi-Agent-Switching" class="article-heading"><a href="#3-Multi-Agent-Switching" class="headerlink" title="3. Multi-Agent Switching"></a>3. Multi-Agent Switching<a class="article-anchor" href="#3-Multi-Agent-Switching" aria-hidden="true"></a></h2><p>When Hawa Code enables Agent Team or multi-Agent collaboration, the left Agent tag list displays all active Agents:</p>
+<ul>
+<li><code>main</code>: The main Agent, always present.</li>
+<li>Other SubAgents: Display the Agent name and type, e.g., <code>mcp-server-discovery (general)</code>, <code>Explore</code>, etc.</li>
+<li>The dot color before the tag indicates the Agent status:<ul>
+<li>Green: Executing (<code>running</code> / <code>started</code>)</li>
+<li>Gray: Ended (<code>ended</code>)</li>
 </ul>
 </li>
 </ul>
-<p>Click a tab to switch to the message stream of the corresponding Agent.</p>
+<p>Click the corresponding tag to switch and view that Agent’s message stream.</p>
+<hr>
+<h2 id="4-Auto-scroll-and-Manual-Pause" class="article-heading"><a href="#4-Auto-scroll-and-Manual-Pause" class="headerlink" title="4. Auto-scroll and Manual Pause"></a>4. Auto-scroll and Manual Pause<a class="article-anchor" href="#4-Auto-scroll-and-Manual-Pause" aria-hidden="true"></a></h2><ul>
+<li>Auto-scroll is enabled by default; new messages will automatically follow to the bottom.</li>
+<li>When you manually scroll up to view historical messages, auto-scroll will automatically pause.</li>
+<li>After pausing, a <strong>Resume auto-scroll</strong> button appears above the message list; click to resume auto-scrolling.</li>
+</ul>
+<hr>
+<h2 id="5-WebSocket-Real-time-Connection" class="article-heading"><a href="#5-WebSocket-Real-time-Connection" class="headerlink" title="5. WebSocket Real-time Connection"></a>5. WebSocket Real-time Connection<a class="article-anchor" href="#5-WebSocket-Real-time-Connection" aria-hidden="true"></a></h2><ul>
+<li>Agent Viewer maintains a long connection with the Hawa Code backend via WebSocket.</li>
+<li>After the connection is disconnected, the frontend will automatically attempt to reconnect every 3 seconds.</li>
+<li>Connection status is displayed in the top title bar:<ul>
+<li><code>Connected</code>: Connected</li>
+<li><code>Connecting...</code>: Connecting</li>
+<li><code>Disconnected</code>: Disconnected</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="6-Settings-Panel" class="article-heading"><a href="#6-Settings-Panel" class="headerlink" title="6. Settings Panel"></a>6. Settings Panel<a class="article-anchor" href="#6-Settings-Panel" aria-hidden="true"></a></h2><p>Click the <strong>Settings</strong> button in the left sidebar, and the right main content area will switch to the settings panel, supporting direct management of Hawa Code configuration in the browser:</p>
+<ul>
+<li>The left side shows setting categories: General, Plugins, Web Server, Auto Mode, Memory, Model Config, Advanced.</li>
+<li>The right side displays the configuration items under the corresponding category.</li>
+<li>After modifying the configuration, click <strong>Save</strong> to save; click <strong>Reset</strong> to revert unsaved changes; click <strong>Close</strong> to close the settings panel and return to Agent Viewer.</li>
+</ul>
+<blockquote>
+<p>Tip: After saving settings, some configuration items require restarting Hawa Code to take effect.</p>
+</blockquote>
+<hr>
+<h2 id="7-Prompt-Input" class="article-heading"><a href="#7-Prompt-Input" class="headerlink" title="7. Prompt Input"></a>7. Prompt Input<a class="article-anchor" href="#7-Prompt-Input" aria-hidden="true"></a></h2><p>Under the <code>main</code> Agent, the input box at the bottom can be used to send instructions to Hawa Code:</p>
+<ul>
+<li>Plain text: Enter directly and press Enter to send.</li>
+<li>Slash commands: Start with <code>/</code>, e.g., <code>/config</code>.</li>
+<li>Bash shortcut mode: Start with <code>!</code> to quickly execute Bash commands.</li>
+<li>When the main Agent is executing, entered content will be queued; click the interrupt button on the right side of the input box to interrupt the current execution.</li>
+<li>When switching to a SubAgent, the input box will prompt <code>Switch to Main agent to type a prompt</code>, and input is not possible at this time.</li>
+</ul>
+<hr>
+<h2 id="8-Tool-Confirmation-Popup" class="article-heading"><a href="#8-Tool-Confirmation-Popup" class="headerlink" title="8. Tool Confirmation Popup"></a>8. Tool Confirmation Popup<a class="article-anchor" href="#8-Tool-Confirmation-Popup" aria-hidden="true"></a></h2><p>When an Agent executes a tool requiring permission confirmation (such as Bash, PowerShell, Write, Edit, etc.), a confirmation card will pop up on the page:</p>
+<ul>
+<li>The top displays the tool name and pending count (when there are multiple confirmations, <code>N pending</code> is displayed).</li>
+<li>The middle shows a summary of the command or file path, tool description, and risk level (Low / Medium / High).</li>
+<li>The bottom provides the following options:<ul>
+<li><strong>Yes</strong>: Allow this execution.</li>
+<li><strong>Yes, and don’t ask again…</strong>: Allow this time and do not ask again for similar operations during the current session.</li>
+<li><strong>No, and tell Hawa Code what to do differently (esc)</strong>: Deny execution and provide feedback.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Tip: When the page is in the background, Agent Viewer will attempt to send a browser system notification to avoid missing confirmation requests. When using it for the first time, you can click <strong>Enable notifications</strong> in the popup prompt to enable notification permissions.</p>
+</blockquote>
+<hr>
+<h2 id="9-User-Interaction-Response" class="article-heading"><a href="#9-User-Interaction-Response" class="headerlink" title="9. User Interaction Response"></a>9. User Interaction Response<a class="article-anchor" href="#9-User-Interaction-Response" aria-hidden="true"></a></h2><p>When the Agent asks you questions via tools such as <code>AskUserQuestion</code> or <code>EnterPlanMode</code>, an interactive form is embedded directly in the message list. You can select options or enter content in the form and submit it, without needing to return to the CLI terminal. The submitted response will be synchronized to the Hawa Code backend.</p>
+<hr>
+<h2 id="10-Security-Notes" class="article-heading"><a href="#10-Security-Notes" class="headerlink" title="10. Security Notes"></a>10. Security Notes<a class="article-anchor" href="#10-Security-Notes" aria-hidden="true"></a></h2><ul>
+<li>The WebServer is bound to <code>127.0.0.1</code> by default, allowing only local access.</li>
+<li>It is not recommended to modify <code>host</code> to <code>0.0.0.0</code> in a public network environment.</li>
+<li>Dangerous operations in the tool confirmation popup will be marked with a risk level; please verify carefully before clicking allow.</li>
+</ul>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-06-15T15:58:37.991Z" itemprop="dateModified">Last updated: 2026-06-15</time>
+                <time class="article-footer-updated" datetime="2026-08-30T14:55:34.065Z" itemprop="dateModified">Last updated: 2026-08-30</time>
                 <a href="code-mode.html" class="article-footer-prev" title="Code Mode"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="settings.html" class="article-footer-next" title="Settings"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -216,7 +308,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Agent-Viewer-Help-Documentation"><span class="toc-text">Agent Viewer Help Documentation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Enable-Agent-Viewer"><span class="toc-text">1. Enable Agent Viewer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Method-1-Via-the-config-Interface"><span class="toc-text">Method 1: Via the &#x2F;config Interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Method-2-Edit-settings-json-Directly"><span class="toc-text">Method 2: Edit settings.json Directly</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Interface-Layout"><span class="toc-text">2. Interface Layout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Auto-scroll-and-Manual-Pause"><span class="toc-text">3. Auto-scroll and Manual Pause</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-WebSocket-Real-time-Connection"><span class="toc-text">4. WebSocket Real-time Connection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Multi-Agent-Switching"><span class="toc-text">5. Multi-Agent Switching</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Agent-Viewer-Help-Documentation"><span class="toc-text">Agent Viewer Help Documentation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Enabling-Agent-Viewer"><span class="toc-text">1. Enabling Agent Viewer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Method-1-Via-the-config-Configuration-Interface"><span class="toc-text">Method 1: Via the &#x2F;config Configuration Interface</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Method-2-Directly-Modify-settings-json"><span class="toc-text">Method 2: Directly Modify settings.json</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Interface-Layout"><span class="toc-text">2. Interface Layout</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Left-Sidebar"><span class="toc-text">2.1 Left Sidebar</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Right-Main-Content-Area"><span class="toc-text">2.2 Right Main Content Area</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Multi-Agent-Switching"><span class="toc-text">3. Multi-Agent Switching</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Auto-scroll-and-Manual-Pause"><span class="toc-text">4. Auto-scroll and Manual Pause</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-WebSocket-Real-time-Connection"><span class="toc-text">5. WebSocket Real-time Connection</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Settings-Panel"><span class="toc-text">6. Settings Panel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Prompt-Input"><span class="toc-text">7. Prompt Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Tool-Confirmation-Popup"><span class="toc-text">8. Tool Confirmation Popup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-User-Interaction-Response"><span class="toc-text">9. User Interaction Response</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-Security-Notes"><span class="toc-text">10. Security Notes</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
@@ -224,7 +316,7 @@ var _hmt = _hmt || [];
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="commands.html" class="sidebar-link">Commands</a><a href="model.html" class="sidebar-link">Models</a><a href="tools.html" class="sidebar-link">Tools</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="permissions.html" class="sidebar-link">Permissions</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool Lazy Loading</a><strong class="sidebar-title">Advanced Features</strong><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="plugin.html" class="sidebar-link">Plugin</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle">▶</span><span>Hooks</span></div><div class="sidebar-submenu"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">Scheduled Tasks</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">Sandboxing</a><a href="goal.html" class="sidebar-link">Goal</a><a href="context-management.html" class="sidebar-link">Context Management</a><a href="code-mode.html" class="sidebar-link">Code Mode</a><strong class="sidebar-title">Web Control</strong><a href="agent-viewer.html" class="sidebar-link current">Agent Viewer</a><a href="settings.html" class="sidebar-link">Settings</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><strong class="sidebar-title">Remote Control</strong><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a><strong class="sidebar-title">Middleware</strong><a href="context.html" class="sidebar-link">Context</a><a href="db.html" class="sidebar-link">DB</a>
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="commands.html" class="sidebar-link">Commands</a><a href="model.html" class="sidebar-link">Models</a><a href="tools.html" class="sidebar-link">Tools</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="permissions.html" class="sidebar-link">Permissions</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool Lazy Loading</a><strong class="sidebar-title">Notifications</strong><a href="notifications.html" class="sidebar-link">Notifications</a><strong class="sidebar-title">Advanced Features</strong><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="plugin.html" class="sidebar-link">Plugin</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle">▶</span><span>Hooks</span></div><div class="sidebar-submenu"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">Scheduled Tasks</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">Sandboxing</a><a href="goal.html" class="sidebar-link">Goal</a><a href="context-management.html" class="sidebar-link">Context Management</a><a href="code-mode.html" class="sidebar-link">Code Mode</a><strong class="sidebar-title">Web Control</strong><a href="agent-viewer.html" class="sidebar-link current">Agent Viewer</a><a href="settings.html" class="sidebar-link">Settings</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><strong class="sidebar-title">Remote Control</strong><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a><strong class="sidebar-title">Middleware</strong><a href="context.html" class="sidebar-link">Context</a><a href="db.html" class="sidebar-link">DB</a>
   </div>
 </aside>
 
@@ -276,7 +368,7 @@ function toggleSubmenu(element, event) {
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="commands.html" class="mobile-nav-link">Commands</a><a href="model.html" class="mobile-nav-link">Models</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="permissions.html" class="mobile-nav-link">Permissions</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool Lazy Loading</a><strong class="mobile-nav-title">Advanced Features</strong><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="plugin.html" class="mobile-nav-link">Plugin</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">Scheduled Tasks</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">Sandboxing</a><a href="goal.html" class="mobile-nav-link">Goal</a><a href="context-management.html" class="mobile-nav-link">Context Management</a><a href="code-mode.html" class="mobile-nav-link">Code Mode</a><strong class="mobile-nav-title">Web Control</strong><a href="agent-viewer.html" class="mobile-nav-link current">Agent Viewer</a><a href="settings.html" class="mobile-nav-link">Settings</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><strong class="mobile-nav-title">Remote Control</strong><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a><strong class="mobile-nav-title">Middleware</strong><a href="context.html" class="mobile-nav-link">Context</a><a href="db.html" class="mobile-nav-link">DB</a>
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="commands.html" class="mobile-nav-link">Commands</a><a href="model.html" class="mobile-nav-link">Models</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="permissions.html" class="mobile-nav-link">Permissions</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool Lazy Loading</a><strong class="mobile-nav-title">Notifications</strong><a href="notifications.html" class="mobile-nav-link">Notifications</a><strong class="mobile-nav-title">Advanced Features</strong><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="plugin.html" class="mobile-nav-link">Plugin</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">Scheduled Tasks</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">Sandboxing</a><a href="goal.html" class="mobile-nav-link">Goal</a><a href="context-management.html" class="mobile-nav-link">Context Management</a><a href="code-mode.html" class="mobile-nav-link">Code Mode</a><strong class="mobile-nav-title">Web Control</strong><a href="agent-viewer.html" class="mobile-nav-link current">Agent Viewer</a><a href="settings.html" class="mobile-nav-link">Settings</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><strong class="mobile-nav-title">Remote Control</strong><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a><strong class="mobile-nav-title">Middleware</strong><a href="context.html" class="mobile-nav-link">Context</a><a href="db.html" class="mobile-nav-link">DB</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
