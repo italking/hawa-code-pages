@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Code Mode | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/docs/code-mode">
+  <!-- Alternate links -->
+  
+    
+      
+    
+      
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/code-mode">
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/code-mode" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="Code ModeCode Mode 是 Hawa Code 内置的一款工具，它允许模型通过一段 JavaScript 代码来调用已配置的 MCP server 能力，并把执行结果返回给模型继续处理。 简单来说，Code Mode 把 MCP server 的工具变成了一段可编程的 JavaScript API。你可以像写普通 JS 一样，把多个 MCP 工具的调用组合起来，完成搜索、查询、计算、">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Code Mode">
+<meta property="og:url" content="https://www.hawacode.com/docs/code-mode">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="Code ModeCode Mode 是 Hawa Code 内置的一款工具，它允许模型通过一段 JavaScript 代码来调用已配置的 MCP server 能力，并把执行结果返回给模型继续处理。 简单来说，Code Mode 把 MCP server 的工具变成了一段可编程的 JavaScript API。你可以像写普通 JS 一样，把多个 MCP 工具的调用组合起来，完成搜索、查询、计算、">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-08-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-30T09:42:59.848Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/blog/" class="main-nav-link">博客</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/code-mode.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Code Mode</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><h1 id="Code-Mode" class="article-heading"><a href="#Code-Mode" class="headerlink" title="Code Mode"></a>Code Mode<a class="article-anchor" href="#Code-Mode" aria-hidden="true"></a></h1><p>Code Mode 是 Hawa Code 内置的一款工具，它允许模型通过一段 JavaScript 代码来调用已配置的 MCP server 能力，并把执行结果返回给模型继续处理。</p>
+<p>简单来说，Code Mode 把 MCP server 的工具变成了一段可编程的 JavaScript API。你可以像写普通 JS 一样，把多个 MCP 工具的调用组合起来，完成搜索、查询、计算、写入等更复杂的任务。</p>
+<hr>
+<h2 id="快速开始" class="article-heading"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始<a class="article-anchor" href="#快速开始" aria-hidden="true"></a></h2><h3 id="1-配置文件" class="article-heading"><a href="#1-配置文件" class="headerlink" title="1. 配置文件"></a>1. 配置文件<a class="article-anchor" href="#1-配置文件" aria-hidden="true"></a></h3><p>Code Mode 使用 <code>.codemode.json</code> 配置 MCP server，格式与 <code>.mcp.json</code> 一致。</p>
+<p>配置文件支持两个层级：</p>
+<ul>
+<li>全局配置：<code>~/.hcode/.codemode.json</code></li>
+<li>项目配置：<code>{项目目录}/.codemode.json</code></li>
+</ul>
+<p>项目配置会覆盖全局配置。</p>
+<p>示例 <code>.codemode.json</code>：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"mcpServers"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"supabaseA"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"http"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"url"</span><span class="punctuation">:</span> <span class="string">"https://mcp.supabase.com/mcp"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"headers"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"Authorization"</span><span class="punctuation">:</span> <span class="string">"Bearer your-token"</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">}</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">"github"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"type"</span><span class="punctuation">:</span> <span class="string">"http"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"url"</span><span class="punctuation">:</span> <span class="string">"https://api.githubcopilot.com/mcp/"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"headers"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"Authorization"</span><span class="punctuation">:</span> <span class="string">"Bearer your-token"</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>提示：如果没有单独配置 <code>.codemode.json</code>，Code Mode 也会复用 Hawa Code 已有的 MCP 配置（全局配置、项目配置、<code>.mcp.json</code>）。</p>
+</blockquote>
+<h3 id="2-使用方式" class="article-heading"><a href="#2-使用方式" class="headerlink" title="2. 使用方式"></a>2. 使用方式<a class="article-anchor" href="#2-使用方式" aria-hidden="true"></a></h3><p>在对话中让 Hawa Code 进入 Code Mode，模型会自动生成 JavaScript 代码并执行。你无需手动安装插件或执行额外命令。</p>
+<p>典型用法：</p>
+<ul>
+<li>调用某个 MCP 工具查询数据</li>
+<li>组合多个 MCP 工具完成多步骤任务</li>
+<li>搜索可用工具并自动发现能力</li>
+</ul>
+<hr>
+<h2 id="代码格式" class="article-heading"><a href="#代码格式" class="headerlink" title="代码格式"></a>代码格式<a class="article-anchor" href="#代码格式" aria-hidden="true"></a></h2><p>Code Mode 接收一段 JavaScript 异步箭头函数，并执行它。</p>
+<p>你可以直接写箭头函数体：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="title function_">async</span> () =&gt; {</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">await</span> codemode.<span class="property">supabaseA</span>.<span class="title function_">list_tables</span>();</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>也可以只写函数体内容，系统会自动包装：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> result = <span class="keyword">await</span> codemode.<span class="property">supabaseA</span>.<span class="title function_">list_tables</span>();</span><br><span class="line"><span class="keyword">return</span> result;</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="调用-MCP-工具" class="article-heading"><a href="#调用-MCP-工具" class="headerlink" title="调用 MCP 工具"></a>调用 MCP 工具<a class="article-anchor" href="#调用-MCP-工具" aria-hidden="true"></a></h2><p>已配置的 MCP server 会以 <code>&lt;codemode.&lt;server&gt;.&lt;tool&gt;&gt;</code> 的形式暴露为 JavaScript 函数。</p>
+<p>例如，配置了一个名为 <code>supabaseA</code> 的 server，其中有一个工具叫 <code>list_tables</code>，可以这样调用：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="title function_">async</span> () =&gt; {</span><br><span class="line">  <span class="keyword">const</span> tables = <span class="keyword">await</span> codemode.<span class="property">supabaseA</span>.<span class="title function_">list_tables</span>();</span><br><span class="line">  <span class="keyword">return</span> tables;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果 server 名或工具名包含特殊字符，会自动转换为合法的 JavaScript 标识符。例如 <code>my-server</code> 会变成 <code>codemode.my_server</code>。</p>
+<hr>
+<h2 id="发现可用工具" class="article-heading"><a href="#发现可用工具" class="headerlink" title="发现可用工具"></a>发现可用工具<a class="article-anchor" href="#发现可用工具" aria-hidden="true"></a></h2><h3 id="搜索工具" class="article-heading"><a href="#搜索工具" class="headerlink" title="搜索工具"></a>搜索工具<a class="article-anchor" href="#搜索工具" aria-hidden="true"></a></h3><p>如果你不确定某个能力在哪里，可以使用 <code>codemode.search()</code>：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="title function_">async</span> () =&gt; {</span><br><span class="line">  <span class="keyword">const</span> matches = <span class="keyword">await</span> codemode.<span class="title function_">search</span>(<span class="string">"list tables"</span>);</span><br><span class="line">  <span class="keyword">return</span> matches;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>返回的结果包含工具路径、所属 server、方法名、描述和匹配分数，帮助你快速定位需要的工具。</p>
+<h3 id="查看工具详情" class="article-heading"><a href="#查看工具详情" class="headerlink" title="查看工具详情"></a>查看工具详情<a class="article-anchor" href="#查看工具详情" aria-hidden="true"></a></h3><p>使用 <code>codemode.describe()</code> 查看某个工具的类型定义和参数说明：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="title function_">async</span> () =&gt; {</span><br><span class="line">  <span class="keyword">const</span> docs = <span class="keyword">await</span> codemode.<span class="title function_">describe</span>(<span class="string">"supabaseA.list_tables"</span>);</span><br><span class="line">  <span class="keyword">return</span> docs;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>也可以只描述整个 server：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="title function_">async</span> () =&gt; {</span><br><span class="line">  <span class="keyword">const</span> docs = <span class="keyword">await</span> codemode.<span class="title function_">describe</span>(<span class="string">"supabaseA"</span>);</span><br><span class="line">  <span class="keyword">return</span> docs;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="保存和复用代码片段" class="article-heading"><a href="#保存和复用代码片段" class="headerlink" title="保存和复用代码片段"></a>保存和复用代码片段<a class="article-anchor" href="#保存和复用代码片段" aria-hidden="true"></a></h2><p>你可以把常用的代码保存为 snippet，方便后续调用：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="title function_">async</span> () =&gt; {</span><br><span class="line">  <span class="keyword">await</span> codemode.<span class="title function_">saveSnippet</span>(</span><br><span class="line">    <span class="string">"list-supabase-tables"</span>,</span><br><span class="line">    <span class="string">"const tables = await codemode.supabaseA.list_tables(); return tables;"</span>,</span><br><span class="line">    <span class="string">"列出 supabaseA 中的所有表"</span></span><br><span class="line">  );</span><br><span class="line">  <span class="keyword">return</span> <span class="string">"saved"</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>snippet 会保存在项目目录的 <code>.codemode-snippets.json</code> 文件中，和 MCP 工具一样可以被 <code>codemode.search()</code> 和 <code>codemode.describe()</code> 找到。</p>
+<hr>
+<h2 id="组合多个工具" class="article-heading"><a href="#组合多个工具" class="headerlink" title="组合多个工具"></a>组合多个工具<a class="article-anchor" href="#组合多个工具" aria-hidden="true"></a></h2><p>Code Mode 的真正价值在于可以组合多个 MCP 工具完成复杂任务。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="line"><span class="title function_">async</span> () =&gt; {</span><br><span class="line">  <span class="keyword">const</span> tables = <span class="keyword">await</span> codemode.<span class="property">supabaseA</span>.<span class="title function_">list_tables</span>();</span><br><span class="line">  <span class="keyword">const</span> details = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> table <span class="keyword">of</span> tables.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="number">5</span>)) {</span><br><span class="line">    <span class="keyword">const</span> schema = <span class="keyword">await</span> codemode.<span class="property">supabaseA</span>.<span class="title function_">describe_table</span>({ table });</span><br><span class="line">    details.<span class="title function_">push</span>({ table, schema });</span><br><span class="line">  }</span><br><span class="line">  <span class="keyword">return</span> details;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="执行环境说明" class="article-heading"><a href="#执行环境说明" class="headerlink" title="执行环境说明"></a>执行环境说明<a class="article-anchor" href="#执行环境说明" aria-hidden="true"></a></h2><ul>
+<li>Code Mode 在独立的 Node 子进程中执行代码，代码通过 IPC 与 Hawa Code 通信。</li>
+<li>执行环境<strong>不包含 <code>fs</code>、<code>require</code>、<code>process</code> 等 Node.js API</strong>，所有 I/O 只能通过已配置的 MCP 工具完成。</li>
+<li>单次执行默认超时时间为 60 秒，超时会自动终止。</li>
+<li>标准 JavaScript 语法可用，但<strong>不支持 TypeScript 类型注解</strong>。</li>
+</ul>
+<hr>
+<h2 id="权限与确认" class="article-heading"><a href="#权限与确认" class="headerlink" title="权限与确认"></a>权限与确认<a class="article-anchor" href="#权限与确认" aria-hidden="true"></a></h2><p>Code Mode 属于需要用户确认的工具。执行前会询问你是否允许，确认后才会运行代码。如果你开启了自动权限模式，符合条件时可能无需每次确认。</p>
+<hr>
+<h2 id="常见场景" class="article-heading"><a href="#常见场景" class="headerlink" title="常见场景"></a>常见场景<a class="article-anchor" href="#常见场景" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>场景</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>查询数据库</td>
+<td><code>codemode.supabaseA.query({ sql: "SELECT * FROM users" })</code></td>
+</tr>
+<tr>
+<td>查询 GitHub 信息</td>
+<td><code>codemode.github.search_issues({ query: "repo:owner/repo is:open" })</code></td>
+</tr>
+<tr>
+<td>组合多工具</td>
+<td>先列表面板，再查询每个表的 Schema</td>
+</tr>
+<tr>
+<td>复用逻辑</td>
+<td>把常用查询保存为 snippet</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="故障排查" class="article-heading"><a href="#故障排查" class="headerlink" title="故障排查"></a>故障排查<a class="article-anchor" href="#故障排查" aria-hidden="true"></a></h2><h3 id="执行超时" class="article-heading"><a href="#执行超时" class="headerlink" title="执行超时"></a>执行超时<a class="article-anchor" href="#执行超时" aria-hidden="true"></a></h3><p>如果代码执行超过 60 秒，会返回超时错误。建议拆分为多个步骤，或减少单次处理的数据量。</p>
+<h3 id="找不到工具" class="article-heading"><a href="#找不到工具" class="headerlink" title="找不到工具"></a>找不到工具<a class="article-anchor" href="#找不到工具" aria-hidden="true"></a></h3><ul>
+<li>检查 <code>.codemode.json</code> 是否已正确配置。</li>
+<li>使用 <code>codemode.search("关键词")</code> 确认工具是否已加载。</li>
+<li>使用 <code>codemode.describe("server.tool")</code> 查看工具名是否正确。</li>
+</ul>
+<h3 id="返回结果过长" class="article-heading"><a href="#返回结果过长" class="headerlink" title="返回结果过长"></a>返回结果过长<a class="article-anchor" href="#返回结果过长" aria-hidden="true"></a></h3><p>Code Mode 会自动截断过长的结果，避免占用过多上下文。如果结果被截断，建议使用更精确的查询条件，或分批获取数据。</p>
+<hr>
+<h2 id="小结" class="article-heading"><a href="#小结" class="headerlink" title="小结"></a>小结<a class="article-anchor" href="#小结" aria-hidden="true"></a></h2><p>Code Mode 把 MCP server 的能力变成了一段可执行的 JavaScript 代码，让模型可以：</p>
+<ul>
+<li>自动发现工具</li>
+<li>组合多个工具</li>
+<li>复用常用代码片段</li>
+<li>在安全的沙箱环境中执行</li>
+</ul>
+<p>通过 Code Mode，你可以让 Hawa Code 处理更复杂、更灵活的多步骤任务。</p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-08-30T09:42:59.848Z" itemprop="dateModified">上次更新：2026-08-30</time>
+                <a href="context-management.html" class="article-footer-prev" title="上下文管理"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="agent-viewer.html" class="article-footer-next" title="Agent Viewer"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Code-Mode"><span class="toc-text">Code Mode</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">1. 配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">2. 使用方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F"><span class="toc-text">代码格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B0%83%E7%94%A8-MCP-%E5%B7%A5%E5%85%B7"><span class="toc-text">调用 MCP 工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E7%8E%B0%E5%8F%AF%E7%94%A8%E5%B7%A5%E5%85%B7"><span class="toc-text">发现可用工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E5%B7%A5%E5%85%B7"><span class="toc-text">搜索工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%A5%E5%85%B7%E8%AF%A6%E6%83%85"><span class="toc-text">查看工具详情</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98%E5%92%8C%E5%A4%8D%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5"><span class="toc-text">保存和复用代码片段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E5%A4%9A%E4%B8%AA%E5%B7%A5%E5%85%B7"><span class="toc-text">组合多个工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83%E8%AF%B4%E6%98%8E"><span class="toc-text">执行环境说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%B8%8E%E7%A1%AE%E8%AE%A4"><span class="toc-text">权限与确认</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%9C%BA%E6%99%AF"><span class="toc-text">常见场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5"><span class="toc-text">故障排查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E8%B6%85%E6%97%B6"><span class="toc-text">执行超时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%BE%E4%B8%8D%E5%88%B0%E5%B7%A5%E5%85%B7"><span class="toc-text">找不到工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E8%BF%87%E9%95%BF"><span class="toc-text">返回结果过长</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="commands.html" class="sidebar-link">命令</a><a href="model.html" class="sidebar-link">模型</a><a href="tools.html" class="sidebar-link">工具</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="permissions.html" class="sidebar-link">权限</a><a href="tool-lazy-loading.html" class="sidebar-link">Tool懒加载</a><strong class="sidebar-title">高级功能</strong><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="plugin.html" class="sidebar-link">Plugin</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle">▶</span><span>Hooks</span></div><div class="sidebar-submenu"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">定时任务</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">沙箱</a><a href="goal.html" class="sidebar-link">Goal</a><a href="context-management.html" class="sidebar-link">上下文管理</a><a href="code-mode.html" class="sidebar-link current">Code Mode</a><strong class="sidebar-title">Web Control</strong><a href="agent-viewer.html" class="sidebar-link">Agent Viewer</a><a href="settings.html" class="sidebar-link">Settings</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><strong class="sidebar-title">远程控制</strong><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a><strong class="sidebar-title">中间件</strong><a href="context.html" class="sidebar-link">Context</a><a href="db.html" class="sidebar-link">DB</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/blog/" class="mobile-nav-link">博客</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="model.html" class="mobile-nav-link">模型</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="permissions.html" class="mobile-nav-link">权限</a><a href="tool-lazy-loading.html" class="mobile-nav-link">Tool懒加载</a><strong class="mobile-nav-title">高级功能</strong><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="plugin.html" class="mobile-nav-link">Plugin</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">定时任务</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">沙箱</a><a href="goal.html" class="mobile-nav-link">Goal</a><a href="context-management.html" class="mobile-nav-link">上下文管理</a><a href="code-mode.html" class="mobile-nav-link current">Code Mode</a><strong class="mobile-nav-title">Web Control</strong><a href="agent-viewer.html" class="mobile-nav-link">Agent Viewer</a><a href="settings.html" class="mobile-nav-link">Settings</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><strong class="mobile-nav-title">远程控制</strong><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a><strong class="mobile-nav-title">中间件</strong><a href="context.html" class="mobile-nav-link">Context</a><a href="db.html" class="mobile-nav-link">DB</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/code-mode.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:zh-cn']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
