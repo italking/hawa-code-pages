@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.0 (2026-08-30)  支持 Code Mode 0.1 新增 codemode 工具，支持通过自然语言调用 MCP server 能力 优化 codemode 工具确认消息提示 补充 codemode.search 方法说明文档 codemode P">
+  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.26 ~ v2.4.29 (2026-09-07)  Code Mode snippet 功能 新增 codemode.snippet.&lt;name&gt;(input)，支持按名执行已保存的 snippet，运行期新保存的 snippet 即时可用 sa">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://www.hawacode.com/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.0 (2026-08-30)  支持 Code Mode 0.1 新增 codemode 工具，支持通过自然语言调用 MCP server 能力 优化 codemode 工具确认消息提示 补充 codemode.search 方法说明文档 codemode P">
+<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.26 ~ v2.4.29 (2026-09-07)  Code Mode snippet 功能 新增 codemode.snippet.&lt;name&gt;(input)，支持按名执行已保存的 snippet，运行期新保存的 snippet 即时可用 sa">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-08-30T08:55:13.663Z">
-<meta property="article:modified_time" content="2026-08-30T08:55:13.663Z">
+<meta property="article:published_time" content="2026-09-08T14:19:43.749Z">
+<meta property="article:modified_time" content="2026-09-08T14:19:43.749Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,69 @@ var _hmt = _hmt || [];
 <p><strong>一个</strong>   是留给自己的底线</p>
 <h1 id="版本" class="article-heading"><a href="#版本" class="headerlink" title="版本"></a>版本<a class="article-anchor" href="#版本" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.4.26 ~ v2.4.29 (2026-09-07)</p>
+<ul>
+<li>Code Mode snippet 功能<ul>
+<li>新增 <code>codemode.snippet.&lt;name&gt;(input)</code>，支持按名执行已保存的 snippet，运行期新保存的 snippet 即时可用</li>
+<li>saveSnippet 新增 inputSchema/outputSchema 可选参数并做对象校验</li>
+<li>describe 对 snippet 不再返回源码，改为基于 schema 生成具体类型签名（无 schema 退化为 unknown）</li>
+</ul>
+</li>
+<li>修复工具不存在时的错误提示<ul>
+<li>仅当工具存在于全量 _tools 列表时才提示用 ToolLoader 加载或 ProxyTool 加载</li>
+<li>工具既不能被加载也不能被代理时只返回 No such tool available</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.4.24 ~ v2.4.25 (2026-09-06)</p>
+<ul>
+<li>.codemode.json 新增 appwrite provider 配置</li>
+<li>proxy 模式暴露层由仅 ProxyTool+CodeMode 改为 ProxyTool + proxyWhiteList 白名单工具</li>
+<li>MCP 客户端支持 .codemode.json 的 timeout 配置，两条 MCP 路径默认连接超时统一调整为 20s</li>
+</ul>
+</li>
+<li><p>v2.4.22 ~ v2.4.23 (2026-09-04)</p>
+<ul>
+<li>使用 TypeScript 类型签名替换 JSON Schema 作为工具参数的描述和验证依据</li>
+<li>修复 agent 中 proxy 模式下子 agent 无法获取 ProxyTool 的问题</li>
+<li>优化 ProxyTool 代理调用的渲染逻辑，增加 &lt;&gt; 前缀标识</li>
+<li>新增 CodeModeToolResult 渲染组件</li>
+</ul>
+</li>
+<li><p>v2.4.14 ~ v2.4.21 (2026-09-04)</p>
+<ul>
+<li>ProxyTool 代理工具增强<ul>
+<li>合并 lazyTool/proxyToolEnable 为三态枚举 LazyToolMode</li>
+<li>修复 proxy 模式下裸调用真实工具绕过 ProxyTool 隔离的问题</li>
+<li>参数校验失败时提示通过 ProxyTool describe 查询正确的入参结构</li>
+<li>优化 proxy tool prompt，强化先 describe 后调用的引导</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.4.10 ~ v2.4.13 (2026-09-02 ~ 2026-09-03)</p>
+<ul>
+<li>支持设置最大 token 返回数量</li>
+<li>优化工具懒加载顺序，增加缓存利用率</li>
+<li>prompt 缓存点优化，减少到只使用一个</li>
+<li>修复 opus-4-8 的模型 thinking 配置</li>
+<li>优化 codemode 显示</li>
+</ul>
+</li>
+<li><p>v2.4.3 ~ v2.4.6 (2026-09-01)</p>
+<ul>
+<li>优化 codemode prompt 语句</li>
+<li>工具懒加载时不显示方法提示</li>
+</ul>
+</li>
+<li><p>v2.4.1 ~ v2.4.2 (2026-08-31)</p>
+<ul>
+<li>codemode MCP 错误时不显示堆栈，ZodError 显示完整错误消息</li>
+<li>增加对 JSON Schema 中 minimum、maximum、minLength、maxLength 属性的支持，生成的 TypeScript 类型添加相应注释</li>
+<li>增加输入参数详细注释功能，HAWA_CODE_JSDOC 设置为 true 时 JSDoc 注释包含每个输入字段的描述</li>
+</ul>
+</li>
 <li><p>v2.4.0 (2026-08-30)</p>
 <ul>
 <li>支持 Code Mode 0.1<ul>
@@ -1004,7 +1067,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-08-30T08:55:13.663Z" itemprop="dateModified">上次更新：2026-08-30</time>
+                <time class="article-footer-updated" datetime="2026-09-08T14:19:43.749Z" itemprop="dateModified">上次更新：2026-09-08</time>
                 
               </footer>
               
