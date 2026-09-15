@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>How Does Hawa Code Proxy Tool Lazy Loading Keep the Prompt Cache Valid? | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/en/blog/posts/hawa-code-proxy-tool-lazy-loading-prompt-cache">
+  <!-- Alternate links -->
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="When an Agent loads thousands of tools or MCP servers at the same time, the context explodes and every request consumes a large number of Tokens. The best solution is to load tools on demand to reduce">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How Does Hawa Code Proxy Tool Lazy Loading Keep the Prompt Cache Valid?">
+<meta property="og:url" content="https://www.hawacode.com/en/blog/posts/hawa-code-proxy-tool-lazy-loading-prompt-cache">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="When an Agent loads thousands of tools or MCP servers at the same time, the context explodes and every request consumes a large number of Tokens. The best solution is to load tools on demand to reduce">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-09-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-15T15:03:08.149Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/en/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/en/docs/" class="main-nav-link">Docs</a><a href="/en/blog/" class="main-nav-link">Blog</a><a href="/en/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="">
+        
+           <option value="zh-cn">简体中文</option>
+        
+           <option value="en" selected>English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">How Does Hawa Code Proxy Tool Lazy Loading Keep the Prompt Cache Valid?</h1>
+                <div class="blog-post-meta">
+                  <time class="blog-post-date" datetime="2026-09-14T16:00:00.000Z">2026-09-15</time>
+                  
+                    <span class="blog-post-author">hawa code</span>
+                  
+                </div>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p>When an Agent loads thousands of tools or MCP servers at the same time, the context explodes and every request consumes a large number of Tokens. The best solution is to load tools on demand to reduce Token consumption. Proxy Tool was created to solve exactly this problem: the Agent only needs one Proxy Tool, which loads other tools on demand, invoking them through the Proxy Tool and thus greatly reducing context consumption.</p>
+<h1 id="How-It-Works" class="article-heading"><a href="#How-It-Works" class="headerlink" title="How It Works"></a>How It Works<a class="article-anchor" href="#How-It-Works" aria-hidden="true"></a></h1><p>Proxy Tool provides two Actions:</p>
+<ul>
+<li>load: loads the tool’s description and the structure of its input and output parameters</li>
+<li>call: executes a specific tool by its name</li>
+</ul>
+<p>Proxy Tool supports both Hawa Code built-in tools and MCP extension tools.</p>
+<h2 id="Load" class="article-heading"><a href="#Load" class="headerlink" title="Load"></a>Load<a class="article-anchor" href="#Load" aria-hidden="true"></a></h2><p>Hawa Code uses load to load the tool’s description. Note that it does not use JSON schema — the TypeScript format saves more Tokens.</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"># <span class="title class_">Read</span></span><br><span class="line"><span class="title class_">Reads</span> a file <span class="keyword">from</span> the local filesystem. <span class="title class_">You</span> can access <span class="built_in">any</span> file directly by <span class="keyword">using</span> <span class="variable language_">this</span> tool.</span><br><span class="line"><span class="title class_">Assume</span> <span class="variable language_">this</span> tool is able to read all files on the machine. <span class="title class_">If</span> the <span class="title class_">User</span> provides a path to a file assume that path is valid. <span class="title class_">It</span> is okay to read a file that does not exist; an error will be returned.</span><br><span class="line"></span><br><span class="line">## <span class="title class_">Input</span> (<span class="title class_">TypeScript</span>)</span><br><span class="line"><span class="string">``</span><span class="string">`typescript</span></span><br><span class="line"><span class="string">type ReadInput = {</span></span><br><span class="line"><span class="string">  /** The absolute path to the file to read */</span></span><br><span class="line"><span class="string">  file_path: string;</span></span><br><span class="line"><span class="string">  /** The line number to start reading from. Defaults to reading from the first line. Only provide if the file is too large to read at once. */</span></span><br><span class="line"><span class="string">  offset?: number;</span></span><br><span class="line"><span class="string">  /** The number of lines to read. Defaults to reading until the last line of the file. Only provide if the file is too large to read at once. */</span></span><br><span class="line"><span class="string">  limit?: number;</span></span><br><span class="line"><span class="string">};</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Call" class="article-heading"><a href="#Call" class="headerlink" title="Call"></a>Call<a class="article-anchor" href="#Call" aria-hidden="true"></a></h2><p>Invokes the proxied tool by its name and parameters.</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"input"</span>: {</span><br><span class="line">    <span class="string">"action"</span>: <span class="string">"call"</span>,</span><br><span class="line">    <span class="string">"input"</span>: {</span><br><span class="line">        <span class="string">"file_path"</span>: <span class="string">"D:\\Javaworks\\hawa-code\\README.md"</span></span><br><span class="line">    },</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"Read"</span></span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="Prompt-Cache" class="article-heading"><a href="#Prompt-Cache" class="headerlink" title="Prompt Cache"></a>Prompt Cache<a class="article-anchor" href="#Prompt-Cache" aria-hidden="true"></a></h1><p>Models support a Prompt Cache feature: as long as the prefix of the current request remains unchanged, the KV Cache can be reused, and subsequent requests can skip recomputing the prefix.</p>
+<p>The Anthropic Claude prefix format is as follows:</p>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line">[<span class="title class_">Tool</span> <span class="title class_">Definitions</span>] + [<span class="title class_">System</span> <span class="title class_">Prompt</span>] + [<span class="title class_">Conversation</span> <span class="title class_">History</span>...]</span><br></pre></td></tr></tbody></table></figure>
+
+<p>If the tool list changes, the entire prefix becomes invalid. However, the content loaded by Proxy Tool’s load action goes directly into the conversation history and does not affect any part of the prefix. The Prompt Cache is therefore completely unaffected.</p>
+<blockquote>
+<p>Hawa Code load mode maximizes Token reduction, which causes the prefix to change.</p>
+</blockquote>
+<h1 id="Proxy-Tool-vs-Code-Mode" class="article-heading"><a href="#Proxy-Tool-vs-Code-Mode" class="headerlink" title="Proxy Tool vs Code Mode"></a>Proxy Tool vs Code Mode<a class="article-anchor" href="#Proxy-Tool-vs-Code-Mode" aria-hidden="true"></a></h1><p>Both Hawa Code Proxy Tool and Code Mode support on-demand tool loading and can handle tens of thousands of tools. The two are complementary in usage scenarios.</p>
+<ul>
+<li>Proxy Tool performs single tool calls and cannot cascade multiple tool calls.</li>
+<li>Code Mode focuses on cascading calls across multiple tools, where each tool is an API — you orchestrate tool calls just like writing code.</li>
+</ul>
+<p>Hawa Code mainly provides Proxy Tool and Code Mode, and these two tools alone can accomplish everything.</p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <a href="/en/blog/" class="blog-back-link">&larr; Back to Blog List</a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#How-It-Works"><span class="toc-text">How It Works</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Load"><span class="toc-text">Load</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Call"><span class="toc-text">Call</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Prompt-Cache"><span class="toc-text">Prompt Cache</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Proxy-Tool-vs-Code-Mode"><span class="toc-text">Proxy Tool vs Code Mode</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/en/docs/" class="mobile-nav-link">Docs</a><a href="/en/blog/" class="mobile-nav-link">Blog</a><a href="/en/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="">
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:en']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
