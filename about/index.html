@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.26 ~ v2.4.29 (2026-09-07)  Code Mode snippet 功能 新增 codemode.snippet.&lt;name&gt;(input)，支持按名执行已保存的 snippet，运行期新保存的 snippet 即时可用 sa">
+  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.51 (2026-09-25)  支持内置默认 Skill 新增仓库根 skills&#x2F; 目录，构建时复制到 dist&#x2F;skills 随包发布 SkillService 增加 builtin 扫描路径（最低优先级，user&#x2F;proj">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://www.hawacode.com/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.26 ~ v2.4.29 (2026-09-07)  Code Mode snippet 功能 新增 codemode.snippet.&lt;name&gt;(input)，支持按名执行已保存的 snippet，运行期新保存的 snippet 即时可用 sa">
+<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.51 (2026-09-25)  支持内置默认 Skill 新增仓库根 skills&#x2F; 目录，构建时复制到 dist&#x2F;skills 随包发布 SkillService 增加 builtin 扫描路径（最低优先级，user&#x2F;proj">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-09-08T14:19:43.749Z">
-<meta property="article:modified_time" content="2026-09-08T14:19:43.749Z">
+<meta property="article:published_time" content="2026-09-27T11:18:23.413Z">
+<meta property="article:modified_time" content="2026-09-27T11:18:23.413Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,76 @@ var _hmt = _hmt || [];
 <p><strong>一个</strong>   是留给自己的底线</p>
 <h1 id="版本" class="article-heading"><a href="#版本" class="headerlink" title="版本"></a>版本<a class="article-anchor" href="#版本" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.4.51 (2026-09-25)</p>
+<ul>
+<li>支持内置默认 Skill<ul>
+<li>新增仓库根 skills/ 目录，构建时复制到 dist/skills 随包发布</li>
+<li>SkillService 增加 builtin 扫描路径（最低优先级，user/project 同名可覆盖），watcher 跳过 builtin</li>
+</ul>
+</li>
+<li>snippets 存储路径改为 .hcode/.codemode-snippets.json</li>
+<li>优化 codemode prompt（强调使用代码调用）与自动保存出参</li>
+<li>优化 ProxyTool 提示信息，明确先 load 再 call 的调用方式</li>
+<li>重构 loop 架构</li>
+</ul>
+</li>
+<li><p>v2.4.49 ~ v2.4.50 (2026-09-24)</p>
+<ul>
+<li>ProxyTool call 参数 input 重命名为 arguments，load 结果中的 TS input type 统一更名为 arguments type</li>
+<li>proxytool 提醒改为英文</li>
+<li>精简 BashTool prompt：删除 git 提交/PR 操作指南、目录验证步骤及未使用的 import</li>
+<li>修复 unwrapMcpResult 多 text content 拼接后无法解析 JSON 的问题</li>
+</ul>
+</li>
+<li><p>v2.4.45 ~ v2.4.48 (2026-09-23)</p>
+<ul>
+<li>ProxyTool 参数改名：action → proxyToolAction，name → toolName，避免与目标工具自身的 action/name 参数嵌套撞名导致模型填参遗漏</li>
+<li>codemode 增强<ul>
+<li>支持自定义 Instructions：.codemode.json 的 MCPServer 新增 instructions 属性，优先级高于 MCP Server 自带配置</li>
+<li>renderToolResultMessage 展示结果增加单行裁剪：超过 200 字符的行截断并追加 … 标记</li>
+<li>output schemas 存储按 provider 的 codemode 配置位置拆分：用户级存 ~/.hcode/codemode-output-schemas.json，项目级存 {项目目录}/.hcode/codemode-output-schemas.json，读取时两级合并，项目级覆盖用户级</li>
+<li>启动加载 MCP 工具时显示 loading 提示</li>
+</ul>
+</li>
+<li>修复 BashTool/PowerShellTool 执行中 progress 全量输出导致的闪烁与黑屏空白问题，显示侧截断为最后 5 行</li>
+<li>PowerShellTool 终端结果展示改为复用 BashTool 的 BashToolResultMessage，与 BashTool 显示样式保持一致</li>
+</ul>
+</li>
+<li><p>v2.4.40 ~ v2.4.42 (2026-09-22)</p>
+<ul>
+<li>精简产品功能<ul>
+<li>移除 release-notes、login(OAuth)、Sentry 功能</li>
+<li>Spinner 动画改为盲文点阵单向循环旋转，删除无引用的死代码文件</li>
+</ul>
+</li>
+<li>修复记忆文件在记忆功能关闭情况下仍显示的问题</li>
+</ul>
+</li>
+<li><p>v2.4.33 ~ v2.4.39 (2026-09-18)</p>
+<ul>
+<li>简化 TodoWriteTool prompt：删除全部 Examples 段落，保留 When/When Not/Task States 核心说明</li>
+</ul>
+</li>
+<li><p>v2.4.30 ~ v2.4.32 (2026-09-08 ~ 2026-09-17)</p>
+<ul>
+<li>ProxyTool 加载机制升级<ul>
+<li>action 由 describe 改为 load，load 成为默认动作，强化先加载后调用的引导</li>
+<li>提示词中的标签由 <available_tools> 统一改为 <loadable_tools>，与工具列表结构命名保持一致</loadable_tools></available_tools></li>
+<li>load 动作在 CLI 与 Web 端显示为 LoadTool(目标工具名)，与 call 动作区分</li>
+<li>load 结果中类型签名去掉 typescript 围栏，直接输出纯文本，与 CodeMode describe 输出保持一致</li>
+<li>system prompt 开启 ProxyTool 时注入加载提示：call 前须先 load 获取工具签名</li>
+</ul>
+</li>
+<li>rules 兼容 ProxyTool 代理模式<ul>
+<li>path rules 解包真实工具名与入参后再匹配，load 动作不参与匹配</li>
+<li>规则展开标签由 <system-reminder> 改为 <system-rules>，合并时插入到末尾 reminder 块之前</system-rules></system-reminder></li>
+<li>修复动态 rules 缓存命中问题</li>
+<li>log.ts 的 isMessageRecord 识别 path_rules 类型，resume 后可回补 matchedPathRules</li>
+</ul>
+</li>
+<li>优化懒加载提示优先级</li>
+</ul>
+</li>
 <li><p>v2.4.26 ~ v2.4.29 (2026-09-07)</p>
 <ul>
 <li>Code Mode snippet 功能<ul>
@@ -1067,7 +1137,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-09-08T14:19:43.749Z" itemprop="dateModified">上次更新：2026-09-08</time>
+                <time class="article-footer-updated" datetime="2026-09-27T11:18:23.413Z" itemprop="dateModified">上次更新：2026-09-27</time>
                 
               </footer>
               
