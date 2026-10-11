@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.51 (2026-09-25)  支持内置默认 Skill 新增仓库根 skills&#x2F; 目录，构建时复制到 dist&#x2F;skills 随包发布 SkillService 增加 builtin 扫描路径（最低优先级，user&#x2F;proj">
+  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.6.12 ~ v2.6.13 (2026-10-11)  移除 ps-tree 依赖，新增自研 processTree 工具统一进程树终止与进程存活检查 update&#x2F;config&#x2F;mcp&#x2F;plugin&#x2F;approved-t">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://www.hawacode.com/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.4.51 (2026-09-25)  支持内置默认 Skill 新增仓库根 skills&#x2F; 目录，构建时复制到 dist&#x2F;skills 随包发布 SkillService 增加 builtin 扫描路径（最低优先级，user&#x2F;proj">
+<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.6.12 ~ v2.6.13 (2026-10-11)  移除 ps-tree 依赖，新增自研 processTree 工具统一进程树终止与进程存活检查 update&#x2F;config&#x2F;mcp&#x2F;plugin&#x2F;approved-t">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-09-27T11:18:23.413Z">
-<meta property="article:modified_time" content="2026-09-27T11:18:23.413Z">
+<meta property="article:published_time" content="2026-10-11T16:13:32.326Z">
+<meta property="article:modified_time" content="2026-10-11T16:13:32.326Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,85 @@ var _hmt = _hmt || [];
 <p><strong>一个</strong>   是留给自己的底线</p>
 <h1 id="版本" class="article-heading"><a href="#版本" class="headerlink" title="版本"></a>版本<a class="article-anchor" href="#版本" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.6.12 ~ v2.6.13 (2026-10-11)</p>
+<ul>
+<li>移除 ps-tree 依赖，新增自研 processTree 工具统一进程树终止与进程存活检查</li>
+<li>update/config/mcp/plugin/approved-tools/doctor 子命令及 –version/–help 跳过 MCP 工具提前加载</li>
+<li>调整工具注册顺序，ProxyTool 相关工具优先注册</li>
+<li>精简 tsconfig paths 通配符兜底规则，裸路径导入改为相对路径导入</li>
+<li>修复 react/jsx-runtime 映射指向 .d.ts 导致 tsx 运行时 jsx 导出缺失的问题</li>
+<li>去掉 Agent tool 示例 Prompt</li>
+</ul>
+</li>
+<li><p>v2.6.10 ~ v2.6.11 (2026-10-09)</p>
+<ul>
+<li>优化启动时间</li>
+<li>Codemode 去掉未连接成功的 provider</li>
+<li>codemode meta 函数统一改为对象入参</li>
+<li>修复 PromptInput 输入大文本问题</li>
+<li>修复 prompt 中 describe 参数</li>
+</ul>
+</li>
+<li><p>v2.6.2 ~ v2.6.9 (2026-10-06 ~ 2026-10-08)</p>
+<ul>
+<li>启动优化<ul>
+<li>启动 loading 提示提前到 parseArgs 的 getCommands() 之前，覆盖正常启动与 –resume 路径，避免启动后长时间无反馈</li>
+<li>MCP HTTP/sse/streamable-http 分支补充连接超时保护，配置 timeout 对 HTTP 服务器同样生效</li>
+</ul>
+</li>
+<li>codemode 增强<ul>
+<li>工具名统一 sanitize：带前缀工具名转为合法标识符，沙箱与 prompt 仅暴露 sanitize 后的名称，调用 MCP server 时使用原始名</li>
+<li>describe 统一 snippet 描述语法为 snippet.<name>，打通 search → describe 链路</name></li>
+<li>getCodemodeTools 增加 memoize 缓存，避免每次执行重复 listTools</li>
+<li>优化中文检索</li>
+<li>修复 codemode.search meta 函数 outputSchema 与实现不一致的问题</li>
+<li>systemReminder 新增 CodeMode 快照保存提醒</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>v2.6.0 ~ v2.6.1 (2026-10-03)</p>
+<ul>
+<li>默认配置调整<ul>
+<li>工具暴露模式 lazyTool 默认改为 proxy</li>
+<li>实时记忆提取 autoMemory.enabled 与记忆整合 autoDream.enabled 默认改为 false</li>
+</ul>
+</li>
+<li>移除 ThinkTool 工具（含 web 端渲染组件及相关引用）</li>
+<li>修复模型配置 bug，支持源名称重命名</li>
+<li>ProxyToolCall 禁止自调用，报错文案统一为 toolName cannot be ProxyToolCall</li>
+<li>codemode MCP 描述按字数截取（英文按单词、中文按字），超出部分追加省略号</li>
+<li>proxytoolload 改为单个加载</li>
+<li>codemode 统一改为驼峰模式</li>
+<li>修复一批编译错误</li>
+</ul>
+</li>
+<li><p>v2.5.1 ~ v2.5.2 (2026-09-29 ~ 2026-09-30)</p>
+<ul>
+<li>优化 ProxyTool 提示信息，强调必须先 load 工具再调用</li>
+<li>proxy-tools 支持最大工具数量，provider 与 methods 排版优化</li>
+<li>codemode 每个 provider 展示的 methods 最大数量支持通过 /config 配置（codemodeMethodsMax，1-100，默认 20）</li>
+<li>markdown 表格优化：数据行之间增加分隔横线，表头绿色高亮</li>
+<li>简化 codemode 使用说明</li>
+<li>去掉 bun 不必要依赖</li>
+</ul>
+</li>
+<li><p>v2.5.0 (2026-09-28)</p>
+<ul>
+<li>ProxyTool 拆分为 ProxyToolLoad 与 ProxyToolCall 两个工具</li>
+<li>优化 useWindowSize 非 TTY fallback 尺寸缓存，避免无效 resize 事件导致重复渲染</li>
+<li>移除 PowerShellTool prompt 中重复的 git 命令说明</li>
+<li>修复一批编译错误（agent.ts、apiTransformer.ts、NormalizedMessage、react key 等）</li>
+</ul>
+</li>
+<li><p>v2.4.52 ~ v2.4.55 (2026-09-26 ~ 2026-09-27)</p>
+<ul>
+<li>优化 ProxyTool prompt 与 JSON schema 描述，明确 load 和 call 的使用规则和参数要求</li>
+<li>prompt 示例增加错误调用方式说明（arguments 内重复 control 参数、参数平铺调用）</li>
+<li>优化 codemode describe 输出 schema 提示，强调必须在首次真实调用后再推断输出结构并持久化</li>
+<li>优化 PowerShell tool use 显示</li>
+</ul>
+</li>
 <li><p>v2.4.51 (2026-09-25)</p>
 <ul>
 <li>支持内置默认 Skill<ul>
@@ -1137,7 +1216,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-09-27T11:18:23.413Z" itemprop="dateModified">上次更新：2026-09-27</time>
+                <time class="article-footer-updated" datetime="2026-10-11T16:13:32.326Z" itemprop="dateModified">上次更新：2026-10-12</time>
                 
               </footer>
               
