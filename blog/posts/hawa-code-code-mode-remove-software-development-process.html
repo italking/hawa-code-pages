@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Hawa Code Code Mode 如何去掉软件的开发环节？ | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/blog/posts/hawa-code-code-mode-remove-software-development-process">
+  <!-- Alternate links -->
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="AI Coding 发展非常迅速，颠覆了很多开发理念，但是软件依然是需要开发出来然后才可以使用，vibe coding 可以让不懂 IT 技术的人开发软件，但是依然需要先去开发一款软件，然后来使用它。  Hawa Code 理念是用户不需要去特意开发一款软件，只需要和 Hawa Code 对话解决自己的问题，Hawa Code 会渐进式生成一款软件来解决用户问题，从而模型推理环节会被逐渐被取代掉。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hawa Code Code Mode 如何去掉软件的开发环节？">
+<meta property="og:url" content="https://www.hawacode.com/blog/posts/hawa-code-code-mode-remove-software-development-process">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="AI Coding 发展非常迅速，颠覆了很多开发理念，但是软件依然是需要开发出来然后才可以使用，vibe coding 可以让不懂 IT 技术的人开发软件，但是依然需要先去开发一款软件，然后来使用它。  Hawa Code 理念是用户不需要去特意开发一款软件，只需要和 Hawa Code 对话解决自己的问题，Hawa Code 会渐进式生成一款软件来解决用户问题，从而模型推理环节会被逐渐被取代掉。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-10-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-11T09:02:13.811Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hawa Code</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/blog/" class="main-nav-link">博客</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="blog/posts/hawa-code-code-mode-remove-software-development-process.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Hawa Code Code Mode 如何去掉软件的开发环节？</h1>
+                <div class="blog-post-meta">
+                  <time class="blog-post-date" datetime="2026-10-10T16:00:00.000Z">2026-10-11</time>
+                  
+                    <span class="blog-post-author">hawa code</span>
+                  
+                </div>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p>AI Coding 发展非常迅速，颠覆了很多开发理念，但是软件依然是需要开发出来然后才可以使用，vibe coding 可以让不懂 IT 技术的人开发软件，但是依然需要先去开发一款软件，然后来使用它。 </p>
+<p>Hawa Code 理念是用户不需要去特意开发一款软件，只需要和 Hawa Code 对话解决自己的问题，Hawa Code 会渐进式生成一款软件来解决用户问题，从而模型推理环节会被逐渐被取代掉。</p>
+<h1 id="简单示例" class="article-heading"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例<a class="article-anchor" href="#简单示例" aria-hidden="true"></a></h1><p>我们通过一个简单的例子来看看它的基础原理</p>
+<h2 id="首次执行" class="article-heading"><a href="#首次执行" class="headerlink" title="首次执行"></a>首次执行<a class="article-anchor" href="#首次执行" aria-hidden="true"></a></h2><p>给 Hawa code  下发一下的指令：</p>
+<blockquote>
+<p>查询我 github 账号上所有 Java 项目提交总次数，不包括 fork 项目，提交人只统计我自己，不统计其他人</p>
+</blockquote>
+<p>Hawa Code Code Mode 主要执行逻辑如下：</p>
+<ul>
+<li>查询需要的 API</li>
+<li>获取 API 详细信息</li>
+<li>进行业务查询，返回结果</li>
+<li>同时保存这个通用场景的业务代码</li>
+</ul>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                                                          …</span><br><span class="line">        <span class="keyword">const</span> res = <span class="keyword">await</span> codemode.<span class="title function_">search</span>(<span class="string">"list user repositories"</span>);</span><br><span class="line">        <span class="keyword">const</span> res2 = <span class="keyword">await</span> codemode.<span class="title function_">search</span>(<span class="string">"list commits"</span>);</span><br><span class="line">        <span class="keyword">const</span> res3 = <span class="keyword">await</span> codemode.<span class="title function_">search</span>(<span class="string">"search commits by author"</span>);</span><br><span class="line">        <span class="keyword">return</span> { <span class="attr">listRepos</span>: res.<span class="property">results</span>, <span class="attr">commits</span>: res2.<span class="property">results</span>, <span class="attr">searchCommits</span>: res3.<span class="property">results</span> };</span><br><span class="line">      })</span><br><span class="line">  ⎿  {</span><br><span class="line">       <span class="string">"listRepos"</span>: [</span><br><span class="line">         {</span><br><span class="line">     ...</span><br><span class="line">         }</span><br><span class="line">       ]</span><br><span class="line">     }</span><br><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                                                             …</span><br><span class="line">        <span class="keyword">const</span> [me, commits, searchCommits] = <span class="keyword">await</span> <span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">          codemode.<span class="title function_">describe</span>(<span class="string">"github.get_me"</span>),</span><br><span class="line">          codemode.<span class="title function_">describe</span>(<span class="string">"github.list_commits"</span>),</span><br><span class="line">          codemode.<span class="title function_">describe</span>(<span class="string">"github.search_commits"</span>)</span><br><span class="line">        ]);</span><br><span class="line">        <span class="keyword">const</span> repoSearch = <span class="keyword">await</span> codemode.<span class="title function_">search</span>(<span class="string">"list repositories for a user or search repos"</span>);</span><br><span class="line">        <span class="keyword">return</span> { me, commits, searchCommits, <span class="attr">repoSearch</span>: repoSearch.<span class="property">results</span> };</span><br><span class="line">      })</span><br><span class="line">  ⎿  {</span><br><span class="line">       <span class="string">"me"</span>: {</span><br><span class="line">         <span class="string">"path"</span>: <span class="string">"github.get_me"</span>,</span><br><span class="line">     ...</span><br><span class="line">         }</span><br><span class="line">       ]</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                                              …</span><br><span class="line">        <span class="keyword">const</span> me = <span class="keyword">await</span> codemode.<span class="property">github</span>.<span class="title function_">get_me</span>({});</span><br><span class="line">        <span class="keyword">const</span> searchRepos = <span class="keyword">await</span> codemode.<span class="title function_">describe</span>(<span class="string">"github.search_repositories"</span>);</span><br><span class="line">        <span class="keyword">return</span> { me, searchRepos };</span><br><span class="line">      })</span><br><span class="line">  ⎿  {</span><br><span class="line">       <span class="string">"me"</span>: {</span><br><span class="line">         <span class="string">"login"</span>: <span class="string">"jiweigang1"</span>,</span><br><span class="line">     ...</span><br><span class="line">         <span class="string">"kind"</span>: <span class="string">"method"</span></span><br><span class="line">       }</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                           …</span><br><span class="line">        <span class="keyword">const</span> res = <span class="keyword">await</span> codemode.<span class="property">github</span>.<span class="title function_">search_repositories</span>({</span><br><span class="line">          <span class="attr">query</span>: <span class="string">"user:jiweigang1 language:Java fork:false"</span>,</span><br><span class="line">          <span class="attr">perPage</span>: <span class="number">100</span></span><br><span class="line">        });</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">      })</span><br><span class="line">  ⎿  {</span><br><span class="line">       <span class="string">"total_count"</span>: <span class="number">13</span>,</span><br><span class="line">       <span class="string">"incomplete_results"</span>: <span class="literal">false</span>,</span><br><span class="line">     ...</span><br><span class="line">         }</span><br><span class="line">       ]</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                                                                                                                 …</span><br><span class="line">        <span class="keyword">const</span> repos = [<span class="string">"AmzGo"</span>, <span class="string">"asm-learning"</span>, <span class="string">"ByteBuddy-learning"</span>, <span class="string">"superdisplay"</span>, <span class="string">"ChromeDriver"</span>, <span class="string">"MetaDesktop"</span>, <span class="string">"Dagger2-learning"</span>, <span class="string">"ad-agent"</span>,</span><br><span class="line">      <span class="string">"google-collections"</span>, <span class="string">"eshop"</span>, <span class="string">"GradleTest"</span>, <span class="string">"maven-jar-template"</span>, <span class="string">"Apm-Tester"</span>];</span><br><span class="line">        <span class="keyword">const</span> results = <span class="keyword">await</span> <span class="title class_">Promise</span>.<span class="title function_">all</span>(repos.<span class="title function_">map</span>(<span class="title function_">async</span> (name) =&gt; {</span><br><span class="line">          <span class="keyword">const</span> res = <span class="keyword">await</span> codemode.<span class="property">github</span>.<span class="title function_">search_commits</span>({</span><br><span class="line">            <span class="attr">query</span>: <span class="string">`repo:jiweigang1/<span class="subst">${name}</span> author:jiweigang1`</span>,</span><br><span class="line">            <span class="attr">perPage</span>: <span class="number">1</span></span><br><span class="line">          });</span><br><span class="line">          <span class="keyword">return</span> { <span class="attr">repo</span>: name, <span class="attr">total</span>: res.<span class="property">total_count</span>, <span class="attr">incomplete</span>: res.<span class="property">incomplete_results</span> };</span><br><span class="line">        }));</span><br><span class="line">        <span class="keyword">const</span> sum = results.<span class="title function_">reduce</span>(<span class="function">(<span class="params">acc, r</span>) =&gt;</span> acc + (r.<span class="property">total</span> || <span class="number">0</span>), <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> { results, sum };</span><br><span class="line">      })</span><br><span class="line">  ⎿  {</span><br><span class="line">       <span class="string">"results"</span>: [</span><br><span class="line">         {</span><br><span class="line">     ...</span><br><span class="line">       ],</span><br><span class="line">       <span class="string">"sum"</span>: <span class="number">459</span></span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                    …</span><br><span class="line">        <span class="keyword">const</span> res = <span class="keyword">await</span> codemode.<span class="property">github</span>.<span class="title function_">list_commits</span>({</span><br><span class="line">          <span class="attr">owner</span>: <span class="string">"jiweigang1"</span>,</span><br><span class="line">          <span class="attr">repo</span>: <span class="string">"google-collections"</span>,</span><br><span class="line">          <span class="attr">author</span>: <span class="string">"jiweigang1"</span>,</span><br><span class="line">          <span class="attr">perPage</span>: <span class="number">1</span>,</span><br><span class="line">          <span class="attr">fields</span>: [<span class="string">"sha"</span>]</span><br><span class="line">        });</span><br><span class="line">        <span class="keyword">return</span> { <span class="attr">firstPageCount</span>: res.<span class="property">length</span> };</span><br><span class="line">      })</span><br><span class="line">  ⎿  {</span><br><span class="line">       <span class="string">"firstPageCount"</span>: <span class="number">0</span></span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                                                                                                                      …</span><br><span class="line">        <span class="keyword">const</span> snippetCode = <span class="string">`async () =&gt; {</span></span><br><span class="line"><span class="string">        const me = await codemode.github.get_me({});</span></span><br><span class="line"><span class="string">        const login = me.login;</span></span><br><span class="line"><span class="string">        const reposRes = await codemode.github.search_repositories({</span></span><br><span class="line"><span class="string">          query: "user:" + login + " language:Java fork:false",</span></span><br><span class="line"><span class="string">          perPage: 100</span></span><br><span class="line"><span class="string">        });</span></span><br><span class="line"><span class="string">        const repos = reposRes.items || [];</span></span><br><span class="line"><span class="string">        const results = await Promise.all(repos.map(async (r) =&gt; {</span></span><br><span class="line"><span class="string">          const res = await codemode.github.search_commits({</span></span><br><span class="line"><span class="string">            query: "repo:" + r.full_name + " author:" + login,</span></span><br><span class="line"><span class="string">            perPage: 1</span></span><br><span class="line"><span class="string">          });</span></span><br><span class="line"><span class="string">          return { repo: r.full_name, total: res.total_count || 0 };</span></span><br><span class="line"><span class="string">        }));</span></span><br><span class="line"><span class="string">        const sum = results.reduce((acc, x) =&gt; acc + x.total, 0);</span></span><br><span class="line"><span class="string">        return { login, totalJavaCommits: sum, perRepo: results };</span></span><br><span class="line"><span class="string">      }`</span>;</span><br><span class="line">        <span class="keyword">const</span> saved = <span class="keyword">await</span> codemode.<span class="title function_">saveSnippet</span>(</span><br><span class="line">          <span class="string">"github-user-language-commit-stats"</span>,</span><br><span class="line">          snippetCode,</span><br><span class="line">          <span class="string">"Count total commits authored by the authenticated GitHub user across their own (non-fork) repositories of a given language. Steps: resolve the</span></span><br><span class="line"><span class="string">      current user via get_me, find repos via search_repositories with user:&lt;login&gt; language:&lt;lang&gt; fork:false, then use search_commits per repo with</span></span><br><span class="line"><span class="string">      author:&lt;login&gt; to get total_count, and sum them up. Note: search_commits only searches the default branch."</span>,</span><br><span class="line">          {},</span><br><span class="line">          {</span><br><span class="line">            <span class="attr">type</span>: <span class="string">"object"</span>,</span><br><span class="line">            <span class="attr">properties</span>: {</span><br><span class="line">              <span class="attr">login</span>: { <span class="attr">type</span>: <span class="string">"string"</span> },</span><br><span class="line">              <span class="attr">totalJavaCommits</span>: { <span class="attr">type</span>: <span class="string">"number"</span> },</span><br><span class="line">              <span class="attr">perRepo</span>: { <span class="attr">type</span>: <span class="string">"array"</span>, <span class="attr">items</span>: { <span class="attr">type</span>: <span class="string">"object"</span>, <span class="attr">properties</span>: { <span class="attr">repo</span>: { <span class="attr">type</span>: <span class="string">"string"</span> }, <span class="attr">total</span>: { <span class="attr">type</span>: <span class="string">"number"</span> } } } }</span><br><span class="line">            }</span><br><span class="line">          }</span><br><span class="line">        );</span><br><span class="line">        <span class="keyword">return</span> saved;</span><br><span class="line">      })</span><br><span class="line">  ⎿  {</span><br><span class="line">       <span class="string">"saved"</span>: <span class="literal">true</span>,</span><br><span class="line">       <span class="string">"name"</span>: <span class="string">"github-user-language-commit-stats"</span></span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">● 查询已完成，结果如下：</span><br><span class="line"></span><br><span class="line">  统计结果（<span class="title class_">GitHub</span> 账号：jiweigang1）</span><br><span class="line"></span><br><span class="line">  共找到 <span class="number">13</span> 个 <span class="title class_">Java</span> 仓库（已排除 fork 项目），您本人作为提交人的提交总次数为：<span class="number">459</span> 次</span><br><span class="line"></span><br><span class="line">  ┌────────────────────┬──────────┐</span><br><span class="line">  │ 仓库               │ 提交次数 │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">AmzGo</span>              │ <span class="number">356</span>      │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ ad-agent           │ <span class="number">38</span>       │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">MetaDesktop</span>        │ <span class="number">14</span>       │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ maven-jar-template │ <span class="number">14</span>       │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">Apm</span>-<span class="title class_">Tester</span>         │ <span class="number">14</span>       │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ asm-learning       │ <span class="number">8</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">ByteBuddy</span>-learning │ <span class="number">6</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">Dagger2</span>-learning   │ <span class="number">3</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ superdisplay       │ <span class="number">2</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ eshop              │ <span class="number">2</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">ChromeDriver</span>       │ <span class="number">1</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">GradleTest</span>         │ <span class="number">1</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ google-collections │ <span class="number">0</span>        │</span><br><span class="line">  └────────────────────┴──────────┘</span><br><span class="line"></span><br><span class="line">  说明：</span><br><span class="line">  - google-collections 为从 <span class="title class_">Google</span> <span class="title class_">Code</span> 自动导入的仓库，其历史提交未关联您的 <span class="title class_">GitHub</span> 账号（通过 <span class="attr">author</span>: 过滤和提交列表双重验证，确认均为 <span class="number">0</span>）。</span><br><span class="line">  - 统计基于每个仓库的默认分支。如果某些仓库有其他分支上的提交，未计入。</span><br><span class="line">  - 该查询逻辑已保存为可复用的 codemode 快照 github-user-language-commit-stats，之后可换语言参数（如 <span class="title class_">Python</span>、<span class="title class_">Go</span>）直接复用。</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="再次执行" class="article-heading"><a href="#再次执行" class="headerlink" title="再次执行"></a>再次执行<a class="article-anchor" href="#再次执行" aria-hidden="true"></a></h2><p>如果 Hawa Code 收到类似场景的指令，其会执行如下逻辑：</p>
+<ul>
+<li>查询 API </li>
+<li>搜索到了可以解决当前指令问题的代码，执行这个代码并返回执行结果，不再进行推理。</li>
+</ul>
+<figure class="highlight typescript"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                                                   …</span><br><span class="line">        <span class="keyword">const</span> res = <span class="keyword">await</span> codemode.<span class="title function_">search</span>(<span class="string">"list user repositories owned"</span>);</span><br><span class="line">        <span class="keyword">const</span> res2 = <span class="keyword">await</span> codemode.<span class="title function_">search</span>(<span class="string">"list commits in repository"</span>);</span><br><span class="line">        <span class="keyword">return</span> { <span class="attr">repos</span>: res.<span class="property">results</span>.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="number">10</span>), <span class="attr">commits</span>: res2.<span class="property">results</span>.<span class="title function_">slice</span>(<span class="number">0</span>, <span class="number">10</span>) };</span><br><span class="line">      })</span><br><span class="line">  ⎿  {</span><br><span class="line">       <span class="string">"repos"</span>: [</span><br><span class="line">         {</span><br><span class="line">     ...</span><br><span class="line">         }</span><br><span class="line">       ]</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                                                      …</span><br><span class="line">        <span class="keyword">const</span> desc = <span class="keyword">await</span> codemode.<span class="title function_">describe</span>(<span class="string">"snippet.github-user-language-commit-stats"</span>);</span><br><span class="line">        <span class="keyword">return</span> desc;</span><br><span class="line">      })</span><br><span class="line">  ⎿ {</span><br><span class="line">      <span class="string">"path"</span>: <span class="string">"snippet.github-user-language-commit-stats"</span>,</span><br><span class="line">      <span class="string">"description"</span>: <span class="string">"Count total commits authored by the authenticated GitHub user across their own (non-fork) repositories of a</span></span><br><span class="line"><span class="string">    given language. Steps: resolve the current user via get_me, find repos via...</span></span><br><span class="line"><span class="string">      "</span>types<span class="string">": "</span><span class="keyword">declare</span> <span class="keyword">const</span> <span class="attr">codemode</span>: {\n  <span class="attr">snippet</span>: {\n    github-user-language-commit-<span class="title function_">stats</span>(<span class="attr">input</span>: <span class="built_in">unknown</span>): <span class="title class_">Promise</span>&lt;{\n</span><br><span class="line">    <span class="attr">login</span>?: <span class="built_in">string</span>;\n      <span class="attr">totalJavaCommits</span>?: <span class="built_in">number</span>;\n      <span class="attr">perRepo</span>?: <span class="title class_">Array</span>&lt;{\...</span><br><span class="line">      <span class="string">"kind"</span>: <span class="string">"snippet"</span></span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">● <span class="title class_">Code</span>(<span class="title function_">async</span> () =&gt; {                                                                                     …</span><br><span class="line">        <span class="keyword">const</span> result = <span class="keyword">await</span> codemode.<span class="property">snippet</span>[<span class="string">"github-user-language-commit-stats"</span>]({ <span class="attr">language</span>: <span class="string">"Java"</span> });</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">      })</span><br><span class="line">  ⎿  {</span><br><span class="line">       <span class="string">"login"</span>: <span class="string">"jiweigang1"</span>,</span><br><span class="line">       <span class="string">"totalJavaCommits"</span>: <span class="number">459</span>,</span><br><span class="line">     ...</span><br><span class="line">         }</span><br><span class="line">       ]</span><br><span class="line">     }</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">● 查询完成。以下是你在 <span class="title class_">GitHub</span> 账号 jiweigang1 下所有非 fork 的 <span class="title class_">Java</span> 项目中、由你自己提交的提交总数统计：</span><br><span class="line"></span><br><span class="line">  总计：<span class="number">459</span> 次提交</span><br><span class="line"></span><br><span class="line">  ┌────────────────────┬──────────┐</span><br><span class="line">  │ 仓库               │ 提交次数 │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">AmzGo</span>              │ <span class="number">356</span>      │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ ad-agent           │ <span class="number">38</span>       │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">MetaDesktop</span>        │ <span class="number">14</span>       │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ maven-jar-template │ <span class="number">14</span>       │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">Apm</span>-<span class="title class_">Tester</span>         │ <span class="number">14</span>       │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ asm-learning       │ <span class="number">8</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">ByteBuddy</span>-learning │ <span class="number">6</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">Dagger2</span>-learning   │ <span class="number">3</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ superdisplay       │ <span class="number">2</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ eshop              │ <span class="number">2</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">ChromeDriver</span>       │ <span class="number">1</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ <span class="title class_">GradleTest</span>         │ <span class="number">1</span>        │</span><br><span class="line">  ├────────────────────┼──────────┤</span><br><span class="line">  │ google-collections │ <span class="number">0</span>        │</span><br><span class="line">  └────────────────────┴──────────┘</span><br><span class="line"></span><br><span class="line">  统计口径说明：</span><br><span class="line">  - 已排除所有 fork 项目（<span class="attr">fork</span>:<span class="literal">false</span>）</span><br><span class="line">  - 只统计提交作者为 jiweigang1 的提交（<span class="attr">author</span>:jiweigang1），不包含其他人的提交</span><br><span class="line">  - 注意：search_commits 仅搜索各仓库的默认分支，其他分支的提交不计入</span><br><span class="line"></span><br><span class="line">  按项目约定，测试/结果文件保存在 test 目录下，无需删除。</span><br></pre></td></tr></tbody></table></figure>
+
+<h1 id="基础原理" class="article-heading"><a href="#基础原理" class="headerlink" title="基础原理"></a>基础原理<a class="article-anchor" href="#基础原理" aria-hidden="true"></a></h1><p>Hawa Code 在处理用户问题过程中，会把用户的问题抽象为通用场景，生成代码并保存下来，再遇到类似问题直接执行代码而不再依靠推理来解决问题。 code mode 底层是一些基础 API、可以人为扩展，这些 API 就像移动 APP 开发的 SDK ，生成的代码就是在 SDK 封装了一层新的 API，这些代码 API 依然可以被其它代码调用。最终可以支撑复杂的应用。</p>
+<p>上述示例只是一个简单示例，后续我会单独写一个查询火车票文章，用户只需要通过  Hawa Code  使用各种方式查询火车票，比如下周六从北京去杭州，中间要经过溧阳站，时间最短的车次。在用户多次查询过程中 Hawa Code 慢慢就生成了一个火车票查询应用。</p>
+<h1 id="推理成本-VS-确定性" class="article-heading"><a href="#推理成本-VS-确定性" class="headerlink" title="推理成本 VS 确定性"></a>推理成本 VS 确定性<a class="article-anchor" href="#推理成本-VS-确定性" aria-hidden="true"></a></h1><p>当前模型推理成本还是非常高的，而执行代码就会廉价很多，同时推理速度是非常慢的，而执行代码速度快很多，推理和代码混合执行，可以使 Agent 付出极少的的成本就可以支持复杂并且流量大的业务。</p>
+<p>模型推理是“概率”，在很多场景下对于不确定性容忍性是非常低的，比如交易、转账、支付，不可能存在任何误差， 代码化可以把不确定变的确定。</p>
+<h1 id="定制化" class="article-heading"><a href="#定制化" class="headerlink" title="定制化"></a>定制化<a class="article-anchor" href="#定制化" aria-hidden="true"></a></h1><p>传统 IT 软件更多的是通用，可复制，但是在 AI 时代， Agent 助手是定制化，每个人都会有一个匹配自己性格、工作行为的智能助手，但是“定制”这个环节是不需要的，Agent 助手会根据用户的行为成长为需要的样子。</p>
+<h1 id="Hawa-Code-要做到什么？" class="article-heading"><a href="#Hawa-Code-要做到什么？" class="headerlink" title="Hawa Code 要做到什么？"></a>Hawa Code 要做到什么？<a class="article-anchor" href="#Hawa-Code-要做到什么？" aria-hidden="true"></a></h1><h2 id="质量可靠" class="article-heading"><a href="#质量可靠" class="headerlink" title="质量可靠"></a>质量可靠<a class="article-anchor" href="#质量可靠" aria-hidden="true"></a></h2><p>自动沉淀的代码必须是可靠的，Hawa Code 不会直接保存新生成的代码，而是只会保存已经解决了真实用户问题代码。这些代码再保存前已经是经过测试验证，同时当业务发生变化，Hawa Code 同样会去订正这些代码。</p>
+<h2 id="丰富的-BaaS-服务" class="article-heading"><a href="#丰富的-BaaS-服务" class="headerlink" title="丰富的 BaaS 服务"></a>丰富的 BaaS 服务<a class="article-anchor" href="#丰富的-BaaS-服务" aria-hidden="true"></a></h2><p>当前 Hawa Code ode mode 支持 MCP 服务扩展，通过 MCP 转换为 API 方式进行代码开发，后续将会支持本地脚本、数据库、存储等本地服务。也会默认集成 Supabase 、Appwrite 等相关三方服务。</p>
+<h2 id="模型路由" class="article-heading"><a href="#模型路由" class="headerlink" title="模型路由"></a>模型路由<a class="article-anchor" href="#模型路由" aria-hidden="true"></a></h2><p>Hawa Code 收到用户指令会通过一个极小的模型进行业务识别，如果指令问题可以通过 code mode 执行代码解决，就不再执行推理，如果没有相关的代码才会路由到大的模型上进行推理。这些极小的模型也可能是直接部署在用户的电脑上而不是部署在云端。</p>
+<h2 id="UI-交互" class="article-heading"><a href="#UI-交互" class="headerlink" title="UI 交互"></a>UI 交互<a class="article-anchor" href="#UI-交互" aria-hidden="true"></a></h2><p>当前 Agent 模型交互相应内容格式主要是 markdown 格式，对于一些复杂信息展示效果比较弱，比如查询一些商品信息，应该像浏览器一样给出一个优美的产品图片列表页面，当前 Hawa Code 支持在浏览器端使用，code mode 后续会支持返回 HTML 富文本格式，可以支持更好的交互体验。</p>
+<hr>
+<p>欢迎了解使用 <a href="https://www.hawacode.com/docs/">Hawa Code</a> <a href="https://www.hawacode.com/docs/">https://www.hawacode.com/docs/</a></p>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <a href="/blog/" class="blog-back-link">&larr; 返回博客列表</a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">简单示例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E6%89%A7%E8%A1%8C"><span class="toc-text">首次执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%8D%E6%AC%A1%E6%89%A7%E8%A1%8C"><span class="toc-text">再次执行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%8E%9F%E7%90%86"><span class="toc-text">基础原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A8%E7%90%86%E6%88%90%E6%9C%AC-VS-%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="toc-text">推理成本 VS 确定性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9A%E5%88%B6%E5%8C%96"><span class="toc-text">定制化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Hawa-Code-%E8%A6%81%E5%81%9A%E5%88%B0%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">Hawa Code 要做到什么？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A8%E9%87%8F%E5%8F%AF%E9%9D%A0"><span class="toc-text">质量可靠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%B0%E5%AF%8C%E7%9A%84-BaaS-%E6%9C%8D%E5%8A%A1"><span class="toc-text">丰富的 BaaS 服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%B7%AF%E7%94%B1"><span class="toc-text">模型路由</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI-%E4%BA%A4%E4%BA%92"><span class="toc-text">UI 交互</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/blog/" class="mobile-nav-link">博客</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="blog/posts/hawa-code-code-mode-remove-software-development-process.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:zh-cn']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
