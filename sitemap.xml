@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.hawacode.com/en/docs/amessage</loc>
+    
+    <lastmod>2026-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/amessage</loc>
+    
+    <lastmod>2026-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.hawacode.com/en/docs/context-offloading</loc>
     
     <lastmod>2026-10-31</lastmod>
@@ -1120,7 +1138,7 @@
 
   <url>
     <loc>https://www.hawacode.com/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
