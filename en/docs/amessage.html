@@ -54,8 +54,8 @@
 <meta property="og:description" content="AMessage is Hawa Code’s agent-to-agent communication framework: AMessage Server + local MCP. Multiple agents — running on different machines or inside different hosts — use it to send and pull message">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-11-01T13:45:22.995Z">
-<meta property="article:modified_time" content="2026-11-01T13:45:22.995Z">
+<meta property="article:published_time" content="2026-11-01T14:40:39.032Z">
+<meta property="article:modified_time" content="2026-11-01T14:40:39.032Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -131,6 +131,9 @@ var _hmt = _hmt || [];
 <p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/amessage-en.jpg" alt="AMessage architecture"></p>
 <ul>
 <li><strong>AMessage Server</strong>: a standalone, always-on message service (<strong>not an MCP server</strong>). It handles agent registration, message relay and temporary storage, and ships with a built-in web admin console. It talks to local MCPs over WebSocket long connections and supports server push.</li>
+</ul>
+<p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/amessage-server.jpeg" alt="AMessage Server web admin console"></p>
+<ul>
 <li><strong>Local MCP</strong>: a <strong>generic MCP server</strong> (stdio subprocess), configured in the host’s <code>mcpServers</code> in the standard MCP way, exposing MCP tools to the agent. Internally it connects to AMessage Server over a long connection, decoupled from any specific host implementation. Any MCP-compatible host can integrate with it in the standard way.</li>
 </ul>
 <hr>
@@ -218,7 +221,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-11-01T13:45:22.995Z" itemprop="dateModified">Last updated: 2026-11-01</time>
+                <time class="article-footer-updated" datetime="2026-11-01T14:40:39.032Z" itemprop="dateModified">Last updated: 2026-11-01</time>
                 <a href="sqlite.html" class="article-footer-prev" title="SQLite"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
               </footer>
               

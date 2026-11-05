@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.6.12 ~ v2.6.13 (2026-10-11)  移除 ps-tree 依赖，新增自研 processTree 工具统一进程树终止与进程存活检查 update&#x2F;config&#x2F;mcp&#x2F;plugin&#x2F;approved-t">
+  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.0 ~ v2.8.2 (2026-11-03 ~ 2026-11-05)  新增 agentMessageService 统一消息投递体系：统一 ‘main’&#x2F;‘agent:{agentId}’ 寻址，支持 Force&#x2F;Try&#x2F;S">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://www.hawacode.com/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.6.12 ~ v2.6.13 (2026-10-11)  移除 ps-tree 依赖，新增自研 processTree 工具统一进程树终止与进程存活检查 update&#x2F;config&#x2F;mcp&#x2F;plugin&#x2F;approved-t">
+<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.0 ~ v2.8.2 (2026-11-03 ~ 2026-11-05)  新增 agentMessageService 统一消息投递体系：统一 ‘main’&#x2F;‘agent:{agentId}’ 寻址，支持 Force&#x2F;Try&#x2F;S">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-10-11T16:13:32.326Z">
-<meta property="article:modified_time" content="2026-10-11T16:13:32.326Z">
+<meta property="article:published_time" content="2026-11-05T13:47:02.977Z">
+<meta property="article:modified_time" content="2026-11-05T13:47:02.977Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,87 @@ var _hmt = _hmt || [];
 <p><strong>一个</strong>   是留给自己的底线</p>
 <h1 id="版本" class="article-heading"><a href="#版本" class="headerlink" title="版本"></a>版本<a class="article-anchor" href="#版本" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.8.0 ~ v2.8.2 (2026-11-03 ~ 2026-11-05)</p>
+<ul>
+<li>新增 agentMessageService 统一消息投递体系：统一 ‘main’/‘agent:{agentId}’ 寻址，支持 Force/Try/Serial 三模式投递与 waitMessages/peekMessages，修复 loop 定时任务 busy 静默丢弃</li>
+<li>移除废弃的 TaskTool 与 TaskTeamTool，统一由 AgentTool 承载子代理任务调度，支持按 agentConfig.tools 过滤工具列表</li>
+<li>Web 端增强<ul>
+<li>subagent 支持 prompt 输入，修复信箱注入消息（含 main busy 排队消息）模型收到但页面不显示的问题</li>
+<li>输入框上方新增待发送列表（pending_prompts）与 Task/TodoWrite 任务列表（tasks_snapshot）展示，对齐 CLI 排序与样式</li>
+</ul>
+</li>
+<li>新增 channel 通知处理体系：接收 MCP server→client 通知，按日期分文件记录日志并经 eventBus 广播分派（主体系与 codemode 体系共用同一路由）</li>
+<li>修复 MCP 缓存失效/重连导致的 stdio 子进程泄漏</li>
+<li>修复 PersistentShell 外部 abortSignal 被内部 signal 静默覆盖的问题，超时分支保证 interrupted 正确上报且进程树已清理</li>
+<li>MCP 主链路接入 ${} 动态变量插值（${env.NAME}、${home}、${cwd}、${projectName} 等），与 .codemode.json 同一套语法，插值只发生在内存不回写配置</li>
+</ul>
+</li>
+<li><p>v2.7.19 ~ v2.7.20 (2026-11-01 ~ 2026-11-02)</p>
+<ul>
+<li>修复并发工具确认时第二个工具卡死的问题：关闭路径增加 timer 守卫，忽略重复关闭，避免误清显示下一个确认的 timer</li>
+<li>Message Archiving 归档占位符改为方括号短标记格式（<code>&lt;system&gt;[archived xxx: id xxx]&lt;/system&gt;</code>），防止模型模仿写入文件</li>
+<li>全局 prompt 禁止规则显式覆盖归档占位符：与 markers 并列声明为 system-generated tokens，禁止范围扩展到 files you write</li>
+</ul>
+</li>
+<li><p>v2.7.14 ~ v2.7.18 (2026-10-28 ~ 2026-10-29)</p>
+<ul>
+<li>ProxyToolLoad 新增 XML 参数说明格式：proxyToolSchemaFormat 支持 json/ts/xml 三选一，xml 模式输出纯 XML 文档并对特殊字符转义</li>
+<li>ProxyToolLoad 重构 schema 格式构建：抽离 buildJsonMessage/buildXmlMessage/buildTsMessage 独立函数</li>
+<li>MessageArchivingTool prompt 精简与英文化</li>
+<li>简化 TodoWriteTool 的 prompt，去掉任务提醒和 Todo 提醒的强制执行，删除系统提示词中的 TodoWrite 强制使用提醒</li>
+</ul>
+</li>
+<li><p>v2.7.10 ~ v2.7.13 (2026-10-24 ~ 2026-10-27)</p>
+<ul>
+<li>ProxyToolLoad 支持按配置切换参数说明格式：settings 新增 proxyToolSchemaFormat（’ts’|’json’），Config 面板提供对应枚举设置项</li>
+<li>Config 面板支持 Tab 分组：新增 General/Context 双 Tab，左右方向键切换</li>
+<li>codemode 进程生命周期修复：ESC 取消经 mainLoop abortController 真正生效；超时/取消/异常收敛为统一 terminate(reason) 出口，杜绝忽略 SIGTERM 的子进程残留；describe 删除 endsWith 回退改为精确匹配，消除幻影方法名</li>
+<li>Message Archiving 增强<ul>
+<li>寻址标记加 <code>&lt;system&gt;</code> 标签包裹，防止模型将内部寻址 token 复读进面向用户的回复</li>
+<li>支持 thinking 块归档（<code>thinking</code> / <code>redacted_thinking</code>），标记注入紧随 assistant 的 user 消息末尾（tool_result 之后，满足 deepseek 兼容约束）</li>
+<li>标记插入位置前移至第一个 reminder 块之前，修复 reminder 被纳入缓存段的潜伏缺陷</li>
+<li>新增 <code>__tool_input__</code> 自动入参归档：词数 &gt; 100 的叶子字符串字段（支持嵌套对象与数组下标）自动归档，unarchive 全量还原</li>
+<li>归档结果渲染瘦身：按 tool result/input field/thinking block 类别统计数量，skipped 按 reason 归组合并</li>
+</ul>
+</li>
+<li>调整低上下文用量的提醒文案，统一向归档方向引导</li>
+<li>buildContextUsageMessage 冷却期统一只返回纯使用率短句，始终注入使用率信号但不诱导归档</li>
+</ul>
+</li>
+<li><p>v2.7.6 ~ v2.7.9 (2026-10-17 ~ 2026-10-22)</p>
+<ul>
+<li>WebFetch 新增 headless 浏览器渲染 JS 页面能力：playwright-core 可选依赖，SPA 空壳检测与 DOM 静默 + 在途请求双条件 settle 判定，/config 新增 headlessBrowser 开关</li>
+<li>Bing Headless Search Provider：无原生搜索能力的模型改用 <a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.bing.com/">www.bing.com</a> 搜索，三层降级链（headless 渲染 + 页面内 DOM 提取 → 静态解析 → 异常兜底）</li>
+<li>表格渲染升级<ul>
+<li>布局算法迁移为 hawa-table 组件，water-filling 列宽分配 + 按显示宽度折行，修复长内容表格超宽错位</li>
+<li>修复 emoji 显示宽度误判（杂项技术符号按宽度 2 计算），修复变体选择符与零宽连接符计入宽度导致的错位</li>
+<li>表头默认居中，新增 renderMarkdownTable 解析 markdown 管道表格</li>
+</ul>
+</li>
+<li>string-cli-width 新增 truncateByWidth 按终端显示宽度截断字符串（正确处理多字节字符与 emoji），待处理提示统一改用</li>
+<li>修复 npx tsx –test 跑完永久挂起：lspManager/fileFreshness 改懒加载，定时器 unref</li>
+<li>修复 autoCompact 开启 thinking 时摘要提取失败</li>
+<li>上下文使用率提醒新增高水位 0.85：超过后放弃动态使用率提醒，交给自动压缩兜底</li>
+<li>归档引导提醒新增步长限制：两次归档之间默认间隔 5 次请求（HAWA_CODE_ARCHIVE_STEP_INTERVAL 实时可调）</li>
+<li>上下文优化提醒拆分为静态指引与动态使用率两条（HAWA_CODE_CONTEXT_OPT_SPLIT 灰度控制）</li>
+<li>简化 codemode.session API：仅保留 get/set，value 传 null 作为删除哨兵</li>
+<li>修复 CLI 终端 thinking/文本消息长词强制切断换行问题</li>
+<li>将 LSP 使用提醒从 system reminder 下沉到工具描述与参数描述</li>
+<li>去重归档系统提醒文案：静态指引负责完整说明，动态使用率只保留信号与最小动作建议</li>
+</ul>
+</li>
+<li><p>v2.7.0 ~ v2.7.5 (2026-10-13 ~ 2026-10-16)</p>
+<ul>
+<li>codemode Session v1：新增 codemode.session 跨进程会话存储能力</li>
+<li>codemode 配置合并逻辑抽离为 mergeCodemodeConfigs，统一对全局与项目级 .codemode.json 合并结果做动态参数插值</li>
+<li>新增 showWindowTokens 设置：状态栏展示当前窗口 token 数量与上下文占比</li>
+<li>getGitPrompt 改为 HAWA_CODE_GIT_PROMPT 环境变量控制（默认关闭）</li>
+<li>ProxyTool 提示词优化：loadOne 返回增加 Required arguments 段，移除 Usage 示例段</li>
+<li>新增 screenService 统一清屏入口，收敛 REPL 全部清屏调用点，resize 后以安全模式重挂 Static 按新宽度重写历史</li>
+<li>修复工具确认弹窗竞态：避免已关闭的弹窗复活与僵尸弹窗</li>
+<li>修复 schemaToType 生成索引签名时使用 additionalProperties 的实际类型</li>
+</ul>
+</li>
 <li><p>v2.6.12 ~ v2.6.13 (2026-10-11)</p>
 <ul>
 <li>移除 ps-tree 依赖，新增自研 processTree 工具统一进程树终止与进程存活检查</li>
@@ -1216,7 +1297,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-10-11T16:13:32.326Z" itemprop="dateModified">上次更新：2026-10-12</time>
+                <time class="article-footer-updated" datetime="2026-11-05T13:47:02.977Z" itemprop="dateModified">上次更新：2026-11-05</time>
                 
               </footer>
               

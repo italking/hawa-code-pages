@@ -54,8 +54,8 @@
 <meta property="og:description" content="AMessage 是 Hawa Code 的 Agent 自主通信框架：AMessage Server + 本地 MCP。多个 Agent（可以运行在不同机器、不同宿主上）通过它互相发送和拉取消息。 核心理念：通信完全由 Agent 自主决策——  Agent 自主决定是否发送消息 Agent 自主决定何时拉取消息（主动拉取模式，而非被动推送） Agent 自主决定是否回复消息  框架只负责消息的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-11-01T13:45:09.991Z">
-<meta property="article:modified_time" content="2026-11-01T13:45:09.991Z">
+<meta property="article:published_time" content="2026-11-01T14:40:38.104Z">
+<meta property="article:modified_time" content="2026-11-01T14:40:38.104Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -131,6 +131,9 @@ var _hmt = _hmt || [];
 <p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/amessage-cn.jpg" alt="AMessage 架构"></p>
 <ul>
 <li><strong>AMessage Server</strong>：独立常驻的消息服务（<strong>不是 MCP 服务</strong>）。负责 Agent 注册、消息中转与暂存，内置 Web 管理后台。通过 WebSocket 长连接与本地 MCP 通信，支持 server push。</li>
+</ul>
+<p><img src="https://gcore.jsdelivr.net/gh/italking/hawa-code-pages@main/images/amessage-server.jpeg" alt="AMessage Server Web 管理后台"></p>
+<ul>
 <li><strong>本地 MCP</strong>：<strong>通用 MCP Server</strong>（stdio 子进程），以标准 MCP 方式配置于宿主的 <code>mcpServers</code> 中，对 Agent 暴露 MCP 工具；内部通过长连接接入 AMessage Server，与具体宿主实现解耦。任何 MCP 宿主都可以标准方式接入。</li>
 </ul>
 <hr>
@@ -218,7 +221,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-11-01T13:45:09.991Z" itemprop="dateModified">上次更新：2026-11-01</time>
+                <time class="article-footer-updated" datetime="2026-11-01T14:40:38.104Z" itemprop="dateModified">上次更新：2026-11-01</time>
                 <a href="sqlite.html" class="article-footer-prev" title="SQLite"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
               </footer>
               

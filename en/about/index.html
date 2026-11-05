@@ -54,8 +54,8 @@
 <meta property="og:description" content="Dahawa Life Plan  An intelligent programming assistant who understands you An intelligent assistant who understands you An assistant who understands you  One is the bottom line reserved for yourself V">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-10-11T16:14:08.596Z">
-<meta property="article:modified_time" content="2026-10-11T16:14:08.596Z">
+<meta property="article:published_time" content="2026-11-05T14:05:21.936Z">
+<meta property="article:modified_time" content="2026-11-05T14:05:21.936Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,87 @@ var _hmt = _hmt || [];
 <p><strong>One</strong> is the bottom line reserved for yourself</p>
 <h1 id="Versions" class="article-heading"><a href="#Versions" class="headerlink" title="Versions"></a>Versions<a class="article-anchor" href="#Versions" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.8.0 ~ v2.8.2 (2026-11-03 ~ 2026-11-05)</p>
+<ul>
+<li>Added agentMessageService, a unified message delivery system: unified ‘main’/‘agent:{agentId}’ addressing with Force/Try/Serial delivery modes plus waitMessages/peekMessages; fixed the loop scheduled task silently dropping prompts on busy</li>
+<li>Removed the deprecated TaskTool and TaskTeamTool; subagent task scheduling is now unified under AgentTool, which supports filtering the tool list by agentConfig.tools</li>
+<li>Web client enhancements<ul>
+<li>Subagents now support prompt input; fixed mailbox-injected messages (including main busy queued messages) being received by the model but not displayed on the page</li>
+<li>Added pending prompt list (pending_prompts) and Task/TodoWrite task list (tasks_snapshot) displays above the input box, aligned with CLI ordering and styling</li>
+</ul>
+</li>
+<li>Added a channel notification handling system: receives MCP server→client notifications, writes date-partitioned log files, and broadcasts dispatch via eventBus (shared routing between the main system and the codemode system)</li>
+<li>Fixed stdio subprocess leaks caused by MCP cache invalidation/reconnection</li>
+<li>Fixed PersistentShell external abortSignal being silently overridden by the internal signal; the timeout branch now correctly reports interrupted and ensures the process tree is cleaned up</li>
+<li>MCP main path now supports ${} dynamic variable interpolation (${env.NAME}, ${home}, ${cwd}, ${projectName}, etc.) with the same syntax as .codemode.json; interpolation happens in memory only and never writes back to config</li>
+</ul>
+</li>
+<li><p>v2.7.19 ~ v2.7.20 (2026-11-01 ~ 2026-11-02)</p>
+<ul>
+<li>Fixed the second tool confirmation getting stuck when confirmations arrive concurrently: the close path now guards with a timer, ignores duplicate closes, and avoids clearing the timer that displays the next confirmation</li>
+<li>Message Archiving placeholders switched to a bracket short-marker format (<code>&lt;system&gt;[archived xxx: id xxx]&lt;/system&gt;</code>) to prevent the model from imitating them into files</li>
+<li>Global prompt prohibition rules now explicitly cover archiving placeholders: declared alongside markers as system-generated tokens, with the prohibition extended to files you write</li>
+</ul>
+</li>
+<li><p>v2.7.14 ~ v2.7.18 (2026-10-28 ~ 2026-10-29)</p>
+<ul>
+<li>ProxyToolLoad added an XML parameter description format: proxyToolSchemaFormat supports json/ts/xml; xml mode outputs a pure XML document with special character escaping</li>
+<li>Refactored ProxyToolLoad schema format building: extracted buildJsonMessage/buildXmlMessage/buildTsMessage into standalone functions</li>
+<li>MessageArchivingTool prompt slimmed down and translated into English</li>
+<li>Simplified TodoWriteTool prompts, removed forced task and todo reminders, and deleted the TodoWrite mandatory usage reminder from the system prompt</li>
+</ul>
+</li>
+<li><p>v2.7.10 ~ v2.7.13 (2026-10-24 ~ 2026-10-27)</p>
+<ul>
+<li>ProxyToolLoad supports switching parameter description formats via config: new settings proxyToolSchemaFormat (‘ts’|’json’) with a corresponding Config panel enum setting</li>
+<li>Config panel now supports Tab grouping: new General/Context tabs, switched with arrow keys</li>
+<li>codemode process lifecycle fixes: ESC cancel now takes effect through the mainLoop abortController; timeout/cancel/error paths converge on a unified terminate(reason) exit, eliminating subprocesses that ignore SIGTERM; describe removed the endsWith fallback in favor of exact matching, eliminating phantom method names</li>
+<li>Message Archiving enhancements<ul>
+<li>Addressing markers wrapped in <code>&lt;system&gt;</code> tags to prevent the model from repeating internal addressing tokens in user-facing replies</li>
+<li>Added thinking block archiving (<code>thinking</code> / <code>redacted_thinking</code>); markers are injected at the end of the user message following the assistant (after tool_result, satisfying the deepseek tool_result-first compatibility constraint)</li>
+<li>Marker insertion moved before the first reminder block, fixing the latent defect of reminders being included in the cache segment</li>
+<li>Added <code>__tool_input__</code> automatic input archiving: leaf string fields with more than 100 words (nested objects and array indices supported) are automatically archived; unarchive restores all archived input fields</li>
+<li>Archiving result rendering slimmed: counts by tool result/input field/thinking block category, with skipped reasons deduplicated and merged</li>
+</ul>
+</li>
+<li>Adjusted low-context-usage reminder wording to consistently guide toward archiving</li>
+<li>buildContextUsageMessage cooldown now uniformly returns only a plain usage sentence, always injecting the usage signal without inducing archiving</li>
+</ul>
+</li>
+<li><p>v2.7.6 ~ v2.7.9 (2026-10-17 ~ 2026-10-22)</p>
+<ul>
+<li>WebFetch added headless browser rendering for JS pages: playwright-core as an optional dependency, SPA shell detection, and dual settle detection (DOM silence + in-flight requests); new headlessBrowser switch in /config</li>
+<li>Bing Headless Search Provider: models without native search capability (OpenAI/DeepSeek and default) now search via <a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.bing.com/">www.bing.com</a> with a three-tier fallback chain (headless rendering + in-page DOM extraction → static parsing → exception fallback)</li>
+<li>Table rendering upgrades<ul>
+<li>Layout algorithm migrated to the hawa-table component with water-filling column width allocation and display-width-aware wrapping, fixing overflow/misalignment of long table content</li>
+<li>Fixed emoji display width misjudgment (miscellaneous technical symbols counted as width 2) and misalignment caused by counting variation selectors and zero-width joiners as width</li>
+<li>Table headers now centered by default; added renderMarkdownTable to parse markdown pipe tables</li>
+</ul>
+</li>
+<li>string-cli-width added truncateByWidth to truncate strings by terminal display width (correctly handling multi-byte characters and emoji); pending hints now uniformly use it</li>
+<li>Fixed npx tsx –test hanging forever: lspManager/fileFreshness switched to lazy loading, timers unref’d</li>
+<li>Fixed autoCompact summary extraction failure when thinking is enabled</li>
+<li>Context usage reminder added a high-water mark of 0.85: dynamic usage reminders are abandoned beyond it, leaving fallback to auto-compaction</li>
+<li>Archiving guidance now enforces a step interval: at least 5 requests between two archiving actions by default (adjustable in real time via HAWA_CODE_ARCHIVE_STEP_INTERVAL)</li>
+<li>Context optimization reminders split into a static guide and a dynamic usage line (gated by HAWA_CODE_CONTEXT_OPT_SPLIT)</li>
+<li>Simplified codemode.session API: kept only get/set, with value null as the delete sentinel</li>
+<li>Fixed CLI terminal forcibly breaking long words in thinking/text messages</li>
+<li>Moved LSP usage reminders from system reminders into tool descriptions and parameter descriptions</li>
+<li>Deduplicated archiving system reminder wording: static guide handles full explanations, dynamic usage keeps only the signal and minimal action suggestion</li>
+</ul>
+</li>
+<li><p>v2.7.0 ~ v2.7.5 (2026-10-13 ~ 2026-10-16)</p>
+<ul>
+<li>codemode Session v1: added codemode.session cross-process session storage capability</li>
+<li>codemode config merging extracted into mergeCodemodeConfigs, uniformly applying dynamic parameter interpolation to merged global and project-level .codemode.json results</li>
+<li>Added showWindowTokens setting: status bar now shows current window token count and context ratio</li>
+<li>getGitPrompt is now controlled by the HAWA_CODE_GIT_PROMPT environment variable (disabled by default)</li>
+<li>ProxyTool prompt optimization: loadOne responses add a Required arguments section and remove the Usage example section</li>
+<li>Added screenService as a unified clear-screen entry point, consolidating all REPL clear-screen call sites; resize now safely re-mounts Static to rewrite history at the new width</li>
+<li>Fixed tool confirmation dialog race conditions: preventing closed dialogs from resurrecting and zombie dialogs</li>
+<li>Fixed schemaToType index signature generation to use the actual additionalProperties type</li>
+</ul>
+</li>
 <li><p>v2.6.12 ~ v2.6.13 (2026-10-11)</p>
 <ul>
 <li>Removed the ps-tree dependency; added a self-developed processTree utility to unify process tree termination and liveness checks</li>
@@ -1206,7 +1287,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-10-11T16:14:08.596Z" itemprop="dateModified">Last updated: 2026-10-12</time>
+                <time class="article-footer-updated" datetime="2026-11-05T14:05:21.936Z" itemprop="dateModified">Last updated: 2026-11-05</time>
                 
               </footer>
               
