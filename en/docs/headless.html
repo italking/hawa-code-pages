@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Headless | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/en/docs/headless">
+  <!-- Alternate links -->
+  
+    
+      
+        <link rel="alternate" hreflang="zh-cn" href="https://www.hawacode.com/docs/headless">
+      
+    
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/headless" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="Headless Help DocumentationHeadless mode lets Hawa Code run without launching the terminal interactive interface, making it suitable for UI-less environments, remote services, and automation scenarios">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Headless">
+<meta property="og:url" content="https://www.hawacode.com/en/docs/headless">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="Headless Help DocumentationHeadless mode lets Hawa Code run without launching the terminal interactive interface, making it suitable for UI-less environments, remote services, and automation scenarios">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-11-06T16:34:50.363Z">
+<meta property="article:modified_time" content="2026-11-06T16:34:50.363Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/en/" id="logo">Hawa Code</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/en/docs/" class="main-nav-link">Docs</a><a href="/en/blog/" class="main-nav-link">Blog</a><a href="/en/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/headless.html">
+        
+           <option value="zh-cn">简体中文</option>
+        
+           <option value="en" selected>English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Headless</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><h1 id="Headless-Help-Documentation" class="article-heading"><a href="#Headless-Help-Documentation" class="headerlink" title="Headless Help Documentation"></a>Headless Help Documentation<a class="article-anchor" href="#Headless-Help-Documentation" aria-hidden="true"></a></h1><p>Headless mode lets Hawa Code run without launching the terminal interactive interface, making it suitable for UI-less environments, remote services, and automation scenarios. Note that Headless is NOT enabled via a <code>--headless</code> parameter. Hawa Code provides two UI-less ways of running:</p>
+<ol>
+<li><strong><code>hcode server</code></strong>: Headless resident service. The process stays running without rendering a terminal UI, with a built-in WebServer (HTTP + WebSocket) for remote control via browser. This is the official Headless run mode.</li>
+<li><strong><code>hcode -p "..."</code></strong>: Single-turn non-interactive mode. Executes one task, prints the result to standard output, and exits. Suitable for pipes and script invocation, but not a resident service.</li>
+</ol>
+<blockquote>
+<p>Note: The <code>headlessBrowser</code> setting (headless browser) is used for web page fetching and rendering, and is unrelated to the Headless run mode. Do not confuse the two.</p>
+</blockquote>
+<hr>
+<h2 id="1-Differences-Between-the-Two-Modes" class="article-heading"><a href="#1-Differences-Between-the-Two-Modes" class="headerlink" title="1. Differences Between the Two Modes"></a>1. Differences Between the Two Modes<a class="article-anchor" href="#1-Differences-Between-the-Two-Modes" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>Comparison</th>
+<th><code>hcode server</code></th>
+<th><code>hcode -p "..."</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Run mode</td>
+<td>Process stays resident, does not exit</td>
+<td>Exits after a single run</td>
+</tr>
+<tr>
+<td>Interactivity</td>
+<td>Real-time interaction in browser, tool-call approval</td>
+<td>No interaction, one-shot output</td>
+</tr>
+<tr>
+<td>Use cases</td>
+<td>Remote resident services, UI-less environments</td>
+<td>CI/CD, scripts, pipe invocation</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Use <code>hcode server</code> when you need to “run long-term on a remote machine and use the full Agent capability via browser”.</li>
+<li>Use <code>hcode -p</code> when you need to “run a single command in a pipeline and judge the result by exit code”.</li>
+</ul>
+<hr>
+<h2 id="2-Starting-the-Headless-Service-with-hcode-server" class="article-heading"><a href="#2-Starting-the-Headless-Service-with-hcode-server" class="headerlink" title="2. Starting the Headless Service with hcode server"></a>2. Starting the Headless Service with <code>hcode server</code><a class="article-anchor" href="#2-Starting-the-Headless-Service-with-hcode-server" aria-hidden="true"></a></h2><h3 id="2-1-Command-Format" class="article-heading"><a href="#2-1-Command-Format" class="headerlink" title="2.1 Command Format"></a>2.1 Command Format<a class="article-anchor" href="#2-1-Command-Format" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode server [options]</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-2-Parameters" class="article-heading"><a href="#2-2-Parameters" class="headerlink" title="2.2 Parameters"></a>2.2 Parameters<a class="article-anchor" href="#2-2-Parameters" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>--port &lt;n&gt;</code></td>
+<td>Web service port. Reads <code>settings.webServer.port</code> by default, falling back to <code>3210</code>; automatically increments by 1 on port conflict</td>
+</tr>
+<tr>
+<td><code>--host &lt;addr&gt;</code></td>
+<td>Bind address, defaults to <code>127.0.0.1</code>. <strong>Binding to a non-loopback address (e.g., <code>0.0.0.0</code>) requires <code>--token</code></strong>, otherwise startup fails</td>
+</tr>
+<tr>
+<td><code>--token &lt;token&gt;</code></td>
+<td>Access token. Passed via WebSocket subprotocol or <code>?token=</code> query param for WS handshake; via <code>Authorization: Bearer &lt;token&gt;</code> for REST</td>
+</tr>
+<tr>
+<td><code>--resume &lt;id&gt;</code></td>
+<td>Resume a historical session (matching the full log path or file name suffix <code>&lt;id&gt;.jsonl</code>); exits with code 1 if not found</td>
+</tr>
+<tr>
+<td><code>--cwd &lt;path&gt;</code></td>
+<td>Working directory, defaults to the process’s current directory</td>
+</tr>
+<tr>
+<td><code>--verbose</code></td>
+<td>Verbose output</td>
+</tr>
+<tr>
+<td><code>--dangerously-skip-permissions</code></td>
+<td>Skip all permission confirmations; carries security risks, see Notes</td>
+</tr>
+</tbody></table>
+<p>Command-line parameters take precedence over the <code>webServer</code> configuration in <code>settings.json</code>; in Headless mode, <code>webServer.enabled</code> is forcibly treated as enabled.</p>
+<h3 id="2-3-Examples" class="article-heading"><a href="#2-3-Examples" class="headerlink" title="2.3 Examples"></a>2.3 Examples<a class="article-anchor" href="#2-3-Examples" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode server                                    <span class="comment"># Local 127.0.0.1:3210, open in browser</span></span><br><span class="line">hcode server --port 4000                        <span class="comment"># Specify a port</span></span><br><span class="line">hcode server --host 0.0.0.0 --token mytok       <span class="comment"># Expose externally (token required)</span></span><br><span class="line">hcode server --resume 2026-11-06T...            <span class="comment"># Resume a historical session</span></span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="3-Prerequisites" class="article-heading"><a href="#3-Prerequisites" class="headerlink" title="3. Prerequisites"></a>3. Prerequisites<a class="article-anchor" href="#3-Prerequisites" aria-hidden="true"></a></h2><ol>
+<li><strong>Complete terminal-mode initialization first</strong>: Headless mode skips terminal-interaction-dependent steps such as Onboarding, the trust dialog, and MCP approval. Please run <code>hcode</code> once in terminal mode first to complete initialization configuration such as model/API.</li>
+<li><strong>Model and API configuration</strong>: Make sure the model and API have been configured via terminal mode and are valid; startup or queries will report errors if the configuration is invalid.</li>
+<li><strong>Permissions and token</strong>: Binding to a loopback address (e.g., <code>127.0.0.1</code>) requires no token; binding to a non-loopback address requires <code>--token</code>, otherwise the service fails to start.</li>
+<li><strong>Working directory</strong>: The process automatically grants read permission to the <code>--cwd</code> directory, without terminal trust confirmation.</li>
+</ol>
+<hr>
+<h2 id="4-How-to-Tell-If-Startup-Succeeded" class="article-heading"><a href="#4-How-to-Tell-If-Startup-Succeeded" class="headerlink" title="4. How to Tell If Startup Succeeded"></a>4. How to Tell If Startup Succeeded<a class="article-anchor" href="#4-How-to-Tell-If-Startup-Succeeded" aria-hidden="true"></a></h2><p>Signs of a successful startup:</p>
+<ol>
+<li><code>Hawa Code headless server starting...</code> and <code>Tools, commands and MCP clients loaded, starting Web server...</code> appear on standard output in sequence.</li>
+<li>Followed by <code>Hawa Code headless server started</code> and the access URL (e.g., <code>URL: http://127.0.0.1:3210</code>); if a token is configured, access instructions are also printed. The actual port is subject to the <code>URL:</code> line in the startup output (already incremented by 1 on port conflict).</li>
+<li>The process stays resident and does not exit; open the URL in a browser to use it.</li>
+</ol>
+<p>After a session starts, session content is no longer printed to terminal standard output; session messages are persisted as JSONL and pushed to the browser in real time via WebSocket.</p>
+<hr>
+<h2 id="5-Logs-and-Troubleshooting" class="article-heading"><a href="#5-Logs-and-Troubleshooting" class="headerlink" title="5. Logs and Troubleshooting"></a>5. Logs and Troubleshooting<a class="article-anchor" href="#5-Logs-and-Troubleshooting" aria-hidden="true"></a></h2><p>Logs are located under <code>UCODE_ROOT_DIR/projects/&lt;project directory&gt;/</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>messages/*.jsonl</code></td>
+<td>Session message records</td>
+</tr>
+<tr>
+<td><code>log/*.log</code></td>
+<td>Runtime logs</td>
+</tr>
+<tr>
+<td><code>log/error-&lt;date&gt;.log</code></td>
+<td>Error logs</td>
+</tr>
+<tr>
+<td><code>errors/*.txt</code></td>
+<td>Error records</td>
+</tr>
+<tr>
+<td><code>mcp-logs-&lt;server&gt;/</code></td>
+<td>Logs of each MCP Server</td>
+</tr>
+</tbody></table>
+<p>Common failure signals and exit codes:</p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Failed to start WebServer: ...</code> and exits with code 1</td>
+<td>WebServer failed to start, commonly due to non-loopback binding without token, port occupied, etc.</td>
+</tr>
+<tr>
+<td><code>Session log not found: &lt;id&gt;</code> and exits with code 1</td>
+<td>The session log specified by <code>--resume</code> does not exist</td>
+</tr>
+<tr>
+<td>Process killed or exits after successful startup</td>
+<td>Abnormal; check the error logs</td>
+</tr>
+</tbody></table>
+<p>Suggested troubleshooting order: check the hints in standard output → inspect <code>log/error-*.log</code> → check whether the browser connection is rejected due to token → check MCP logs if necessary.</p>
+<hr>
+<h2 id="6-CI-CD-and-Script-Scenarios" class="article-heading"><a href="#6-CI-CD-and-Script-Scenarios" class="headerlink" title="6. CI/CD and Script Scenarios"></a>6. CI/CD and Script Scenarios<a class="article-anchor" href="#6-CI-CD-and-Script-Scenarios" aria-hidden="true"></a></h2><ul>
+<li><p><strong>Prefer <code>hcode -p</code></strong>: Executes one query, prints the result to standard output, and exits with code 0, suitable as a CI step judged by exit code.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode -p <span class="string">"Fix the lint errors"</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"instruction"</span> | hcode -p        <span class="comment"># Standard input is also supported</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>The process exits with code 1 when standard input has no content.</p>
+</li>
+<li><p><strong>Use <code>hcode server</code> for resident remote services / UI-less environments</strong>: runs resident on servers, Docker, systemd, with the browser as the frontend.</p>
+</li>
+<li><p><strong>Batch and automation tasks</strong>: Tasks can be submitted programmatically via the WebServer REST / WebSocket API (REST requires a Bearer token).</p>
+</li>
+</ul>
+<hr>
+<h2 id="7-Notes" class="article-heading"><a href="#7-Notes" class="headerlink" title="7. Notes"></a>7. Notes<a class="article-anchor" href="#7-Notes" aria-hidden="true"></a></h2><ol>
+<li><strong>Permission confirmations require someone to approve in the browser</strong>: In Headless mode, the Web client is the only approval channel; tool confirmations time out after about 5 minutes if no client responds.</li>
+<li><strong>Security risks of <code>--dangerously-skip-permissions</code></strong>: This parameter skips all permission confirmations, and the Headless path does not perform the isolated-environment check from terminal mode. Use it only in trusted, isolated environments.</li>
+<li><strong>Mind standard input when running in the background</strong>: Running in the background via systemd, <code>docker run -d</code>, etc. is unaffected; but pipe/heredoc scenarios (e.g., <code>somecmd | hcode server</code>) block startup while waiting for stdin EOF. When running in the background, make sure standard input is <code>/dev/null</code> or set <code>CI=true</code>.</li>
+<li><strong>Port conflicts are handled automatically</strong>: On port occupation, the port is incremented by 1 automatically; the actual port is subject to the <code>URL:</code> line in the startup output.</li>
+<li><strong>Token security</strong>: The token appears in process arguments and the URL query param; on multi-user machines, beware of leaks via process listings and browser history.</li>
+<li><strong>Other limitations</strong>: No built-in task timeout or failure retry; the integrity of cross-session recovery via <code>--resume</code> has not been fully validated; the Headless path does not execute SessionStart hooks — users relying on that hook to inject context should take note.</li>
+</ol>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-11-06T16:34:50.363Z" itemprop="dateModified">Last updated: 2026-11-07</time>
+                <a href="commands.html" class="article-footer-prev" title="Commands"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="model.html" class="article-footer-next" title="Models"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Headless-Help-Documentation"><span class="toc-text">Headless Help Documentation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Differences-Between-the-Two-Modes"><span class="toc-text">1. Differences Between the Two Modes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Starting-the-Headless-Service-with-hcode-server"><span class="toc-text">2. Starting the Headless Service with hcode server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Command-Format"><span class="toc-text">2.1 Command Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-Parameters"><span class="toc-text">2.2 Parameters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-Examples"><span class="toc-text">2.3 Examples</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Prerequisites"><span class="toc-text">3. Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-How-to-Tell-If-Startup-Succeeded"><span class="toc-text">4. How to Tell If Startup Succeeded</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Logs-and-Troubleshooting"><span class="toc-text">5. Logs and Troubleshooting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-CI-CD-and-Script-Scenarios"><span class="toc-text">6. CI&#x2F;CD and Script Scenarios</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-Notes"><span class="toc-text">7. Notes</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="commands.html" class="sidebar-link">Commands</a><a href="headless.html" class="sidebar-link current">Headless</a><a href="model.html" class="sidebar-link">Models</a><a href="tools.html" class="sidebar-link">Tools</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="permissions.html" class="sidebar-link">Permissions</a><strong class="sidebar-title">Advanced Features</strong><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="plugin.html" class="sidebar-link">Plugin</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Hooks</span></div><div class="sidebar-submenu expanded"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">Scheduled Tasks</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">Sandboxing</a><a href="goal.html" class="sidebar-link">Goal</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Context</span></div><div class="sidebar-submenu expanded"><a href="context-edit.html" class="sidebar-link sidebar-link-level3">Edit</a><a href="context-offloading.html" class="sidebar-link sidebar-link-level3">Offloading</a></div><a href="code-mode.html" class="sidebar-link">Code Mode</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Tool Lazy Loading</span></div><div class="sidebar-submenu expanded"><a href="load.html" class="sidebar-link sidebar-link-level3">Load</a><a href="proxy.html" class="sidebar-link sidebar-link-level3">Proxy</a></div><a href="channel.html" class="sidebar-link">Channel</a><strong class="sidebar-title">Web Control</strong><a href="agent-viewer.html" class="sidebar-link">Agent Viewer</a><a href="settings.html" class="sidebar-link">Settings</a><a href="notifications.html" class="sidebar-link">Notifications</a><strong class="sidebar-title">Work</strong><a href="default-plugin-market.html" class="sidebar-link">Default Plugin Marketplace</a><a href="ppt.html" class="sidebar-link">PPT</a><a href="word.html" class="sidebar-link">Word</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><strong class="sidebar-title">Remote Control</strong><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a><strong class="sidebar-title">Middleware</strong><a href="sqlite.html" class="sidebar-link">SQLite</a><a href="amessage.html" class="sidebar-link">AMessage</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/en/docs/" class="mobile-nav-link">Docs</a><a href="/en/blog/" class="mobile-nav-link">Blog</a><a href="/en/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="commands.html" class="mobile-nav-link">Commands</a><a href="headless.html" class="mobile-nav-link current">Headless</a><a href="model.html" class="mobile-nav-link">Models</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="permissions.html" class="mobile-nav-link">Permissions</a><strong class="mobile-nav-title">Advanced Features</strong><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="plugin.html" class="mobile-nav-link">Plugin</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu expanded"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">Scheduled Tasks</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">Sandboxing</a><a href="goal.html" class="mobile-nav-link">Goal</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Context</span></div><div class="mobile-nav-submenu expanded"><a href="context-edit.html" class="mobile-nav-link mobile-nav-link-level3">Edit</a><a href="context-offloading.html" class="mobile-nav-link mobile-nav-link-level3">Offloading</a></div><a href="code-mode.html" class="mobile-nav-link">Code Mode</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Tool Lazy Loading</span></div><div class="mobile-nav-submenu expanded"><a href="load.html" class="mobile-nav-link mobile-nav-link-level3">Load</a><a href="proxy.html" class="mobile-nav-link mobile-nav-link-level3">Proxy</a></div><a href="channel.html" class="mobile-nav-link">Channel</a><strong class="mobile-nav-title">Web Control</strong><a href="agent-viewer.html" class="mobile-nav-link">Agent Viewer</a><a href="settings.html" class="mobile-nav-link">Settings</a><a href="notifications.html" class="mobile-nav-link">Notifications</a><strong class="mobile-nav-title">Work</strong><a href="default-plugin-market.html" class="mobile-nav-link">Default Plugin Marketplace</a><a href="ppt.html" class="mobile-nav-link">PPT</a><a href="word.html" class="mobile-nav-link">Word</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><strong class="mobile-nav-title">Remote Control</strong><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a><strong class="mobile-nav-title">Middleware</strong><a href="sqlite.html" class="mobile-nav-link">SQLite</a><a href="amessage.html" class="mobile-nav-link">AMessage</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/headless.html">
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:en']
+    }
+  });
+}
+</script>
+
+</body>
+</html>
