@@ -54,8 +54,8 @@
 <meta property="og:description" content="AMessage 是 Hawa Code 的 Agent 自主通信框架：AMessage Server + 本地 MCP。多个 Agent（可以运行在不同机器、不同宿主上）通过它互相发送和拉取消息。 核心理念：通信完全由 Agent 自主决策——  Agent 自主决定是否发送消息 Agent 自主决定何时拉取消息（主动拉取模式，而非被动推送） Agent 自主决定是否回复消息  框架只负责消息的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-11-05T15:03:55.413Z">
-<meta property="article:modified_time" content="2026-11-05T15:03:55.413Z">
+<meta property="article:published_time" content="2026-11-06T15:01:47.585Z">
+<meta property="article:modified_time" content="2026-11-06T15:01:47.585Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -206,6 +206,12 @@ var _hmt = _hmt || [];
 <td>Agent 描述</td>
 </tr>
 <tr>
+<td><code>AMESSAGE_ROLE</code></td>
+<td>否</td>
+<td><code>worker</code></td>
+<td>Agent 角色（<code>leader</code> / <code>worker</code>），连接建立时上报注册表，详见下文</td>
+</tr>
+<tr>
 <td><code>AMESSAGE_OFFLINE_STRATEGY</code></td>
 <td>否</td>
 <td><code>reject</code></td>
@@ -219,6 +225,31 @@ var _hmt = _hmt || [];
 </tr>
 </tbody></table>
 <hr>
+<h2 id="通过环境变量配置角色" class="article-heading"><a href="#通过环境变量配置角色" class="headerlink" title="通过环境变量配置角色"></a>通过环境变量配置角色<a class="article-anchor" href="#通过环境变量配置角色" aria-hidden="true"></a></h2><p><code>AMESSAGE_ROLE</code> 用于声明 Agent 在 AMessage Server 注册表中的角色，其他 Agent 可通过 <code>listAgents</code> 看到（返回结果含其他在线 Agent 的 <code>role</code> 字段，不含调用方自己）。</p>
+<p>配合 Hawa Code MCP 配置的 <code>${env.NAME}</code> 动态插值（见 <a href="mcp.html">MCP</a>），可在 <code>.mcp.json</code> 中引用宿主环境变量，让不同机器 / 不同宿主上的 Agent 共用同一份配置、按各自环境变量扮演不同角色：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"mcpServers"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"amessage"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"npx"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"-y"</span><span class="punctuation">,</span> <span class="string">"@dahawa/hawa-amessage-mcp"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"env"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"AMESSAGE_SERVER"</span><span class="punctuation">:</span> <span class="string">"ws://localhost:7920"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"AMESSAGE_API_KEY"</span><span class="punctuation">:</span> <span class="string">"your-api-key"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"AMESSAGE_ROLE"</span><span class="punctuation">:</span> <span class="string">"${env.CLUSTER_MODE}"</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>上例中，AMessage 只拿到插值替换后的 <code>AMESSAGE_ROLE</code> 值。<code>CLUSTER_MODE</code> 一般由 Hawa Code 的 <code>clusterMode</code> 配置自动同步，无需手工 export；若采用手工 export，请确保最终解析为合法取值。</p>
+<h3 id="取值与默认值" class="article-heading"><a href="#取值与默认值" class="headerlink" title="取值与默认值"></a>取值与默认值<a class="article-anchor" href="#取值与默认值" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>支持取值</td>
+<td>闭集：<code>leader</code> / <code>worker</code>，大小写敏感，不支持自定义字符串</td>
+</tr>
+<tr>
+<td>默认值</td>
+<td><code>worker</code>（未设置或为空字符串时按 <code>worker</code> 处理）</td>
+</tr>
+<tr>
+<td>非法取值</td>
+<td>本地 MCP 启动时即报错退出</td>
+</tr>
+</tbody></table>
 <h2 id="消息实时推送（Channel）" class="article-heading"><a href="#消息实时推送（Channel）" class="headerlink" title="消息实时推送（Channel）"></a>消息实时推送（Channel）<a class="article-anchor" href="#消息实时推送（Channel）" aria-hidden="true"></a></h2><p>其他 Agent 发来的消息，会通过 Hawa Code 的 <a href="channel.html">Channel</a> 机制<strong>实时推入</strong>当前 Agent 的上下文——无需等待 Agent 主动调用 <code>receiveMessage</code> 拉取。</p>
 <p>收到消息时：</p>
 <ul>
@@ -229,7 +260,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-11-05T15:03:55.413Z" itemprop="dateModified">上次更新：2026-11-05</time>
+                <time class="article-footer-updated" datetime="2026-11-06T15:01:47.585Z" itemprop="dateModified">上次更新：2026-11-06</time>
                 <a href="sqlite.html" class="article-footer-prev" title="SQLite"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
               </footer>
               
@@ -238,7 +269,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8-Server"><span class="toc-text">安装与启动 Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">客户端配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BE%9B%E7%9A%84-MCP-%E5%B7%A5%E5%85%B7"><span class="toc-text">提供的 MCP 工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">常用环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81%EF%BC%88Channel%EF%BC%89"><span class="toc-text">消息实时推送（Channel）</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E5%90%AF%E5%8A%A8-Server"><span class="toc-text">安装与启动 Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="toc-text">客户端配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%90%E4%BE%9B%E7%9A%84-MCP-%E5%B7%A5%E5%85%B7"><span class="toc-text">提供的 MCP 工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">常用环境变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE%E8%A7%92%E8%89%B2"><span class="toc-text">通过环境变量配置角色</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%96%E5%80%BC%E4%B8%8E%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-text">取值与默认值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E5%AE%9E%E6%97%B6%E6%8E%A8%E9%80%81%EF%BC%88Channel%EF%BC%89"><span class="toc-text">消息实时推送（Channel）</span></a></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>

@@ -54,8 +54,8 @@
 <meta property="og:description" content="AMessage is Hawa Code’s agent-to-agent communication framework: AMessage Server + local MCP. Multiple agents — running on different machines or inside different hosts — use it to send and pull message">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-11-05T15:03:56.608Z">
-<meta property="article:modified_time" content="2026-11-05T15:03:56.608Z">
+<meta property="article:published_time" content="2026-11-06T15:05:07.066Z">
+<meta property="article:modified_time" content="2026-11-06T15:05:07.066Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -206,6 +206,12 @@ var _hmt = _hmt || [];
 <td>Agent description</td>
 </tr>
 <tr>
+<td><code>AMESSAGE_ROLE</code></td>
+<td>No</td>
+<td><code>worker</code></td>
+<td>Agent role (<code>leader</code> / <code>worker</code>), reported to the registry on connect — see below</td>
+</tr>
+<tr>
 <td><code>AMESSAGE_OFFLINE_STRATEGY</code></td>
 <td>No</td>
 <td><code>reject</code></td>
@@ -219,6 +225,31 @@ var _hmt = _hmt || [];
 </tr>
 </tbody></table>
 <hr>
+<h2 id="Configuring-the-role-via-environment-variable" class="article-heading"><a href="#Configuring-the-role-via-environment-variable" class="headerlink" title="Configuring the role via environment variable"></a>Configuring the role via environment variable<a class="article-anchor" href="#Configuring-the-role-via-environment-variable" aria-hidden="true"></a></h2><p><code>AMESSAGE_ROLE</code> declares the agent’s role in the AMessage Server registry. Other agents can see it via <code>listAgents</code> (the returned <code>AgentInfo[]</code> includes a <code>role</code> field for each online agent, but not for the caller itself).</p>
+<p>Combined with Hawa Code’s <code>${env.NAME}</code> dynamic interpolation in MCP config (see <a href="mcp.html">MCP</a>), <code>.mcp.json</code> can reference a host environment variable so agents on different machines / hosts share one config file while taking different roles:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"mcpServers"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"amessage"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"npx"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"-y"</span><span class="punctuation">,</span> <span class="string">"@dahawa/hawa-amessage-mcp"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"env"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"AMESSAGE_SERVER"</span><span class="punctuation">:</span> <span class="string">"ws://localhost:7920"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"AMESSAGE_API_KEY"</span><span class="punctuation">:</span> <span class="string">"your-api-key"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"AMESSAGE_ROLE"</span><span class="punctuation">:</span> <span class="string">"${env.CLUSTER_MODE}"</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>In this example, AMessage only receives the interpolated value of <code>AMESSAGE_ROLE</code>. <code>CLUSTER_MODE</code> is usually synced automatically from Hawa Code’s <code>clusterMode</code> setting, so no manual export is needed; if you export it manually, make sure it resolves to a valid value.</p>
+<h3 id="Values-and-defaults" class="article-heading"><a href="#Values-and-defaults" class="headerlink" title="Values and defaults"></a>Values and defaults<a class="article-anchor" href="#Values-and-defaults" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Allowed values</td>
+<td>Closed set: <code>leader</code> / <code>worker</code>, case-sensitive, no custom strings</td>
+</tr>
+<tr>
+<td>Default</td>
+<td><code>worker</code> (used when unset or empty)</td>
+</tr>
+<tr>
+<td>Invalid values</td>
+<td>The local MCP exits immediately at startup</td>
+</tr>
+</tbody></table>
 <h2 id="Real-time-Message-Push-Channel" class="article-heading"><a href="#Real-time-Message-Push-Channel" class="headerlink" title="Real-time Message Push (Channel)"></a>Real-time Message Push (Channel)<a class="article-anchor" href="#Real-time-Message-Push-Channel" aria-hidden="true"></a></h2><p>Messages from other agents are <strong>pushed in real time</strong> into the current agent’s context via Hawa Code’s <a href="channel.html">Channel</a> mechanism — no need to wait for the agent to actively call <code>receiveMessage</code>.</p>
 <p>When a message arrives:</p>
 <ul>
@@ -229,7 +260,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-11-05T15:03:56.608Z" itemprop="dateModified">Last updated: 2026-11-05</time>
+                <time class="article-footer-updated" datetime="2026-11-06T15:05:07.066Z" itemprop="dateModified">Last updated: 2026-11-06</time>
                 <a href="sqlite.html" class="article-footer-prev" title="SQLite"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
               </footer>
               
@@ -238,7 +269,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">Contents</strong>
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-and-start-the-Server"><span class="toc-text">Install and start the Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client-configuration"><span class="toc-text">Client configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MCP-tools-provided"><span class="toc-text">MCP tools provided</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Environment-variables"><span class="toc-text">Environment variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Real-time-Message-Push-Channel"><span class="toc-text">Real-time Message Push (Channel)</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-and-start-the-Server"><span class="toc-text">Install and start the Server</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Client-configuration"><span class="toc-text">Client configuration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MCP-tools-provided"><span class="toc-text">MCP tools provided</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Environment-variables"><span class="toc-text">Environment variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Configuring-the-role-via-environment-variable"><span class="toc-text">Configuring the role via environment variable</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Values-and-defaults"><span class="toc-text">Values and defaults</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Real-time-Message-Push-Channel"><span class="toc-text">Real-time Message Push (Channel)</span></a></li></ol>
               <a href="#" id="article-toc-top">Back to Top</a>
             </div>
           </aside>
