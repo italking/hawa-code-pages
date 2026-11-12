@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Headless 帮助文档Headless 模式让 Hawa Code 在不启动终端交互界面的情况下运行，适合无 UI 环境、远程服务和自动化场景。需要说明的是，Headless 并不是通过 --headless 参数开启的，Hawa Code 提供以下两种无终端 UI 的用法：  hcode server：Headless 常驻服务。进程常驻、不渲染终端 UI，内置 WebServer（HTTP">
+  <meta name="description" content="HeadlessHeadless 模式让 Hawa Code 在不启动终端交互界面的情况下运行，适合无 UI 环境、远程服务和自动化场景。需要说明的是，Headless 并不是通过 --headless 参数开启的，Hawa Code 提供以下两种无终端 UI 的用法：  hcode server：Headless 常驻服务。进程常驻、不渲染终端 UI，内置 WebServer（HTTP + We">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Headless">
 <meta property="og:url" content="https://www.hawacode.com/docs/headless">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Headless 帮助文档Headless 模式让 Hawa Code 在不启动终端交互界面的情况下运行，适合无 UI 环境、远程服务和自动化场景。需要说明的是，Headless 并不是通过 --headless 参数开启的，Hawa Code 提供以下两种无终端 UI 的用法：  hcode server：Headless 常驻服务。进程常驻、不渲染终端 UI，内置 WebServer（HTTP">
+<meta property="og:description" content="HeadlessHeadless 模式让 Hawa Code 在不启动终端交互界面的情况下运行，适合无 UI 环境、远程服务和自动化场景。需要说明的是，Headless 并不是通过 --headless 参数开启的，Hawa Code 提供以下两种无终端 UI 的用法：  hcode server：Headless 常驻服务。进程常驻、不渲染终端 UI，内置 WebServer（HTTP + We">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-11-06T16:33:57.454Z">
-<meta property="article:modified_time" content="2026-11-06T16:33:57.454Z">
+<meta property="article:published_time" content="2026-11-12T14:40:58.989Z">
+<meta property="article:modified_time" content="2026-11-12T14:40:58.989Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -120,7 +120,7 @@ var _hmt = _hmt || [];
                 <h1 class="article-title" itemprop="name">Headless</h1>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <html><head></head><body><h1 id="Headless-帮助文档" class="article-heading"><a href="#Headless-帮助文档" class="headerlink" title="Headless 帮助文档"></a>Headless 帮助文档<a class="article-anchor" href="#Headless-帮助文档" aria-hidden="true"></a></h1><p>Headless 模式让 Hawa Code 在不启动终端交互界面的情况下运行，适合无 UI 环境、远程服务和自动化场景。需要说明的是，Headless 并不是通过 <code>--headless</code> 参数开启的，Hawa Code 提供以下两种无终端 UI 的用法：</p>
+                <html><head></head><body><h1 id="Headless" class="article-heading"><a href="#Headless" class="headerlink" title="Headless"></a>Headless<a class="article-anchor" href="#Headless" aria-hidden="true"></a></h1><p>Headless 模式让 Hawa Code 在不启动终端交互界面的情况下运行，适合无 UI 环境、远程服务和自动化场景。需要说明的是，Headless 并不是通过 <code>--headless</code> 参数开启的，Hawa Code 提供以下两种无终端 UI 的用法：</p>
 <ol>
 <li><strong><code>hcode server</code></strong>：Headless 常驻服务。进程常驻、不渲染终端 UI，内置 WebServer（HTTP + WebSocket），通过浏览器远程控制。这是官方的 Headless 运行模式。</li>
 <li><strong><code>hcode -p "..."</code></strong>：单轮非交互模式。执行一次任务、将结果打印到标准输出后退出，适合管道和脚本调用，但不是常驻服务。</li>
@@ -160,6 +160,9 @@ var _hmt = _hmt || [];
 <hr>
 <h2 id="2-使用-hcode-server-启动-Headless-服务" class="article-heading"><a href="#2-使用-hcode-server-启动-Headless-服务" class="headerlink" title="2. 使用 hcode server 启动 Headless 服务"></a>2. 使用 <code>hcode server</code> 启动 Headless 服务<a class="article-anchor" href="#2-使用-hcode-server-启动-Headless-服务" aria-hidden="true"></a></h2><h3 id="2-1-命令格式" class="article-heading"><a href="#2-1-命令格式" class="headerlink" title="2.1 命令格式"></a>2.1 命令格式<a class="article-anchor" href="#2-1-命令格式" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode server [options]</span><br></pre></td></tr></tbody></table></figure>
 
+<p>此外还提供一个独立的 dist 入口，可直接用 node 启动构建产物，参数与 <code>hcode server</code> 相同：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">node dist/entrypoints/server.js [options]</span><br></pre></td></tr></tbody></table></figure>
+
 <h3 id="2-2-参数说明" class="article-heading"><a href="#2-2-参数说明" class="headerlink" title="2.2 参数说明"></a>2.2 参数说明<a class="article-anchor" href="#2-2-参数说明" aria-hidden="true"></a></h3><table>
 <thead>
 <tr>
@@ -168,18 +171,6 @@ var _hmt = _hmt || [];
 </tr>
 </thead>
 <tbody><tr>
-<td><code>--port &lt;n&gt;</code></td>
-<td>Web 服务端口。默认读取 <code>settings.webServer.port</code>，未配置时为 <code>3210</code>；端口冲突时自动 +1</td>
-</tr>
-<tr>
-<td><code>--host &lt;addr&gt;</code></td>
-<td>绑定地址，默认 <code>127.0.0.1</code>。<strong>绑定非 loopback 地址（如 <code>0.0.0.0</code>）时必须同时配置 <code>--token</code></strong>，否则启动失败</td>
-</tr>
-<tr>
-<td><code>--token &lt;token&gt;</code></td>
-<td>访问令牌。WebSocket 握手通过子协议或 <code>?token=</code> 传递；REST 接口通过 <code>Authorization: Bearer &lt;token&gt;</code> 传递</td>
-</tr>
-<tr>
 <td><code>--resume &lt;id&gt;</code></td>
 <td>恢复历史会话（匹配日志完整路径或文件名后缀 <code>&lt;id&gt;.jsonl</code>），找不到时以退出码 1 退出</td>
 </tr>
@@ -196,24 +187,42 @@ var _hmt = _hmt || [];
 <td>跳过所有权限确认，存在安全风险，详见注意事项</td>
 </tr>
 </tbody></table>
-<p>命令行参数的优先级高于 <code>settings.json</code> 中的 <code>webServer</code> 配置；Headless 模式下 <code>webServer.enabled</code> 会被强制视为开启。</p>
-<h3 id="2-3-示例" class="article-heading"><a href="#2-3-示例" class="headerlink" title="2.3 示例"></a>2.3 示例<a class="article-anchor" href="#2-3-示例" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode server                                    <span class="comment"># 本机 127.0.0.1:3210，浏览器打开即用</span></span><br><span class="line">hcode server --port 4000                        <span class="comment"># 指定端口</span></span><br><span class="line">hcode server --host 0.0.0.0 --token mytok       <span class="comment"># 对外暴露（必须带 token）</span></span><br><span class="line">hcode server --resume 2026-11-06T...            <span class="comment"># 恢复历史会话</span></span><br></pre></td></tr></tbody></table></figure>
+<p>WebServer 完全由 settings 配置驱动（<code>settings.webServer.enabled</code> 等），不再提供 <code>--port</code> / <code>--host</code> / <code>--token</code> 等命令行覆盖参数；端口与绑定地址请在 settings 中配置，默认绑定地址为 <code>0.0.0.0</code>。使用 <code>hcode server</code> 前请确保已在 settings 中开启 <code>webServer.enabled</code>；若未开启，进程仍会启动但仅打印 <code>Hawa Code headless server started (WebServer disabled, set settings.webServer.enabled=true to enable)</code> 提示，不会拉起 WebServer。</p>
+<h3 id="2-3-登录鉴权" class="article-heading"><a href="#2-3-登录鉴权" class="headerlink" title="2.3 登录鉴权"></a>2.3 登录鉴权<a class="article-anchor" href="#2-3-登录鉴权" aria-hidden="true"></a></h3><p>Web 端已改为<strong>用户名 + 密码登录鉴权</strong>（不再使用 <code>--token</code> 参数），并内置登录页：</p>
+<ul>
+<li><strong>默认凭据</strong>：未配置时为 <code>admin / admin</code>，不落盘存储；首次登录后请尽快修改。</li>
+<li><strong>凭据存储</strong>：以 scrypt 哈希保存在用户级 settings（<code>~/.hcode/settings.json</code> 的 <code>webServer.username / passwordHash / authSalt</code>）。</li>
+<li><strong>修改入口</strong>：终端 <code>/config</code> 的 Web Server username/password 项，或 Web 端”设置 → Account”（需当前密码验证）。</li>
+<li><strong>会话 token</strong>：登录成功后由服务端签发 HMAC 签名 token，有效期 7 天；HTTP 请求通过 <code>Authorization: Bearer &lt;token&gt;</code> 传递，WebSocket 握手通过子协议或 <code>?token=</code> 传递。<strong>修改密码后旧 token 立即失效</strong>，需重新登录。</li>
+<li><strong>接口</strong>：<code>GET /api/auth/status</code>（登录状态）、<code>POST /api/auth/login</code>（登录获取 token）、<code>POST /api/auth/change-password</code>（修改凭据）；其余 <code>/api/*</code> 与 <code>/ws</code> 无有效 token 时返回 401。</li>
+<li>使用默认凭据登录时，Web 端会显示修改密码的警告横幅；绑定非回环地址且使用默认凭据时，启动输出弱口令告警。</li>
+</ul>
+<h3 id="2-4-示例" class="article-heading"><a href="#2-4-示例" class="headerlink" title="2.4 示例"></a>2.4 示例<a class="article-anchor" href="#2-4-示例" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hcode server                                    <span class="comment"># 按 settings 配置启动（默认绑定 0.0.0.0，端口见 settings.webServer.port），浏览器打开后登录使用</span></span><br><span class="line">hcode server --resume 2026-11-06T...            <span class="comment"># 恢复历史会话</span></span><br><span class="line">node dist/entrypoints/server.js                 <span class="comment"># 直接以 node 启动 dist 产物（参数同上）</span></span><br></pre></td></tr></tbody></table></figure>
 
+<h3 id="2-5-后台运行" class="article-heading"><a href="#2-5-后台运行" class="headerlink" title="2.5 后台运行"></a>2.5 后台运行<a class="article-anchor" href="#2-5-后台运行" aria-hidden="true"></a></h3><p>在 Linux/macOS 服务器上常驻后台运行（日志写入文件，标准输入重定向避免阻塞）：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">nohup</span> hcode server &gt; hcode-server.log 2&gt;&amp;1 &lt; /dev/null &amp;</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>标准输入必须重定向为 <code>/dev/null</code>（或设置 <code>CI=true</code>），否则管道场景会因等待 EOF 而阻塞启动。</li>
+<li>启动输出与错误写入 <code>hcode-server.log</code>，会话日志仍位于 <code>UCODE_ROOT_DIR/projects/&lt;项目目录&gt;/</code>。</li>
+<li>停止服务：<code>pkill -f "cli.js server"</code>（按进程实际命令行匹配；<code>hcode</code> shim 被 exec 后命令行中不含 “hcode” 字样，按 <code>"hcode server"</code> 匹配不到），或直接 <code>kill &lt;PID&gt;</code>。</li>
+<li>生产环境更推荐使用 systemd 或 Docker 托管，详见第 6 节。</li>
+</ul>
 <hr>
 <h2 id="3-前置条件" class="article-heading"><a href="#3-前置条件" class="headerlink" title="3. 前置条件"></a>3. 前置条件<a class="article-anchor" href="#3-前置条件" aria-hidden="true"></a></h2><ol>
 <li><strong>先完成终端模式初始化</strong>：Headless 模式跳过 Onboarding、信任对话框、MCP 审批等依赖终端交互的步骤，因此请先在终端模式中运行一次 <code>hcode</code>，完成模型/API 等初始化配置。</li>
 <li><strong>模型与 API 配置</strong>：请确保模型和 API 已通过终端模式配置完成且有效，配置无效时启动或查询会报错。</li>
-<li><strong>权限与 token</strong>：绑定 loopback 地址（如 <code>127.0.0.1</code>）无需 token；绑定非 loopback 地址必须配置 <code>--token</code>，否则服务启动失败。</li>
+<li><strong>登录凭据</strong>：Web 端通过用户名+密码登录。绑定非回环地址对外提供服务前，请先通过终端 <code>/config</code> 或 Web 端设置修改默认凭据（admin/admin），避免弱口令暴露。</li>
 <li><strong>工作目录</strong>：进程会自动授予 <code>--cwd</code> 目录的读取权限，无需终端信任确认。</li>
 </ol>
 <hr>
 <h2 id="4-启动后如何判断成功" class="article-heading"><a href="#4-启动后如何判断成功" class="headerlink" title="4. 启动后如何判断成功"></a>4. 启动后如何判断成功<a class="article-anchor" href="#4-启动后如何判断成功" aria-hidden="true"></a></h2><p>启动成功的标志：</p>
 <ol>
 <li>标准输出依次出现 <code>Hawa Code headless server starting...</code>、<code>Tools, commands and MCP clients loaded, starting Web server...</code>。</li>
-<li>随后出现 <code>Hawa Code headless server started</code> 与访问 URL（例如 <code>URL: http://127.0.0.1:3210</code>）；若配置了 token，还会附带访问方式说明。实际端口以启动输出中的 <code>URL:</code> 为准（端口冲突时已自动 +1）。</li>
-<li>进程保持常驻不退出，用浏览器打开该 URL 即可使用。</li>
+<li>随后出现 <code>Hawa Code headless server started</code> 与访问 URL（例如 <code>URL: http://0.0.0.0:3210</code>）及启动耗时。实际端口以启动输出中的 <code>URL:</code> 为准（端口冲突时已自动 +1）。</li>
+<li>进程保持常驻不退出，用浏览器打开该 URL，登录后即可使用。</li>
 </ol>
-<p>启动会话后，终端标准输出不再打印会话内容；会话消息以 JSONL 形式落盘，并通过 WebSocket 实时推送到浏览器。</p>
+<p>启动会话后，终端标准输出不再打印会话内容；会话消息以 JSONL 形式落盘，并通过 WebSocket 实时推送到浏览器。进程支持 SIGINT/SIGTERM 优雅关闭（<code>kill &lt;PID&gt;</code> 即可正常退出）。</p>
 <hr>
 <h2 id="5-日志与排查" class="article-heading"><a href="#5-日志与排查" class="headerlink" title="5. 日志与排查"></a>5. 日志与排查<a class="article-anchor" href="#5-日志与排查" aria-hidden="true"></a></h2><p>日志位于 <code>UCODE_ROOT_DIR/projects/&lt;项目目录&gt;/</code> 下：</p>
 <table>
@@ -254,7 +263,11 @@ var _hmt = _hmt || [];
 </thead>
 <tbody><tr>
 <td><code>Failed to start WebServer: ...</code> 并以退出码 1 退出</td>
-<td>WebServer 启动失败，常见于非 loopback 未配 token、端口占用等</td>
+<td>WebServer 启动失败，常见于端口占用、settings 中未开启 <code>webServer.enabled</code> 等</td>
+</tr>
+<tr>
+<td>WebServer 30 秒内未就绪</td>
+<td>serverRunner 等待 WebServer 就绪超时，请检查 settings 的 <code>webServer</code> 配置与端口占用情况</td>
 </tr>
 <tr>
 <td><code>Session log not found: &lt;id&gt;</code> 并以退出码 1 退出</td>
@@ -265,7 +278,7 @@ var _hmt = _hmt || [];
 <td>属于异常，请查看错误日志</td>
 </tr>
 </tbody></table>
-<p>排查顺序建议：先看标准输出中的提示 → 查看 <code>log/error-*.log</code> → 检查浏览器端是否因 token 被拒绝连接 → 必要时查看 MCP 日志。</p>
+<p>排查顺序建议：先看标准输出中的提示 → 查看 <code>log/error-*.log</code> → 检查浏览器端是否已登录（未登录访问 <code>/api/*</code> 与 <code>/ws</code> 会返回 401）→ 必要时查看 MCP 日志。</p>
 <hr>
 <h2 id="6-CI-CD-与脚本场景" class="article-heading"><a href="#6-CI-CD-与脚本场景" class="headerlink" title="6. CI/CD 与脚本场景"></a>6. CI/CD 与脚本场景<a class="article-anchor" href="#6-CI-CD-与脚本场景" aria-hidden="true"></a></h2><ul>
 <li><p><strong>优先使用 <code>hcode -p</code></strong>：执行一次查询、将结果打印到标准输出后以退出码 0 退出，适合作为 CI 步骤按退出码判断结果。</p>
@@ -275,22 +288,22 @@ var _hmt = _hmt || [];
 </li>
 <li><p><strong>常驻远程服务/无 UI 环境使用 <code>hcode server</code></strong>：在服务器、Docker、systemd 中常驻运行，浏览器作为前端。</p>
 </li>
-<li><p><strong>批量与自动化任务</strong>：可通过 WebServer 的 REST / WebSocket API 程序化提交任务（REST 接口需携带 Bearer token）。</p>
+<li><p><strong>批量与自动化任务</strong>：可先调用 <code>POST /api/auth/login</code> 获取会话 token，再通过 WebServer 的 REST / WebSocket API 程序化提交任务（请求需携带 <code>Authorization: Bearer &lt;token&gt;</code>）。</p>
 </li>
 </ul>
 <hr>
 <h2 id="7-注意事项" class="article-heading"><a href="#7-注意事项" class="headerlink" title="7. 注意事项"></a>7. 注意事项<a class="article-anchor" href="#7-注意事项" aria-hidden="true"></a></h2><ol>
 <li><strong>权限确认需要有人在浏览器侧审批</strong>：Headless 模式下唯一的审批通道是 Web 客户端；没有任何客户端响应时，工具确认约 5 分钟后超时。</li>
 <li><strong><code>--dangerously-skip-permissions</code> 的安全风险</strong>：该参数会跳过所有权限确认，Headless 路径未执行终端模式中的隔离环境校验，请务必仅在受信任的隔离环境中使用。</li>
-<li><strong>后台运行时注意标准输入</strong>：通过 systemd、<code>docker run -d</code> 等方式后台运行不受影响；但管道/ heredoc 场景（如 <code>somecmd | hcode server</code>）会因等待标准输入 EOF 而阻塞启动，后台运行请确保标准输入为 <code>/dev/null</code> 或设置 <code>CI=true</code>。</li>
+<li><strong>后台运行时注意标准输入</strong>：通过 systemd、<code>docker run -d</code>、nohup 等方式后台运行不受影响；但管道/ heredoc 场景（如 <code>somecmd | hcode server</code>）会因等待标准输入 EOF 而阻塞启动，后台运行请确保标准输入为 <code>/dev/null</code> 或设置 <code>CI=true</code>。</li>
 <li><strong>端口冲突自动处理</strong>：端口被占用时自动 +1 重试，实际端口以启动输出 <code>URL:</code> 行为准。</li>
-<li><strong>token 安全</strong>：token 会出现在进程参数和 URL query param 中，多用户机器上注意进程列表泄露与浏览器历史泄露。</li>
+<li><strong>登录凭据安全</strong>：凭据以 scrypt 哈希存储在用户级 settings 中，但默认凭据（admin/admin）为公开已知值，仅适合本机体验；任何对外暴露前务必修改，改密后旧会话 token 立即失效。</li>
 <li><strong>其他限制</strong>：无内建任务超时与失败重试；<code>--resume</code> 跨会话恢复的完整性未经充分验证；Headless 路径不执行 SessionStart hooks，依赖该 hook 注入上下文的用户请注意。</li>
 </ol>
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-11-06T16:33:57.454Z" itemprop="dateModified">上次更新：2026-11-07</time>
+                <time class="article-footer-updated" datetime="2026-11-12T14:40:58.989Z" itemprop="dateModified">上次更新：2026-11-12</time>
                 <a href="channel.html" class="article-footer-prev" title="Channel"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="agent-viewer.html" class="article-footer-next" title="Agent Viewer"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -299,7 +312,7 @@ var _hmt = _hmt || [];
           <aside id="article-toc" role="navigation">
             <div id="article-toc-inner">
               <strong class="sidebar-title">目录</strong>
-              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Headless-%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3"><span class="toc-text">Headless 帮助文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">1. 两种模式的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-hcode-server-%E5%90%AF%E5%8A%A8-Headless-%E6%9C%8D%E5%8A%A1"><span class="toc-text">2. 使用 hcode server 启动 Headless 服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.1 命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">2.2 参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%A4%BA%E4%BE%8B"><span class="toc-text">2.3 示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="toc-text">3. 前置条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%90%AF%E5%8A%A8%E5%90%8E%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%88%90%E5%8A%9F"><span class="toc-text">4. 启动后如何判断成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%97%A5%E5%BF%97%E4%B8%8E%E6%8E%92%E6%9F%A5"><span class="toc-text">5. 日志与排查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-CI-CD-%E4%B8%8E%E8%84%9A%E6%9C%AC%E5%9C%BA%E6%99%AF"><span class="toc-text">6. CI&#x2F;CD 与脚本场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">7. 注意事项</span></a></li></ol></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Headless"><span class="toc-text">Headless</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">1. 两种模式的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8-hcode-server-%E5%90%AF%E5%8A%A8-Headless-%E6%9C%8D%E5%8A%A1"><span class="toc-text">2. 使用 hcode server 启动 Headless 服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"><span class="toc-text">2.1 命令格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">2.2 参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E7%99%BB%E5%BD%95%E9%89%B4%E6%9D%83"><span class="toc-text">2.3 登录鉴权</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E7%A4%BA%E4%BE%8B"><span class="toc-text">2.4 示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8C"><span class="toc-text">2.5 后台运行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="toc-text">3. 前置条件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%90%AF%E5%8A%A8%E5%90%8E%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%88%90%E5%8A%9F"><span class="toc-text">4. 启动后如何判断成功</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%97%A5%E5%BF%97%E4%B8%8E%E6%8E%92%E6%9F%A5"><span class="toc-text">5. 日志与排查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-CI-CD-%E4%B8%8E%E8%84%9A%E6%9C%AC%E5%9C%BA%E6%99%AF"><span class="toc-text">6. CI&#x2F;CD 与脚本场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">7. 注意事项</span></a></li></ol></li></ol>
               <a href="#" id="article-toc-top">回到顶部</a>
             </div>
           </aside>
