@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.0 ~ v2.8.2 (2026-11-03 ~ 2026-11-05)  新增 agentMessageService 统一消息投递体系：统一 ‘main’&#x2F;‘agent:{agentId}’ 寻址，支持 Force&#x2F;Try&#x2F;S">
+  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.11 (2026-11-09 ~ 2026-11-12)  消息 ID 生成方式抽象为可插拔生成器：支持 increment（默认，session 级自增、计数器落盘、重启&#x2F;恢复不重复）、nanoid、uuid 三种实现，通过 HAWA_CODE_M">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://www.hawacode.com/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.0 ~ v2.8.2 (2026-11-03 ~ 2026-11-05)  新增 agentMessageService 统一消息投递体系：统一 ‘main’&#x2F;‘agent:{agentId}’ 寻址，支持 Force&#x2F;Try&#x2F;S">
+<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.11 (2026-11-09 ~ 2026-11-12)  消息 ID 生成方式抽象为可插拔生成器：支持 increment（默认，session 级自增、计数器落盘、重启&#x2F;恢复不重复）、nanoid、uuid 三种实现，通过 HAWA_CODE_M">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-11-12T13:00:38.237Z">
-<meta property="article:modified_time" content="2026-11-12T13:00:38.237Z">
+<meta property="article:published_time" content="2026-11-13T13:06:37.398Z">
+<meta property="article:modified_time" content="2026-11-13T13:06:37.398Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,32 @@ var _hmt = _hmt || [];
 <p><strong>一个</strong>   是留给自己的底线</p>
 <h1 id="版本" class="article-heading"><a href="#版本" class="headerlink" title="版本"></a>版本<a class="article-anchor" href="#版本" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.8.11 (2026-11-09 ~ 2026-11-12)</p>
+<ul>
+<li>消息 ID 生成方式抽象为可插拔生成器：支持 increment（默认，session 级自增、计数器落盘、重启/恢复不重复）、nanoid、uuid 三种实现，通过 HAWA_CODE_MESSAGE_ID_MODE 环境变量切换</li>
+<li>消息归档 id 与 wire tool_use_id 解耦：归档键统一改为 canonical id（消息 uuid#tool_use 序号），旧归档键惰性迁移并落盘持久化</li>
+<li>headless WebServer 配置改为完全依赖 settings（settings.webServer.enabled），移除 –port / –host 命令行覆盖参数</li>
+</ul>
+</li>
+<li><p>v2.8.10 (2026-11-08)</p>
+<ul>
+<li>WebServer 鉴权从 –token 参数改为单用户登录：用户名 + 密码（scrypt 哈希存用户级 settings），默认凭据 admin/admin；Web 端新增登录页与设置 Account 分区；会话 token 改为 HMAC 签名（有效期 7 天，修改密码后旧 token 立即失效）；新增 /api/auth/status、/api/auth/login、/api/auth/change-password 接口，未认证访问 /api/* 与 /ws 返回 401</li>
+<li>WebServer 默认绑定地址从 127.0.0.1 改为 0.0.0.0；非回环绑定 + 默认凭据时启动输出弱口令告警，默认凭据登录后 Web 端显示可手动关闭的警告横幅</li>
+<li>修复 hcode server 子命令 –dangerously-skip-permissions / –verbose 参数不生效的问题（commander 同名选项被解析到顶层程序）</li>
+<li>修复 Web 客户端通过 <a target="_blank" rel="noopener external nofollow noreferrer" href="http://ip/">http://IP</a> 访问时 crypto.randomUUID 在非安全上下文不可用导致的页面崩溃（自动回退）</li>
+<li>修复 PersistentShell 在 bash 进程退出后写 stdin 触发 EPIPE 未捕获异常导致进程崩溃的问题</li>
+</ul>
+</li>
+<li><p>v2.8.3 ~ v2.8.9 (2026-11-06 ~ 2026-11-07)</p>
+<ul>
+<li>新增 headless server 模式 0.1 版：<code>hcode server</code> 以无终端 UI 方式常驻运行，由 Web 端远程控制，适用于无 UI 环境与远程常驻服务场景</li>
+<li>新增集群模式（Cluster Mode）：config 新增 clusterMode（leader/worker，默认 worker）与 clusterEnabled 开关（默认 on），/config 面板新增 Cluster Tab；leader 模式只保留 amessage 工具、强制关闭工具懒加载并禁止 IDE 连接；amessage 工具识别从硬编码名前缀改为握手身份识别（重命名 .mcp.json 键名不再静默失效）</li>
+<li>修复终端 ESC 无法中断任务的问题（headless 重构引入的回归）</li>
+<li>移除内置 Doctor 诊断与 ConfigureNpmPrefix 组件</li>
+<li>修复 Web 端确认工具执行后未关闭 VSCode diff 比较窗口的问题</li>
+<li>修复 PowerShell 超时/中断时未终止整个进程树的问题，中断原因消息完整保留</li>
+</ul>
+</li>
 <li><p>v2.8.0 ~ v2.8.2 (2026-11-03 ~ 2026-11-05)</p>
 <ul>
 <li>新增 agentMessageService 统一消息投递体系：统一 ‘main’/‘agent:{agentId}’ 寻址，支持 Force/Try/Serial 三模式投递与 waitMessages/peekMessages，修复 loop 定时任务 busy 静默丢弃</li>
@@ -1297,7 +1323,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-11-12T13:00:38.237Z" itemprop="dateModified">上次更新：2026-11-12</time>
+                <time class="article-footer-updated" datetime="2026-11-13T13:06:37.398Z" itemprop="dateModified">上次更新：2026-11-13</time>
                 
               </footer>
               
