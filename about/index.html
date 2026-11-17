@@ -46,16 +46,16 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
   <!-- Open Graph -->
-  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.11 (2026-11-09 ~ 2026-11-12)  消息 ID 生成方式抽象为可插拔生成器：支持 increment（默认，session 级自增、计数器落盘、重启&#x2F;恢复不重复）、nanoid、uuid 三种实现，通过 HAWA_CODE_M">
+  <meta name="description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.12 (2026-11-13 ~ 2026-11-17)  新增 codemode 沙箱内 CLI 执行能力 codemode.cli：沙箱内可直接执行 CLI 命令（bash 语义，默认 60s 超时，输出尾部截断 30000 字符），安全校验复用 BANN">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://www.hawacode.com/about/">
 <meta property="og:site_name" content="Hawa Code">
-<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.11 (2026-11-09 ~ 2026-11-12)  消息 ID 生成方式抽象为可插拔生成器：支持 increment（默认，session 级自增、计数器落盘、重启&#x2F;恢复不重复）、nanoid、uuid 三种实现，通过 HAWA_CODE_M">
+<meta property="og:description" content="Dahawa 人生规划  一个懂你的、智能编程助手 一个懂你的、智能助手 一个懂你的、助手  一个   是留给自己的底线 版本  v2.8.12 (2026-11-13 ~ 2026-11-17)  新增 codemode 沙箱内 CLI 执行能力 codemode.cli：沙箱内可直接执行 CLI 命令（bash 语义，默认 60s 超时，输出尾部截断 30000 字符），安全校验复用 BANN">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
-<meta property="article:published_time" content="2026-11-13T13:06:37.398Z">
-<meta property="article:modified_time" content="2026-11-13T13:06:37.398Z">
+<meta property="article:published_time" content="2026-11-17T15:24:31.105Z">
+<meta property="article:modified_time" content="2026-11-17T15:24:31.105Z">
 <meta property="article:author" content="Hawa Code">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
@@ -129,6 +129,18 @@ var _hmt = _hmt || [];
 <p><strong>一个</strong>   是留给自己的底线</p>
 <h1 id="版本" class="article-heading"><a href="#版本" class="headerlink" title="版本"></a>版本<a class="article-anchor" href="#版本" aria-hidden="true"></a></h1><hr>
 <ul>
+<li><p>v2.8.12 (2026-11-13 ~ 2026-11-17)</p>
+<ul>
+<li>新增 codemode 沙箱内 CLI 执行能力 codemode.cli：沙箱内可直接执行 CLI 命令（bash 语义，默认 60s 超时，输出尾部截断 30000 字符），安全校验复用 BANNED_COMMANDS 与 cd 限制规则，超时/中止跨平台强杀进程树；新增 codemodeCli 设置项默认禁用，/config 面板提供开关</li>
+<li>skill 加载优化：支持符号链接 skill 目录（失效软链静默跳过）；parseSkillMetadata 用 gray-matter 替换手写正则，支持折叠块、引号、BOM、嵌套结构与 allowed-tools YAML 数组；严格 YAML 兼容回退保证存量宽松写法 skill 不丢失；watcher 加固（防 EMFILE 崩溃、Linux 逐目录 watch 降级）；修复 gray-matter 缓存污染</li>
+<li>修复 Bash 工具超时问题：后台任务 timeout=0 表示不限时，不再被前台 120s 超时误杀；exec_ 与 runCommand 统一返回 ExecResult 错误对象消除 NPE；超时回调增加防重入标志</li>
+<li>修复模块循环引用 TDZ：HANDS_TOOLS 等模块级常量改为惰性函数，解除 BashTool → mcpClient → handsTypes → BashTool 循环</li>
+<li>统一主/子 agent 判定：新增 isMainAgent() 工具函数收口 11 处散装判断</li>
+<li>修复 hawaContext 默认 key 拼写 defalt→default，消除权限白名单/懒加载工具的存储桶分裂</li>
+<li>getLatestVersion 增加模块级 in-flight 去重锁，避免 AutoUpdater 并发重复触发</li>
+<li>Web 端增加工作目录</li>
+</ul>
+</li>
 <li><p>v2.8.11 (2026-11-09 ~ 2026-11-12)</p>
 <ul>
 <li>消息 ID 生成方式抽象为可插拔生成器：支持 increment（默认，session 级自增、计数器落盘、重启/恢复不重复）、nanoid、uuid 三种实现，通过 HAWA_CODE_MESSAGE_ID_MODE 环境变量切换</li>
@@ -1323,7 +1335,7 @@ var _hmt = _hmt || [];
 </body></html>
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2026-11-13T13:06:37.398Z" itemprop="dateModified">上次更新：2026-11-13</time>
+                <time class="article-footer-updated" datetime="2026-11-17T15:24:31.105Z" itemprop="dateModified">上次更新：2026-11-17</time>
                 
               </footer>
               
