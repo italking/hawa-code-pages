@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>DingTalk | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/en/docs/dingtalk">
+  <!-- Alternate links -->
+  
+    
+      
+        <link rel="alternate" hreflang="zh-cn" href="https://www.hawacode.com/docs/dingtalk">
+      
+    
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/dingtalk" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="DingTalk integration lets Hawa Code listen to DingTalk message events (message, reaction, read, recall) and, once reply is enabled, reply to DingTalk conversations directly — a two-way loop. It is pro">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DingTalk">
+<meta property="og:url" content="https://www.hawacode.com/en/docs/dingtalk">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="DingTalk integration lets Hawa Code listen to DingTalk message events (message, reaction, read, recall) and, once reply is enabled, reply to DingTalk conversations directly — a two-way loop. It is pro">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-11-22T05:48:26.017Z">
+<meta property="article:modified_time" content="2026-11-22T05:48:26.017Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/en/" id="logo">Hawa Code</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/en/docs/" class="main-nav-link">Docs</a><a href="/en/blog/" class="main-nav-link">Blog</a><a href="/en/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/dingtalk.html">
+        
+           <option value="zh-cn">简体中文</option>
+        
+           <option value="en" selected>English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">DingTalk</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p>DingTalk integration lets Hawa Code <strong>listen</strong> to DingTalk message events (message, reaction, read, recall) and, once reply is enabled, <strong>reply</strong> to DingTalk conversations directly — a two-way loop.</p>
+<p>It is provided by the built-in MCP server <a href="channel.html"><code>@dahawa/hawa-channel</code></a>. Notifications are injected through the <a href="channel.html">Channel protocol</a>, and authentication is delegated to the DingTalk CLI <code>dws</code> (using the current user’s OAuth login — no AppKey/AppSecret required).</p>
+<hr>
+<h2 id="What-It-Does" class="article-heading"><a href="#What-It-Does" class="headerlink" title="What It Does"></a>What It Does<a class="article-anchor" href="#What-It-Does" aria-hidden="true"></a></h2><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">DingTalk event ──▶ dws event +listen-im (long connection)──▶ hawa-channel (normalization)</span><br><span class="line">                                                                 │</span><br><span class="line">                                                                 ▼ notifications/hawacode/channel</span><br><span class="line">                                                           Hawa Code main agent context</span><br><span class="line"></span><br><span class="line">Agent reply ──▶ send_dingtalk_message (MCP tool)──▶ dws chat +messages-send ──▶ DingTalk</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><strong>Listen</strong>: messages that @ you, direct chats, group messages, reactions, reads and recalls are injected into the agent context in real time.</li>
+<li><strong>Reply</strong>: after receiving an event, the agent can call the MCP tool to send the answer back to the corresponding direct chat or group.</li>
+</ul>
+<hr>
+<h2 id="Prerequisites" class="article-heading"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites<a class="article-anchor" href="#Prerequisites" aria-hidden="true"></a></h2><ul>
+<li>Node.js ≥ 20.</li>
+<li>Install the DingTalk CLI <code>dws</code> and complete OAuth login for the current user:</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">dws --version</span><br><span class="line">dws auth status --format json   <span class="comment"># confirm logged in</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>On startup hawa-channel automatically checks <code>dws</code> availability and login status. It exits with an error if not logged in — it never fails silently.</p>
+<hr>
+<h2 id="Enabling" class="article-heading"><a href="#Enabling" class="headerlink" title="Enabling"></a>Enabling<a class="article-anchor" href="#Enabling" aria-hidden="true"></a></h2><p>Add the following to the <code>.mcp.json</code> of your hawa-code project:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"mcpServers"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"channel"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"npx"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"-y"</span><span class="punctuation">,</span> <span class="string">"@dahawa/hawa-channel"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"env"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"WEBHOOK_ENABLED"</span><span class="punctuation">:</span> <span class="string">"false"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"DINGTALK_ENABLED"</span><span class="punctuation">:</span> <span class="string">"true"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"DINGTALK_LISTEN_KIND"</span><span class="punctuation">:</span> <span class="string">"at-me"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"DINGTALK_EVENTS"</span><span class="punctuation">:</span> <span class="string">"message"</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>Webhook and DingTalk can be toggled independently (<code>WEBHOOK_ENABLED=false</code> means no <code>WEBHOOK_SECRET</code> is needed).</p>
+<h3 id="Environment-Variables" class="article-heading"><a href="#Environment-Variables" class="headerlink" title="Environment Variables"></a>Environment Variables<a class="article-anchor" href="#Environment-Variables" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>DINGTALK_ENABLED</code></td>
+<td><code>false</code></td>
+<td>Start the DingTalk event listener</td>
+</tr>
+<tr>
+<td><code>DINGTALK_LISTEN_KIND</code></td>
+<td><code>at-me</code></td>
+<td>Listen scope, see the table below</td>
+</tr>
+<tr>
+<td><code>DINGTALK_EVENTS</code></td>
+<td><code>message</code></td>
+<td>Comma-separated: <code>message / reaction / read / recall</code></td>
+</tr>
+<tr>
+<td><code>DINGTALK_USER_QUERY</code></td>
+<td>none</td>
+<td><strong>Required</strong> when <code>kind=sender</code> — user query condition</td>
+</tr>
+<tr>
+<td><code>DINGTALK_CHAT_QUERY</code></td>
+<td>none</td>
+<td><strong>Required</strong> when <code>kind=group</code> — chat query condition</td>
+</tr>
+<tr>
+<td><code>DINGTALK_SEND_ENABLED</code></td>
+<td><code>false</code></td>
+<td>Register the <code>send_dingtalk_message</code> reply tool</td>
+</tr>
+<tr>
+<td><code>DWS_BIN</code></td>
+<td><code>dws</code></td>
+<td>dws executable name or absolute path</td>
+</tr>
+<tr>
+<td><code>DWS_PROFILE</code></td>
+<td>none</td>
+<td>dws profile; listening and replying must use the <strong>same</strong> one</td>
+</tr>
+<tr>
+<td><code>LOG_LEVEL</code></td>
+<td><code>info</code></td>
+<td><code>debug / info / warn / error</code></td>
+</tr>
+</tbody></table>
+<h3 id="Listen-Scope-LISTEN-KIND" class="article-heading"><a href="#Listen-Scope-LISTEN-KIND" class="headerlink" title="Listen Scope (LISTEN_KIND)"></a>Listen Scope (LISTEN_KIND)<a class="article-anchor" href="#Listen-Scope-LISTEN-KIND" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>kind</th>
+<th>Scope</th>
+<th>Allowed events</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>at-me</code></td>
+<td>Messages that @ the current user (default)</td>
+<td><code>message</code> only</td>
+</tr>
+<tr>
+<td><code>all-direct</code></td>
+<td>All direct chat messages</td>
+<td><code>message</code> only</td>
+</tr>
+<tr>
+<td><code>all-group</code></td>
+<td>All group messages</td>
+<td><code>message</code> only</td>
+</tr>
+<tr>
+<td><code>sender</code></td>
+<td>A specific user — requires <code>DINGTALK_USER_QUERY</code></td>
+<td>All four event kinds</td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td>A specific chat — requires <code>DINGTALK_CHAT_QUERY</code></td>
+<td>All four event kinds</td>
+</tr>
+</tbody></table>
+<p>Example — listen to messages and reactions in a specific group:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"DINGTALK_ENABLED"</span><span class="punctuation">:</span> <span class="string">"true"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"DINGTALK_LISTEN_KIND"</span><span class="punctuation">:</span> <span class="string">"group"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"DINGTALK_CHAT_QUERY"</span><span class="punctuation">:</span> <span class="string">"Dev Group"</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">"DINGTALK_EVENTS"</span><span class="punctuation">:</span> <span class="string">"message,reaction"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="What-the-Agent-Receives" class="article-heading"><a href="#What-the-Agent-Receives" class="headerlink" title="What the Agent Receives"></a>What the Agent Receives<a class="article-anchor" href="#What-the-Agent-Receives" aria-hidden="true"></a></h2><p>Events are normalized into a unified format before being injected:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Injected body example (actual format)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>message</td>
+<td><code>[钉钉消息] 张三: please check the build log</code></td>
+</tr>
+<tr>
+<td>reaction</td>
+<td><code>[钉钉 reaction] 张三: 赞</code></td>
+</tr>
+<tr>
+<td>read</td>
+<td><code>[钉钉已读] 张三: msg_xxx</code></td>
+</tr>
+<tr>
+<td>recall</td>
+<td><code>[钉钉撤回] 张三: msg_xxx</code></td>
+</tr>
+</tbody></table>
+<ul>
+<li>Non-text messages are rendered with type labels: <code>[图片] / [语音] / [视频] / [文件] / [位置] / [链接] / [富文本]</code> (image / voice / video / file / location / link / rich text).</li>
+<li><code>meta</code> carries <code>messageId</code>, <code>sender</code>, <code>chatId</code>, <code>msgtype</code>, <code>timestamp</code>, etc. The agent can use <code>conversationId</code> or <code>senderOpenDingtalkId</code> from the event to target its reply.</li>
+</ul>
+<hr>
+<h2 id="Replying-to-DingTalk-send-dingtalk-message" class="article-heading"><a href="#Replying-to-DingTalk-send-dingtalk-message" class="headerlink" title="Replying to DingTalk (send_dingtalk_message)"></a>Replying to DingTalk (send_dingtalk_message)<a class="article-anchor" href="#Replying-to-DingTalk-send-dingtalk-message" aria-hidden="true"></a></h2><p>Reply is <strong>disabled by default</strong> (to prevent the agent from accidentally sending messages outward). The tool is only registered after explicit opt-in:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"DINGTALK_SEND_ENABLED"</span><span class="punctuation">:</span> <span class="string">"true"</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>Tool parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>content</code></td>
+<td>Yes</td>
+<td>Reply text, 1–4000 characters after trimming</td>
+</tr>
+<tr>
+<td><code>conversationId</code></td>
+<td>One of the two</td>
+<td>Conversation ID (group or direct), from the event meta</td>
+</tr>
+<tr>
+<td><code>userOpenDingtalkId</code></td>
+<td>One of the two</td>
+<td>User open ID, from the event meta</td>
+</tr>
+</tbody></table>
+<p>Exactly one of the two target parameters must be provided. The tool calls <code>dws chat +messages-send --as user</code> under the hood; whether a permission prompt appears depends on hawa-code’s own tool permission settings.</p>
+<hr>
+<h2 id="Troubleshooting" class="article-heading"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting<a class="article-anchor" href="#Troubleshooting" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Investigation</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Startup error <code>dws OAuth is not logged in</code></td>
+<td>Run <code>dws auth login</code> to complete OAuth; check <code>DWS_BIN</code> and <code>DWS_PROFILE</code></td>
+</tr>
+<tr>
+<td>No events arriving</td>
+<td>Check <code>LISTEN_KIND</code>, user/chat query conditions, and event types; <code>dingtalk listener ready</code> in the logs means the listener is ready</td>
+</tr>
+<tr>
+<td>Listener restarts frequently</td>
+<td>This is normal reconnect behavior (exponential backoff + dws subscription status check); if it keeps failing, inspect dws stderr with <code>LOG_LEVEL=debug</code></td>
+</tr>
+<tr>
+<td><code>tools/list</code> has no reply tool</td>
+<td>Confirm <code>DINGTALK_SEND_ENABLED=true</code> and reconnect the MCP server</td>
+</tr>
+<tr>
+<td>No logs</td>
+<td>hawa-channel writes runtime logs to <strong>stderr</strong> (MCP stdout carries only the protocol); raise <code>LOG_LEVEL</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="How-It-Works" class="article-heading"><a href="#How-It-Works" class="headerlink" title="How It Works"></a>How It Works<a class="article-anchor" href="#How-It-Works" aria-hidden="true"></a></h2><ul>
+<li><strong>No custom protocol</strong>: it reuses the <code>dws event +listen-im</code> long connection to subscribe to IM events. Subscription management and self-loop filtering are handled by dws; hawa-channel only consumes the NDJSON event stream from its stdout and normalizes the fields.</li>
+<li><strong>Delegated authentication</strong>: it uses the current user’s dws OAuth (open-source normal mode — no AppKey/AppSecret). hawa-channel never touches or stores any DingTalk secret; credentials are saved by dws itself under <code>~/.dws</code>.</li>
+<li><strong>Resilience</strong>: the process reconnects automatically with exponential backoff after exit. Before reconnecting it queries <code>dws event status</code> and respects dws’s subscription protection (no forced re-subscription during the cooldown window).</li>
+<li><strong>Unified egress</strong>: after normalization, everything is injected via the MCP notification <code>notifications/hawacode/channel</code> with <code>source=dingtalk</code>. Replies go in the reverse direction through the MCP tool calling dws — the whole path never touches a shell.</li>
+</ul>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-11-22T05:48:26.017Z" itemprop="dateModified">Last updated: 2026-11-22</time>
+                <a href="index.html" class="article-footer-next" title="Setup"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-It-Does"><span class="toc-text">What It Does</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prerequisites"><span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enabling"><span class="toc-text">Enabling</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Environment-Variables"><span class="toc-text">Environment Variables</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Listen-Scope-LISTEN-KIND"><span class="toc-text">Listen Scope (LISTEN_KIND)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-the-Agent-Receives"><span class="toc-text">What the Agent Receives</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Replying-to-DingTalk-send-dingtalk-message"><span class="toc-text">Replying to DingTalk (send_dingtalk_message)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Troubleshooting"><span class="toc-text">Troubleshooting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-It-Works"><span class="toc-text">How It Works</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="commands.html" class="sidebar-link">Commands</a><a href="model.html" class="sidebar-link">Models</a><a href="tools.html" class="sidebar-link">Tools</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="permissions.html" class="sidebar-link">Permissions</a><strong class="sidebar-title">Advanced Features</strong><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="plugin.html" class="sidebar-link">Plugin</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Hooks</span></div><div class="sidebar-submenu expanded"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">Scheduled Tasks</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">Sandboxing</a><a href="goal.html" class="sidebar-link">Goal</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Context</span></div><div class="sidebar-submenu expanded"><a href="context-edit.html" class="sidebar-link sidebar-link-level3">Edit</a><a href="context-offloading.html" class="sidebar-link sidebar-link-level3">Offloading</a></div><a href="code-mode.html" class="sidebar-link">Code Mode</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Tool Lazy Loading</span></div><div class="sidebar-submenu expanded"><a href="load.html" class="sidebar-link sidebar-link-level3">Load</a><a href="proxy.html" class="sidebar-link sidebar-link-level3">Proxy</a></div><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Channel</span></div><div class="sidebar-submenu expanded"><a href="channel.html" class="sidebar-link sidebar-link-level3">Channel Protocol</a><a href="dingtalk.html" class="sidebar-link sidebar-link-level3 current">DingTalk</a><a href="webhook.html" class="sidebar-link sidebar-link-level3">Webhook</a></div><a href="headless.html" class="sidebar-link">Headless</a><a href="cluster.html" class="sidebar-link">Cluster</a><strong class="sidebar-title">Web Control</strong><a href="agent-viewer.html" class="sidebar-link">Agent Viewer</a><a href="settings.html" class="sidebar-link">Settings</a><a href="notifications.html" class="sidebar-link">Notifications</a><strong class="sidebar-title">Work</strong><a href="default-plugin-market.html" class="sidebar-link">Default Plugin Marketplace</a><a href="ppt.html" class="sidebar-link">PPT</a><a href="word.html" class="sidebar-link">Word</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><strong class="sidebar-title">Remote Control</strong><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a><strong class="sidebar-title">Middleware</strong><a href="sqlite.html" class="sidebar-link">SQLite</a><a href="amessage.html" class="sidebar-link">AMessage</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/en/docs/" class="mobile-nav-link">Docs</a><a href="/en/blog/" class="mobile-nav-link">Blog</a><a href="/en/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="commands.html" class="mobile-nav-link">Commands</a><a href="model.html" class="mobile-nav-link">Models</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="permissions.html" class="mobile-nav-link">Permissions</a><strong class="mobile-nav-title">Advanced Features</strong><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="plugin.html" class="mobile-nav-link">Plugin</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu expanded"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">Scheduled Tasks</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">Sandboxing</a><a href="goal.html" class="mobile-nav-link">Goal</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Context</span></div><div class="mobile-nav-submenu expanded"><a href="context-edit.html" class="mobile-nav-link mobile-nav-link-level3">Edit</a><a href="context-offloading.html" class="mobile-nav-link mobile-nav-link-level3">Offloading</a></div><a href="code-mode.html" class="mobile-nav-link">Code Mode</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Tool Lazy Loading</span></div><div class="mobile-nav-submenu expanded"><a href="load.html" class="mobile-nav-link mobile-nav-link-level3">Load</a><a href="proxy.html" class="mobile-nav-link mobile-nav-link-level3">Proxy</a></div><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Channel</span></div><div class="mobile-nav-submenu expanded"><a href="channel.html" class="mobile-nav-link mobile-nav-link-level3">Channel Protocol</a><a href="dingtalk.html" class="mobile-nav-link mobile-nav-link-level3 current">DingTalk</a><a href="webhook.html" class="mobile-nav-link mobile-nav-link-level3">Webhook</a></div><a href="headless.html" class="mobile-nav-link">Headless</a><a href="cluster.html" class="mobile-nav-link">Cluster</a><strong class="mobile-nav-title">Web Control</strong><a href="agent-viewer.html" class="mobile-nav-link">Agent Viewer</a><a href="settings.html" class="mobile-nav-link">Settings</a><a href="notifications.html" class="mobile-nav-link">Notifications</a><strong class="mobile-nav-title">Work</strong><a href="default-plugin-market.html" class="mobile-nav-link">Default Plugin Marketplace</a><a href="ppt.html" class="mobile-nav-link">PPT</a><a href="word.html" class="mobile-nav-link">Word</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><strong class="mobile-nav-title">Remote Control</strong><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a><strong class="mobile-nav-title">Middleware</strong><a href="sqlite.html" class="mobile-nav-link">SQLite</a><a href="amessage.html" class="mobile-nav-link">AMessage</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/dingtalk.html">
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:en']
+    }
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Webhook | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/en/docs/webhook">
+  <!-- Alternate links -->
+  
+    
+      
+        <link rel="alternate" hreflang="zh-cn" href="https://www.hawacode.com/docs/webhook">
+      
+    
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/webhook" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="Webhook is Hawa Code’s generic inbound channel for external events: any system capable of sending HTTP requests (CI, monitoring, Git platforms, scheduled jobs, custom services) can push events into th">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Webhook">
+<meta property="og:url" content="https://www.hawacode.com/en/docs/webhook">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="Webhook is Hawa Code’s generic inbound channel for external events: any system capable of sending HTTP requests (CI, monitoring, Git platforms, scheduled jobs, custom services) can push events into th">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-11-22T05:47:59.877Z">
+<meta property="article:modified_time" content="2026-11-22T05:47:59.877Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/en/" id="logo">Hawa Code</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/en/docs/" class="main-nav-link">Docs</a><a href="/en/blog/" class="main-nav-link">Blog</a><a href="/en/about/" class="main-nav-link">About</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/webhook.html">
+        
+           <option value="zh-cn">简体中文</option>
+        
+           <option value="en" selected>English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Webhook</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p>Webhook is Hawa Code’s <strong>generic inbound channel for external events</strong>: any system capable of sending HTTP requests (CI, monitoring, Git platforms, scheduled jobs, custom services) can push events into the agent’s conversation context in real time — no polling required.</p>
+<p>It is provided by the built-in MCP server <a href="channel.html"><code>@dahawa/hawa-channel</code></a> and injects notifications through the <a href="channel.html">Channel protocol</a>.</p>
+<hr>
+<h2 id="What-It-Does" class="article-heading"><a href="#What-It-Does" class="headerlink" title="What It Does"></a>What It Does<a class="article-anchor" href="#What-It-Does" aria-hidden="true"></a></h2><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">External system ──POST /webhook/{channel}──▶ hawa-channel (verifies signature)</span><br><span class="line">                                                  │</span><br><span class="line">                                                  ▼  notifications/hawacode/channel</span><br><span class="line">                                             Hawa Code main agent context</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Typical scenarios:</p>
+<ul>
+<li>CI build success / failure alerts</li>
+<li>Monitoring alerts</li>
+<li>Git platform PR / Issue events</li>
+<li>Async notifications from any custom system</li>
+</ul>
+<hr>
+<h2 id="Enabling" class="article-heading"><a href="#Enabling" class="headerlink" title="Enabling"></a>Enabling<a class="article-anchor" href="#Enabling" aria-hidden="true"></a></h2><p>Add the following to the <code>.mcp.json</code> of your hawa-code project:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"mcpServers"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"channel"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"npx"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"-y"</span><span class="punctuation">,</span> <span class="string">"@dahawa/hawa-channel"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"env"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"WEBHOOK_ENABLED"</span><span class="punctuation">:</span> <span class="string">"true"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"WEBHOOK_PORT"</span><span class="punctuation">:</span> <span class="string">"9527"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"WEBHOOK_HOST"</span><span class="punctuation">:</span> <span class="string">"127.0.0.1"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"WEBHOOK_SECRET"</span><span class="punctuation">:</span> <span class="string">"replace-with-a-strong-random-secret"</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>Requires Node.js ≥ 20. After restarting hawa-code, the MCP server is launched automatically via <code>npx</code>.</p>
+<p>::: warning<br>When <code>WEBHOOK_ENABLED=true</code> (the default), <code>WEBHOOK_SECRET</code> is <strong>required</strong> — startup fails without it.<br>:::</p>
+<h3 id="Environment-Variables" class="article-heading"><a href="#Environment-Variables" class="headerlink" title="Environment Variables"></a>Environment Variables<a class="article-anchor" href="#Environment-Variables" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>WEBHOOK_ENABLED</code></td>
+<td><code>true</code></td>
+<td>Enable the webhook HTTP receiver</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_HOST</code></td>
+<td><code>127.0.0.1</code></td>
+<td>Listen address; change to a server IP or <code>0.0.0.0</code> to expose it</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_PORT</code></td>
+<td><code>9527</code></td>
+<td>Listen port</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_SECRET</code></td>
+<td>none</td>
+<td>HMAC signing secret — <strong>used only for verification, never log it</strong></td>
+</tr>
+<tr>
+<td><code>WEBHOOK_ALLOWED_IPS</code></td>
+<td>empty</td>
+<td>Comma-separated client IP allowlist; empty means no restriction</td>
+</tr>
+<tr>
+<td><code>LOG_LEVEL</code></td>
+<td><code>info</code></td>
+<td><code>debug / info / warn / error</code></td>
+</tr>
+</tbody></table>
+<p>Webhook and <a href="dingtalk.html">DingTalk</a> are independent features and can be toggled separately.</p>
+<hr>
+<h2 id="Sending-Requests" class="article-heading"><a href="#Sending-Requests" class="headerlink" title="Sending Requests"></a>Sending Requests<a class="article-anchor" href="#Sending-Requests" aria-hidden="true"></a></h2><h3 id="Endpoints" class="article-heading"><a href="#Endpoints" class="headerlink" title="Endpoints"></a>Endpoints<a class="article-anchor" href="#Endpoints" aria-hidden="true"></a></h3><figure class="highlight text"><table><tbody><tr><td class="code"><pre><span class="line">GET  /health                 health check</span><br><span class="line">POST /webhook/{channel}      receive an event (channel is defined by the caller)</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>channel</code> may contain only lowercase letters, digits, underscores and hyphens (<code>^[a-z0-9_-]{1,32}$</code>). Use it to distinguish event sources, e.g. <code>ci</code>, <code>monitor</code>, <code>git</code>.</p>
+<h3 id="Headers" class="article-heading"><a href="#Headers" class="headerlink" title="Headers"></a>Headers<a class="article-anchor" href="#Headers" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Content-Type</code></td>
+<td>Yes</td>
+<td>Must be <code>application/json</code></td>
+</tr>
+<tr>
+<td><code>X-Timestamp</code></td>
+<td>Yes</td>
+<td>Unix timestamp in <strong>seconds</strong></td>
+</tr>
+<tr>
+<td><code>X-Signature</code></td>
+<td>Yes</td>
+<td><code>sha256=</code> + 64 hex chars (HMAC)</td>
+</tr>
+</tbody></table>
+<h3 id="Signature-Algorithm" class="article-heading"><a href="#Signature-Algorithm" class="headerlink" title="Signature Algorithm"></a>Signature Algorithm<a class="article-anchor" href="#Signature-Algorithm" aria-hidden="true"></a></h3><figure class="highlight text"><table><tbody><tr><td class="code"><pre><span class="line">payload     = "&lt;timestamp&gt;." + &lt;raw request body string&gt;</span><br><span class="line">X-Signature = "sha256=" + lowercaseHex( HMAC_SHA256(WEBHOOK_SECRET, payload) )</span><br></pre></td></tr></tbody></table></figure>
+
+<p>The signature is computed over the <strong>raw request body</strong>. Any JSON reformatting (extra whitespace, changed field order) breaks verification — sign first, then send the body unchanged.</p>
+<p>Requests whose timestamp differs from server time by more than <strong>5 minutes</strong> are rejected. Duplicate requests with the same <code>channel + timestamp + body</code> are blocked by <strong>replay protection</strong>.</p>
+<h3 id="Request-Body" class="article-heading"><a href="#Request-Body" class="headerlink" title="Request Body"></a>Request Body<a class="article-anchor" href="#Request-Body" aria-hidden="true"></a></h3><p>Any JSON object. The notification text is extracted with priority <code>text</code> → <code>message</code> → <code>content</code>; if none of them exists, a compact JSON string is used. An <code>event</code> field is passed to the agent as metadata.</p>
+<h3 id="Complete-Example" class="article-heading"><a href="#Complete-Example" class="headerlink" title="Complete Example"></a>Complete Example<a class="article-anchor" href="#Complete-Example" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">SECRET=<span class="string">'replace-with-a-strong-random-secret'</span></span><br><span class="line">TIMESTAMP=$(<span class="built_in">date</span> +%s)</span><br><span class="line">BODY=<span class="string">'{"text":"main branch build failed","event":"build.failed"}'</span></span><br><span class="line"></span><br><span class="line">SIGNATURE=$(node -e <span class="string">'</span></span><br><span class="line"><span class="string">  const [secret, ts, body] = process.argv.slice(1);</span></span><br><span class="line"><span class="string">  const hmac = require("node:crypto").createHmac("sha256", secret);</span></span><br><span class="line"><span class="string">  console.log(hmac.update(ts + "." + body).digest("hex"));</span></span><br><span class="line"><span class="string">'</span> <span class="string">"<span class="variable">$SECRET</span>"</span> <span class="string">"<span class="variable">$TIMESTAMP</span>"</span> <span class="string">"<span class="variable">$BODY</span>"</span>)</span><br><span class="line"></span><br><span class="line">curl -i <span class="string">"http://127.0.0.1:9527/webhook/ci"</span> \</span><br><span class="line">  -H <span class="string">'Content-Type: application/json'</span> \</span><br><span class="line">  -H <span class="string">"X-Timestamp: <span class="variable">${TIMESTAMP}</span>"</span> \</span><br><span class="line">  -H <span class="string">"X-Signature: sha256=<span class="variable">${SIGNATURE}</span>"</span> \</span><br><span class="line">  --data-raw <span class="string">"<span class="variable">$BODY</span>"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>Success response:</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span><span class="attr">"code"</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">"message"</span><span class="punctuation">:</span><span class="string">"ok"</span><span class="punctuation">,</span><span class="attr">"data"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"received"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">}</span><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>::: tip<br>HTTP 200 only means the <strong>request was accepted</strong>. The notification is injected into the agent context asynchronously; a failed injection does not roll back the HTTP status.<br>:::</p>
+<hr>
+<h2 id="What-the-Agent-Receives" class="article-heading"><a href="#What-the-Agent-Receives" class="headerlink" title="What the Agent Receives"></a>What the Agent Receives<a class="article-anchor" href="#What-the-Agent-Receives" aria-hidden="true"></a></h2><p>The body injected into the agent context looks like:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">[webhook:ci] main branch build failed</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>meta</code> carries <code>messageId</code>, <code>channel</code>, <code>event</code> and <code>timestamp</code>, so the agent can determine the event type and source, and decide how to respond.</p>
+<hr>
+<h2 id="Response-Codes-and-Troubleshooting" class="article-heading"><a href="#Response-Codes-and-Troubleshooting" class="headerlink" title="Response Codes and Troubleshooting"></a>Response Codes and Troubleshooting<a class="article-anchor" href="#Response-Codes-and-Troubleshooting" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>HTTP Status</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>400</code></td>
+<td>Invalid channel, Content-Type, request JSON or Content-Length</td>
+</tr>
+<tr>
+<td><code>401</code></td>
+<td>Missing / wrong timestamp or signature, timestamp outside the 5-minute window, replayed request</td>
+</tr>
+<tr>
+<td><code>403</code></td>
+<td>Client IP not in the allowlist</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>Path or method mismatch</td>
+</tr>
+<tr>
+<td><code>413</code></td>
+<td>Request body exceeds 1 MiB</td>
+</tr>
+<tr>
+<td><code>429</code></td>
+<td>Per-channel rate limit exceeded (60 requests / minute)</td>
+</tr>
+<tr>
+<td><code>500</code></td>
+<td>Internal server error</td>
+</tr>
+</tbody></table>
+<p>Troubleshooting tips:</p>
+<ul>
+<li>Startup error about missing <code>WEBHOOK_SECRET</code>: set the environment variable and restart hawa-code.</li>
+<li>Persistent <code>401</code>: verify the secrets match, the timestamp is in <strong>seconds</strong>, and the signature is computed over the <strong>raw request body</strong>.</li>
+<li><code>403</code>: check whether <code>WEBHOOK_ALLOWED_IPS</code> contains the client address.</li>
+<li>Notifications not arriving: hawa-channel logs to <strong>stderr</strong> (MCP stdout carries only the protocol); raise <code>LOG_LEVEL=debug</code> for details.</li>
+</ul>
+<hr>
+<h2 id="How-It-Works" class="article-heading"><a href="#How-It-Works" class="headerlink" title="How It Works"></a>How It Works<a class="article-anchor" href="#How-It-Works" aria-hidden="true"></a></h2><ul>
+<li><strong>Signature verification</strong>: <code>HMAC-SHA256(secret, timestamp + "." + rawBody)</code> — the shared secret lets the sender prove and the receiver verify; the key itself never travels over the network.</li>
+<li><strong>Freshness and replay protection</strong>: a 5-minute timestamp window plus an in-memory replay cache blocks stale requests and verbatim replays.</li>
+<li><strong>Protection mechanisms</strong>: per-channel token-bucket rate limiting (60/min), a 1 MiB body limit, and an optional IP allowlist.</li>
+<li><strong>Async processing after ACK</strong>: HTTP 200 is returned first; the message is then normalized and pushed to hawa-code through the MCP notification <code>notifications/hawacode/channel</code>, so external systems are never blocked by slow agent processing.</li>
+</ul>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-11-22T05:47:59.877Z" itemprop="dateModified">Last updated: 2026-11-22</time>
+                <a href="index.html" class="article-footer-next" title="Setup"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-It-Does"><span class="toc-text">What It Does</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enabling"><span class="toc-text">Enabling</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Environment-Variables"><span class="toc-text">Environment Variables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sending-Requests"><span class="toc-text">Sending Requests</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Endpoints"><span class="toc-text">Endpoints</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Headers"><span class="toc-text">Headers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Signature-Algorithm"><span class="toc-text">Signature Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Request-Body"><span class="toc-text">Request Body</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Complete-Example"><span class="toc-text">Complete Example</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-the-Agent-Receives"><span class="toc-text">What the Agent Receives</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Response-Codes-and-Troubleshooting"><span class="toc-text">Response Codes and Troubleshooting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-It-Works"><span class="toc-text">How It Works</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Getting Started</strong><a href="index.html" class="sidebar-link">Setup</a><a href="commands.html" class="sidebar-link">Commands</a><a href="model.html" class="sidebar-link">Models</a><a href="tools.html" class="sidebar-link">Tools</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">Configuration</a><a href="memory.html" class="sidebar-link">Memory</a><a href="permissions.html" class="sidebar-link">Permissions</a><strong class="sidebar-title">Advanced Features</strong><a href="slash-commands.html" class="sidebar-link">Slash Commands</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="plugin.html" class="sidebar-link">Plugin</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Hooks</span></div><div class="sidebar-submenu expanded"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">Scheduled Tasks</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">Sandboxing</a><a href="goal.html" class="sidebar-link">Goal</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Context</span></div><div class="sidebar-submenu expanded"><a href="context-edit.html" class="sidebar-link sidebar-link-level3">Edit</a><a href="context-offloading.html" class="sidebar-link sidebar-link-level3">Offloading</a></div><a href="code-mode.html" class="sidebar-link">Code Mode</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Tool Lazy Loading</span></div><div class="sidebar-submenu expanded"><a href="load.html" class="sidebar-link sidebar-link-level3">Load</a><a href="proxy.html" class="sidebar-link sidebar-link-level3">Proxy</a></div><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Channel</span></div><div class="sidebar-submenu expanded"><a href="channel.html" class="sidebar-link sidebar-link-level3">Channel Protocol</a><a href="dingtalk.html" class="sidebar-link sidebar-link-level3">DingTalk</a><a href="webhook.html" class="sidebar-link sidebar-link-level3 current">Webhook</a></div><a href="headless.html" class="sidebar-link">Headless</a><a href="cluster.html" class="sidebar-link">Cluster</a><strong class="sidebar-title">Web Control</strong><a href="agent-viewer.html" class="sidebar-link">Agent Viewer</a><a href="settings.html" class="sidebar-link">Settings</a><a href="notifications.html" class="sidebar-link">Notifications</a><strong class="sidebar-title">Work</strong><a href="default-plugin-market.html" class="sidebar-link">Default Plugin Marketplace</a><a href="ppt.html" class="sidebar-link">PPT</a><a href="word.html" class="sidebar-link">Word</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><strong class="sidebar-title">Remote Control</strong><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a><strong class="sidebar-title">Middleware</strong><a href="sqlite.html" class="sidebar-link">SQLite</a><a href="amessage.html" class="sidebar-link">AMessage</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/en/docs/" class="mobile-nav-link">Docs</a><a href="/en/blog/" class="mobile-nav-link">Blog</a><a href="/en/about/" class="mobile-nav-link">About</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Getting Started</strong><a href="index.html" class="mobile-nav-link">Setup</a><a href="commands.html" class="mobile-nav-link">Commands</a><a href="model.html" class="mobile-nav-link">Models</a><a href="tools.html" class="mobile-nav-link">Tools</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">Configuration</a><a href="memory.html" class="mobile-nav-link">Memory</a><a href="permissions.html" class="mobile-nav-link">Permissions</a><strong class="mobile-nav-title">Advanced Features</strong><a href="slash-commands.html" class="mobile-nav-link">Slash Commands</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="plugin.html" class="mobile-nav-link">Plugin</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu expanded"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks Overview</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">Scheduled Tasks</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">Sandboxing</a><a href="goal.html" class="mobile-nav-link">Goal</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Context</span></div><div class="mobile-nav-submenu expanded"><a href="context-edit.html" class="mobile-nav-link mobile-nav-link-level3">Edit</a><a href="context-offloading.html" class="mobile-nav-link mobile-nav-link-level3">Offloading</a></div><a href="code-mode.html" class="mobile-nav-link">Code Mode</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Tool Lazy Loading</span></div><div class="mobile-nav-submenu expanded"><a href="load.html" class="mobile-nav-link mobile-nav-link-level3">Load</a><a href="proxy.html" class="mobile-nav-link mobile-nav-link-level3">Proxy</a></div><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Channel</span></div><div class="mobile-nav-submenu expanded"><a href="channel.html" class="mobile-nav-link mobile-nav-link-level3">Channel Protocol</a><a href="dingtalk.html" class="mobile-nav-link mobile-nav-link-level3">DingTalk</a><a href="webhook.html" class="mobile-nav-link mobile-nav-link-level3 current">Webhook</a></div><a href="headless.html" class="mobile-nav-link">Headless</a><a href="cluster.html" class="mobile-nav-link">Cluster</a><strong class="mobile-nav-title">Web Control</strong><a href="agent-viewer.html" class="mobile-nav-link">Agent Viewer</a><a href="settings.html" class="mobile-nav-link">Settings</a><a href="notifications.html" class="mobile-nav-link">Notifications</a><strong class="mobile-nav-title">Work</strong><a href="default-plugin-market.html" class="mobile-nav-link">Default Plugin Marketplace</a><a href="ppt.html" class="mobile-nav-link">PPT</a><a href="word.html" class="mobile-nav-link">Word</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><strong class="mobile-nav-title">Remote Control</strong><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a><strong class="mobile-nav-title">Middleware</strong><a href="sqlite.html" class="mobile-nav-link">SQLite</a><a href="amessage.html" class="mobile-nav-link">AMessage</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/webhook.html">
+      
+        <option value="zh-cn">简体中文</option>
+      
+        <option value="en" selected>English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:en']
+    }
+  });
+}
+</script>
+
+</body>
+</html>

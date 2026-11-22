@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+  <title>Webhook | Hawa Code</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://www.hawacode.com/docs/webhook">
+  <!-- Alternate links -->
+  
+    
+      
+    
+      
+        <link rel="alternate" hreflang="en" href="https://www.hawacode.com/en/docs/webhook">
+      
+    
+    <link rel="alternate" hreflang="x-default" href="https://www.hawacode.com/en/docs/webhook" />
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/logo.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/logo.png">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/logo.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/logo.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  
+<link rel="stylesheet" href="/css/navy.css">
+
+  <!-- endbuild -->
+  <link rel="stylesheet" href="/npm/typeface-lato@0.0.75/index.min.css">
+  <link rel="stylesheet" href="/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+  <link rel="stylesheet" href="/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Hawa Code" type="application/atom+xml">
+  <!-- Open Graph -->
+  <meta name="description" content="Webhook 是 Hawa Code 的通用外部事件接入通道：任何能发 HTTP 请求的系统（CI、监控、Git 平台、定时任务、自建业务服务）都可以把事件实时推进 Agent 的对话上下文，Agent 无需轮询。 它由内置 MCP Server @dahawa&#x2F;hawa-channel 提供，基于 Channel 协议 注入通知。  能做什么外部系统 ──POST &#x2F;webhook&#x2F;&amp;#123">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Webhook">
+<meta property="og:url" content="https://www.hawacode.com/docs/webhook">
+<meta property="og:site_name" content="Hawa Code">
+<meta property="og:description" content="Webhook 是 Hawa Code 的通用外部事件接入通道：任何能发 HTTP 请求的系统（CI、监控、Git 平台、定时任务、自建业务服务）都可以把事件实时推进 Agent 的对话上下文，Agent 无需轮询。 它由内置 MCP Server @dahawa&#x2F;hawa-channel 提供，基于 Channel 协议 注入通知。  能做什么外部系统 ──POST &#x2F;webhook&#x2F;&amp;#123">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hawacode.com/icon/og-image-wide.png">
+<meta property="article:published_time" content="2026-11-22T05:44:58.980Z">
+<meta property="article:modified_time" content="2026-11-22T05:44:58.980Z">
+<meta property="article:author" content="Hawa Code">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hawacode.com/icon/twitter-summary.png">
+<meta name="twitter:site" content="hawacode">
+<meta property="fb:admins" content="100000247608790">
+  <!-- Google Analytics -->
+  
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ee73930917724ed366ead801df76ba95";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  <!-- Algolia -->
+  <link rel="preconnect" href="https://92MM5ICJU3-dsn.algolia.net" crossorigin />
+  <link rel="stylesheet" href="/npm/@docsearch/css@3">
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hawa Code</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">文档</a><a href="/blog/" class="main-nav-link">博客</a><a href="/about/" class="main-nav-link">关于</a>
+      <a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/italking/hawa-code" class="main-nav-link"><i class="fab fa-github-alt"></i></a>
+      <!-- Search removed: <div id="docsearch"></div> -->
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/webhook.html">
+        
+           <option value="zh-cn" selected>简体中文</option>
+        
+           <option value="en">English</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Webhook</h1>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <html><head></head><body><p>Webhook 是 Hawa Code 的<strong>通用外部事件接入通道</strong>：任何能发 HTTP 请求的系统（CI、监控、Git 平台、定时任务、自建业务服务）都可以把事件实时推进 Agent 的对话上下文，Agent 无需轮询。</p>
+<p>它由内置 MCP Server <a href="channel.html"><code>@dahawa/hawa-channel</code></a> 提供，基于 <a href="channel.html">Channel 协议</a> 注入通知。</p>
+<hr>
+<h2 id="能做什么" class="article-heading"><a href="#能做什么" class="headerlink" title="能做什么"></a>能做什么<a class="article-anchor" href="#能做什么" aria-hidden="true"></a></h2><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">外部系统 ──POST /webhook/{channel}──▶ hawa-channel（验签）</span><br><span class="line">                                        │</span><br><span class="line">                                        ▼  notifications/hawacode/channel</span><br><span class="line">                                   Hawa Code 主 Agent 上下文</span><br></pre></td></tr></tbody></table></figure>
+
+<p>典型场景：</p>
+<ul>
+<li>CI 构建失败/成功告警</li>
+<li>监控异常推送</li>
+<li>Git 平台 PR、Issue 事件</li>
+<li>任何自定义系统的异步通知</li>
+</ul>
+<hr>
+<h2 id="启用方式" class="article-heading"><a href="#启用方式" class="headerlink" title="启用方式"></a>启用方式<a class="article-anchor" href="#启用方式" aria-hidden="true"></a></h2><p>在 hawa-code 项目的 <code>.mcp.json</code> 中添加：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span></span><br><span class="line">  <span class="attr">"mcpServers"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">    <span class="attr">"channel"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">      <span class="attr">"command"</span><span class="punctuation">:</span> <span class="string">"npx"</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"args"</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">"-y"</span><span class="punctuation">,</span> <span class="string">"@dahawa/hawa-channel"</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">      <span class="attr">"env"</span><span class="punctuation">:</span> <span class="punctuation">{</span></span><br><span class="line">        <span class="attr">"WEBHOOK_ENABLED"</span><span class="punctuation">:</span> <span class="string">"true"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"WEBHOOK_PORT"</span><span class="punctuation">:</span> <span class="string">"9527"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"WEBHOOK_HOST"</span><span class="punctuation">:</span> <span class="string">"127.0.0.1"</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">"WEBHOOK_SECRET"</span><span class="punctuation">:</span> <span class="string">"replace-with-a-strong-random-secret"</span></span><br><span class="line">      <span class="punctuation">}</span></span><br><span class="line">    <span class="punctuation">}</span></span><br><span class="line">  <span class="punctuation">}</span></span><br><span class="line"><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>需要 Node.js ≥ 20。重启 hawa-code 后 MCP Server 会通过 <code>npx</code> 自动拉起。</p>
+<p>::: warning<br><code>WEBHOOK_ENABLED=true</code>（默认即为 true）时 <code>WEBHOOK_SECRET</code> <strong>必填</strong>，否则启动报错。<br>:::</p>
+<h3 id="环境变量" class="article-heading"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量<a class="article-anchor" href="#环境变量" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>环境变量</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>WEBHOOK_ENABLED</code></td>
+<td><code>true</code></td>
+<td>是否启用 Webhook HTTP 接收服务</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_HOST</code></td>
+<td><code>127.0.0.1</code></td>
+<td>监听地址；对外提供服务时改为服务器 IP 或 <code>0.0.0.0</code></td>
+</tr>
+<tr>
+<td><code>WEBHOOK_PORT</code></td>
+<td><code>9527</code></td>
+<td>监听端口</td>
+</tr>
+<tr>
+<td><code>WEBHOOK_SECRET</code></td>
+<td>无</td>
+<td>HMAC 验签密钥，<strong>仅用于验签，不要写入日志</strong></td>
+</tr>
+<tr>
+<td><code>WEBHOOK_ALLOWED_IPS</code></td>
+<td>空</td>
+<td>逗号分隔的客户端 IP 白名单；空表示不限制</td>
+</tr>
+<tr>
+<td><code>LOG_LEVEL</code></td>
+<td><code>info</code></td>
+<td><code>debug / info / warn / error</code></td>
+</tr>
+</tbody></table>
+<p>Webhook 与<a href="dingtalk.html">钉钉</a>能力相互独立，可单独开关。</p>
+<hr>
+<h2 id="发送请求" class="article-heading"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求<a class="article-anchor" href="#发送请求" aria-hidden="true"></a></h2><h3 id="接口" class="article-heading"><a href="#接口" class="headerlink" title="接口"></a>接口<a class="article-anchor" href="#接口" aria-hidden="true"></a></h3><figure class="highlight text"><table><tbody><tr><td class="code"><pre><span class="line">GET  /health                 健康检查</span><br><span class="line">POST /webhook/{channel}      接收事件（channel 由调用方自定义）</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>channel</code> 只能包含小写字母、数字、下划线和中划线（<code>^[a-z0-9_-]{1,32}$</code>），用于区分事件来源，例如 <code>ci</code>、<code>monitor</code>、<code>git</code>。</p>
+<h3 id="请求头" class="article-heading"><a href="#请求头" class="headerlink" title="请求头"></a>请求头<a class="article-anchor" href="#请求头" aria-hidden="true"></a></h3><table>
+<thead>
+<tr>
+<th>头</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Content-Type</code></td>
+<td>是</td>
+<td>必须为 <code>application/json</code></td>
+</tr>
+<tr>
+<td><code>X-Timestamp</code></td>
+<td>是</td>
+<td>Unix <strong>秒</strong>级时间戳</td>
+</tr>
+<tr>
+<td><code>X-Signature</code></td>
+<td>是</td>
+<td><code>sha256=</code> + 64 位十六进制 HMAC</td>
+</tr>
+</tbody></table>
+<h3 id="签名算法" class="article-heading"><a href="#签名算法" class="headerlink" title="签名算法"></a>签名算法<a class="article-anchor" href="#签名算法" aria-hidden="true"></a></h3><figure class="highlight text"><table><tbody><tr><td class="code"><pre><span class="line">payload   = "&lt;timestamp&gt;." + &lt;原始请求体字符串&gt;</span><br><span class="line">X-Signature = "sha256=" + lowercaseHex( HMAC_SHA256(WEBHOOK_SECRET, payload) )</span><br></pre></td></tr></tbody></table></figure>
+
+<p>签名针对<strong>原始请求体</strong>计算，JSON 格式化差异（空格、字段顺序）都会导致验签失败，请先签名再原样发送。</p>
+<p>时间戳与当前时间偏差超过 <strong>5 分钟</strong>会被拒绝；相同 <code>channel + 时间戳 + 请求体</code> 的重复请求会被<strong>重放保护</strong>拦截。</p>
+<h3 id="请求体" class="article-heading"><a href="#请求体" class="headerlink" title="请求体"></a>请求体<a class="article-anchor" href="#请求体" aria-hidden="true"></a></h3><p>任意 JSON 对象。通知正文按以下优先级提取字段：<code>text</code> → <code>message</code> → <code>content</code>；都不存在时退化为紧凑 JSON 字符串。<code>event</code> 字段会作为元数据传给 Agent。</p>
+<h3 id="完整调用示例" class="article-heading"><a href="#完整调用示例" class="headerlink" title="完整调用示例"></a>完整调用示例<a class="article-anchor" href="#完整调用示例" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">SECRET=<span class="string">'replace-with-a-strong-random-secret'</span></span><br><span class="line">TIMESTAMP=$(<span class="built_in">date</span> +%s)</span><br><span class="line">BODY=<span class="string">'{"text":"main 分支构建失败","event":"build.failed"}'</span></span><br><span class="line"></span><br><span class="line">SIGNATURE=$(node -e <span class="string">'</span></span><br><span class="line"><span class="string">  const [secret, ts, body] = process.argv.slice(1);</span></span><br><span class="line"><span class="string">  const hmac = require("node:crypto").createHmac("sha256", secret);</span></span><br><span class="line"><span class="string">  console.log(hmac.update(ts + "." + body).digest("hex"));</span></span><br><span class="line"><span class="string">'</span> <span class="string">"<span class="variable">$SECRET</span>"</span> <span class="string">"<span class="variable">$TIMESTAMP</span>"</span> <span class="string">"<span class="variable">$BODY</span>"</span>)</span><br><span class="line"></span><br><span class="line">curl -i <span class="string">"http://127.0.0.1:9527/webhook/ci"</span> \</span><br><span class="line">  -H <span class="string">'Content-Type: application/json'</span> \</span><br><span class="line">  -H <span class="string">"X-Timestamp: <span class="variable">${TIMESTAMP}</span>"</span> \</span><br><span class="line">  -H <span class="string">"X-Signature: sha256=<span class="variable">${SIGNATURE}</span>"</span> \</span><br><span class="line">  --data-raw <span class="string">"<span class="variable">$BODY</span>"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>成功响应：</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line"><span class="punctuation">{</span><span class="attr">"code"</span><span class="punctuation">:</span><span class="number">0</span><span class="punctuation">,</span><span class="attr">"message"</span><span class="punctuation">:</span><span class="string">"ok"</span><span class="punctuation">,</span><span class="attr">"data"</span><span class="punctuation">:</span><span class="punctuation">{</span><span class="attr">"received"</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">}</span><span class="punctuation">}</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>::: tip<br>HTTP 200 只表示<strong>请求已被接收</strong>。通知是异步注入 Agent 上下文的，注入失败不会回滚 HTTP 状态。<br>:::</p>
+<hr>
+<h2 id="Agent-收到什么" class="article-heading"><a href="#Agent-收到什么" class="headerlink" title="Agent 收到什么"></a>Agent 收到什么<a class="article-anchor" href="#Agent-收到什么" aria-hidden="true"></a></h2><p>注入 Agent 上下文的正文格式：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">[webhook:ci] main 分支构建失败</span><br></pre></td></tr></tbody></table></figure>
+
+<p><code>meta</code> 中带 <code>messageId</code>、<code>channel</code>、<code>event</code>、<code>timestamp</code>，Agent 可据此判断事件类型与来源并自主响应。</p>
+<hr>
+<h2 id="响应码与排错" class="article-heading"><a href="#响应码与排错" class="headerlink" title="响应码与排错"></a>响应码与排错<a class="article-anchor" href="#响应码与排错" aria-hidden="true"></a></h2><table>
+<thead>
+<tr>
+<th>HTTP 状态</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>400</code></td>
+<td>channel、Content-Type、请求体 JSON 或 Content-Length 非法</td>
+</tr>
+<tr>
+<td><code>401</code></td>
+<td>缺少/错误的时间戳或签名、时间戳超出 5 分钟窗口、重放请求</td>
+</tr>
+<tr>
+<td><code>403</code></td>
+<td>客户端 IP 不在白名单</td>
+</tr>
+<tr>
+<td><code>404</code></td>
+<td>路径或请求方法不匹配</td>
+</tr>
+<tr>
+<td><code>413</code></td>
+<td>请求体超过 1 MiB</td>
+</tr>
+<tr>
+<td><code>429</code></td>
+<td>同一 channel 超过每分钟 60 次限流</td>
+</tr>
+<tr>
+<td><code>500</code></td>
+<td>服务内部错误</td>
+</tr>
+</tbody></table>
+<p>排查建议：</p>
+<ul>
+<li>启动报错缺少 <code>WEBHOOK_SECRET</code>：配置环境变量后重启 hawa-code。</li>
+<li>一直 <code>401</code>：核对密钥是否一致、时间戳是否为<strong>秒</strong>、签名是否基于<strong>原始请求体</strong>。</li>
+<li>提示 <code>403</code>：检查 <code>WEBHOOK_ALLOWED_IPS</code> 是否包含客户端地址。</li>
+<li>收不到通知：hawa-channel 的日志走 <strong>stderr</strong>（MCP stdout 只承载协议），提高 <code>LOG_LEVEL=debug</code> 查看。</li>
+</ul>
+<hr>
+<h2 id="原理简述" class="article-heading"><a href="#原理简述" class="headerlink" title="原理简述"></a>原理简述<a class="article-anchor" href="#原理简述" aria-hidden="true"></a></h2><ul>
+<li><strong>验签</strong>：<code>HMAC-SHA256(密钥, 时间戳 + "." + 原始请求体)</code>，密钥双方共享，请求方证明、接收方校验，密钥本身不出现在网络传输中。</li>
+<li><strong>时效与重放</strong>：时间戳 5 分钟有效窗口 + 内存重放缓存，拦截过期请求和原样重放。</li>
+<li><strong>保护机制</strong>：按 channel 令牌桶限流（60 次/分钟）、请求体 1 MiB 上限、可选 IP 白名单。</li>
+<li><strong>ACK 后异步处理</strong>：先返回 HTTP 200，再规范化消息并通过 MCP notification（<code>notifications/hawacode/channel</code>）推给 hawa-code，外部系统不会因 Agent 处理慢而被阻塞。</li>
+</ul>
+</body></html>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2026-11-22T05:44:58.980Z" itemprop="dateModified">上次更新：2026-11-22</time>
+                <a href="index.html" class="article-footer-next" title="安装"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E5%81%9A%E4%BB%80%E4%B9%88"><span class="toc-text">能做什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">启用方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">环境变量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82"><span class="toc-text">发送请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3"><span class="toc-text">接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%A4%B4"><span class="toc-text">请求头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%BE%E5%90%8D%E7%AE%97%E6%B3%95"><span class="toc-text">签名算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E4%BD%93"><span class="toc-text">请求体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text">完整调用示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Agent-%E6%94%B6%E5%88%B0%E4%BB%80%E4%B9%88"><span class="toc-text">Agent 收到什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E7%A0%81%E4%B8%8E%E6%8E%92%E9%94%99"><span class="toc-text">响应码与排错</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E7%AE%80%E8%BF%B0"><span class="toc-text">原理简述</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">安装</a><a href="commands.html" class="sidebar-link">命令</a><a href="model.html" class="sidebar-link">模型</a><a href="tools.html" class="sidebar-link">工具</a><a href="ide.html" class="sidebar-link">IDE</a><strong class="sidebar-title">配置</strong><a href="configuration.html" class="sidebar-link">配置</a><a href="memory.html" class="sidebar-link">记忆</a><a href="permissions.html" class="sidebar-link">权限</a><strong class="sidebar-title">高级功能</strong><a href="slash-commands.html" class="sidebar-link">斜杠命令</a><a href="skill.html" class="sidebar-link">Skill</a><a href="subagent.html" class="sidebar-link">Subagent</a><a href="mcp.html" class="sidebar-link">MCP</a><a href="lsp.html" class="sidebar-link">LSPServer</a><a href="plugin.html" class="sidebar-link">Plugin</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Hooks</span></div><div class="sidebar-submenu expanded"><a href="hooks-index.html" class="sidebar-link sidebar-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="sidebar-link sidebar-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="sidebar-link sidebar-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="sidebar-link sidebar-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="sidebar-link sidebar-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="sidebar-link sidebar-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="sidebar-link sidebar-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="sidebar-link sidebar-link-level3">SessionStart</a><a href="hooks-session-end.html" class="sidebar-link sidebar-link-level3">SessionEnd</a></div><a href="agent-team.html" class="sidebar-link">Agent Team</a><a href="tasks.html" class="sidebar-link">Tasks</a><a href="scheduled.html" class="sidebar-link">定时任务</a><a href="plan.html" class="sidebar-link">Plan</a><a href="sandboxing.html" class="sidebar-link">沙箱</a><a href="goal.html" class="sidebar-link">Goal</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Context</span></div><div class="sidebar-submenu expanded"><a href="context-edit.html" class="sidebar-link sidebar-link-level3">Edit</a><a href="context-offloading.html" class="sidebar-link sidebar-link-level3">Offloading</a></div><a href="code-mode.html" class="sidebar-link">Code Mode</a><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>工具懒加载</span></div><div class="sidebar-submenu expanded"><a href="load.html" class="sidebar-link sidebar-link-level3">Load</a><a href="proxy.html" class="sidebar-link sidebar-link-level3">Proxy</a></div><div class="sidebar-link-parent" onclick="return toggleSubmenu(this, event)"><span class="sidebar-toggle expanded">▶</span><span>Channel</span></div><div class="sidebar-submenu expanded"><a href="channel.html" class="sidebar-link sidebar-link-level3">Channel 协议</a><a href="dingtalk.html" class="sidebar-link sidebar-link-level3">钉钉</a><a href="webhook.html" class="sidebar-link sidebar-link-level3 current">Webhook</a></div><a href="headless.html" class="sidebar-link">Headless</a><a href="cluster.html" class="sidebar-link">Cluster</a><strong class="sidebar-title">Web Control</strong><a href="agent-viewer.html" class="sidebar-link">Agent Viewer</a><a href="settings.html" class="sidebar-link">Settings</a><a href="notifications.html" class="sidebar-link">通知</a><strong class="sidebar-title">Work</strong><a href="default-plugin-market.html" class="sidebar-link">默认插件市场</a><a href="ppt.html" class="sidebar-link">PPT</a><a href="word.html" class="sidebar-link">Word</a><strong class="sidebar-title">Computer</strong><a href="computer-use.html" class="sidebar-link">computer use</a><strong class="sidebar-title">远程控制</strong><a href="hands.html" class="sidebar-link">hands</a><a href="hands-mcp.html" class="sidebar-link">hands mcp</a><strong class="sidebar-title">中间件</strong><a href="sqlite.html" class="sidebar-link">SQLite</a><a href="amessage.html" class="sidebar-link">AMessage</a>
+  </div>
+</aside>
+
+<script>
+function toggleSubmenu(element, event) {
+  // 阻止事件冒泡，防止触发链接跳转
+  if (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  
+  const submenu = element.nextElementSibling;
+  const toggle = element.querySelector('.sidebar-toggle');
+  
+  if (submenu && submenu.classList.contains('sidebar-submenu')) {
+    submenu.classList.toggle('expanded');
+    if (toggle) {
+      toggle.classList.toggle('expanded');
+    }
+  }
+  
+  // 返回 false 阻止默认行为
+  return false;
+}
+</script>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2026 <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" target="_blank">Hawa Code</a><br>
+    </div>
+    <div id="footer-links">
+      <a href="https://github.com/italking/hawa-code" rel="external nofollow noreferrer" class="footer-link" target="_blank"><i class="fab fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">文档</a><a href="/blog/" class="mobile-nav-link">博客</a><a href="/about/" class="mobile-nav-link">关于</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/italking/hawa-code" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">安装</a><a href="commands.html" class="mobile-nav-link">命令</a><a href="model.html" class="mobile-nav-link">模型</a><a href="tools.html" class="mobile-nav-link">工具</a><a href="ide.html" class="mobile-nav-link">IDE</a><strong class="mobile-nav-title">配置</strong><a href="configuration.html" class="mobile-nav-link">配置</a><a href="memory.html" class="mobile-nav-link">记忆</a><a href="permissions.html" class="mobile-nav-link">权限</a><strong class="mobile-nav-title">高级功能</strong><a href="slash-commands.html" class="mobile-nav-link">斜杠命令</a><a href="skill.html" class="mobile-nav-link">Skill</a><a href="subagent.html" class="mobile-nav-link">Subagent</a><a href="mcp.html" class="mobile-nav-link">MCP</a><a href="lsp.html" class="mobile-nav-link">LSPServer</a><a href="plugin.html" class="mobile-nav-link">Plugin</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Hooks</span></div><div class="mobile-nav-submenu expanded"><a href="hooks-index.html" class="mobile-nav-link mobile-nav-link-level3">Hooks 概述</a><a href="hooks-stop.html" class="mobile-nav-link mobile-nav-link-level3">Stop</a><a href="hooks-subagent-stop.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStop</a><a href="hooks-subagent-start.html" class="mobile-nav-link mobile-nav-link-level3">SubagentStart</a><a href="hooks-pre-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PreToolUse</a><a href="hooks-post-tool-use.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUse</a><a href="hooks-post-tool-use-failure.html" class="mobile-nav-link mobile-nav-link-level3">PostToolUseFailure</a><a href="hooks-session-start.html" class="mobile-nav-link mobile-nav-link-level3">SessionStart</a><a href="hooks-session-end.html" class="mobile-nav-link mobile-nav-link-level3">SessionEnd</a></div><a href="agent-team.html" class="mobile-nav-link">Agent Team</a><a href="tasks.html" class="mobile-nav-link">Tasks</a><a href="scheduled.html" class="mobile-nav-link">定时任务</a><a href="plan.html" class="mobile-nav-link">Plan</a><a href="sandboxing.html" class="mobile-nav-link">沙箱</a><a href="goal.html" class="mobile-nav-link">Goal</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Context</span></div><div class="mobile-nav-submenu expanded"><a href="context-edit.html" class="mobile-nav-link mobile-nav-link-level3">Edit</a><a href="context-offloading.html" class="mobile-nav-link mobile-nav-link-level3">Offloading</a></div><a href="code-mode.html" class="mobile-nav-link">Code Mode</a><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>工具懒加载</span></div><div class="mobile-nav-submenu expanded"><a href="load.html" class="mobile-nav-link mobile-nav-link-level3">Load</a><a href="proxy.html" class="mobile-nav-link mobile-nav-link-level3">Proxy</a></div><div class="mobile-nav-link-parent" onclick="return toggleSubmenu(this, event)"><span class="mobile-nav-toggle expanded">▶</span><span>Channel</span></div><div class="mobile-nav-submenu expanded"><a href="channel.html" class="mobile-nav-link mobile-nav-link-level3">Channel 协议</a><a href="dingtalk.html" class="mobile-nav-link mobile-nav-link-level3">钉钉</a><a href="webhook.html" class="mobile-nav-link mobile-nav-link-level3 current">Webhook</a></div><a href="headless.html" class="mobile-nav-link">Headless</a><a href="cluster.html" class="mobile-nav-link">Cluster</a><strong class="mobile-nav-title">Web Control</strong><a href="agent-viewer.html" class="mobile-nav-link">Agent Viewer</a><a href="settings.html" class="mobile-nav-link">Settings</a><a href="notifications.html" class="mobile-nav-link">通知</a><strong class="mobile-nav-title">Work</strong><a href="default-plugin-market.html" class="mobile-nav-link">默认插件市场</a><a href="ppt.html" class="mobile-nav-link">PPT</a><a href="word.html" class="mobile-nav-link">Word</a><strong class="mobile-nav-title">Computer</strong><a href="computer-use.html" class="mobile-nav-link">computer use</a><strong class="mobile-nav-title">远程控制</strong><a href="hands.html" class="mobile-nav-link">hands</a><a href="hands-mcp.html" class="mobile-nav-link">hands mcp</a><strong class="mobile-nav-title">中间件</strong><a href="sqlite.html" class="mobile-nav-link">SQLite</a><a href="amessage.html" class="mobile-nav-link">AMessage</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/webhook.html">
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+        <option value="en">English</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- Cookie -->
+<script src="/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- build:js build/js/main.js -->
+
+<script src="/js/lang_select.js"></script>
+
+
+<script src="/js/mobile_nav.js"></script>
+
+
+<script src="/js/colorScheme.js"></script>
+
+<!-- endbuild -->
+
+<!-- Algolia -->
+<script src="/npm/@docsearch/js@3"></script>
+<script type="text/javascript">
+// 只在搜索容器存在时初始化 docsearch
+if (document.getElementById('docsearch')) {
+  docsearch({
+    appId: '92MM5ICJU3',
+    apiKey: '64d254213e6c3157c3abc2bc74228632',
+    indexName: 'hawacode',
+    insights: true,
+    container: '#docsearch',
+    debug: false,
+    searchParameters: {
+      facetFilters: ['lang:zh-cn']
+    }
+  });
+}
+</script>
+
+</body>
+</html>

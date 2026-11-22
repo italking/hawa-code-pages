@@ -2,6 +2,60 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.hawacode.com/en/docs/dingtalk</loc>
+    
+    <lastmod>2026-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/webhook</loc>
+    
+    <lastmod>2026-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/dingtalk</loc>
+    
+    <lastmod>2026-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/webhook</loc>
+    
+    <lastmod>2026-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/en/docs/channel</loc>
+    
+    <lastmod>2026-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.hawacode.com/docs/channel</loc>
+    
+    <lastmod>2026-11-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.hawacode.com/en/about/</loc>
     
     <lastmod>2026-11-17</lastmod>
@@ -86,24 +140,6 @@
     <loc>https://www.hawacode.com/docs/agent-viewer</loc>
     
     <lastmod>2026-11-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/en/docs/channel</loc>
-    
-    <lastmod>2026-11-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.hawacode.com/docs/channel</loc>
-    
-    <lastmod>2026-11-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1192,7 +1228,7 @@
 
   <url>
     <loc>https://www.hawacode.com/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
